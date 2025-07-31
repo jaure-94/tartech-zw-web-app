@@ -4,6 +4,7 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { Bolt, Calculator, Mountain, HardHat, Tractor, ArrowRight, ChevronDown, Shield, Award, Users, Clock, CheckCircle, Star, Phone } from 'lucide-react';
 import { ScrollAnimations } from '@/components/ScrollAnimations';
+import bulldozerImage from '@assets/bulldozer-2195329_1920_1753976237868.jpg';
 
 export default function Home() {
   useEffect(() => {
@@ -18,7 +19,7 @@ export default function Home() {
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-16">
         <div className="absolute inset-0 z-0">
           <img 
-            src="/attached_assets/bulldozer-2195329_1920_1753976237868.jpg" 
+            src={bulldozerImage} 
             alt="Heavy industrial bulldozer and excavator equipment at construction site with dramatic sky" 
             className="w-full h-full object-cover"
             onError={(e) => {
