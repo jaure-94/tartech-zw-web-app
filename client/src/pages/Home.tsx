@@ -26,11 +26,11 @@ export default function Home() {
         </div>
         
         <div className="relative z-20 text-center px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
-          <h1 className="animate-fade-in hero-title font-black text-white mb-8 tracking-tight">
+          <h1 className="animate-fade-in text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-black text-white mb-8 leading-tight tracking-tight">
             ENGINEERING EXCELLENCE<br />
             <span className="text-construction-yellow">IN HARSH ENVIRONMENTS</span>
           </h1>
-          <p className="animate-fade-in hero-subtitle text-gray-200 mb-12 max-w-5xl mx-auto font-light">
+          <p className="animate-fade-in text-lg sm:text-xl md:text-2xl lg:text-3xl text-gray-200 mb-12 max-w-5xl mx-auto font-light leading-relaxed">
             Zimbabwe's premier industrial contractor delivering world-class solutions in construction, mining, and agriculture with three decades of proven expertise and unwavering safety standards.
           </p>
           <div className="animate-fade-in flex flex-col sm:flex-row gap-6 justify-center">
