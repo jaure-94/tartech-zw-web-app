@@ -4,6 +4,7 @@ import { QueryClientProvider } from "@tanstack/react-query";
 import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { Navigation } from "@/components/Navigation";
+import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { Footer } from "@/components/Footer";
 
 // Pages
@@ -37,6 +38,7 @@ function App() {
       <TooltipProvider>
         <div className="min-h-screen flex flex-col">
           <Navigation />
+          <Breadcrumbs />
           <main className="flex-1">
             <Router />
           </main>
