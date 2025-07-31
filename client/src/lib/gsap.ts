@@ -81,18 +81,18 @@ export const initNavbarAnimation = () => {
     ScrollTrigger.create({
       start: "top -80",
       end: 99999,
-      toggleClass: {className: "bg-white/95 shadow-lg backdrop-blur-sm", targets: navbar}
+      toggleClass: {className: "navbar-scrolled", targets: navbar}
     });
   }
 };
 
 export const animateServiceCards = () => {
   document.querySelectorAll('.service-card-hover').forEach(card => {
-    card.addEventListener('mouseenter', function() {
+    card.addEventListener('mouseenter', function(this: HTMLElement) {
       gsap.to(this, {duration: 0.3, y: -8, ease: "power2.out"});
     });
     
-    card.addEventListener('mouseleave', function() {
+    card.addEventListener('mouseleave', function(this: HTMLElement) {
       gsap.to(this, {duration: 0.3, y: 0, ease: "power2.out"});
     });
   });
