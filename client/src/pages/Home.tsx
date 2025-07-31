@@ -18,11 +18,11 @@ export default function Home() {
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-16">
         <div className="absolute inset-0 z-0">
           <img 
-            src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1920&h=1080" 
-            alt="Heavy mining dump trucks and excavators in Zimbabwe industrial mining operation" 
+            src="/attached_assets/bulldozer-2195329_1920_1753975241197.jpg" 
+            alt="Heavy industrial bulldozer and excavator equipment at construction site with dramatic sky" 
             className="w-full h-full object-cover"
             onError={(e) => {
-              e.currentTarget.src = "https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&h=1080";
+              e.currentTarget.src = "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&h=1080";
             }}
           />
           <div className="hero-overlay absolute inset-0"></div>
