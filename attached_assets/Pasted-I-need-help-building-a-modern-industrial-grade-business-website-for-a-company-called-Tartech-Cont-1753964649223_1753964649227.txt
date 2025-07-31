@@ -1,0 +1,55 @@
+I need help building a modern, industrial-grade business website for a company called **Tartech Contracting**, which operates in the **construction, agriculture, and mining industries** in Zimbabwe.
+
+The current site (https://tartech.co.zw) is built on WordPress and lacks modern design, animation, responsiveness, and technical functionality. I want to rebuild it using the following tech stack:
+
+- **React (with TypeScript)**
+- **Next.js** for routing and server-side rendering
+- **GSAP** for scroll-based animations and micro-interactions
+- **Tailwind CSS** for responsive design
+- Hosted on **AWS** for performance and scalability
+
+### 🔧 Design Goals & Features:
+
+#### 🏠 Home Page
+- Hero section with animated industrial background (e.g. rotating excavator arm or dust particles using GSAP)
+- Clear value proposition like: “Engineering Excellence in Harsh Environments”
+- Animated call-to-action (CTA) buttons like “Explore Services” or “Get a Quote”
+- Use `next/image` for optimized loading of high-res construction imagery
+
+#### 🛠️ Services Page
+- Split by industry: Construction, Mining, Agriculture
+- Each service should have its own route (e.g. `/services/mining`)
+- Use scroll animations to reveal heavy machinery components or stats
+- Embed case studies or client testimonials
+
+#### 📞 Contact Page
+- Functional contact form with validation (React Hook Form)
+- Integrate with email service (e.g. Formspree or AWS SES)
+- GSAP animation on successful submission
+- Embedded Google Maps or Mapbox for location
+
+#### ℹ️ About Page
+- Split layout with mission/vision on one side, animated timeline on the other
+- Scroll-triggered animations for company milestones
+- Carousel for team members or equipment gallery
+
+#### 📱 Mobile-First UX
+- Use Tailwind’s responsive utilities to create a mobile-first layout
+- Sticky mobile nav bar and hamburger menu with GSAP transitions
+- Optimize readability and spacing for small screens
+
+#### 🎨 Branding & UI
+- Use bold black/yellow color palette
+- Heavy-duty, geometric typography
+- Custom SVG icons for each service
+- Build reusable UI components (cards, buttons, CTAs, headers)
+
+### ✅ Deliverables
+Please provide a structured React + Next.js project template with:
+- A dynamic routing system for services
+- GSAP-powered UI animation examples
+- Functional contact form
+- Responsive layout using Tailwind CSS
+- Placeholder assets/components for each page
+
+The goal is a visually striking, performant, and professional website that reflects the energy, scale, and industrial strength of Tartech Contracting.
