@@ -132,6 +132,51 @@
   .services-dropdown-item:hover::before {
     left: 100%;
   }
+
+  /* Better responsive text sizing */
+  @media (max-width: 640px) {
+    .hero-title {
+      font-size: 2.5rem;
+      line-height: 1.2;
+    }
+    .hero-subtitle {
+      font-size: 1.125rem;
+      line-height: 1.4;
+    }
+  }
+
+  @media (min-width: 641px) and (max-width: 1024px) {
+    .hero-title {
+      font-size: 4rem;
+      line-height: 1.1;
+    }
+    .hero-subtitle {
+      font-size: 1.5rem;
+      line-height: 1.4;
+    }
+  }
+
+  @media (min-width: 1025px) {
+    .hero-title {
+      font-size: 6rem;
+      line-height: 1.05;
+    }
+    .hero-subtitle {
+      font-size: 2rem;
+      line-height: 1.4;
+    }
+  }
+
+  @media (min-width: 1280px) {
+    .hero-title {
+      font-size: 7rem;
+      line-height: 1;
+    }
+    .hero-subtitle {
+      font-size: 2.5rem;
+      line-height: 1.3;
+    }
+  }
   
   .hero-overlay {
     background: linear-gradient(135deg, rgba(26, 26, 26, 0.8) 0%, rgba(26, 26, 26, 0.6) 100%);

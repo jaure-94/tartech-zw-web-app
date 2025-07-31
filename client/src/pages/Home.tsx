@@ -18,19 +18,19 @@ export default function Home() {
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-16">
         <div className="absolute inset-0 z-0">
           <img 
-            src="https://images.unsplash.com/photo-1590736969955-71cc94901144?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1920&h=1080" 
-            alt="Massive mining excavator and dump trucks operating in Zimbabwe open pit mine at sunset" 
+            src="https://images.unsplash.com/photo-1617817544103-c38bccde78d9?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1920&h=1080" 
+            alt="Large mining dump trucks and heavy excavators working in Zimbabwe open pit mine industrial operation" 
             className="w-full h-full object-cover" 
           />
           <div className="hero-overlay absolute inset-0"></div>
         </div>
         
-        <div className="relative z-20 text-center px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto">
-          <h1 className="animate-fade-in text-4xl sm:text-6xl lg:text-8xl font-black text-white mb-6 leading-tight">
+        <div className="relative z-20 text-center px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+          <h1 className="animate-fade-in hero-title font-black text-white mb-8 tracking-tight">
             ENGINEERING EXCELLENCE<br />
             <span className="text-construction-yellow">IN HARSH ENVIRONMENTS</span>
           </h1>
-          <p className="animate-fade-in text-xl sm:text-2xl lg:text-3xl text-gray-200 mb-12 max-w-4xl mx-auto font-light leading-relaxed">
+          <p className="animate-fade-in hero-subtitle text-gray-200 mb-12 max-w-5xl mx-auto font-light">
             Zimbabwe's premier industrial contractor delivering world-class solutions in construction, mining, and agriculture with three decades of proven expertise and unwavering safety standards.
           </p>
           <div className="animate-fade-in flex flex-col sm:flex-row gap-6 justify-center">
