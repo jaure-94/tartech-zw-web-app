@@ -19,45 +19,40 @@ const routeLabels: Record<string, string> = {
 
 export function Breadcrumbs() {
   const [location] = useLocation();
-  const [breadcrumbs, setBreadcrumbs] = useState<BreadcrumbItem[]>([]);
 
-  useEffect(() => {
-    // Don't show breadcrumbs on home page
-    if (location === '/') {
-      setBreadcrumbs([]);
-      return;
-    }
-
-    const pathSegments = location.split('/').filter(segment => segment !== '');
-    const items: BreadcrumbItem[] = [];
-
-    // Always add Home as first item
-    items.push({
-      label: 'Home',
-      href: '/',
-      isActive: false
-    });
-
-    // Build breadcrumb trail
-    let currentPath = '';
-    pathSegments.forEach((segment, index) => {
-      currentPath += `/${segment}`;
-      const isLast = index === pathSegments.length - 1;
-      
-      items.push({
-        label: routeLabels[segment] || segment.charAt(0).toUpperCase() + segment.slice(1),
-        href: currentPath,
-        isActive: isLast
-      });
-    });
-
-    setBreadcrumbs(items);
-  }, [location]);
-
-  // Don't render if no breadcrumbs or on home page
-  if (breadcrumbs.length === 0) {
+  // Don't show breadcrumbs on home page
+  if (location === '/') {
     return null;
   }
+
+  const pathSegments = location.split('/').filter(segment => segment !== '');
+  
+  // If no path segments, don't show breadcrumbs
+  if (pathSegments.length === 0) {
+    return null;
+  }
+
+  const breadcrumbs: BreadcrumbItem[] = [];
+
+  // Always add Home as first item
+  breadcrumbs.push({
+    label: 'Home',
+    href: '/',
+    isActive: false
+  });
+
+  // Build breadcrumb trail
+  let currentPath = '';
+  pathSegments.forEach((segment, index) => {
+    currentPath += `/${segment}`;
+    const isLast = index === pathSegments.length - 1;
+    
+    breadcrumbs.push({
+      label: routeLabels[segment] || segment.charAt(0).toUpperCase() + segment.slice(1),
+      href: currentPath,
+      isActive: isLast
+    });
+  });
 
   return (
     <nav className="bg-gray-50 border-b border-gray-200" aria-label="Breadcrumb">
