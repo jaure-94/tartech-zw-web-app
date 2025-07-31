@@ -2,6 +2,7 @@ import { useEffect } from 'react';
 import { Link } from 'wouter';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 import { Bolt, Calculator, Mountain, HardHat, Tractor, ArrowRight, ChevronDown, Shield, Award, Users, Clock, CheckCircle, Star, Phone } from 'lucide-react';
 import { ScrollAnimations } from '@/components/ScrollAnimations';
 import bulldozerImage from '@assets/bulldozer-2195329_1920_1753976237868.jpg';
@@ -176,7 +177,7 @@ export default function Home() {
 
       {/* Why Choose Us */}
       <section className="py-24 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="animate-fade-in text-4xl sm:text-5xl font-black text-industrial-black mb-6">
               WHY CHOOSE <span className="text-construction-yellow">TARTECH</span>
@@ -186,46 +187,112 @@ export default function Home() {
             </p>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            <Card className="animate-fade-in text-center p-8 border-2 border-transparent hover:border-construction-yellow transition-all duration-300">
-              <CardContent className="p-0">
-                <div className="w-16 h-16 bg-construction-yellow rounded-full flex items-center justify-center mx-auto mb-6">
-                  <Shield className="h-8 w-8 text-industrial-black" />
-                </div>
-                <h3 className="text-xl font-bold text-industrial-black mb-4">SAFETY FIRST</h3>
-                <p className="text-industrial-gray">Zero-incident safety record with comprehensive training and international safety protocols</p>
-              </CardContent>
-            </Card>
-            
-            <Card className="animate-fade-in text-center p-8 border-2 border-transparent hover:border-construction-yellow transition-all duration-300">
-              <CardContent className="p-0">
-                <div className="w-16 h-16 bg-construction-yellow rounded-full flex items-center justify-center mx-auto mb-6">
-                  <Award className="h-8 w-8 text-industrial-black" />
-                </div>
-                <h3 className="text-xl font-bold text-industrial-black mb-4">PROVEN EXCELLENCE</h3>
-                <p className="text-industrial-gray">Industry awards and certifications recognizing our commitment to quality and innovation</p>
-              </CardContent>
-            </Card>
-            
-            <Card className="animate-fade-in text-center p-8 border-2 border-transparent hover:border-construction-yellow transition-all duration-300">
-              <CardContent className="p-0">
-                <div className="w-16 h-16 bg-construction-yellow rounded-full flex items-center justify-center mx-auto mb-6">
-                  <Users className="h-8 w-8 text-industrial-black" />
-                </div>
-                <h3 className="text-xl font-bold text-industrial-black mb-4">EXPERT TEAM</h3>
-                <p className="text-industrial-gray">Highly skilled professionals with decades of experience in harsh industrial environments</p>
-              </CardContent>
-            </Card>
-            
-            <Card className="animate-fade-in text-center p-8 border-2 border-transparent hover:border-construction-yellow transition-all duration-300">
-              <CardContent className="p-0">
-                <div className="w-16 h-16 bg-construction-yellow rounded-full flex items-center justify-center mx-auto mb-6">
-                  <Clock className="h-8 w-8 text-industrial-black" />
-                </div>
-                <h3 className="text-xl font-bold text-industrial-black mb-4">ON-TIME DELIVERY</h3>
-                <p className="text-industrial-gray">Consistent project completion within deadlines and budget constraints</p>
-              </CardContent>
-            </Card>
+          <div className="animate-fade-in">
+            <Accordion type="single" collapsible className="w-full space-y-4">
+              <AccordionItem value="safety" className="border border-gray-200 rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300">
+                <AccordionTrigger className="px-8 py-6 bg-gradient-to-r from-white to-gray-50 hover:from-construction-yellow/10 hover:to-construction-yellow/5 transition-all duration-300 text-left [&[data-state=open]]:bg-construction-yellow/10">
+                  <div className="flex items-center space-x-4">
+                    <div className="w-12 h-12 bg-construction-yellow rounded-full flex items-center justify-center flex-shrink-0">
+                      <Shield className="h-6 w-6 text-industrial-black" />
+                    </div>
+                    <div>
+                      <h3 className="text-xl font-bold text-industrial-black">SAFETY FIRST</h3>
+                      <p className="text-sm text-industrial-gray">Our commitment to zero-incident operations</p>
+                    </div>
+                  </div>
+                </AccordionTrigger>
+                <AccordionContent className="px-8 pb-6 bg-white">
+                  <div className="pl-16 space-y-4">
+                    <p className="text-industrial-gray leading-relaxed">
+                      Zero-incident safety record with comprehensive training and international safety protocols. Our commitment to safety goes beyond compliance – it's ingrained in every aspect of our operations.
+                    </p>
+                    <ul className="space-y-2 text-industrial-gray">
+                      <li className="flex items-center"><CheckCircle className="h-4 w-4 text-construction-yellow mr-3 flex-shrink-0" /> International safety certifications and standards</li>
+                      <li className="flex items-center"><CheckCircle className="h-4 w-4 text-construction-yellow mr-3 flex-shrink-0" /> Regular safety training and equipment updates</li>
+                      <li className="flex items-center"><CheckCircle className="h-4 w-4 text-construction-yellow mr-3 flex-shrink-0" /> 24/7 safety monitoring and incident prevention</li>
+                    </ul>
+                  </div>
+                </AccordionContent>
+              </AccordionItem>
+
+              <AccordionItem value="excellence" className="border border-gray-200 rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300">
+                <AccordionTrigger className="px-8 py-6 bg-gradient-to-r from-white to-gray-50 hover:from-construction-yellow/10 hover:to-construction-yellow/5 transition-all duration-300 text-left [&[data-state=open]]:bg-construction-yellow/10">
+                  <div className="flex items-center space-x-4">
+                    <div className="w-12 h-12 bg-construction-yellow rounded-full flex items-center justify-center flex-shrink-0">
+                      <Award className="h-6 w-6 text-industrial-black" />
+                    </div>
+                    <div>
+                      <h3 className="text-xl font-bold text-industrial-black">PROVEN EXCELLENCE</h3>
+                      <p className="text-sm text-industrial-gray">Award-winning quality and innovation</p>
+                    </div>
+                  </div>
+                </AccordionTrigger>
+                <AccordionContent className="px-8 pb-6 bg-white">
+                  <div className="pl-16 space-y-4">
+                    <p className="text-industrial-gray leading-relaxed">
+                      Industry awards and certifications recognizing our commitment to quality and innovation. Our excellence is measured not just by what we build, but how we build it.
+                    </p>
+                    <ul className="space-y-2 text-industrial-gray">
+                      <li className="flex items-center"><CheckCircle className="h-4 w-4 text-construction-yellow mr-3 flex-shrink-0" /> Zimbabwe Engineering Excellence Awards</li>
+                      <li className="flex items-center"><CheckCircle className="h-4 w-4 text-construction-yellow mr-3 flex-shrink-0" /> ISO 9001 Quality Management certification</li>
+                      <li className="flex items-center"><CheckCircle className="h-4 w-4 text-construction-yellow mr-3 flex-shrink-0" /> Industry leadership in sustainable practices</li>
+                    </ul>
+                  </div>
+                </AccordionContent>
+              </AccordionItem>
+
+              <AccordionItem value="team" className="border border-gray-200 rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300">
+                <AccordionTrigger className="px-8 py-6 bg-gradient-to-r from-white to-gray-50 hover:from-construction-yellow/10 hover:to-construction-yellow/5 transition-all duration-300 text-left [&[data-state=open]]:bg-construction-yellow/10">
+                  <div className="flex items-center space-x-4">
+                    <div className="w-12 h-12 bg-construction-yellow rounded-full flex items-center justify-center flex-shrink-0">
+                      <Users className="h-6 w-6 text-industrial-black" />
+                    </div>
+                    <div>
+                      <h3 className="text-xl font-bold text-industrial-black">EXPERT TEAM</h3>
+                      <p className="text-sm text-industrial-gray">Decades of specialized experience</p>
+                    </div>
+                  </div>
+                </AccordionTrigger>
+                <AccordionContent className="px-8 pb-6 bg-white">
+                  <div className="pl-16 space-y-4">
+                    <p className="text-industrial-gray leading-relaxed">
+                      Highly skilled professionals with decades of experience in harsh industrial environments. Our team combines local knowledge with international expertise.
+                    </p>
+                    <ul className="space-y-2 text-industrial-gray">
+                      <li className="flex items-center"><CheckCircle className="h-4 w-4 text-construction-yellow mr-3 flex-shrink-0" /> Certified engineers and project managers</li>
+                      <li className="flex items-center"><CheckCircle className="h-4 w-4 text-construction-yellow mr-3 flex-shrink-0" /> Specialized heavy equipment operators</li>
+                      <li className="flex items-center"><CheckCircle className="h-4 w-4 text-construction-yellow mr-3 flex-shrink-0" /> Continuous professional development programs</li>
+                    </ul>
+                  </div>
+                </AccordionContent>
+              </AccordionItem>
+
+              <AccordionItem value="delivery" className="border border-gray-200 rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300">
+                <AccordionTrigger className="px-8 py-6 bg-gradient-to-r from-white to-gray-50 hover:from-construction-yellow/10 hover:to-construction-yellow/5 transition-all duration-300 text-left [&[data-state=open]]:bg-construction-yellow/10">
+                  <div className="flex items-center space-x-4">
+                    <div className="w-12 h-12 bg-construction-yellow rounded-full flex items-center justify-center flex-shrink-0">
+                      <Clock className="h-6 w-6 text-industrial-black" />
+                    </div>
+                    <div>
+                      <h3 className="text-xl font-bold text-industrial-black">ON-TIME DELIVERY</h3>
+                      <p className="text-sm text-industrial-gray">Reliable project completion</p>
+                    </div>
+                  </div>
+                </AccordionTrigger>
+                <AccordionContent className="px-8 pb-6 bg-white">
+                  <div className="pl-16 space-y-4">
+                    <p className="text-industrial-gray leading-relaxed">
+                      Consistent project completion within deadlines and budget constraints. Our proven project management methodology ensures predictable outcomes.
+                    </p>
+                    <ul className="space-y-2 text-industrial-gray">
+                      <li className="flex items-center"><CheckCircle className="h-4 w-4 text-construction-yellow mr-3 flex-shrink-0" /> 95% on-time delivery rate across all projects</li>
+                      <li className="flex items-center"><CheckCircle className="h-4 w-4 text-construction-yellow mr-3 flex-shrink-0" /> Advanced project scheduling and monitoring</li>
+                      <li className="flex items-center"><CheckCircle className="h-4 w-4 text-construction-yellow mr-3 flex-shrink-0" /> Transparent communication and progress reporting</li>
+                    </ul>
+                  </div>
+                </AccordionContent>
+              </AccordionItem>
+            </Accordion>
           </div>
         </div>
       </section>
