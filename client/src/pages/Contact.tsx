@@ -112,13 +112,13 @@ export default function Contact() {
       <ScrollAnimations />
       
       {/* Contact Section */}
-      <section className="py-20 bg-industrial-black text-white">
+      <section className="py-20 bg-light-industrial">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h1 className="animate-fade-in text-4xl sm:text-5xl font-black mb-6">
+            <h1 className="animate-fade-in text-4xl sm:text-5xl font-black text-industrial-black mb-6">
               GET IN <span className="text-construction-yellow">TOUCH</span>
             </h1>
-            <p className="animate-fade-in text-lg text-gray-300 max-w-3xl mx-auto">
+            <p className="animate-fade-in text-lg text-industrial-gray max-w-3xl mx-auto">
               Ready to start your next industrial project? Contact our expert team for a consultation and detailed quote tailored to your specific requirements.
             </p>
           </div>
@@ -126,139 +126,143 @@ export default function Contact() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             {/* Contact Form */}
             <div className="animate-slide-in-left">
-              <Form {...form}>
-                <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <FormField
-                      control={form.control}
-                      name="firstName"
-                      render={({ field }) => (
-                        <FormItem>
-                          <FormLabel className="text-sm font-bold text-gray-300">FIRST NAME *</FormLabel>
-                          <FormControl>
-                            <Input 
-                              placeholder="Enter your first name" 
-                              {...field}
-                              className="bg-white/10 border-gray-600 text-white placeholder-gray-400 focus:border-construction-yellow focus:ring-construction-yellow"
-                            />
-                          </FormControl>
-                          <FormMessage />
-                        </FormItem>
-                      )}
-                    />
-                    <FormField
-                      control={form.control}
-                      name="lastName"
-                      render={({ field }) => (
-                        <FormItem>
-                          <FormLabel className="text-sm font-bold text-gray-300">LAST NAME *</FormLabel>
-                          <FormControl>
-                            <Input 
-                              placeholder="Enter your last name" 
-                              {...field}
-                              className="bg-white/10 border-gray-600 text-white placeholder-gray-400 focus:border-construction-yellow focus:ring-construction-yellow"
-                            />
-                          </FormControl>
-                          <FormMessage />
-                        </FormItem>
-                      )}
-                    />
-                  </div>
-                  
-                  <FormField
-                    control={form.control}
-                    name="email"
-                    render={({ field }) => (
-                      <FormItem>
-                        <FormLabel className="text-sm font-bold text-gray-300">EMAIL ADDRESS *</FormLabel>
-                        <FormControl>
-                          <Input 
-                            type="email"
-                            placeholder="your.email@example.com" 
-                            {...field}
-                            className="bg-white/10 border-gray-600 text-white placeholder-gray-400 focus:border-construction-yellow focus:ring-construction-yellow"
-                          />
-                        </FormControl>
-                        <FormMessage />
-                      </FormItem>
-                    )}
-                  />
-                  
-                  <FormField
-                    control={form.control}
-                    name="company"
-                    render={({ field }) => (
-                      <FormItem>
-                        <FormLabel className="text-sm font-bold text-gray-300">COMPANY</FormLabel>
-                        <FormControl>
-                          <Input 
-                            placeholder="Your company name" 
-                            {...field}
-                            className="bg-white/10 border-gray-600 text-white placeholder-gray-400 focus:border-construction-yellow focus:ring-construction-yellow"
-                          />
-                        </FormControl>
-                        <FormMessage />
-                      </FormItem>
-                    )}
-                  />
-                  
-                  <FormField
-                    control={form.control}
-                    name="service"
-                    render={({ field }) => (
-                      <FormItem>
-                        <FormLabel className="text-sm font-bold text-gray-300">SERVICE REQUIRED *</FormLabel>
-                        <Select onValueChange={field.onChange} value={field.value}>
-                          <FormControl>
-                            <SelectTrigger className="bg-white/10 border-gray-600 text-white focus:border-construction-yellow focus:ring-construction-yellow">
-                              <SelectValue placeholder="Select a service" />
-                            </SelectTrigger>
-                          </FormControl>
-                          <SelectContent>
-                            <SelectItem value="mining">Mining Operations</SelectItem>
-                            <SelectItem value="construction">Construction</SelectItem>
-                            <SelectItem value="agriculture">Agriculture Infrastructure</SelectItem>
-                            <SelectItem value="consultation">General Consultation</SelectItem>
-                          </SelectContent>
-                        </Select>
-                        <FormMessage />
-                      </FormItem>
-                    )}
-                  />
-                  
-                  <FormField
-                    control={form.control}
-                    name="message"
-                    render={({ field }) => (
-                      <FormItem>
-                        <FormLabel className="text-sm font-bold text-gray-300">PROJECT DETAILS *</FormLabel>
-                        <FormControl>
-                          <Textarea 
-                            placeholder="Tell us about your project requirements, timeline, and any specific needs..."
-                            className="bg-white/10 border-gray-600 text-white placeholder-gray-400 focus:border-construction-yellow focus:ring-construction-yellow resize-none"
-                            rows={6}
-                            {...field}
-                          />
-                        </FormControl>
-                        <FormMessage />
-                      </FormItem>
-                    )}
-                  />
-                  
-                  <Button 
-                    type="submit" 
-                    className="w-full bg-construction-yellow text-industrial-black hover:bg-white font-bold text-lg py-4"
-                    disabled={contactMutation.isPending}
-                  >
-                    <Send className="mr-2 h-5 w-5" />
-                    {contactMutation.isPending ? 'SENDING...' : 'SEND MESSAGE'}
-                  </Button>
-                </form>
-              </Form>
+              <Card className="bg-white rounded-2xl shadow-xl">
+                <CardContent className="p-8">
+                  <Form {...form}>
+                    <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
+                      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <FormField
+                          control={form.control}
+                          name="firstName"
+                          render={({ field }) => (
+                            <FormItem>
+                              <FormLabel className="text-sm font-bold text-industrial-black">FIRST NAME *</FormLabel>
+                              <FormControl>
+                                <Input 
+                                  placeholder="Enter your first name" 
+                                  {...field}
+                                  className="bg-white border-gray-300 text-industrial-black placeholder-gray-500 focus:border-construction-yellow focus:ring-construction-yellow"
+                                />
+                              </FormControl>
+                              <FormMessage />
+                            </FormItem>
+                          )}
+                        />
+                        <FormField
+                          control={form.control}
+                          name="lastName"
+                          render={({ field }) => (
+                            <FormItem>
+                              <FormLabel className="text-sm font-bold text-industrial-black">LAST NAME *</FormLabel>
+                              <FormControl>
+                                <Input 
+                                  placeholder="Enter your last name" 
+                                  {...field}
+                                  className="bg-white border-gray-300 text-industrial-black placeholder-gray-500 focus:border-construction-yellow focus:ring-construction-yellow"
+                                />
+                              </FormControl>
+                              <FormMessage />
+                            </FormItem>
+                          )}
+                        />
+                      </div>
+                      
+                      <FormField
+                        control={form.control}
+                        name="email"
+                        render={({ field }) => (
+                          <FormItem>
+                            <FormLabel className="text-sm font-bold text-industrial-black">EMAIL ADDRESS *</FormLabel>
+                            <FormControl>
+                              <Input 
+                                type="email"
+                                placeholder="your.email@example.com" 
+                                {...field}
+                                className="bg-white border-gray-300 text-industrial-black placeholder-gray-500 focus:border-construction-yellow focus:ring-construction-yellow"
+                              />
+                            </FormControl>
+                            <FormMessage />
+                          </FormItem>
+                        )}
+                      />
+                      
+                      <FormField
+                        control={form.control}
+                        name="company"
+                        render={({ field }) => (
+                          <FormItem>
+                            <FormLabel className="text-sm font-bold text-industrial-black">COMPANY</FormLabel>
+                            <FormControl>
+                              <Input 
+                                placeholder="Your company name" 
+                                {...field}
+                                className="bg-white border-gray-300 text-industrial-black placeholder-gray-500 focus:border-construction-yellow focus:ring-construction-yellow"
+                              />
+                            </FormControl>
+                            <FormMessage />
+                          </FormItem>
+                        )}
+                      />
+                      
+                      <FormField
+                        control={form.control}
+                        name="service"
+                        render={({ field }) => (
+                          <FormItem>
+                            <FormLabel className="text-sm font-bold text-industrial-black">SERVICE REQUIRED *</FormLabel>
+                            <Select onValueChange={field.onChange} value={field.value}>
+                              <FormControl>
+                                <SelectTrigger className="bg-white border-gray-300 text-industrial-black focus:border-construction-yellow focus:ring-construction-yellow">
+                                  <SelectValue placeholder="Select a service" />
+                                </SelectTrigger>
+                              </FormControl>
+                              <SelectContent>
+                                <SelectItem value="mining">Mining Operations</SelectItem>
+                                <SelectItem value="construction">Construction</SelectItem>
+                                <SelectItem value="agriculture">Agriculture Infrastructure</SelectItem>
+                                <SelectItem value="consultation">General Consultation</SelectItem>
+                              </SelectContent>
+                            </Select>
+                            <FormMessage />
+                          </FormItem>
+                        )}
+                      />
+                      
+                      <FormField
+                        control={form.control}
+                        name="message"
+                        render={({ field }) => (
+                          <FormItem>
+                            <FormLabel className="text-sm font-bold text-industrial-black">PROJECT DETAILS *</FormLabel>
+                            <FormControl>
+                              <Textarea 
+                                placeholder="Tell us about your project requirements, timeline, and any specific needs..."
+                                className="bg-white border-gray-300 text-industrial-black placeholder-gray-500 focus:border-construction-yellow focus:ring-construction-yellow resize-none"
+                                rows={6}
+                                {...field}
+                              />
+                            </FormControl>
+                            <FormMessage />
+                          </FormItem>
+                        )}
+                      />
+                      
+                      <Button 
+                        type="submit" 
+                        className="w-full bg-construction-yellow text-industrial-black hover:bg-industrial-black hover:text-white font-bold text-lg py-4 transition-colors duration-300"
+                        disabled={contactMutation.isPending}
+                      >
+                        <Send className="mr-2 h-5 w-5" />
+                        {contactMutation.isPending ? 'SENDING...' : 'SEND MESSAGE'}
+                      </Button>
+                    </form>
+                  </Form>
+                </CardContent>
+              </Card>
               
               {/* Success Message */}
               {showSuccess && (
-                <div id="success-message" className="mt-6 p-6 bg-green-600 rounded-lg text-center">
+                <div id="success-message" className="mt-6 p-6 bg-green-600 rounded-lg text-center text-white">
                   <CheckCircle className="h-8 w-8 mx-auto mb-2" />
                   <h3 className="font-bold text-lg mb-2">MESSAGE SENT SUCCESSFULLY!</h3>
                   <p className="text-sm opacity-90">Thank you for contacting Tartech Contracting. We'll get back to you within 24 hours.</p>
@@ -268,36 +272,36 @@ export default function Contact() {
             
             {/* Contact Information */}
             <div className="animate-slide-in-right">
-              <Card className="bg-white/10 backdrop-blur-sm border-0 mb-8">
+              <Card className="bg-white rounded-2xl shadow-xl mb-8">
                 <CardContent className="p-8">
                   <h3 className="text-2xl font-bold text-construction-yellow mb-6">CONTACT INFORMATION</h3>
                   <div className="space-y-6">
                     <div className="flex items-start">
                       <MapPin className="text-construction-yellow h-6 w-6 mr-4 mt-1 flex-shrink-0" />
                       <div>
-                        <h4 className="font-bold mb-1">HEAD OFFICE</h4>
-                        <p className="text-gray-300">123 Industrial Avenue<br />Harare, Zimbabwe</p>
+                        <h4 className="font-bold mb-1 text-industrial-black">HEAD OFFICE</h4>
+                        <p className="text-industrial-gray">123 Industrial Avenue<br />Harare, Zimbabwe</p>
                       </div>
                     </div>
                     <div className="flex items-start">
                       <Phone className="text-construction-yellow h-6 w-6 mr-4 mt-1 flex-shrink-0" />
                       <div>
-                        <h4 className="font-bold mb-1">PHONE</h4>
-                        <p className="text-gray-300">+263 4 123 4567</p>
+                        <h4 className="font-bold mb-1 text-industrial-black">PHONE</h4>
+                        <p className="text-industrial-gray">+263 4 123 4567</p>
                       </div>
                     </div>
                     <div className="flex items-start">
                       <Mail className="text-construction-yellow h-6 w-6 mr-4 mt-1 flex-shrink-0" />
                       <div>
-                        <h4 className="font-bold mb-1">EMAIL</h4>
-                        <p className="text-gray-300">info@tartech.co.zw</p>
+                        <h4 className="font-bold mb-1 text-industrial-black">EMAIL</h4>
+                        <p className="text-industrial-gray">info@tartech.co.zw</p>
                       </div>
                     </div>
                     <div className="flex items-start">
                       <Clock className="text-construction-yellow h-6 w-6 mr-4 mt-1 flex-shrink-0" />
                       <div>
-                        <h4 className="font-bold mb-1">BUSINESS HOURS</h4>
-                        <p className="text-gray-300">Monday - Friday: 7:00 AM - 6:00 PM<br />Saturday: 8:00 AM - 2:00 PM</p>
+                        <h4 className="font-bold mb-1 text-industrial-black">BUSINESS HOURS</h4>
+                        <p className="text-industrial-gray">Monday - Friday: 7:00 AM - 6:00 PM<br />Saturday: 8:00 AM - 2:00 PM</p>
                       </div>
                     </div>
                   </div>
@@ -305,11 +309,11 @@ export default function Contact() {
               </Card>
               
               {/* Map Placeholder */}
-              <Card className="bg-white/10 backdrop-blur-sm border-0">
+              <Card className="bg-white rounded-2xl shadow-xl">
                 <CardContent className="p-8 text-center">
                   <Map className="text-construction-yellow h-12 w-12 mx-auto mb-4" />
-                  <h4 className="font-bold text-lg mb-2">INTERACTIVE MAP</h4>
-                  <p className="text-gray-300">View our location and get directions</p>
+                  <h4 className="font-bold text-lg mb-2 text-industrial-black">INTERACTIVE MAP</h4>
+                  <p className="text-industrial-gray">View our location and get directions</p>
                 </CardContent>
               </Card>
             </div>
