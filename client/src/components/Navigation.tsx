@@ -64,7 +64,7 @@ export function Navigation() {
             <div className="ml-10 flex items-baseline space-x-8">
               {navLinks.map((link) => (
                 <Link key={link.href} href={link.href}>
-                  <span className={`font-bold text-industrial-black hover:text-construction-yellow transition-colors duration-300 cursor-pointer ${
+                  <span className={`nav-font nav-link-hover font-medium text-industrial-black hover:text-construction-yellow cursor-pointer ${
                     location === link.href ? 'text-construction-yellow' : ''
                   }`}>
                     {link.label}
@@ -78,15 +78,15 @@ export function Navigation() {
                 onMouseEnter={() => setServicesDropdownOpen(true)}
                 onMouseLeave={() => setServicesDropdownOpen(false)}
               >
-                <button className="font-bold text-industrial-black hover:text-construction-yellow transition-colors duration-300 flex items-center">
+                <button className="nav-font nav-link-hover font-medium text-industrial-black hover:text-construction-yellow flex items-center">
                   SERVICES <ChevronDown className="ml-1 h-4 w-4" />
                 </button>
-                <div className={`absolute top-full left-0 mt-2 w-48 bg-white shadow-xl rounded-lg transition-all duration-300 ${
+                <div className={`services-dropdown absolute top-full left-0 mt-2 w-56 rounded-xl transition-all duration-300 ${
                   servicesDropdownOpen ? 'opacity-100 visible translate-y-0' : 'opacity-0 invisible translate-y-2'
                 }`}>
                   {serviceLinks.map((link) => (
                     <Link key={link.href} href={link.href}>
-                      <span className="block px-4 py-3 text-sm text-industrial-black hover:bg-construction-yellow hover:text-white transition-colors duration-200 cursor-pointer first:rounded-t-lg last:rounded-b-lg">
+                      <span className="services-dropdown-item nav-font block px-5 py-4 text-sm font-medium text-industrial-black hover:bg-construction-yellow hover:text-white cursor-pointer first:rounded-t-xl last:rounded-b-xl">
                         {link.label}
                       </span>
                     </Link>
