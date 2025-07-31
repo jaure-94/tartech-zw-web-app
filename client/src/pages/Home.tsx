@@ -18,26 +18,24 @@ export default function Home() {
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-16">
         <div className="absolute inset-0 z-0">
           <img 
-            src="/attached_assets/bulldozer-2195329_1920_1753973536293.jpg" 
-            alt="Yellow bulldozer and excavator heavy construction equipment on industrial construction site" 
+            src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1920&h=1080" 
+            alt="Heavy mining excavators and industrial equipment working in open pit mine operation" 
             className="w-full h-full object-cover"
             onError={(e) => {
-              e.currentTarget.src = "https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&h=1080";
+              e.currentTarget.src = "https://images.unsplash.com/photo-1504307651254-35680f356dfd?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&h=1080";
             }}
           />
           <div className="hero-overlay absolute inset-0"></div>
         </div>
         
         <div className="relative z-20 text-center px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
-          <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 md:p-12 shadow-2xl">
-            <h1 className="animate-fade-in text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-black text-white mb-8 leading-tight tracking-tight">
-              ENGINEERING EXCELLENCE<br />
-              <span className="text-construction-yellow">IN HARSH ENVIRONMENTS</span>
-            </h1>
-            <p className="animate-fade-in text-lg sm:text-xl md:text-2xl lg:text-3xl text-gray-200 mb-12 max-w-5xl mx-auto font-light leading-relaxed">
-              Zimbabwe's premier industrial contractor delivering world-class solutions in construction, mining, and agriculture with three decades of proven expertise and unwavering safety standards.
-            </p>
-          </div>
+          <h1 className="animate-fade-in text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-black text-white mb-8 leading-tight tracking-tight">
+            ENGINEERING EXCELLENCE<br />
+            <span className="text-construction-yellow">IN HARSH ENVIRONMENTS</span>
+          </h1>
+          <p className="animate-fade-in text-lg sm:text-xl md:text-2xl lg:text-3xl text-gray-200 mb-12 max-w-5xl mx-auto font-light leading-relaxed">
+            Zimbabwe's premier industrial contractor delivering world-class solutions in construction, mining, and agriculture with three decades of proven expertise and unwavering safety standards.
+          </p>
           <div className="animate-fade-in flex flex-col sm:flex-row gap-6 justify-center">
             <Link href="/services">
               <Button size="lg" className="bg-construction-yellow text-industrial-black hover:bg-white font-bold text-xl px-10 py-6 rounded-xl shadow-2xl transform hover:scale-105 transition-all duration-300">
@@ -46,7 +44,7 @@ export default function Home() {
               </Button>
             </Link>
             <Link href="/contact">
-              <Button size="lg" variant="outline" className="border-3 border-white text-industrial-black bg-white hover:bg-construction-yellow hover:text-industrial-black font-bold text-xl px-10 py-6 rounded-xl shadow-2xl transform hover:scale-105 transition-all duration-300">
+              <Button size="lg" variant="outline" className="border-3 border-white text-white hover:bg-white hover:text-industrial-black font-bold text-xl px-10 py-6 rounded-xl shadow-2xl transform hover:scale-105 transition-all duration-300">
                 <Calculator className="mr-3 h-6 w-6" />
                 GET A QUOTE
               </Button>
