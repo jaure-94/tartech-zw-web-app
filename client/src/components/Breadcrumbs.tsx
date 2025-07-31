@@ -58,6 +58,7 @@ export function Breadcrumbs() {
     <nav className="bg-gray-50 border-b border-gray-200" aria-label="Breadcrumb">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center py-3">
+
           <ol className="flex items-center space-x-2 text-sm">
             {breadcrumbs.map((item, index) => (
               <li key={item.href} className="flex items-center">
