@@ -39,13 +39,13 @@ export default function Home() {
           </p>
           <div className="animate-fade-in flex flex-col sm:flex-row gap-6 justify-center">
             <Link href="/services">
-              <Button size="lg" className="bg-construction-yellow text-industrial-black hover:bg-white font-bold text-xl px-10 py-6 rounded-xl shadow-2xl transform hover:scale-105 transition-all duration-300">
+              <Button size="lg" className="bg-construction-yellow text-industrial-black hover:bg-white text-xl px-10 py-6 rounded-xl shadow-2xl transform hover:scale-105 transition-all duration-300">
                 <Bolt className="mr-3 h-6 w-6" />
                 EXPLORE SERVICES
               </Button>
             </Link>
             <Link href="/contact">
-              <Button size="lg" variant="outline" className="border-3 border-white text-white hover:bg-white hover:text-black font-bold text-xl px-10 py-6 rounded-xl shadow-2xl transform hover:scale-105 transition-all duration-300">
+              <Button size="lg" variant="outline" className="border-3 border-white text-black hover:bg-white hover:text-black text-xl px-10 py-6 rounded-xl shadow-2xl transform hover:scale-105 transition-all duration-300">
                 <Calculator className="mr-3 h-6 w-6" />
                 GET A QUOTE
               </Button>
