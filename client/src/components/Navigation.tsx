@@ -1,0 +1,160 @@
+import { useState } from 'react';
+import { Link, useLocation } from 'wouter';
+import { Button } from '@/components/ui/button';
+import { Menu, X, ChevronDown } from 'lucide-react';
+import { gsap } from '@/lib/gsap';
+
+export function Navigation() {
+  const [location] = useLocation();
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [servicesDropdownOpen, setServicesDropdownOpen] = useState(false);
+
+  const toggleMobileMenu = () => {
+    const newState = !mobileMenuOpen;
+    setMobileMenuOpen(newState);
+    
+    const mobileMenu = document.getElementById('mobile-menu');
+    if (mobileMenu) {
+      if (newState) {
+        gsap.to(mobileMenu, {
+          duration: 0.3,
+          opacity: 1,
+          visibility: 'visible',
+          y: 0,
+          ease: "power2.out"
+        });
+      } else {
+        gsap.to(mobileMenu, {
+          duration: 0.3,
+          opacity: 0,
+          visibility: 'hidden',
+          y: -16,
+          ease: "power2.in"
+        });
+      }
+    }
+  };
+
+  const navLinks = [
+    { href: '/', label: 'HOME' },
+    { href: '/about', label: 'WHO WE ARE' },
+    { href: '/contact', label: 'CONTACT' }
+  ];
+
+  const serviceLinks = [
+    { href: '/services', label: 'Overview' },
+    { href: '/services/mining', label: 'Mining' },
+    { href: '/services/construction', label: 'Construction' },
+    { href: '/services/agriculture', label: 'Agriculture' }
+  ];
+
+  return (
+    <nav id="navbar" className="nav-transition fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm shadow-lg">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex justify-between items-center h-16">
+          {/* Logo */}
+          <Link href="/" className="flex-shrink-0">
+            <div className="text-2xl font-black text-industrial-black">
+              TARTECH <span className="text-construction-yellow">CONTRACTING</span>
+            </div>
+          </Link>
+
+          {/* Desktop Navigation */}
+          <div className="hidden md:block">
+            <div className="ml-10 flex items-baseline space-x-8">
+              {navLinks.map((link) => (
+                <Link key={link.href} href={link.href}>
+                  <span className={`font-bold text-industrial-black hover:text-construction-yellow transition-colors duration-300 cursor-pointer ${
+                    location === link.href ? 'text-construction-yellow' : ''
+                  }`}>
+                    {link.label}
+                  </span>
+                </Link>
+              ))}
+
+              {/* Services Dropdown */}
+              <div 
+                className="relative group"
+                onMouseEnter={() => setServicesDropdownOpen(true)}
+                onMouseLeave={() => setServicesDropdownOpen(false)}
+              >
+                <button className="font-bold text-industrial-black hover:text-construction-yellow transition-colors duration-300 flex items-center">
+                  SERVICES <ChevronDown className="ml-1 h-4 w-4" />
+                </button>
+                <div className={`absolute top-full left-0 mt-2 w-48 bg-white shadow-xl rounded-lg transition-all duration-300 ${
+                  servicesDropdownOpen ? 'opacity-100 visible translate-y-0' : 'opacity-0 invisible translate-y-2'
+                }`}>
+                  {serviceLinks.map((link) => (
+                    <Link key={link.href} href={link.href}>
+                      <span className="block px-4 py-3 text-sm text-industrial-black hover:bg-construction-yellow hover:text-white transition-colors duration-200 cursor-pointer first:rounded-t-lg last:rounded-b-lg">
+                        {link.label}
+                      </span>
+                    </Link>
+                  ))}
+                </div>
+              </div>
+
+              <Link href="/contact">
+                <Button className="bg-construction-yellow text-industrial-black hover:bg-safety-orange font-bold">
+                  GET QUOTE
+                </Button>
+              </Link>
+            </div>
+          </div>
+
+          {/* Mobile menu button */}
+          <div className="md:hidden">
+            <Button 
+              variant="ghost" 
+              size="icon"
+              onClick={toggleMobileMenu}
+              className="text-industrial-black hover:text-construction-yellow"
+            >
+              {mobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+            </Button>
+          </div>
+        </div>
+      </div>
+
+      {/* Mobile Navigation Menu */}
+      <div 
+        id="mobile-menu" 
+        className="md:hidden bg-white border-t opacity-0 invisible transition-all duration-300 transform -translate-y-4"
+      >
+        <div className="px-2 pt-2 pb-3 space-y-1">
+          {navLinks.map((link) => (
+            <Link key={link.href} href={link.href}>
+              <span 
+                className="block px-3 py-2 text-base font-bold text-industrial-black hover:text-construction-yellow transition-colors duration-300 cursor-pointer"
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                {link.label}
+              </span>
+            </Link>
+          ))}
+          
+          <div className="px-3 py-2 text-base font-bold text-industrial-black">SERVICES</div>
+          {serviceLinks.map((link) => (
+            <Link key={link.href} href={link.href}>
+              <span 
+                className="block px-6 py-2 text-sm text-industrial-gray hover:text-construction-yellow transition-colors duration-300 cursor-pointer"
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                - {link.label}
+              </span>
+            </Link>
+          ))}
+          
+          <Link href="/contact">
+            <Button 
+              className="mx-3 mt-4 w-[calc(100%-1.5rem)] bg-construction-yellow text-industrial-black hover:bg-safety-orange font-bold"
+              onClick={() => setMobileMenuOpen(false)}
+            >
+              GET QUOTE
+            </Button>
+          </Link>
+        </div>
+      </div>
+    </nav>
+  );
+}
