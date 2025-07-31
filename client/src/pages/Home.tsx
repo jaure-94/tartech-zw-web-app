@@ -18,11 +18,11 @@ export default function Home() {
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-16">
         <div className="absolute inset-0 z-0">
           <img 
-            src="/attached_assets/bulldozer-2195329_1920_1753975241197.jpg" 
+            src="/attached_assets/bulldozer-2195329_1920_1753976237868.jpg" 
             alt="Heavy industrial bulldozer and excavator equipment at construction site with dramatic sky" 
             className="w-full h-full object-cover"
             onError={(e) => {
-              e.currentTarget.src = "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&h=1080";
+              e.currentTarget.src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&h=1080";
             }}
           />
           <div className="hero-overlay absolute inset-0"></div>
@@ -234,7 +234,7 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="animate-fade-in text-3xl sm:text-4xl font-black text-white mb-6">
-              WE ARE HERE TO <span className="text-construction-yellow">SERVE</span>
+              WE ARE GOOD AT <span className="text-construction-yellow">SOLVING PROBLEMS</span>
             </h2>
             <p className="animate-fade-in text-lg text-gray-300 max-w-3xl mx-auto">
               From the depths of Zimbabwe's mines to expansive agricultural lands, we deliver specialized solutions across every major industrial sector.
