@@ -95,106 +95,112 @@ export default function Mining() {
 
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-16">
             {/* Mine Site Infrastructure */}
-            <Card className="group hover:shadow-2xl transition-all duration-300 border-2 hover:border-construction-yellow">
-              <CardContent className="p-8">
-                <div className="text-center mb-6">
-                  <div className="w-20 h-20 bg-construction-yellow rounded-full flex items-center justify-center mx-auto mb-4">
-                    <Building2 className="text-industrial-black h-10 w-10" />
-                  </div>
-                  <h3 className="text-2xl font-black text-industrial-black">MINE SITE INFRASTRUCTURE</h3>
-                  <h4 className="text-lg font-bold text-industrial-gray mt-2">& CAPITAL PROJECTS SUPPORT</h4>
-                </div>
-                <div className="space-y-4">
-                  <div className="flex items-start">
-                    <CheckCircle className="text-construction-yellow mr-3 mt-1 h-5 w-5 flex-shrink-0" />
-                    <span className="text-industrial-gray">Site infrastructure development</span>
-                  </div>
-                  <div className="flex items-start">
-                    <CheckCircle className="text-construction-yellow mr-3 mt-1 h-5 w-5 flex-shrink-0" />
-                    <span className="text-industrial-gray">Tailings facility construction</span>
-                  </div>
-                  <div className="flex items-start">
-                    <CheckCircle className="text-construction-yellow mr-3 mt-1 h-5 w-5 flex-shrink-0" />
-                    <span className="text-industrial-gray">Site civils work, including haul roads, runways and camp establishment</span>
-                  </div>
-                </div>
-                <div className="mt-6">
+            <Card className="group hover:shadow-2xl transition-all duration-300 border-2 hover:border-construction-yellow bg-white">
+              <CardContent className="p-0">
+                <div className="relative">
                   <img 
-                    src="https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=600&h=400" 
+                    src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&h=300" 
                     alt="Mining site infrastructure with processing facilities and haul roads" 
-                    className="rounded-lg w-full h-48 object-cover" 
+                    className="w-full h-48 object-cover rounded-t-lg" 
                   />
+                  <div className="absolute top-4 right-4">
+                    <div className="w-12 h-12 bg-construction-yellow rounded-full flex items-center justify-center shadow-lg">
+                      <Building2 className="text-industrial-black h-6 w-6" />
+                    </div>
+                  </div>
+                </div>
+                <div className="p-8">
+                  <h3 className="text-xl font-black text-industrial-black mb-2">MINE SITE INFRASTRUCTURE</h3>
+                  <h4 className="text-sm font-bold text-construction-yellow mb-6">& CAPITAL PROJECTS SUPPORT</h4>
+                  <div className="space-y-3">
+                    <div className="flex items-start">
+                      <CheckCircle className="text-construction-yellow mr-3 mt-0.5 h-4 w-4 flex-shrink-0" />
+                      <span className="text-industrial-gray text-sm leading-relaxed">Site infrastructure development</span>
+                    </div>
+                    <div className="flex items-start">
+                      <CheckCircle className="text-construction-yellow mr-3 mt-0.5 h-4 w-4 flex-shrink-0" />
+                      <span className="text-industrial-gray text-sm leading-relaxed">Tailings facility construction</span>
+                    </div>
+                    <div className="flex items-start">
+                      <CheckCircle className="text-construction-yellow mr-3 mt-0.5 h-4 w-4 flex-shrink-0" />
+                      <span className="text-industrial-gray text-sm leading-relaxed">Site civils work, including haul roads, runways and camp establishment</span>
+                    </div>
+                  </div>
                 </div>
               </CardContent>
             </Card>
 
             {/* Materials Handling */}
-            <Card className="group hover:shadow-2xl transition-all duration-300 border-2 hover:border-construction-yellow">
-              <CardContent className="p-8">
-                <div className="text-center mb-6">
-                  <div className="w-20 h-20 bg-construction-yellow rounded-full flex items-center justify-center mx-auto mb-4">
-                    <Package className="text-industrial-black h-10 w-10" />
-                  </div>
-                  <h3 className="text-2xl font-black text-industrial-black">MATERIALS HANDLING</h3>
-                </div>
-                <div className="space-y-4">
-                  <div className="flex items-start">
-                    <CheckCircle className="text-construction-yellow mr-3 mt-1 h-5 w-5 flex-shrink-0" />
-                    <span className="text-industrial-gray">Raw material and product handling</span>
-                  </div>
-                  <div className="flex items-start">
-                    <CheckCircle className="text-construction-yellow mr-3 mt-1 h-5 w-5 flex-shrink-0" />
-                    <span className="text-industrial-gray">Crushing and screening</span>
-                  </div>
-                  <div className="flex items-start">
-                    <CheckCircle className="text-construction-yellow mr-3 mt-1 h-5 w-5 flex-shrink-0" />
-                    <span className="text-industrial-gray">Stockpile and dump management</span>
-                  </div>
-                </div>
-                <div className="mt-6">
+            <Card className="group hover:shadow-2xl transition-all duration-300 border-2 hover:border-construction-yellow bg-white">
+              <CardContent className="p-0">
+                <div className="relative">
                   <img 
-                    src="https://images.unsplash.com/photo-1594736797933-d0a9e04fc575?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=600&h=400" 
+                    src="https://images.unsplash.com/photo-1631286220756-4a79c3e84bf6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&h=300" 
                     alt="Mining materials handling equipment with conveyor systems and stockpiles" 
-                    className="rounded-lg w-full h-48 object-cover" 
+                    className="w-full h-48 object-cover rounded-t-lg" 
                   />
+                  <div className="absolute top-4 right-4">
+                    <div className="w-12 h-12 bg-construction-yellow rounded-full flex items-center justify-center shadow-lg">
+                      <Package className="text-industrial-black h-6 w-6" />
+                    </div>
+                  </div>
+                </div>
+                <div className="p-8">
+                  <h3 className="text-xl font-black text-industrial-black mb-6">MATERIALS HANDLING</h3>
+                  <div className="space-y-3">
+                    <div className="flex items-start">
+                      <CheckCircle className="text-construction-yellow mr-3 mt-0.5 h-4 w-4 flex-shrink-0" />
+                      <span className="text-industrial-gray text-sm leading-relaxed">Raw material and product handling</span>
+                    </div>
+                    <div className="flex items-start">
+                      <CheckCircle className="text-construction-yellow mr-3 mt-0.5 h-4 w-4 flex-shrink-0" />
+                      <span className="text-industrial-gray text-sm leading-relaxed">Crushing and screening</span>
+                    </div>
+                    <div className="flex items-start">
+                      <CheckCircle className="text-construction-yellow mr-3 mt-0.5 h-4 w-4 flex-shrink-0" />
+                      <span className="text-industrial-gray text-sm leading-relaxed">Stockpile and dump management</span>
+                    </div>
+                  </div>
                 </div>
               </CardContent>
             </Card>
 
             {/* Contract Mining Solutions */}
-            <Card className="group hover:shadow-2xl transition-all duration-300 border-2 hover:border-construction-yellow">
-              <CardContent className="p-8">
-                <div className="text-center mb-6">
-                  <div className="w-20 h-20 bg-construction-yellow rounded-full flex items-center justify-center mx-auto mb-4">
-                    <Pickaxe className="text-industrial-black h-10 w-10" />
-                  </div>
-                  <h3 className="text-2xl font-black text-industrial-black">CONTRACT MINING</h3>
-                  <h4 className="text-lg font-bold text-industrial-gray mt-2">SOLUTIONS</h4>
-                </div>
-                <div className="space-y-4">
-                  <div className="flex items-start">
-                    <CheckCircle className="text-construction-yellow mr-3 mt-1 h-5 w-5 flex-shrink-0" />
-                    <span className="text-industrial-gray">Overburden strip</span>
-                  </div>
-                  <div className="flex items-start">
-                    <CheckCircle className="text-construction-yellow mr-3 mt-1 h-5 w-5 flex-shrink-0" />
-                    <span className="text-industrial-gray">Drill and blast</span>
-                  </div>
-                  <div className="flex items-start">
-                    <CheckCircle className="text-construction-yellow mr-3 mt-1 h-5 w-5 flex-shrink-0" />
-                    <span className="text-industrial-gray">Load and haul</span>
-                  </div>
-                  <div className="flex items-start">
-                    <CheckCircle className="text-construction-yellow mr-3 mt-1 h-5 w-5 flex-shrink-0" />
-                    <span className="text-industrial-gray">Rehabilitation</span>
-                  </div>
-                </div>
-                <div className="mt-6">
+            <Card className="group hover:shadow-2xl transition-all duration-300 border-2 hover:border-construction-yellow bg-white">
+              <CardContent className="p-0">
+                <div className="relative">
                   <img 
-                    src="https://images.unsplash.com/photo-1565793298595-6a879b1d9492?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=600&h=400" 
+                    src="https://images.unsplash.com/photo-1611273426858-450d8e3c9fce?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&h=300" 
                     alt="Heavy mining excavator loading dump truck at open pit mine" 
-                    className="rounded-lg w-full h-48 object-cover" 
+                    className="w-full h-48 object-cover rounded-t-lg" 
                   />
+                  <div className="absolute top-4 right-4">
+                    <div className="w-12 h-12 bg-construction-yellow rounded-full flex items-center justify-center shadow-lg">
+                      <Pickaxe className="text-industrial-black h-6 w-6" />
+                    </div>
+                  </div>
+                </div>
+                <div className="p-8">
+                  <h3 className="text-xl font-black text-industrial-black mb-2">CONTRACT MINING</h3>
+                  <h4 className="text-sm font-bold text-construction-yellow mb-6">SOLUTIONS</h4>
+                  <div className="space-y-3">
+                    <div className="flex items-start">
+                      <CheckCircle className="text-construction-yellow mr-3 mt-0.5 h-4 w-4 flex-shrink-0" />
+                      <span className="text-industrial-gray text-sm leading-relaxed">Overburden strip</span>
+                    </div>
+                    <div className="flex items-start">
+                      <CheckCircle className="text-construction-yellow mr-3 mt-0.5 h-4 w-4 flex-shrink-0" />
+                      <span className="text-industrial-gray text-sm leading-relaxed">Drill and blast</span>
+                    </div>
+                    <div className="flex items-start">
+                      <CheckCircle className="text-construction-yellow mr-3 mt-0.5 h-4 w-4 flex-shrink-0" />
+                      <span className="text-industrial-gray text-sm leading-relaxed">Load and haul</span>
+                    </div>
+                    <div className="flex items-start">
+                      <CheckCircle className="text-construction-yellow mr-3 mt-0.5 h-4 w-4 flex-shrink-0" />
+                      <span className="text-industrial-gray text-sm leading-relaxed">Rehabilitation</span>
+                    </div>
+                  </div>
                 </div>
               </CardContent>
             </Card>
