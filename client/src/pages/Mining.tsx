@@ -59,21 +59,21 @@ export default function Mining() {
             <Card className="animate-fade-in bg-white/10 backdrop-blur-sm border-0">
               <CardContent className="p-8 text-center">
                 <Gem className="text-construction-yellow h-12 w-12 mx-auto mb-4" />
-                <h4 className="text-xl font-bold mb-4">PRECIOUS METALS</h4>
+                <h4 className="text-xl font-bold mb-4 text-white">PRECIOUS METALS</h4>
                 <p className="text-gray-300">Gold and platinum mining operations with specialized recovery techniques</p>
               </CardContent>
             </Card>
             <Card className="animate-fade-in bg-white/10 backdrop-blur-sm border-0">
               <CardContent className="p-8 text-center">
                 <Box className="text-construction-yellow h-12 w-12 mx-auto mb-4" />
-                <h4 className="text-xl font-bold mb-4">BASE METALS</h4>
+                <h4 className="text-xl font-bold mb-4 text-white">BASE METALS</h4>
                 <p className="text-gray-300">Copper, nickel, and chrome extraction with modern processing methods</p>
               </CardContent>
             </Card>
             <Card className="animate-fade-in bg-white/10 backdrop-blur-sm border-0">
               <CardContent className="p-8 text-center">
                 <Mountain className="text-construction-yellow h-12 w-12 mx-auto mb-4" />
-                <h4 className="text-xl font-bold mb-4">INDUSTRIAL MINERALS</h4>
+                <h4 className="text-xl font-bold mb-4 text-white">INDUSTRIAL MINERALS</h4>
                 <p className="text-gray-300">Coal, diamond, and aggregate mining for industrial applications</p>
               </CardContent>
             </Card>
@@ -135,7 +135,7 @@ export default function Mining() {
               <CardContent className="p-0">
                 <div className="relative">
                   <img 
-                    src="https://images.unsplash.com/photo-1631286220756-4a79c3e84bf6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&h=300" 
+                    src="https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&h=300" 
                     alt="Mining materials handling equipment with conveyor systems and stockpiles" 
                     className="w-full h-48 object-cover rounded-t-lg" 
                   />
