@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 import { Card, CardContent } from '@/components/ui/card';
-import { CheckCircle, Compass, Shovel, Hammer, Key } from 'lucide-react';
+import { CheckCircle2, Compass, Shovel, Hammer, Key, Building, MapPin, Droplets, Mountain } from 'lucide-react';
 import { ScrollAnimations } from '@/components/ScrollAnimations';
 
 export default function Construction() {
@@ -29,19 +29,19 @@ export default function Construction() {
               <h3 className="text-3xl font-black text-industrial-black mb-6">INDUSTRIAL CONSTRUCTION</h3>
               <ul className="space-y-4 text-lg text-industrial-gray">
                 <li className="flex items-start">
-                  <CheckCircle className="text-construction-yellow mr-3 mt-1 h-5 w-5 flex-shrink-0" />
+                  <CheckCircle2 className="text-construction-yellow mr-3 mt-1 h-5 w-5 flex-shrink-0" />
                   <span>Manufacturing facilities and processing plants</span>
                 </li>
                 <li className="flex items-start">
-                  <CheckCircle className="text-construction-yellow mr-3 mt-1 h-5 w-5 flex-shrink-0" />
+                  <CheckCircle2 className="text-construction-yellow mr-3 mt-1 h-5 w-5 flex-shrink-0" />
                   <span>Warehouse and distribution center construction</span>
                 </li>
                 <li className="flex items-start">
-                  <CheckCircle className="text-construction-yellow mr-3 mt-1 h-5 w-5 flex-shrink-0" />
+                  <CheckCircle2 className="text-construction-yellow mr-3 mt-1 h-5 w-5 flex-shrink-0" />
                   <span>Power infrastructure and utility installations</span>
                 </li>
                 <li className="flex items-start">
-                  <CheckCircle className="text-construction-yellow mr-3 mt-1 h-5 w-5 flex-shrink-0" />
+                  <CheckCircle2 className="text-construction-yellow mr-3 mt-1 h-5 w-5 flex-shrink-0" />
                   <span>Heavy concrete foundations and structural steelwork</span>
                 </li>
               </ul>
@@ -91,6 +91,128 @@ export default function Construction() {
               </div>
             </CardContent>
           </Card>
+        </div>
+      </section>
+
+      {/* Detailed Construction Services */}
+      <section className="py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-black text-industrial-black mb-6">
+              OUR <span className="text-construction-yellow">CONSTRUCTION</span> SERVICES
+            </h2>
+            <p className="text-lg text-industrial-gray max-w-3xl mx-auto">
+              Comprehensive construction solutions meeting Ministry of Transport and SATCC specifications across Zimbabwe
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-16">
+            {/* Road Construction */}
+            <Card className="group hover:shadow-2xl transition-all duration-300 border-2 hover:border-construction-yellow">
+              <CardContent className="p-8">
+                <div className="flex items-center mb-6">
+                  <div className="w-16 h-16 bg-construction-yellow rounded-full flex items-center justify-center mr-4">
+                    <MapPin className="text-industrial-black h-8 w-8" />
+                  </div>
+                  <h3 className="text-2xl font-black text-industrial-black">ROAD CONSTRUCTION/REHABILITATION</h3>
+                </div>
+                <p className="text-industrial-gray leading-relaxed mb-4">
+                  All works (including earthworks, layer works, surfacing, storm water drainage, concrete structures, road signs, road marking and other ancillary items), done to contract specification; typically, Ministry of Transport or SATCC.
+                </p>
+                <div className="flex flex-wrap gap-2">
+                  <span className="px-3 py-1 bg-light-industrial text-industrial-black text-sm rounded-full">Earthworks</span>
+                  <span className="px-3 py-1 bg-light-industrial text-industrial-black text-sm rounded-full">Surfacing</span>
+                  <span className="px-3 py-1 bg-light-industrial text-industrial-black text-sm rounded-full">Storm Drainage</span>
+                  <span className="px-3 py-1 bg-light-industrial text-industrial-black text-sm rounded-full">Road Marking</span>
+                </div>
+              </CardContent>
+            </Card>
+
+            {/* Structural Concrete */}
+            <Card className="group hover:shadow-2xl transition-all duration-300 border-2 hover:border-construction-yellow">
+              <CardContent className="p-8">
+                <div className="flex items-center mb-6">
+                  <div className="w-16 h-16 bg-construction-yellow rounded-full flex items-center justify-center mr-4">
+                    <Building className="text-industrial-black h-8 w-8" />
+                  </div>
+                  <h3 className="text-2xl font-black text-industrial-black">STRUCTURAL CONCRETE AND BUILDINGS</h3>
+                </div>
+                <p className="text-industrial-gray leading-relaxed mb-4">
+                  There is capacity to undertake both the construction of both reinforced concrete structures and commercial or domestic buildings. The experience thus far i.r.o. structural concrete works stems from the construction of bridges (inclusive of road over rail), various storm water structures and water retaining structure.
+                </p>
+                <div className="flex flex-wrap gap-2">
+                  <span className="px-3 py-1 bg-light-industrial text-industrial-black text-sm rounded-full">Reinforced Concrete</span>
+                  <span className="px-3 py-1 bg-light-industrial text-industrial-black text-sm rounded-full">Bridge Construction</span>
+                  <span className="px-3 py-1 bg-light-industrial text-industrial-black text-sm rounded-full">Commercial Buildings</span>
+                  <span className="px-3 py-1 bg-light-industrial text-industrial-black text-sm rounded-full">Water Structures</span>
+                </div>
+              </CardContent>
+            </Card>
+
+            {/* Urban Infrastructure */}
+            <Card className="group hover:shadow-2xl transition-all duration-300 border-2 hover:border-construction-yellow">
+              <CardContent className="p-8">
+                <div className="flex items-center mb-6">
+                  <div className="w-16 h-16 bg-construction-yellow rounded-full flex items-center justify-center mr-4">
+                    <Droplets className="text-industrial-black h-8 w-8" />
+                  </div>
+                  <h3 className="text-2xl font-black text-industrial-black">URBAN INFRASTRUCTURAL DEVELOPMENT</h3>
+                </div>
+                <p className="text-industrial-gray leading-relaxed mb-4">
+                  This pertains to the development of commercial or residential erven and associated roads and storm water drainage, along with provision of various services such as sewer and water reticulation, all as specified. A few successful contracts have been undertaken.
+                </p>
+                <div className="flex flex-wrap gap-2">
+                  <span className="px-3 py-1 bg-light-industrial text-industrial-black text-sm rounded-full">Residential Development</span>
+                  <span className="px-3 py-1 bg-light-industrial text-industrial-black text-sm rounded-full">Commercial Erven</span>
+                  <span className="px-3 py-1 bg-light-industrial text-industrial-black text-sm rounded-full">Water Reticulation</span>
+                  <span className="px-3 py-1 bg-light-industrial text-industrial-black text-sm rounded-full">Sewer Systems</span>
+                </div>
+              </CardContent>
+            </Card>
+
+            {/* Bulk Earth Works */}
+            <Card className="group hover:shadow-2xl transition-all duration-300 border-2 hover:border-construction-yellow">
+              <CardContent className="p-8">
+                <div className="flex items-center mb-6">
+                  <div className="w-16 h-16 bg-construction-yellow rounded-full flex items-center justify-center mr-4">
+                    <Mountain className="text-industrial-black h-8 w-8" />
+                  </div>
+                  <h3 className="text-2xl font-black text-industrial-black">BULK EARTH WORKS</h3>
+                </div>
+                <p className="text-industrial-gray leading-relaxed mb-4">
+                  Earthworks associated with the construction of road and dam embankments and open cast mining activities.
+                </p>
+                <div className="flex flex-wrap gap-2">
+                  <span className="px-3 py-1 bg-light-industrial text-industrial-black text-sm rounded-full">Road Embankments</span>
+                  <span className="px-3 py-1 bg-light-industrial text-industrial-black text-sm rounded-full">Dam Construction</span>
+                  <span className="px-3 py-1 bg-light-industrial text-industrial-black text-sm rounded-full">Open Cast Mining</span>
+                  <span className="px-3 py-1 bg-light-industrial text-industrial-black text-sm rounded-full">Large Scale Earthworks</span>
+                </div>
+              </CardContent>
+            </Card>
+          </div>
+
+          {/* Call to Action */}
+          <div className="text-center">
+            <Card className="bg-industrial-black rounded-2xl">
+              <CardContent className="p-12">
+                <h3 className="text-3xl font-black text-white mb-4">
+                  READY TO START YOUR <span className="text-construction-yellow">CONSTRUCTION PROJECT?</span>
+                </h3>
+                <p className="text-gray-300 text-lg mb-8 max-w-2xl mx-auto">
+                  From planning to completion, our experienced team delivers construction projects that meet the highest standards and specifications.
+                </p>
+                <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                  <button className="px-8 py-4 bg-construction-yellow text-industrial-black font-bold rounded-lg hover:bg-yellow-400 transition-colors duration-200">
+                    REQUEST QUOTE
+                  </button>
+                  <button className="px-8 py-4 border-2 border-construction-yellow text-construction-yellow font-bold rounded-lg hover:bg-construction-yellow hover:text-industrial-black transition-all duration-200">
+                    VIEW PORTFOLIO
+                  </button>
+                </div>
+              </CardContent>
+            </Card>
+          </div>
         </div>
       </section>
     </div>
