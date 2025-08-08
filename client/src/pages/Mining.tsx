@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 import { Card, CardContent } from '@/components/ui/card';
-import { Gem, Box, Mountain, CheckCircle, Building2, Truck, Pickaxe, Zap, Package, Layers, Shovel } from 'lucide-react';
+import { Gem, Box, Mountain, CheckCircle, Building2, Truck, Pickaxe, Zap, Package, Layers, Shovel, Droplets } from 'lucide-react';
 import { ScrollAnimations } from '@/components/ScrollAnimations';
 
 export default function Mining() {
@@ -205,8 +205,116 @@ export default function Mining() {
               </CardContent>
             </Card>
           </div>
+        </div>
+      </section>
 
-          {/* Mining Process Overview */}
+        {/* Dewatering Services Section */}
+        <section className="py-20 bg-white">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center mb-16">
+              <h2 className="text-4xl font-black text-industrial-black mb-4">
+                DEWATERING <span className="text-construction-yellow">SERVICES</span>
+              </h2>
+              <p className="text-lg text-industrial-gray max-w-3xl mx-auto">
+                Keeping mining operations dry and efficient with professional water management solutions
+              </p>
+            </div>
+
+            <Card className="group hover:shadow-2xl transition-all duration-300 border-2 hover:border-construction-yellow bg-white mb-16">
+              <CardContent className="p-0">
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-0">
+                  <div className="relative">
+                    <img 
+                      src="/attached_assets/Dewatering_1754640348834.jpg" 
+                      alt="Professional dewatering operations with submersible pumps at mining site" 
+                      className="w-full h-80 lg:h-full object-cover lg:rounded-l-lg" 
+                    />
+                    <div className="absolute top-4 right-4">
+                      <div className="w-16 h-16 bg-construction-yellow rounded-full flex items-center justify-center shadow-lg">
+                        <Droplets className="text-industrial-black h-8 w-8" />
+                      </div>
+                    </div>
+                  </div>
+                  <div className="p-8 lg:p-12 flex flex-col justify-center">
+                    <h3 className="text-3xl font-black text-industrial-black mb-6">WE REMOVE WATER AND WASTE</h3>
+                    <p className="text-xl text-construction-yellow font-bold mb-6">We keep operations dry. Simple.</p>
+                    <p className="text-industrial-gray leading-relaxed mb-8">
+                      Our submersible pumps keep groundwater out and operational efficiency in. We bring safe and secure working operations from mines to construction sites across Zimbabwe.
+                    </p>
+                    
+                    <div className="space-y-5">
+                      <div className="flex items-start">
+                        <CheckCircle className="text-construction-yellow mr-4 mt-1 h-6 w-6 flex-shrink-0" />
+                        <div>
+                          <span className="text-industrial-black font-bold text-lg">Groundwater Management</span>
+                          <p className="text-industrial-gray mt-1">Advanced submersible pump systems for continuous water removal from mining excavations</p>
+                        </div>
+                      </div>
+                      <div className="flex items-start">
+                        <CheckCircle className="text-construction-yellow mr-4 mt-1 h-6 w-6 flex-shrink-0" />
+                        <div>
+                          <span className="text-industrial-black font-bold text-lg">Operational Efficiency</span>
+                          <p className="text-industrial-gray mt-1">Maintaining dry working conditions to ensure uninterrupted mining operations and equipment performance</p>
+                        </div>
+                      </div>
+                      <div className="flex items-start">
+                        <CheckCircle className="text-construction-yellow mr-4 mt-1 h-6 w-6 flex-shrink-0" />
+                        <div>
+                          <span className="text-industrial-black font-bold text-lg">Safety & Security</span>
+                          <p className="text-industrial-gray mt-1">Creating safe working environments through professional water control and waste management</p>
+                        </div>
+                      </div>
+                      <div className="flex items-start">
+                        <CheckCircle className="text-construction-yellow mr-4 mt-1 h-6 w-6 flex-shrink-0" />
+                        <div>
+                          <span className="text-industrial-black font-bold text-lg">Cross-Industry Application</span>
+                          <p className="text-industrial-gray mt-1">Dewatering solutions for mining operations, construction sites, and industrial projects</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+
+            {/* Dewatering Process Cards */}
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+              <Card className="animate-fade-in bg-industrial-black border-2 border-construction-yellow">
+                <CardContent className="p-8 text-center">
+                  <div className="w-16 h-16 bg-construction-yellow rounded-full flex items-center justify-center mx-auto mb-6">
+                    <Mountain className="text-industrial-black h-8 w-8" />
+                  </div>
+                  <h4 className="text-xl font-bold mb-4 text-white">SITE ASSESSMENT</h4>
+                  <p className="text-gray-300">Comprehensive evaluation of groundwater conditions and drainage requirements for optimal pump placement</p>
+                </CardContent>
+              </Card>
+              
+              <Card className="animate-fade-in bg-industrial-black border-2 border-construction-yellow">
+                <CardContent className="p-8 text-center">
+                  <div className="w-16 h-16 bg-construction-yellow rounded-full flex items-center justify-center mx-auto mb-6">
+                    <Droplets className="text-industrial-black h-8 w-8" />
+                  </div>
+                  <h4 className="text-xl font-bold mb-4 text-white">PUMP DEPLOYMENT</h4>
+                  <p className="text-gray-300">Strategic installation of high-capacity submersible pumps for continuous water removal and site management</p>
+                </CardContent>
+              </Card>
+              
+              <Card className="animate-fade-in bg-industrial-black border-2 border-construction-yellow">
+                <CardContent className="p-8 text-center">
+                  <div className="w-16 h-16 bg-construction-yellow rounded-full flex items-center justify-center mx-auto mb-6">
+                    <CheckCircle className="text-industrial-black h-8 w-8" />
+                  </div>
+                  <h4 className="text-xl font-bold mb-4 text-white">CONTINUOUS MONITORING</h4>
+                  <p className="text-gray-300">24/7 system monitoring and maintenance to ensure uninterrupted operations and optimal performance</p>
+                </CardContent>
+              </Card>
+            </div>
+          </div>
+        </section>
+
+        {/* Mining Process Overview */}
+        <section className="py-20 bg-gradient-to-br from-industrial-black via-gray-900 to-industrial-black relative overflow-hidden">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <Card className="bg-industrial-black rounded-2xl mb-16">
             <CardContent className="p-12">
               <div className="text-center mb-12">
