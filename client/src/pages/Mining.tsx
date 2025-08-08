@@ -220,56 +220,68 @@ export default function Mining() {
               </p>
             </div>
 
-            <Card className="group hover:shadow-2xl transition-all duration-300 border-2 hover:border-construction-yellow bg-white mb-16">
+            {/* Main Dewatering Feature Card */}
+            <Card className="group hover:shadow-2xl transition-all duration-300 border-2 hover:border-construction-yellow bg-white mb-16 overflow-hidden">
               <CardContent className="p-0">
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-0">
-                  <div className="relative">
+                  <div className="relative order-2 lg:order-1">
                     <img 
-                      src="/attached_assets/Dewatering_1754640348834.jpg" 
-                      alt="Professional dewatering operations with submersible pumps at mining site" 
-                      className="w-full h-80 lg:h-full object-cover lg:rounded-l-lg" 
+                      src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&h=600" 
+                      alt="Professional dewatering operations with submersible pumps removing water from mining excavation" 
+                      className="w-full h-80 lg:h-full object-cover lg:rounded-l-lg shadow-inner" 
                     />
-                    <div className="absolute top-4 right-4">
-                      <div className="w-16 h-16 bg-construction-yellow rounded-full flex items-center justify-center shadow-lg">
-                        <Droplets className="text-industrial-black h-8 w-8" />
+                    <div className="absolute top-6 right-6">
+                      <div className="w-20 h-20 bg-construction-yellow rounded-full flex items-center justify-center shadow-2xl border-4 border-white">
+                        <Droplets className="text-industrial-black h-10 w-10" />
+                      </div>
+                    </div>
+                    <div className="absolute bottom-4 left-4 right-4">
+                      <div className="bg-industrial-black/80 backdrop-blur-sm rounded-lg p-4">
+                        <p className="text-construction-yellow font-bold text-sm">ADVANCED PUMP SYSTEMS</p>
+                        <p className="text-white text-xs">Continuous water removal & site management</p>
                       </div>
                     </div>
                   </div>
-                  <div className="p-8 lg:p-12 flex flex-col justify-center">
-                    <h3 className="text-3xl font-black text-industrial-black mb-6">WE REMOVE WATER AND WASTE</h3>
-                    <p className="text-xl text-construction-yellow font-bold mb-6">We keep operations dry. Simple.</p>
-                    <p className="text-industrial-gray leading-relaxed mb-8">
+                  <div className="p-8 lg:p-12 flex flex-col justify-center order-1 lg:order-2 bg-gradient-to-br from-gray-50 to-white">
+                    <div className="mb-6">
+                      <span className="inline-block bg-construction-yellow text-industrial-black text-xs font-bold px-3 py-1 rounded-full mb-4">
+                        MINING DEWATERING SPECIALISTS
+                      </span>
+                      <h3 className="text-4xl font-black text-industrial-black mb-4 leading-tight">WE REMOVE WATER AND WASTE</h3>
+                      <p className="text-2xl text-construction-yellow font-bold mb-6">We keep operations dry. Simple.</p>
+                    </div>
+                    <p className="text-industrial-gray leading-relaxed mb-8 text-lg">
                       Our submersible pumps keep groundwater out and operational efficiency in. We bring safe and secure working operations from mines to construction sites across Zimbabwe.
                     </p>
                     
-                    <div className="space-y-5">
-                      <div className="flex items-start">
-                        <CheckCircle className="text-construction-yellow mr-4 mt-1 h-6 w-6 flex-shrink-0" />
-                        <div>
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                      <div className="bg-white rounded-lg p-6 shadow-md border-l-4 border-construction-yellow">
+                        <div className="flex items-center mb-3">
+                          <CheckCircle className="text-construction-yellow mr-3 h-7 w-7 flex-shrink-0" />
                           <span className="text-industrial-black font-bold text-lg">Groundwater Management</span>
-                          <p className="text-industrial-gray mt-1">Advanced submersible pump systems for continuous water removal from mining excavations</p>
                         </div>
+                        <p className="text-industrial-gray text-sm leading-relaxed">Advanced submersible pump systems for continuous water removal from mining excavations</p>
                       </div>
-                      <div className="flex items-start">
-                        <CheckCircle className="text-construction-yellow mr-4 mt-1 h-6 w-6 flex-shrink-0" />
-                        <div>
+                      <div className="bg-white rounded-lg p-6 shadow-md border-l-4 border-construction-yellow">
+                        <div className="flex items-center mb-3">
+                          <CheckCircle className="text-construction-yellow mr-3 h-7 w-7 flex-shrink-0" />
                           <span className="text-industrial-black font-bold text-lg">Operational Efficiency</span>
-                          <p className="text-industrial-gray mt-1">Maintaining dry working conditions to ensure uninterrupted mining operations and equipment performance</p>
                         </div>
+                        <p className="text-industrial-gray text-sm leading-relaxed">Maintaining dry working conditions to ensure uninterrupted mining operations and equipment performance</p>
                       </div>
-                      <div className="flex items-start">
-                        <CheckCircle className="text-construction-yellow mr-4 mt-1 h-6 w-6 flex-shrink-0" />
-                        <div>
+                      <div className="bg-white rounded-lg p-6 shadow-md border-l-4 border-construction-yellow">
+                        <div className="flex items-center mb-3">
+                          <CheckCircle className="text-construction-yellow mr-3 h-7 w-7 flex-shrink-0" />
                           <span className="text-industrial-black font-bold text-lg">Safety & Security</span>
-                          <p className="text-industrial-gray mt-1">Creating safe working environments through professional water control and waste management</p>
                         </div>
+                        <p className="text-industrial-gray text-sm leading-relaxed">Creating safe working environments through professional water control and waste management</p>
                       </div>
-                      <div className="flex items-start">
-                        <CheckCircle className="text-construction-yellow mr-4 mt-1 h-6 w-6 flex-shrink-0" />
-                        <div>
+                      <div className="bg-white rounded-lg p-6 shadow-md border-l-4 border-construction-yellow">
+                        <div className="flex items-center mb-3">
+                          <CheckCircle className="text-construction-yellow mr-3 h-7 w-7 flex-shrink-0" />
                           <span className="text-industrial-black font-bold text-lg">Cross-Industry Application</span>
-                          <p className="text-industrial-gray mt-1">Dewatering solutions for mining operations, construction sites, and industrial projects</p>
                         </div>
+                        <p className="text-industrial-gray text-sm leading-relaxed">Dewatering solutions for mining operations, construction sites, and industrial projects</p>
                       </div>
                     </div>
                   </div>
@@ -277,37 +289,69 @@ export default function Mining() {
               </CardContent>
             </Card>
 
-            {/* Dewatering Process Cards */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
-              <Card className="animate-fade-in bg-industrial-black border-2 border-construction-yellow">
-                <CardContent className="p-8 text-center">
-                  <div className="w-16 h-16 bg-construction-yellow rounded-full flex items-center justify-center mx-auto mb-6">
-                    <Mountain className="text-industrial-black h-8 w-8" />
-                  </div>
-                  <h4 className="text-xl font-bold mb-4 text-white">SITE ASSESSMENT</h4>
-                  <p className="text-gray-300">Comprehensive evaluation of groundwater conditions and drainage requirements for optimal pump placement</p>
-                </CardContent>
-              </Card>
+            {/* Dewatering Process Workflow */}
+            <div className="bg-gradient-to-r from-industrial-black via-gray-900 to-industrial-black rounded-2xl p-8 lg:p-12 mb-16">
+              <div className="text-center mb-12">
+                <h3 className="text-3xl font-black text-white mb-4">
+                  DEWATERING <span className="text-construction-yellow">PROCESS</span>
+                </h3>
+                <p className="text-gray-300 text-lg max-w-3xl mx-auto">
+                  Systematic approach to maintaining dry, safe, and productive mining operations
+                </p>
+              </div>
               
-              <Card className="animate-fade-in bg-industrial-black border-2 border-construction-yellow">
-                <CardContent className="p-8 text-center">
-                  <div className="w-16 h-16 bg-construction-yellow rounded-full flex items-center justify-center mx-auto mb-6">
-                    <Droplets className="text-industrial-black h-8 w-8" />
-                  </div>
-                  <h4 className="text-xl font-bold mb-4 text-white">PUMP DEPLOYMENT</h4>
-                  <p className="text-gray-300">Strategic installation of high-capacity submersible pumps for continuous water removal and site management</p>
-                </CardContent>
-              </Card>
-              
-              <Card className="animate-fade-in bg-industrial-black border-2 border-construction-yellow">
-                <CardContent className="p-8 text-center">
-                  <div className="w-16 h-16 bg-construction-yellow rounded-full flex items-center justify-center mx-auto mb-6">
-                    <CheckCircle className="text-industrial-black h-8 w-8" />
-                  </div>
-                  <h4 className="text-xl font-bold mb-4 text-white">CONTINUOUS MONITORING</h4>
-                  <p className="text-gray-300">24/7 system monitoring and maintenance to ensure uninterrupted operations and optimal performance</p>
-                </CardContent>
-              </Card>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div className="relative">
+                  <Card className="animate-fade-in bg-white/10 backdrop-blur-sm border-2 border-construction-yellow hover:bg-white/20 transition-all duration-300 group">
+                    <CardContent className="p-8 text-center relative">
+                      <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
+                        <div className="w-12 h-12 bg-construction-yellow rounded-full flex items-center justify-center text-industrial-black font-black text-xl shadow-lg">
+                          01
+                        </div>
+                      </div>
+                      <div className="w-20 h-20 bg-construction-yellow/20 rounded-full flex items-center justify-center mx-auto mb-6 mt-4 group-hover:bg-construction-yellow/30 transition-colors">
+                        <Mountain className="text-construction-yellow h-10 w-10" />
+                      </div>
+                      <h4 className="text-xl font-bold mb-4 text-white">SITE ASSESSMENT</h4>
+                      <p className="text-gray-300">Comprehensive evaluation of groundwater conditions and drainage requirements for optimal pump placement and system design</p>
+                    </CardContent>
+                  </Card>
+                </div>
+                
+                <div className="relative">
+                  <Card className="animate-fade-in bg-white/10 backdrop-blur-sm border-2 border-construction-yellow hover:bg-white/20 transition-all duration-300 group">
+                    <CardContent className="p-8 text-center relative">
+                      <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
+                        <div className="w-12 h-12 bg-construction-yellow rounded-full flex items-center justify-center text-industrial-black font-black text-xl shadow-lg">
+                          02
+                        </div>
+                      </div>
+                      <div className="w-20 h-20 bg-construction-yellow/20 rounded-full flex items-center justify-center mx-auto mb-6 mt-4 group-hover:bg-construction-yellow/30 transition-colors">
+                        <Droplets className="text-construction-yellow h-10 w-10" />
+                      </div>
+                      <h4 className="text-xl font-bold mb-4 text-white">PUMP DEPLOYMENT</h4>
+                      <p className="text-gray-300">Strategic installation of high-capacity submersible pumps for continuous water removal and comprehensive site management</p>
+                    </CardContent>
+                  </Card>
+                </div>
+                
+                <div className="relative">
+                  <Card className="animate-fade-in bg-white/10 backdrop-blur-sm border-2 border-construction-yellow hover:bg-white/20 transition-all duration-300 group">
+                    <CardContent className="p-8 text-center relative">
+                      <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
+                        <div className="w-12 h-12 bg-construction-yellow rounded-full flex items-center justify-center text-industrial-black font-black text-xl shadow-lg">
+                          03
+                        </div>
+                      </div>
+                      <div className="w-20 h-20 bg-construction-yellow/20 rounded-full flex items-center justify-center mx-auto mb-6 mt-4 group-hover:bg-construction-yellow/30 transition-colors">
+                        <CheckCircle className="text-construction-yellow h-10 w-10" />
+                      </div>
+                      <h4 className="text-xl font-bold mb-4 text-white">CONTINUOUS MONITORING</h4>
+                      <p className="text-gray-300">24/7 system monitoring and proactive maintenance to ensure uninterrupted operations and optimal performance</p>
+                    </CardContent>
+                  </Card>
+                </div>
+              </div>
             </div>
           </div>
         </section>
