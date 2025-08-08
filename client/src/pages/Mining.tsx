@@ -293,8 +293,8 @@ export default function Mining() {
             {/* Dewatering Process Workflow */}
             <div className="bg-gradient-to-r from-industrial-black via-gray-900 to-industrial-black rounded-2xl p-8 lg:p-12 mb-16">
               <div className="text-center mb-12">
-                <h3 className="text-3xl font-black text-white mb-4">
-                  DEWATERING <span className="text-construction-yellow">PROCESS</span>
+                <h3 className="text-3xl font-black text-construction-yellow mb-4">
+                  DEWATERING <span className="text-white">PROCESS</span>
                 </h3>
                 <p className="text-gray-300 text-lg max-w-3xl mx-auto">
                   Systematic approach to maintaining dry, safe, and productive mining operations
