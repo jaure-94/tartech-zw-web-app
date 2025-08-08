@@ -291,19 +291,19 @@ export default function Mining() {
             </Card>
 
             {/* Dewatering Process Workflow */}
-            <div className="bg-gradient-to-r from-industrial-black via-gray-900 to-industrial-black rounded-2xl p-8 lg:p-12 mb-16">
+            <div className="bg-white border-2 border-gray-200 rounded-2xl p-8 lg:p-12 mb-16 shadow-lg">
               <div className="text-center mb-12">
-                <h3 className="text-3xl font-black text-white mb-4">
+                <h3 className="text-3xl font-black text-industrial-black mb-4">
                   DEWATERING <span className="text-construction-yellow">PROCESS</span>
                 </h3>
-                <p className="text-gray-300 text-lg max-w-3xl mx-auto">
+                <p className="text-industrial-gray text-lg max-w-3xl mx-auto">
                   Systematic approach to maintaining dry, safe, and productive mining operations
                 </p>
               </div>
               
               <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                 <div className="relative">
-                  <Card className="animate-fade-in bg-white/10 backdrop-blur-sm border-2 border-construction-yellow hover:bg-white/20 transition-all duration-300 group">
+                  <Card className="animate-fade-in bg-industrial-black border-2 border-construction-yellow hover:shadow-xl transition-all duration-300 group">
                     <CardContent className="p-8 text-center relative">
                       <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
                         <div className="w-12 h-12 bg-construction-yellow rounded-full flex items-center justify-center text-industrial-black font-black text-xl shadow-lg">
@@ -320,7 +320,7 @@ export default function Mining() {
                 </div>
                 
                 <div className="relative">
-                  <Card className="animate-fade-in bg-white/10 backdrop-blur-sm border-2 border-construction-yellow hover:bg-white/20 transition-all duration-300 group">
+                  <Card className="animate-fade-in bg-industrial-black border-2 border-construction-yellow hover:shadow-xl transition-all duration-300 group">
                     <CardContent className="p-8 text-center relative">
                       <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
                         <div className="w-12 h-12 bg-construction-yellow rounded-full flex items-center justify-center text-industrial-black font-black text-xl shadow-lg">
@@ -337,7 +337,7 @@ export default function Mining() {
                 </div>
                 
                 <div className="relative">
-                  <Card className="animate-fade-in bg-white/10 backdrop-blur-sm border-2 border-construction-yellow hover:bg-white/20 transition-all duration-300 group">
+                  <Card className="animate-fade-in bg-industrial-black border-2 border-construction-yellow hover:shadow-xl transition-all duration-300 group">
                     <CardContent className="p-8 text-center relative">
                       <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
                         <div className="w-12 h-12 bg-construction-yellow rounded-full flex items-center justify-center text-industrial-black font-black text-xl shadow-lg">
