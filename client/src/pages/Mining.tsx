@@ -2,6 +2,7 @@ import { useEffect } from 'react';
 import { Card, CardContent } from '@/components/ui/card';
 import { Gem, Box, Mountain, CheckCircle, Building2, Truck, Pickaxe, Zap, Package, Layers, Shovel, Droplets } from 'lucide-react';
 import { ScrollAnimations } from '@/components/ScrollAnimations';
+import dewateringImage from '@assets/Dewatering_1754640759227.jpg';
 
 export default function Mining() {
   useEffect(() => {
@@ -226,8 +227,8 @@ export default function Mining() {
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-0">
                   <div className="relative order-2 lg:order-1">
                     <img 
-                      src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&h=600" 
-                      alt="Professional dewatering operations with submersible pumps removing water from mining excavation" 
+                      src={dewateringImage} 
+                      alt="Professional dewatering operations with excavator and submersible pump removing water from mining excavation site" 
                       className="w-full h-80 lg:h-full object-cover lg:rounded-l-lg shadow-inner" 
                     />
                     <div className="absolute top-6 right-6">
