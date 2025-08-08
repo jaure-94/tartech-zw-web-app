@@ -42,7 +42,7 @@ export function Navigation() {
   ];
 
   const serviceLinks = [
-    { href: '/services', label: 'Overview' },
+    { href: '/services', label: 'Borehole Drilling' },
     { href: '/services/mining', label: 'Mining' },
     { href: '/services/construction', label: 'Construction' },
     { href: '/services/agriculture', label: 'Agriculture' }
