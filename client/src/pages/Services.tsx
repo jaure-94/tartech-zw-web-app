@@ -19,8 +19,8 @@ export default function Services() {
         <div className="absolute inset-0 bg-gradient-to-r from-construction-yellow/10 to-transparent"></div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center mb-16">
-            <h1 className="animate-fade-in text-4xl sm:text-6xl font-black text-white mb-6">
-              BOREHOLE <span className="text-construction-yellow">DRILLING</span>
+            <h1 className="animate-fade-in text-4xl sm:text-6xl font-black mb-6">
+              <span className="text-black">BOREHOLE</span> <span className="text-construction-yellow">DRILLING</span>
             </h1>
             <p className="animate-fade-in text-xl text-gray-300 max-w-4xl mx-auto leading-relaxed">
               At Tartech Contracting, we are your comprehensive partner for unlocking reliable water on your property. Our highly skilled team tackles all drilling projects, from standard boreholes to specialized blast hole and RC drilling.
