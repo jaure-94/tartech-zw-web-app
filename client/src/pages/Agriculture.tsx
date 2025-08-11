@@ -35,38 +35,26 @@ export default function Agriculture() {
           <img 
             src="https://images.unsplash.com/photo-1625246333195-78d9c38ad449?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&h=1080" 
             alt="Large agricultural tractor working in expansive field at sunset" 
-            className="w-full h-full object-cover opacity-30"
+            className="w-full h-full object-cover opacity-20"
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-industrial-black/80 to-transparent"></div>
+          <div className="absolute inset-0 bg-gradient-to-r from-industrial-black/90 via-industrial-black/70 to-industrial-black/80"></div>
         </div>
         
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          <div className="text-center max-w-4xl mx-auto">
             <div className="animate-slide-in-left">
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black text-white mb-6 leading-tight">
                 AGRICULTURAL <span className="text-construction-yellow">EXCELLENCE</span>
               </h1>
-              <p className="text-xl text-gray-300 mb-8 leading-relaxed">
+              <p className="text-xl text-gray-200 mb-12 leading-relaxed max-w-3xl mx-auto">
                 Transforming Zimbabwe's agricultural landscape with cutting-edge technology, precision engineering, and three decades of expertise in land development and infrastructure.
               </p>
-              <div className="flex flex-col sm:flex-row gap-4">
-                <Link href="/contact">
-                  <Button size="lg" className="bg-construction-yellow text-industrial-black hover:bg-white text-lg px-8 py-4">
-                    <Phone className="mr-2 h-5 w-5" />
-                    GET QUOTE
-                  </Button>
-                </Link>
-                <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-industrial-black text-lg px-8 py-4">
-                  <ArrowRight className="mr-2 h-5 w-5" />
-                  OUR PORTFOLIO
-                </Button>
-              </div>
             </div>
             
             <div className="animate-slide-in-right">
-              <div className="bg-white/10 backdrop-blur-md rounded-2xl p-8 border border-white/20">
+              <div className="bg-white/10 backdrop-blur-md rounded-2xl p-8 border border-white/20 max-w-3xl mx-auto">
                 <h3 className="text-2xl font-bold text-construction-yellow mb-6">OUR AGRICULTURE SERVICES</h3>
-                <div className="grid grid-cols-2 gap-4 text-white">
+                <div className="grid grid-cols-2 md:grid-cols-3 gap-4 text-white">
                   <div className="flex items-center space-x-2">
                     <TreePine className="h-5 w-5 text-construction-yellow" />
                     <span className="text-sm">Bush Clearing</span>
@@ -116,8 +104,8 @@ export default function Agriculture() {
               <Card className="h-full overflow-hidden shadow-2xl border-4 border-transparent hover:border-construction-yellow transition-all duration-500">
                 <div className="h-64 overflow-hidden">
                   <img 
-                    src="https://images.unsplash.com/photo-1574263867128-ac4e16bec53b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600" 
-                    alt="Heavy machinery clearing dense vegetation and bush land"
+                    src="https://images.unsplash.com/photo-1581833971358-2c8b550f87b3?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600" 
+                    alt="Heavy bulldozer and excavator clearing dense vegetation and bush land"
                     className="w-full h-full object-cover hover:scale-110 transition-transform duration-700" 
                   />
                 </div>
