@@ -44,7 +44,7 @@ export default function Agriculture() {
           <div className="text-center max-w-4xl mx-auto">
             <div className="animate-slide-in-left">
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black text-white mb-6 leading-tight">
-                AGRICULTURAL INFRASTRUCTURE <span className="text-construction-yellow">EXPERTS</span>
+                AGRI-INFRASTRUCTURE <span className="text-construction-yellow">EXPERTS</span>
               </h1>
               <p className="text-xl text-gray-200 mb-12 leading-relaxed max-w-3xl mx-auto">
                 Transforming Zimbabwe's agricultural landscape with cutting-edge technology, precision engineering, and three decades of expertise in land development and infrastructure.
