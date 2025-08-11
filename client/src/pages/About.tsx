@@ -36,7 +36,7 @@ export default function About() {
             alt="Professional construction team in hard hats and safety gear on industrial site" 
             className="w-full h-full object-cover opacity-30"
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-industrial-black/85 via-industrial-black/60 to-industrial-black/75"></div>
+          <div className="absolute inset-0 bg-gradient-to-r from-industrial-black/90 via-industrial-black/85 to-industrial-black/90"></div>
         </div>
         
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -313,6 +313,18 @@ export default function About() {
             </div>
           </div>
 
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-8">
+            <div className="animate-fade-in">
+              <Card className="bg-white/10 backdrop-blur-md border border-white/20 p-6 text-center hover:border-construction-yellow transition-all duration-500">
+                <CardContent className="p-0">
+                  <Shield className="h-12 w-12 text-construction-yellow mx-auto mb-4" />
+                  <h3 className="text-white font-bold mb-2">NSSA</h3>
+                  <p className="text-gray-300 text-sm">National Social Security Authority</p>
+                </CardContent>
+              </Card>
+            </div>
+          </div>
+
           <div className="text-center mt-12">
             <div className="animate-fade-in inline-block">
               <Card className="bg-white/5 backdrop-blur-md border border-construction-yellow/30 p-6">
@@ -323,6 +335,227 @@ export default function About() {
                   <p className="text-gray-400 text-sm">Licensed and compliant with government construction standards</p>
                 </CardContent>
               </Card>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Key Strengths Section */}
+      <section className="py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="animate-fade-in text-4xl sm:text-5xl font-black text-industrial-black mb-6">
+              KEY <span className="text-construction-yellow">STRENGTHS</span>
+            </h2>
+            <p className="animate-fade-in text-lg text-industrial-gray max-w-4xl mx-auto">
+              Our strategic advantages and core competencies that set us apart in the competitive construction landscape.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div className="animate-slide-in-left space-y-6">
+              <div className="flex items-start space-x-4">
+                <div className="w-8 h-8 bg-construction-yellow rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                  <CheckCircle className="h-5 w-5 text-industrial-black" />
+                </div>
+                <p className="text-industrial-gray leading-relaxed">
+                  <strong>Diversity and strategic positioning</strong> within the Zimbabwean construction landscape
+                </p>
+              </div>
+              
+              <div className="flex items-start space-x-4">
+                <div className="w-8 h-8 bg-construction-yellow rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                  <CheckCircle className="h-5 w-5 text-industrial-black" />
+                </div>
+                <p className="text-industrial-gray leading-relaxed">
+                  The <strong>solution-based culture</strong> it brings to the project teams it is involved with
+                </p>
+              </div>
+              
+              <div className="flex items-start space-x-4">
+                <div className="w-8 h-8 bg-construction-yellow rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                  <CheckCircle className="h-5 w-5 text-industrial-black" />
+                </div>
+                <p className="text-industrial-gray leading-relaxed">
+                  <strong>Technologically advanced approach</strong> to managing construction sites
+                </p>
+              </div>
+              
+              <div className="flex items-start space-x-4">
+                <div className="w-8 h-8 bg-construction-yellow rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                  <CheckCircle className="h-5 w-5 text-industrial-black" />
+                </div>
+                <p className="text-industrial-gray leading-relaxed">
+                  <strong>Commitment to sustainability and transformation</strong> in all project delivery
+                </p>
+              </div>
+            </div>
+            
+            <div className="animate-slide-in-right space-y-6">
+              <div className="flex items-start space-x-4">
+                <div className="w-8 h-8 bg-construction-yellow rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                  <CheckCircle className="h-5 w-5 text-industrial-black" />
+                </div>
+                <p className="text-industrial-gray leading-relaxed">
+                  <strong>Successful recruitment and up-skilling</strong> of local communities as part of project deliverables
+                </p>
+              </div>
+              
+              <div className="flex items-start space-x-4">
+                <div className="w-8 h-8 bg-construction-yellow rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                  <CheckCircle className="h-5 w-5 text-industrial-black" />
+                </div>
+                <p className="text-industrial-gray leading-relaxed">
+                  <strong>Single-point of accountability</strong> removing the interface risk from the client domain
+                </p>
+              </div>
+              
+              <div className="flex items-start space-x-4">
+                <div className="w-8 h-8 bg-construction-yellow rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                  <CheckCircle className="h-5 w-5 text-industrial-black" />
+                </div>
+                <p className="text-industrial-gray leading-relaxed">
+                  Ability to <strong>leverage experience in creating support and project infrastructure</strong> in even the harshest environments
+                </p>
+              </div>
+              
+              <div className="flex items-start space-x-4">
+                <div className="w-8 h-8 bg-construction-yellow rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                  <CheckCircle className="h-5 w-5 text-industrial-black" />
+                </div>
+                <p className="text-industrial-gray leading-relaxed">
+                  <strong>Streamlined shared services, management systems and policies</strong> for optimal efficiency
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Track Record Section */}
+      <section className="py-20 bg-light-industrial">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="animate-fade-in text-4xl sm:text-5xl font-black text-industrial-black mb-6">
+              TRACK <span className="text-construction-yellow">RECORD</span>
+            </h2>
+            <p className="animate-fade-in text-lg text-industrial-gray max-w-4xl mx-auto mb-8">
+              Our history speaks for itself. Since its inception, the company has sought to acquire new skills and to improve upon established methods. This philosophy has provided the company a platform to successfully develop a multi-disciplinary construction capability.
+            </p>
+            <p className="animate-fade-in text-lg text-industrial-gray max-w-4xl mx-auto">
+              Tartech is a company that has already been tried and proven and has outstood the test of time as it has managed to make a tremendous impact on the market and has gained the satisfaction and faith of a wide spectrum of clients.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-16">
+            <div className="animate-slide-in-left">
+              <img 
+                src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600" 
+                alt="Modern city skyline showcasing successful construction projects" 
+                className="rounded-xl shadow-2xl w-full" 
+              />
+            </div>
+            
+            <div className="animate-slide-in-right">
+              <h3 className="text-3xl font-black text-industrial-black mb-8">TRUSTED BY LEADING ORGANIZATIONS</h3>
+              
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <Card className="p-6 bg-white border-l-4 border-construction-yellow shadow-lg hover:shadow-xl transition-all duration-300">
+                  <CardContent className="p-0">
+                    <div className="flex items-center space-x-3">
+                      <Building2 className="h-6 w-6 text-construction-yellow" />
+                      <div>
+                        <h4 className="font-bold text-industrial-black">City of Harare</h4>
+                        <p className="text-sm text-industrial-gray">Municipal Infrastructure</p>
+                      </div>
+                    </div>
+                  </CardContent>
+                </Card>
+
+                <Card className="p-6 bg-white border-l-4 border-construction-yellow shadow-lg hover:shadow-xl transition-all duration-300">
+                  <CardContent className="p-0">
+                    <div className="flex items-center space-x-3">
+                      <Building2 className="h-6 w-6 text-construction-yellow" />
+                      <div>
+                        <h4 className="font-bold text-industrial-black">City of Marondera</h4>
+                        <p className="text-sm text-industrial-gray">Urban Development</p>
+                      </div>
+                    </div>
+                  </CardContent>
+                </Card>
+
+                <Card className="p-6 bg-white border-l-4 border-construction-yellow shadow-lg hover:shadow-xl transition-all duration-300">
+                  <CardContent className="p-0">
+                    <div className="flex items-center space-x-3">
+                      <Settings className="h-6 w-6 text-construction-yellow" />
+                      <div>
+                        <h4 className="font-bold text-industrial-black">Bikita Minerals</h4>
+                        <p className="text-sm text-industrial-gray">Mining Infrastructure</p>
+                      </div>
+                    </div>
+                  </CardContent>
+                </Card>
+
+                <Card className="p-6 bg-white border-l-4 border-construction-yellow shadow-lg hover:shadow-xl transition-all duration-300">
+                  <CardContent className="p-0">
+                    <div className="flex items-center space-x-3">
+                      <Target className="h-6 w-6 text-construction-yellow" />
+                      <div>
+                        <h4 className="font-bold text-industrial-black">Min of Transport</h4>
+                        <p className="text-sm text-industrial-gray">Department of Roads</p>
+                      </div>
+                    </div>
+                  </CardContent>
+                </Card>
+
+                <Card className="p-6 bg-white border-l-4 border-construction-yellow shadow-lg hover:shadow-xl transition-all duration-300">
+                  <CardContent className="p-0">
+                    <div className="flex items-center space-x-3">
+                      <Settings className="h-6 w-6 text-construction-yellow" />
+                      <div>
+                        <h4 className="font-bold text-industrial-black">Freda Rebecca Mines</h4>
+                        <p className="text-sm text-industrial-gray">Gold Mining Operations</p>
+                      </div>
+                    </div>
+                  </CardContent>
+                </Card>
+
+                <Card className="p-6 bg-white border-l-4 border-construction-yellow shadow-lg hover:shadow-xl transition-all duration-300">
+                  <CardContent className="p-0">
+                    <div className="flex items-center space-x-3">
+                      <Settings className="h-6 w-6 text-construction-yellow" />
+                      <div>
+                        <h4 className="font-bold text-industrial-black">Bindura Nickel Corporation</h4>
+                        <p className="text-sm text-industrial-gray">Nickel Mining</p>
+                      </div>
+                    </div>
+                  </CardContent>
+                </Card>
+
+                <Card className="p-6 bg-white border-l-4 border-construction-yellow shadow-lg hover:shadow-xl transition-all duration-300">
+                  <CardContent className="p-0">
+                    <div className="flex items-center space-x-3">
+                      <Building2 className="h-6 w-6 text-construction-yellow" />
+                      <div>
+                        <h4 className="font-bold text-industrial-black">Khaya Cement</h4>
+                        <p className="text-sm text-industrial-gray">Industrial Manufacturing</p>
+                      </div>
+                    </div>
+                  </CardContent>
+                </Card>
+
+                <Card className="p-6 bg-white border-l-4 border-construction-yellow shadow-lg hover:shadow-xl transition-all duration-300">
+                  <CardContent className="p-0">
+                    <div className="flex items-center space-x-3">
+                      <Settings className="h-6 w-6 text-construction-yellow" />
+                      <div>
+                        <h4 className="font-bold text-industrial-black">Zimplats</h4>
+                        <p className="text-sm text-industrial-gray">Platinum Mining</p>
+                      </div>
+                    </div>
+                  </CardContent>
+                </Card>
+              </div>
             </div>
           </div>
         </div>
