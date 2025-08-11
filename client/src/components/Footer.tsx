@@ -1,6 +1,5 @@
 import { Link } from 'wouter';
 import { Phone, Mail, MapPin, Clock, Facebook, Twitter, Linkedin, Instagram } from 'lucide-react';
-import tartechLogo from '@assets/Tartech Logo_1754917926947.png';
 
 export function Footer() {
   return (
@@ -12,12 +11,10 @@ export function Footer() {
           {/* Company Info */}
           <div className="lg:col-span-1">
             <div className="flex items-center mb-6">
-              <img 
-                src={tartechLogo} 
-                alt="Tartech Contracting Logo" 
-                className="h-12 w-auto mr-3"
-              />
-              <span className="text-xl font-black text-white">CONTRACTING</span>
+              <div className="w-10 h-10 bg-construction-yellow rounded-lg flex items-center justify-center mr-3">
+                <span className="font-black text-industrial-black text-lg">T</span>
+              </div>
+              <span className="text-2xl font-black text-white">TARTECH</span>
             </div>
             <p className="text-gray-300 mb-6 leading-relaxed">
               Zimbabwe's premier industrial contractor delivering excellence in construction, mining, and agriculture with three decades of proven expertise.
