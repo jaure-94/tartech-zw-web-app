@@ -14,6 +14,7 @@ import { gsap } from '@/lib/gsap';
 import { useMutation } from '@tanstack/react-query';
 import { apiRequest } from '@/lib/queryClient';
 import { useToast } from '@/hooks/use-toast';
+import tartechLogo from '@assets/Tartech Logo_1754917926947.png';
 
 const contactFormSchema = z.object({
   firstName: z.string().min(2, 'First name must be at least 2 characters'),
@@ -115,6 +116,13 @@ export default function Contact() {
       <section className="py-20 bg-light-industrial">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
+            <div className="animate-fade-in mb-6 flex justify-center">
+              <img 
+                src={tartechLogo} 
+                alt="Tartech Contracting Logo" 
+                className="h-16 w-auto"
+              />
+            </div>
             <h1 className="animate-fade-in text-4xl sm:text-5xl font-black text-industrial-black mb-6">
               GET IN <span className="text-construction-yellow">TOUCH</span>
             </h1>

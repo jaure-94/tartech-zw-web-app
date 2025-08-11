@@ -1,6 +1,7 @@
 import { useEffect } from 'react';
 import { Target, Eye } from 'lucide-react';
 import { ScrollAnimations } from '@/components/ScrollAnimations';
+import tartechLogo from '@assets/Tartech Logo_1754917926947.png';
 
 export default function About() {
   useEffect(() => {
@@ -17,9 +18,16 @@ export default function About() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             {/* Mission/Vision Content */}
             <div className="animate-slide-in-left">
-              <h1 className="text-4xl sm:text-5xl font-black text-industrial-black mb-8">
-                WHO <span className="text-construction-yellow">WE ARE</span>
-              </h1>
+              <div className="flex items-center mb-8">
+                <img 
+                  src={tartechLogo} 
+                  alt="Tartech Contracting Logo" 
+                  className="h-12 w-auto mr-4"
+                />
+                <h1 className="text-4xl sm:text-5xl font-black text-industrial-black">
+                  WHO <span className="text-construction-yellow">WE ARE</span>
+                </h1>
+              </div>
               <div className="space-y-8">
                 <div>
                   <h3 className="text-2xl font-bold text-industrial-black mb-4 flex items-center">

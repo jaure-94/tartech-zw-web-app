@@ -6,6 +6,7 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/
 import { Bolt, Calculator, Mountain, HardHat, Tractor, ArrowRight, ChevronDown, Shield, Award, Users, Clock, CheckCircle, Star, Phone } from 'lucide-react';
 import { ScrollAnimations } from '@/components/ScrollAnimations';
 import bulldozerImage from '@assets/bulldozer-2195329_1920_1753976237868.jpg';
+import tartechLogo from '@assets/Tartech Logo_1754917926947.png';
 
 export default function Home() {
   useEffect(() => {
@@ -31,6 +32,13 @@ export default function Home() {
         </div>
         
         <div className="relative z-20 text-center px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+          <div className="animate-fade-in mb-8 flex justify-center">
+            <img 
+              src={tartechLogo} 
+              alt="Tartech Contracting Logo" 
+              className="h-16 md:h-20 lg:h-24 w-auto opacity-90"
+            />
+          </div>
           <h1 className="animate-fade-in text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-black text-white mb-8 leading-tight tracking-tight">
             ENGINEERING EXCELLENCE<br />
             <span className="text-construction-yellow">IN HARSH ENVIRONMENTS</span>
