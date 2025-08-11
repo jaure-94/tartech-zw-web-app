@@ -44,7 +44,7 @@ export default function Agriculture() {
           <div className="text-center max-w-4xl mx-auto">
             <div className="animate-slide-in-left">
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black text-white mb-6 leading-tight">
-                AGRICULTURAL <span className="text-construction-yellow">EXCELLENCE</span>
+                AGRICULTURAL INFRASTRUCTURE <span className="text-construction-yellow">EXPERTS</span>
               </h1>
               <p className="text-xl text-gray-200 mb-12 leading-relaxed max-w-3xl mx-auto">
                 Transforming Zimbabwe's agricultural landscape with cutting-edge technology, precision engineering, and three decades of expertise in land development and infrastructure.
@@ -471,17 +471,13 @@ export default function Agriculture() {
           <p className="animate-fade-in text-lg text-industrial-black mb-8 max-w-2xl mx-auto">
             Get a free consultation and project quote from Zimbabwe's most trusted agricultural contractor. Let's discuss your land development and infrastructure needs.
           </p>
-          <div className="animate-fade-in flex flex-col sm:flex-row gap-4 justify-center">
+          <div className="animate-fade-in flex justify-center">
             <Link href="/contact">
-              <Button size="lg" variant="outline" className="border-2 border-industrial-black text-industrial-black hover:bg-industrial-black hover:text-construction-yellow text-lg px-8 py-4">
-                <Phone className="mr-2 h-5 w-5" />
-                GET FREE QUOTE
+              <Button size="lg" className="bg-industrial-black text-construction-yellow hover:bg-gray-800 text-lg px-8 py-4">
+                <Mail className="mr-2 h-5 w-5" />
+                EMAIL US TODAY
               </Button>
             </Link>
-            <Button size="lg" className="bg-industrial-black text-construction-yellow hover:bg-gray-800 text-lg px-8 py-4">
-              <Mail className="mr-2 h-5 w-5" />
-              EMAIL US TODAY
-            </Button>
           </div>
         </div>
       </section>
