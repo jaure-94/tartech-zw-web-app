@@ -35,9 +35,9 @@ export default function Agriculture() {
           <img 
             src="https://images.unsplash.com/photo-1625246333195-78d9c38ad449?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&h=1080" 
             alt="Large agricultural tractor working in expansive field at sunset" 
-            className="w-full h-full object-cover opacity-15"
+            className="w-full h-full object-cover opacity-40"
           />
-          <div className="absolute inset-0 bg-black/85"></div>
+          <div className="absolute inset-0 bg-black/60"></div>
         </div>
         
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
