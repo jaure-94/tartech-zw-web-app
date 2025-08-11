@@ -259,87 +259,6 @@ export default function About() {
         </div>
       </section>
 
-      {/* Certifications Section */}
-      <section className="py-20 bg-industrial-black">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="animate-fade-in text-4xl sm:text-5xl font-black text-white mb-6">
-              CERTIFICATION & <span className="text-construction-yellow">MEMBERSHIP</span>
-            </h2>
-            <p className="animate-fade-in text-lg text-gray-300 max-w-3xl mx-auto">
-              Our professional affiliations and certifications demonstrate our commitment to industry standards and regulatory compliance.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            <div className="animate-fade-in">
-              <Card className="bg-white/10 backdrop-blur-md border border-white/20 p-6 text-center hover:border-construction-yellow transition-all duration-500">
-                <CardContent className="p-0">
-                  <Award className="h-12 w-12 text-construction-yellow mx-auto mb-4" />
-                  <h3 className="text-white font-bold mb-2">ZBCA</h3>
-                  <p className="text-gray-300 text-sm">Zimbabwe Building Contractors Association</p>
-                </CardContent>
-              </Card>
-            </div>
-
-            <div className="animate-fade-in">
-              <Card className="bg-white/10 backdrop-blur-md border border-white/20 p-6 text-center hover:border-construction-yellow transition-all duration-500">
-                <CardContent className="p-0">
-                  <FileCheck className="h-12 w-12 text-construction-yellow mx-auto mb-4" />
-                  <h3 className="text-white font-bold mb-2">PRAZ</h3>
-                  <p className="text-gray-300 text-sm">Procurement Regulatory Authority</p>
-                </CardContent>
-              </Card>
-            </div>
-
-            <div className="animate-fade-in">
-              <Card className="bg-white/10 backdrop-blur-md border border-white/20 p-6 text-center hover:border-construction-yellow transition-all duration-500">
-                <CardContent className="p-0">
-                  <Building2 className="h-12 w-12 text-construction-yellow mx-auto mb-4" />
-                  <h3 className="text-white font-bold mb-2">NEC</h3>
-                  <p className="text-gray-300 text-sm">National Employment Council for Construction</p>
-                </CardContent>
-              </Card>
-            </div>
-
-            <div className="animate-fade-in">
-              <Card className="bg-white/10 backdrop-blur-md border border-white/20 p-6 text-center hover:border-construction-yellow transition-all duration-500">
-                <CardContent className="p-0">
-                  <Settings className="h-12 w-12 text-construction-yellow mx-auto mb-4" />
-                  <h3 className="text-white font-bold mb-2">CIFOZ</h3>
-                  <p className="text-gray-300 text-sm">Construction Industry Federation of Zimbabwe</p>
-                </CardContent>
-              </Card>
-            </div>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-8">
-            <div className="animate-fade-in">
-              <Card className="bg-white/10 backdrop-blur-md border border-white/20 p-6 text-center hover:border-construction-yellow transition-all duration-500">
-                <CardContent className="p-0">
-                  <Shield className="h-12 w-12 text-construction-yellow mx-auto mb-4" />
-                  <h3 className="text-white font-bold mb-2">NSSA</h3>
-                  <p className="text-gray-300 text-sm">National Social Security Authority</p>
-                </CardContent>
-              </Card>
-            </div>
-          </div>
-
-          <div className="text-center mt-12">
-            <div className="animate-fade-in inline-block">
-              <Card className="bg-white/5 backdrop-blur-md border border-construction-yellow/30 p-6">
-                <CardContent className="p-0">
-                  <p className="text-gray-300 mb-2">
-                    <strong className="text-construction-yellow">Ministry of Local Government Public Works</strong>
-                  </p>
-                  <p className="text-gray-400 text-sm">Licensed and compliant with government construction standards</p>
-                </CardContent>
-              </Card>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* Key Strengths Section */}
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -556,6 +475,85 @@ export default function About() {
                   </CardContent>
                 </Card>
               </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Certifications Section */}
+      <section className="py-20 bg-industrial-black">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="animate-fade-in text-4xl sm:text-5xl font-black text-white mb-6">
+              CERTIFICATION & <span className="text-construction-yellow">MEMBERSHIP</span>
+            </h2>
+            <p className="animate-fade-in text-lg text-gray-300 max-w-3xl mx-auto">
+              Our professional affiliations and certifications demonstrate our commitment to industry standards and regulatory compliance.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div className="animate-fade-in">
+              <Card className="bg-white/10 backdrop-blur-md border border-white/20 p-6 text-center hover:border-construction-yellow transition-all duration-500">
+                <CardContent className="p-0">
+                  <Award className="h-12 w-12 text-construction-yellow mx-auto mb-4" />
+                  <h3 className="text-white font-bold mb-2">ZBCA</h3>
+                  <p className="text-gray-300 text-sm">Zimbabwe Building Contractors Association</p>
+                </CardContent>
+              </Card>
+            </div>
+
+            <div className="animate-fade-in">
+              <Card className="bg-white/10 backdrop-blur-md border border-white/20 p-6 text-center hover:border-construction-yellow transition-all duration-500">
+                <CardContent className="p-0">
+                  <FileCheck className="h-12 w-12 text-construction-yellow mx-auto mb-4" />
+                  <h3 className="text-white font-bold mb-2">PRAZ</h3>
+                  <p className="text-gray-300 text-sm">Procurement Regulatory Authority</p>
+                </CardContent>
+              </Card>
+            </div>
+
+            <div className="animate-fade-in">
+              <Card className="bg-white/10 backdrop-blur-md border border-white/20 p-6 text-center hover:border-construction-yellow transition-all duration-500">
+                <CardContent className="p-0">
+                  <Building2 className="h-12 w-12 text-construction-yellow mx-auto mb-4" />
+                  <h3 className="text-white font-bold mb-2">NEC</h3>
+                  <p className="text-gray-300 text-sm">National Employment Council for Construction</p>
+                </CardContent>
+              </Card>
+            </div>
+
+            <div className="animate-fade-in">
+              <Card className="bg-white/10 backdrop-blur-md border border-white/20 p-6 text-center hover:border-construction-yellow transition-all duration-500">
+                <CardContent className="p-0">
+                  <Settings className="h-12 w-12 text-construction-yellow mx-auto mb-4" />
+                  <h3 className="text-white font-bold mb-2">CIFOZ</h3>
+                  <p className="text-gray-300 text-sm">Construction Industry Federation of Zimbabwe</p>
+                </CardContent>
+              </Card>
+            </div>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-8">
+            <div className="animate-fade-in">
+              <Card className="bg-white/10 backdrop-blur-md border border-white/20 p-6 text-center hover:border-construction-yellow transition-all duration-500">
+                <CardContent className="p-0">
+                  <Shield className="h-12 w-12 text-construction-yellow mx-auto mb-4" />
+                  <h3 className="text-white font-bold mb-2">NSSA</h3>
+                  <p className="text-gray-300 text-sm">National Social Security Authority</p>
+                </CardContent>
+              </Card>
+            </div>
+
+            <div className="animate-fade-in">
+              <Card className="bg-white/5 backdrop-blur-md border border-construction-yellow/30 p-6 text-center">
+                <CardContent className="p-0">
+                  <p className="text-gray-300 mb-2">
+                    <strong className="text-construction-yellow">Ministry of Local Government Public Works</strong>
+                  </p>
+                  <p className="text-gray-400 text-sm">Licensed and compliant with government construction standards</p>
+                </CardContent>
+              </Card>
             </div>
           </div>
         </div>
