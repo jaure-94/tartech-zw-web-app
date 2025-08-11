@@ -96,13 +96,7 @@ export function Footer() {
                   </span>
                 </Link>
               </li>
-              <li>
-                <Link href="/services">
-                  <span className="text-gray-300 hover:text-construction-yellow transition-colors duration-300 cursor-pointer">
-                    Services
-                  </span>
-                </Link>
-              </li>
+
               <li>
                 <Link href="/contact">
                   <span className="text-gray-300 hover:text-construction-yellow transition-colors duration-300 cursor-pointer">
@@ -115,11 +109,7 @@ export function Footer() {
                   Safety Standards
                 </span>
               </li>
-              <li>
-                <span className="text-gray-300 hover:text-construction-yellow transition-colors duration-300 cursor-pointer">
-                  Careers
-                </span>
-              </li>
+
             </ul>
           </div>
 
@@ -188,21 +178,7 @@ export function Footer() {
         </div>
       </div>
 
-      {/* Call-to-Action Strip */}
-      <div className="bg-construction-yellow">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
-          <div className="flex flex-col md:flex-row justify-between items-center space-y-2 md:space-y-0">
-            <div className="text-industrial-black font-bold">
-              Ready to start your industrial project?
-            </div>
-            <Link href="/contact">
-              <button className="bg-industrial-black text-construction-yellow px-6 py-2 rounded-lg font-bold hover:bg-gray-800 transition-colors duration-300">
-                GET A FREE QUOTE
-              </button>
-            </Link>
-          </div>
-        </div>
-      </div>
+
     </footer>
   );
 }

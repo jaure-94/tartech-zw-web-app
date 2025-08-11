@@ -9,6 +9,16 @@ export function Navigation() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [servicesDropdownOpen, setServicesDropdownOpen] = useState(false);
 
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
+  const handleNavClick = () => {
+    scrollToTop();
+    setMobileMenuOpen(false);
+    setServicesDropdownOpen(false);
+  };
+
   const toggleMobileMenu = () => {
     const newState = !mobileMenuOpen;
     setMobileMenuOpen(newState);
@@ -53,7 +63,7 @@ export function Navigation() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
-          <Link href="/" className="flex-shrink-0">
+          <Link href="/" className="flex-shrink-0" onClick={handleNavClick}>
             <div className="text-2xl font-black text-industrial-black">
               TARTECH <span className="text-construction-yellow">CONTRACTING</span>
             </div>
@@ -63,7 +73,7 @@ export function Navigation() {
           <div className="hidden md:block">
             <div className="ml-10 flex items-baseline space-x-8">
               {navLinks.map((link) => (
-                <Link key={link.href} href={link.href}>
+                <Link key={link.href} href={link.href} onClick={handleNavClick}>
                   <span className={`nav-font nav-link-hover font-medium text-industrial-black hover:text-construction-yellow cursor-pointer ${
                     location === link.href ? 'text-construction-yellow' : ''
                   }`}>
@@ -85,7 +95,7 @@ export function Navigation() {
                   servicesDropdownOpen ? 'opacity-100 visible translate-y-0' : 'opacity-0 invisible translate-y-2'
                 }`}>
                   {serviceLinks.map((link) => (
-                    <Link key={link.href} href={link.href}>
+                    <Link key={link.href} href={link.href} onClick={handleNavClick}>
                       <span className="services-dropdown-item nav-font block px-5 py-4 text-sm font-medium text-industrial-black hover:bg-construction-yellow hover:text-white cursor-pointer first:rounded-t-xl last:rounded-b-xl">
                         {link.label}
                       </span>
@@ -94,7 +104,7 @@ export function Navigation() {
                 </div>
               </div>
 
-              <Link href="/contact">
+              <Link href="/contact" onClick={handleNavClick}>
                 <Button className="bg-construction-yellow text-industrial-black hover:bg-safety-orange font-bold">
                   GET QUOTE
                 </Button>
@@ -123,10 +133,9 @@ export function Navigation() {
       >
         <div className="px-2 pt-2 pb-3 space-y-1">
           {navLinks.map((link) => (
-            <Link key={link.href} href={link.href}>
+            <Link key={link.href} href={link.href} onClick={handleNavClick}>
               <span 
                 className="block px-3 py-2 text-base font-bold text-industrial-black hover:text-construction-yellow transition-colors duration-300 cursor-pointer"
-                onClick={() => setMobileMenuOpen(false)}
               >
                 {link.label}
               </span>
@@ -135,20 +144,18 @@ export function Navigation() {
           
           <div className="px-3 py-2 text-base font-bold text-industrial-black">SERVICES</div>
           {serviceLinks.map((link) => (
-            <Link key={link.href} href={link.href}>
+            <Link key={link.href} href={link.href} onClick={handleNavClick}>
               <span 
                 className="block px-6 py-2 text-sm text-industrial-gray hover:text-construction-yellow transition-colors duration-300 cursor-pointer"
-                onClick={() => setMobileMenuOpen(false)}
               >
                 - {link.label}
               </span>
             </Link>
           ))}
           
-          <Link href="/contact">
+          <Link href="/contact" onClick={handleNavClick}>
             <Button 
               className="mx-3 mt-4 w-[calc(100%-1.5rem)] bg-construction-yellow text-industrial-black hover:bg-safety-orange font-bold"
-              onClick={() => setMobileMenuOpen(false)}
             >
               GET QUOTE
             </Button>

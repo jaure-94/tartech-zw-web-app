@@ -298,13 +298,13 @@ export default function Home() {
       </section>
 
       {/* Industries We Serve */}
-      <section className="py-24 bg-gradient-to-br from-industrial-black to-gray-900">
+      <section className="py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="animate-fade-in text-3xl sm:text-4xl font-black text-white mb-6">
+            <h2 className="animate-fade-in text-3xl sm:text-4xl font-black text-industrial-black mb-6">
               WE ARE GOOD AT <span className="text-construction-yellow">SOLVING PROBLEMS</span>
             </h2>
-            <p className="animate-fade-in text-lg text-gray-300 max-w-3xl mx-auto">
+            <p className="animate-fade-in text-lg text-industrial-gray max-w-3xl mx-auto">
               From the depths of Zimbabwe's mines to expansive agricultural lands, we deliver specialized solutions across every major industrial sector.
             </p>
           </div>
