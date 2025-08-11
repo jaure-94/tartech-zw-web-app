@@ -2,6 +2,9 @@ import { Link } from 'wouter';
 import { Phone, Mail, MapPin, Clock, Facebook, Twitter, Linkedin, Instagram } from 'lucide-react';
 
 export function Footer() {
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
   return (
     <footer className="bg-industrial-black text-white">
       {/* Main Footer Content */}
@@ -40,21 +43,21 @@ export function Footer() {
             <h3 className="text-lg font-bold text-construction-yellow mb-6">OUR SERVICES</h3>
             <ul className="space-y-3">
               <li>
-                <Link href="/services/mining">
+                <Link href="/services/mining" onClick={scrollToTop}>
                   <span className="text-gray-300 hover:text-construction-yellow transition-colors duration-300 cursor-pointer">
                     Mining Operations
                   </span>
                 </Link>
               </li>
               <li>
-                <Link href="/services/construction">
+                <Link href="/services/construction" onClick={scrollToTop}>
                   <span className="text-gray-300 hover:text-construction-yellow transition-colors duration-300 cursor-pointer">
                     Construction Services
                   </span>
                 </Link>
               </li>
               <li>
-                <Link href="/services/agriculture">
+                <Link href="/services/agriculture" onClick={scrollToTop}>
                   <span className="text-gray-300 hover:text-construction-yellow transition-colors duration-300 cursor-pointer">
                     Agricultural Solutions
                   </span>
@@ -83,14 +86,14 @@ export function Footer() {
             <h3 className="text-lg font-bold text-construction-yellow mb-6">QUICK LINKS</h3>
             <ul className="space-y-3">
               <li>
-                <Link href="/">
+                <Link href="/" onClick={scrollToTop}>
                   <span className="text-gray-300 hover:text-construction-yellow transition-colors duration-300 cursor-pointer">
                     Home
                   </span>
                 </Link>
               </li>
               <li>
-                <Link href="/about">
+                <Link href="/about" onClick={scrollToTop}>
                   <span className="text-gray-300 hover:text-construction-yellow transition-colors duration-300 cursor-pointer">
                     About Us
                   </span>
@@ -98,7 +101,7 @@ export function Footer() {
               </li>
 
               <li>
-                <Link href="/contact">
+                <Link href="/contact" onClick={scrollToTop}>
                   <span className="text-gray-300 hover:text-construction-yellow transition-colors duration-300 cursor-pointer">
                     Contact
                   </span>

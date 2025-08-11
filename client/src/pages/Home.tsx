@@ -3,7 +3,7 @@ import { Link } from 'wouter';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
-import { Bolt, Calculator, Mountain, HardHat, Tractor, ArrowRight, ChevronDown, Shield, Award, Users, Clock, CheckCircle, Star, Phone } from 'lucide-react';
+import { Bolt, Calculator, Mountain, HardHat, Tractor, ArrowRight, ChevronDown, Shield, Award, Users, Clock, CheckCircle, Star, Phone, Drill } from 'lucide-react';
 import { ScrollAnimations } from '@/components/ScrollAnimations';
 import bulldozerImage from '@assets/bulldozer-2195329_1920_1753976237868.jpg';
 
@@ -11,6 +11,13 @@ export default function Home() {
   useEffect(() => {
     document.title = 'Tartech Contracting - Engineering Excellence in Harsh Environments';
   }, []);
+
+  const scrollToServices = () => {
+    const servicesSection = document.getElementById('our-expertise');
+    if (servicesSection) {
+      servicesSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
 
   return (
     <div className="min-h-screen">
@@ -39,12 +46,14 @@ export default function Home() {
             Zimbabwe's premier industrial contractor delivering world-class solutions in construction, mining, and agriculture with three decades of proven expertise and unwavering safety standards.
           </p>
           <div className="animate-fade-in flex flex-col sm:flex-row gap-6 justify-center">
-            <Link href="/services">
-              <Button size="lg" className="bg-construction-yellow text-industrial-black hover:bg-white text-xl px-10 py-6 rounded-xl shadow-2xl transform hover:scale-105 transition-all duration-300">
-                <Bolt className="mr-3 h-6 w-6" />
-                EXPLORE SERVICES
-              </Button>
-            </Link>
+            <Button 
+              size="lg" 
+              onClick={scrollToServices}
+              className="bg-construction-yellow text-industrial-black hover:bg-white text-xl px-10 py-6 rounded-xl shadow-2xl transform hover:scale-105 transition-all duration-300"
+            >
+              <Bolt className="mr-3 h-6 w-6" />
+              EXPLORE SERVICES
+            </Button>
             <Link href="/contact">
               <Button size="lg" variant="outline" className="border-3 border-white text-black hover:bg-white hover:text-black text-xl px-10 py-6 rounded-xl shadow-2xl transform hover:scale-105 transition-all duration-300">
                 <Calculator className="mr-3 h-6 w-6" />
@@ -85,7 +94,7 @@ export default function Home() {
       </section>
 
       {/* Services Overview */}
-      <section className="py-20 bg-light-industrial">
+      <section id="our-expertise" className="py-20 bg-light-industrial">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="animate-fade-in text-4xl sm:text-5xl font-black text-industrial-black mb-6">
@@ -96,7 +105,32 @@ export default function Home() {
             </p>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {/* Borehole Drilling Card */}
+            <Card className="service-card-hover animate-fade-in bg-white rounded-xl shadow-xl overflow-hidden border-4 border-transparent hover:border-construction-yellow">
+              <div className="h-64 overflow-hidden">
+                <img 
+                  src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600" 
+                  alt="Industrial borehole drilling rig equipment in operation" 
+                  className="w-full h-full object-cover transition-transform duration-500 hover:scale-110" 
+                />
+              </div>
+              <CardContent className="p-8">
+                <div className="text-construction-yellow text-5xl mb-4">
+                  <Drill className="h-12 w-12" />
+                </div>
+                <h3 className="text-2xl font-bold text-industrial-black mb-4">BOREHOLE DRILLING</h3>
+                <p className="text-industrial-gray mb-6">
+                  Professional borehole drilling services with rotary air percussion and mud drilling techniques for water access and industrial applications.
+                </p>
+                <Link href="/services">
+                  <span className="inline-flex items-center text-construction-yellow font-bold hover:text-safety-orange transition-colors duration-300 cursor-pointer">
+                    LEARN MORE <ArrowRight className="ml-2 h-4 w-4" />
+                  </span>
+                </Link>
+              </CardContent>
+            </Card>
+
             {/* Mining Card */}
             <Card className="service-card-hover animate-fade-in bg-white rounded-xl shadow-xl overflow-hidden border-4 border-transparent hover:border-construction-yellow">
               <div className="h-64 overflow-hidden">
