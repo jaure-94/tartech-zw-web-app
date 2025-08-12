@@ -6,6 +6,7 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/
 import { Bolt, Calculator, Mountain, HardHat, Tractor, ArrowRight, ChevronDown, Shield, Award, Users, Clock, CheckCircle, Star, Phone, Drill, ChevronLeft, ChevronRight } from 'lucide-react';
 import { ScrollAnimations } from '@/components/ScrollAnimations';
 import bulldozerImage from '@assets/bulldozer-2195329_1920_1753976237868.jpg';
+import tartechLogoSymbol from '@assets/tartech-logo-symbol_1754996014881.png';
 
 export default function Home() {
   const logoSliderRef = useRef<HTMLDivElement>(null);
@@ -209,8 +210,12 @@ export default function Home() {
               <div className="w-24 h-24 mx-auto mb-6 relative">
                 <div className="absolute inset-0 border-4 border-construction-yellow/20 rounded-full"></div>
                 <div className="absolute inset-0 border-4 border-construction-yellow border-t-transparent rounded-full animate-spin"></div>
-                <div className="absolute inset-2 bg-construction-yellow/10 rounded-full flex items-center justify-center">
-                  <HardHat className="w-8 h-8 text-construction-yellow" />
+                <div className="absolute inset-2 bg-construction-yellow/10 rounded-full flex items-center justify-center p-4">
+                  <img 
+                    src={tartechLogoSymbol} 
+                    alt="Tartech Logo" 
+                    className="w-full h-full object-contain"
+                  />
                 </div>
               </div>
               <h2 className="text-2xl font-bold text-white mb-2">TARTECH</h2>
