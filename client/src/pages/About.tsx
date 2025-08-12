@@ -36,11 +36,11 @@ export default function About() {
           <img 
             src="https://images.unsplash.com/photo-1577962917302-cd874c4e31d2?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&h=1080" 
             alt="Professional construction team in hard hats and safety gear on industrial site" 
-            className="w-full h-full object-cover opacity-25 animate-zoom-in"
+            className="w-full h-full object-cover opacity-15 animate-zoom-in"
           />
           
           {/* Dynamic Overlay with Animation */}
-          <div className="absolute inset-0 bg-black/88 animate-fade-in"></div>
+          <div className="absolute inset-0 bg-black/95 animate-fade-in"></div>
           
           {/* Animated Grid Pattern */}
           <div className="absolute inset-0 opacity-10">
