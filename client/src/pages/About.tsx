@@ -34,9 +34,9 @@ export default function About() {
           <img 
             src="https://images.unsplash.com/photo-1577962917302-cd874c4e31d2?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&h=1080" 
             alt="Professional construction team in hard hats and safety gear on industrial site" 
-            className="w-full h-full object-cover opacity-30"
+            className="w-full h-full object-cover opacity-20"
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-industrial-black/95 via-industrial-black/90 to-industrial-black/95"></div>
+          <div className="absolute inset-0 bg-black/90"></div>
         </div>
         
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
