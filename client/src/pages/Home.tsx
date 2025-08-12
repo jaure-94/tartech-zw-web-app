@@ -84,7 +84,7 @@ export default function Home() {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-20 items-center min-h-[70vh]">
             
             {/* Left Column - Hero Content */}
-            <div className="lg:col-span-7 space-y-16">
+            <div className="lg:col-span-7 space-y-12">
               {/* Premium Company Badge */}
               <div className="animate-slide-up-delay-1">
                 <div className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-construction-yellow/10 to-construction-yellow/15 backdrop-blur-xl border border-construction-yellow/30 rounded-full shadow-lg hover:shadow-construction-yellow/15 transition-all duration-500 hover:scale-105">
@@ -99,9 +99,9 @@ export default function Home() {
               </div>
               
               {/* Enhanced Headlines Structure */}
-              <div className="space-y-12">
+              <div className="space-y-10">
                 <div className="space-y-6">
-                  <h1 className="animate-slide-up-delay-2 text-4xl sm:text-5xl md:text-6xl lg:text-8xl font-black leading-[0.85] tracking-tight">
+                  <h1 className="animate-slide-up-delay-2 text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black leading-[0.9] tracking-tight">
                     <span className="block relative text-white font-black mb-2">
                       INDUSTRIAL
                       <div className="absolute -bottom-0.5 left-0 w-24 h-0.5 bg-construction-yellow/25 rounded-full"></div>
@@ -110,31 +110,31 @@ export default function Home() {
                       <span className="text-construction-yellow drop-shadow-2xl filter brightness-110 font-black">EXCELLENCE</span>
                       <div className="absolute -bottom-3 left-0 w-full h-1.5 bg-gradient-to-r from-construction-yellow/90 via-construction-yellow to-construction-yellow/90 animate-expand-width rounded-full shadow-lg shadow-construction-yellow/40"></div>
                     </span>
-                    <span className="block text-white/85 font-black tracking-tight text-4xl sm:text-5xl md:text-6xl lg:text-8xl mt-3">IN ZIMBABWE</span>
+                    <span className="block text-white/85 font-black tracking-tight text-4xl sm:text-5xl md:text-6xl lg:text-7xl mt-3">IN ZIMBABWE</span>
                   </h1>
                 </div>
                 
-                <div className="animate-slide-up-delay-3 space-y-8 max-w-3xl">
-                  <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-white font-light leading-tight tracking-wide">
+                <div className="animate-slide-up-delay-3 space-y-6 max-w-3xl">
+                  <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl text-white font-light leading-tight tracking-wide">
                     Leading contractor delivering <span className="font-semibold text-white/95">world-class solutions</span> across Zimbabwe's most demanding industrial sectors
                   </h2>
                   
-                  <div className="space-y-6">
-                    <p className="text-lg sm:text-xl lg:text-2xl text-gray-300/90 font-light leading-relaxed max-w-2xl">
+                  <div className="space-y-5">
+                    <p className="text-base sm:text-lg lg:text-xl text-gray-300/90 font-light leading-relaxed max-w-2xl">
                       Three decades of unwavering commitment to safety, innovation, and excellence across multiple industrial domains.
                     </p>
                     
-                    <div className="flex flex-wrap gap-3">
-                      <span className="inline-flex items-center text-construction-yellow font-semibold text-base px-4 py-2 bg-gradient-to-r from-construction-yellow/10 to-construction-yellow/15 rounded-xl border border-construction-yellow/20">
-                        <div className="w-2 h-2 bg-construction-yellow rounded-full mr-3"></div>
+                    <div className="flex flex-wrap gap-2">
+                      <span className="inline-flex items-center text-construction-yellow font-medium text-sm px-3 py-1.5 bg-gradient-to-r from-construction-yellow/8 to-construction-yellow/12 rounded-lg border border-construction-yellow/15">
+                        <div className="w-1.5 h-1.5 bg-construction-yellow rounded-full mr-2"></div>
                         Construction
                       </span>
-                      <span className="inline-flex items-center text-construction-yellow font-semibold text-base px-4 py-2 bg-gradient-to-r from-construction-yellow/10 to-construction-yellow/15 rounded-xl border border-construction-yellow/20">
-                        <div className="w-2 h-2 bg-construction-yellow rounded-full mr-3"></div>
+                      <span className="inline-flex items-center text-construction-yellow font-medium text-sm px-3 py-1.5 bg-gradient-to-r from-construction-yellow/8 to-construction-yellow/12 rounded-lg border border-construction-yellow/15">
+                        <div className="w-1.5 h-1.5 bg-construction-yellow rounded-full mr-2"></div>
                         Mining
                       </span>
-                      <span className="inline-flex items-center text-construction-yellow font-semibold text-base px-4 py-2 bg-gradient-to-r from-construction-yellow/10 to-construction-yellow/15 rounded-xl border border-construction-yellow/20">
-                        <div className="w-2 h-2 bg-construction-yellow rounded-full mr-3"></div>
+                      <span className="inline-flex items-center text-construction-yellow font-medium text-sm px-3 py-1.5 bg-gradient-to-r from-construction-yellow/8 to-construction-yellow/12 rounded-lg border border-construction-yellow/15">
+                        <div className="w-1.5 h-1.5 bg-construction-yellow rounded-full mr-2"></div>
                         Agriculture
                       </span>
                     </div>
@@ -143,7 +143,7 @@ export default function Home() {
               </div>
               
               {/* Premium Statistics Display */}
-              <div className="animate-slide-up-delay-4 py-8">
+              <div className="animate-slide-up-delay-4 py-6">
                 <div className="bg-gradient-to-r from-white/6 to-white/10 backdrop-blur-xl rounded-2xl border border-white/15 p-6 shadow-2xl">
                   <div className="grid grid-cols-3 gap-6">
                     <div className="text-center group cursor-default">
@@ -172,7 +172,7 @@ export default function Home() {
               </div>
               
               {/* Primary CTA Button */}
-              <div className="animate-slide-up-delay-5 mb-20">
+              <div className="animate-slide-up-delay-5 mb-16">
                 <Link href="/contact">
                   <Button size="lg" className="group relative bg-gradient-to-r from-construction-yellow to-construction-yellow/95 text-industrial-black hover:from-construction-yellow/95 hover:to-construction-yellow/85 text-xl font-semibold px-12 py-5 rounded-2xl shadow-lg hover:shadow-construction-yellow/25 transition-all duration-400 hover:scale-105 overflow-hidden border border-construction-yellow/20 hover:border-construction-yellow/30">
                     {/* Subtle Background Overlay */}
