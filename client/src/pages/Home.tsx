@@ -18,38 +18,45 @@ export default function Home() {
     import('@/lib/gsap').then(({ gsap, initParallaxEffect }) => {
       setTimeout(() => {
         // Letter stagger animation for main heading
-        const headingText = document.querySelector('.hero-heading-text');
-        if (headingText) {
-          // Split text into individual characters
-          const text = headingText.textContent || '';
-          const chars = text.split('').map(char => 
-            char === ' ' ? '<span class="char-space">&nbsp;</span>' : `<span class="char inline-block">${char}</span>`
-          );
-          headingText.innerHTML = chars.join('');
-          
-          // Animate each character with stagger
-          gsap.fromTo('.char', 
-            {
-              opacity: 0,
-              y: 50,
-              rotationX: -90,
-              scale: 0.8
+        const headingTexts = [
+          document.querySelector('.hero-heading-text-1'),
+          document.querySelector('.hero-heading-text-2'),
+          document.querySelector('.hero-heading-text-3')
+        ];
+        
+        headingTexts.forEach((headingText, lineIndex) => {
+          if (headingText) {
+            // Split text into individual characters
+            const text = headingText.textContent || '';
+            const chars = text.split('').map(char => 
+              char === ' ' ? '<span class="char-space">&nbsp;</span>' : `<span class="char inline-block">${char}</span>`
+            );
+            headingText.innerHTML = chars.join('');
+          }
+        });
+        
+        // Animate each character with stagger across all lines
+        gsap.fromTo('.char', 
+          {
+            opacity: 0,
+            y: 50,
+            rotationX: -90,
+            scale: 0.8
+          },
+          {
+            opacity: 1,
+            y: 0,
+            rotationX: 0,
+            scale: 1,
+            duration: 0.8,
+            ease: "back.out(1.7)",
+            stagger: {
+              amount: 3.0,
+              from: "start"
             },
-            {
-              opacity: 1,
-              y: 0,
-              rotationX: 0,
-              scale: 1,
-              duration: 0.8,
-              ease: "back.out(1.7)",
-              stagger: {
-                amount: 2.5,
-                from: "start"
-              },
-              delay: 0.5
-            }
-          );
-        }
+            delay: 0.5
+          }
+        );
         
         initParallaxEffect();
       }, 100);
@@ -202,8 +209,14 @@ export default function Home() {
                 <div className="space-y-6">
                   <div className="relative">
                     <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black leading-[0.9] tracking-tight">
-                      <span className="hero-heading-text block relative text-white font-black mb-2">
-                        INDUSTRIAL EXCELLENCE IN ZIMBABWE
+                      <span className="hero-heading-text-1 block text-white font-black mb-2">
+                        INDUSTRIAL
+                      </span>
+                      <span className="hero-heading-text-2 block text-construction-yellow drop-shadow-2xl filter brightness-110 font-black mb-2">
+                        EXCELLENCE
+                      </span>
+                      <span className="hero-heading-text-3 block text-white/85 font-black">
+                        IN ZIMBABWE
                       </span>
                     </h1>
                     <div className="absolute -bottom-0.5 left-0 w-24 h-0.5 bg-construction-yellow/25 rounded-full"></div>
