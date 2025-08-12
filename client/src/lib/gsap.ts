@@ -104,3 +104,19 @@ export const smoothScrollTo = (target: string) => {
     gsap.to(window, {duration: 1, scrollTo: element, ease: "power2.inOut"});
   }
 };
+
+export const initParallaxEffect = () => {
+  const heroImage = document.querySelector('.hero-parallax-image');
+  if (heroImage) {
+    gsap.to(heroImage, {
+      yPercent: -50,
+      ease: "none",
+      scrollTrigger: {
+        trigger: ".hero-section",
+        start: "top bottom",
+        end: "bottom top",
+        scrub: true
+      }
+    });
+  }
+};

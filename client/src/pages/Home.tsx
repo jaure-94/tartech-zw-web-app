@@ -10,6 +10,13 @@ import bulldozerImage from '@assets/bulldozer-2195329_1920_1753976237868.jpg';
 export default function Home() {
   useEffect(() => {
     document.title = 'Tartech Contracting - Engineering Excellence in Harsh Environments';
+    
+    // Initialize parallax effect
+    import('@/lib/gsap').then(({ initParallaxEffect }) => {
+      setTimeout(() => {
+        initParallaxEffect();
+      }, 100);
+    });
   }, []);
 
   const scrollToServices = () => {
@@ -24,14 +31,14 @@ export default function Home() {
       <ScrollAnimations />
       
       {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center bg-gradient-to-br from-industrial-black via-gray-900 to-industrial-black overflow-hidden">
+      <section className="hero-section relative min-h-screen flex items-center bg-gradient-to-br from-industrial-black via-gray-900 to-industrial-black overflow-hidden">
         {/* Advanced Background Layer */}
         <div className="absolute inset-0">
           {/* Primary Background Image */}
           <img 
             src={bulldozerImage} 
             alt="Heavy industrial bulldozer and excavator equipment at construction site with dramatic sky" 
-            className="w-full h-full object-cover opacity-35 animate-zoom-in"
+            className="hero-parallax-image w-full h-[120%] object-cover opacity-35 animate-zoom-in"
             onError={(e) => {
               e.currentTarget.src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&h=1080";
             }}
@@ -110,7 +117,7 @@ export default function Home() {
                     Leading contractor delivering world-class solutions across Zimbabwe's most demanding industrial sectors
                   </p>
                   <p className="text-lg sm:text-xl text-gray-300 max-w-2xl font-light leading-relaxed">
-                    Specialized in <span className="text-construction-yellow font-semibold px-3 py-1.5 bg-gradient-to-r from-construction-yellow/8 to-construction-yellow/12 rounded-lg border border-construction-yellow/20">construction</span>, <span className="text-construction-yellow font-semibold px-3 py-1.5 bg-gradient-to-r from-construction-yellow/8 to-construction-yellow/12 rounded-lg border border-construction-yellow/20">mining</span>, and <span className="text-construction-yellow font-semibold px-3 py-1.5 bg-gradient-to-r from-construction-yellow/8 to-construction-yellow/12 rounded-lg border border-construction-yellow/20">agriculture</span> with unwavering safety standards and three decades of proven expertise.
+                    Specialized in <span className="text-construction-yellow font-semibold px-3 py-1.5 bg-gradient-to-r from-construction-yellow/8 to-construction-yellow/12 rounded-lg">construction</span>, <span className="text-construction-yellow font-semibold px-3 py-1.5 bg-gradient-to-r from-construction-yellow/8 to-construction-yellow/12 rounded-lg">mining</span>, and <span className="text-construction-yellow font-semibold px-3 py-1.5 bg-gradient-to-r from-construction-yellow/8 to-construction-yellow/12 rounded-lg">agriculture</span> with unwavering safety standards and three decades of proven expertise.
                   </p>
                 </div>
               </div>
@@ -145,25 +152,25 @@ export default function Home() {
               </div>
               
               {/* Premium CTA Buttons */}
-              <div className="animate-slide-up-delay-5 flex flex-col sm:flex-row gap-6">
+              <div className="animate-slide-up-delay-5 flex flex-col sm:flex-row gap-8 mb-16">
                 <Button 
                   size="lg" 
                   onClick={scrollToServices}
-                  className="group relative bg-gradient-to-r from-construction-yellow to-construction-yellow/90 text-industrial-black hover:from-construction-yellow/95 hover:to-construction-yellow/85 text-lg font-bold px-10 py-5 rounded-2xl shadow-2xl hover:shadow-construction-yellow/25 transition-all duration-500 hover:scale-105 overflow-hidden"
+                  className="group relative bg-gradient-to-r from-construction-yellow via-construction-yellow to-construction-yellow/95 text-industrial-black hover:from-construction-yellow/98 hover:to-construction-yellow/88 text-xl font-bold px-12 py-6 rounded-3xl shadow-2xl hover:shadow-construction-yellow/30 transition-all duration-500 hover:scale-105 overflow-hidden border border-construction-yellow/20"
                 >
-                  <div className="absolute inset-0 bg-gradient-to-r from-white/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                  <div className="absolute inset-0 bg-gradient-to-r from-white/25 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                   <div className="relative flex items-center">
-                    <Bolt className="mr-3 h-6 w-6 group-hover:rotate-12 transition-transform duration-300" />
+                    <Bolt className="mr-4 h-7 w-7 group-hover:rotate-12 transition-transform duration-300" />
                     EXPLORE SERVICES
-                    <div className="ml-3 w-2 h-2 bg-industrial-black/40 rounded-full group-hover:bg-industrial-black/60 transition-colors duration-300"></div>
+                    <div className="ml-4 w-2.5 h-2.5 bg-industrial-black/50 rounded-full group-hover:bg-industrial-black/70 transition-colors duration-300"></div>
                   </div>
                 </Button>
                 <Link href="/contact">
-                  <Button size="lg" variant="outline" className="group relative border-2 border-white/40 text-white hover:bg-white/8 hover:border-construction-yellow/60 text-lg font-medium px-10 py-5 rounded-2xl backdrop-blur-lg transition-all duration-500 hover:scale-105 overflow-hidden">
-                    <div className="absolute inset-0 bg-gradient-to-r from-construction-yellow/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                  <Button size="lg" variant="outline" className="group relative border-2 border-white/50 text-white hover:bg-white/10 hover:border-construction-yellow/70 text-xl font-normal px-12 py-6 rounded-3xl backdrop-blur-xl transition-all duration-500 hover:scale-105 overflow-hidden shadow-lg hover:shadow-white/10">
+                    <div className="absolute inset-0 bg-gradient-to-r from-construction-yellow/8 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                     <div className="relative flex items-center">
-                      <Phone className="mr-3 h-6 w-6 group-hover:rotate-12 transition-transform duration-300" />
-                      GET A QUOTE
+                      <Phone className="mr-4 h-7 w-7 group-hover:rotate-12 transition-transform duration-300" />
+                      <span className="text-white font-medium">GET IN TOUCH</span>
                     </div>
                   </Button>
                 </Link>
@@ -225,13 +232,13 @@ export default function Home() {
           </div>
         </div>
         
-        {/* Sophisticated Scroll Indicator */}
-        <div className="absolute bottom-12 left-1/2 transform -translate-x-1/2 text-center group cursor-pointer" onClick={scrollToServices}>
+        {/* Elegant Scroll Indicator */}
+        <div className="absolute bottom-16 left-1/2 transform -translate-x-1/2 text-center group cursor-pointer" onClick={scrollToServices}>
           <div className="animate-bounce">
-            <div className="text-construction-yellow/80 text-xs font-semibold mb-3 uppercase tracking-[0.2em] group-hover:text-construction-yellow transition-colors duration-300">Discover Our Expertise</div>
+            <div className="text-construction-yellow/75 text-xs font-semibold mb-4 uppercase tracking-[0.25em] group-hover:text-construction-yellow transition-colors duration-300">Discover Our Expertise</div>
             <div className="relative">
-              <div className="w-6 h-10 border-2 border-construction-yellow/60 rounded-full mx-auto relative group-hover:border-construction-yellow transition-colors duration-300">
-                <div className="w-1 h-3 bg-construction-yellow/80 rounded-full absolute top-2 left-1/2 transform -translate-x-1/2 group-hover:bg-construction-yellow animate-scroll-dot"></div>
+              <div className="w-7 h-12 border-2 border-construction-yellow/50 rounded-full mx-auto relative group-hover:border-construction-yellow/80 transition-all duration-300 shadow-lg shadow-construction-yellow/10">
+                <div className="w-1.5 h-4 bg-construction-yellow/70 rounded-full absolute top-2 left-1/2 transform -translate-x-1/2 group-hover:bg-construction-yellow animate-scroll-dot"></div>
               </div>
             </div>
           </div>
