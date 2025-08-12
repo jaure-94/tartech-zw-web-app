@@ -27,23 +27,63 @@ export default function Home() {
           onComplete: () => {
             setIsLoading(false);
             
-            // Start hero animations after loading screen is gone
+            // Start hero animations after loading screen is gone and DOM is ready
             setTimeout(() => {
-              initHeroAnimations(gsap, initParallaxEffect);
-            }, 200);
+              // Wait for DOM to be fully ready
+              if (document.readyState === 'complete') {
+                initHeroAnimations(gsap, initParallaxEffect);
+              } else {
+                window.addEventListener('load', () => {
+                  setTimeout(() => {
+                    initHeroAnimations(gsap, initParallaxEffect);
+                  }, 100);
+                });
+              }
+            }, 500);
           }
         });
       });
     }, 2000); // Show loader for 2 seconds
 
     const initHeroAnimations = (gsap: any, initParallaxEffect: any) => {
-      // Create master timeline for hero section animations
-      const heroTimeline = gsap.timeline();
+      console.log('Starting hero animations initialization');
       
-      // Disable CSS animations and set initial states for hero elements
-      const heroElements = document.querySelectorAll('.animate-slide-up-delay-1, .animate-slide-up-delay-3, .animate-slide-up-delay-4, .animate-slide-up-delay-5');
+      // Function to wait for elements to be available
+      const waitForElements = (selector: string, maxAttempts = 10): Promise<NodeListOf<Element>> => {
+        return new Promise((resolve, reject) => {
+          let attempts = 0;
+          const checkElements = () => {
+            const elements = document.querySelectorAll(selector);
+            if (elements.length > 0) {
+              resolve(elements);
+            } else if (attempts < maxAttempts) {
+              attempts++;
+              console.log(`Attempt ${attempts}: Waiting for elements ${selector}...`);
+              setTimeout(checkElements, 100);
+            } else {
+              console.log(`Failed to find elements ${selector} after ${maxAttempts} attempts`);
+              resolve(document.querySelectorAll(selector)); // Return empty list
+            }
+          };
+          checkElements();
+        });
+      };
+      
+      // Wait for elements and then animate
+      Promise.all([
+        waitForElements('.animate-slide-up-delay-1, .animate-slide-up-delay-3, .animate-slide-up-delay-4, .animate-slide-up-delay-5'),
+        waitForElements('.hero-heading-text-1, .hero-heading-text-2, .hero-heading-text-3')
+      ]).then(([heroElements, headingElements]) => {
+        console.log('Found hero elements:', heroElements.length);
+        console.log('Found heading elements:', headingElements.length);
+        
+        // Create master timeline for hero section animations
+        const heroTimeline = gsap.timeline();
+      
       heroElements.forEach(el => {
         const htmlEl = el as HTMLElement;
+        // Override CSS animations without removing classes
+        htmlEl.style.animation = 'none !important';
         htmlEl.style.opacity = '0';
         htmlEl.style.transform = 'translateY(30px)';
       });
@@ -55,16 +95,23 @@ export default function Home() {
         document.querySelector('.hero-heading-text-3')
       ];
       
+      console.log('Found heading texts:', headingTexts.map(el => el?.textContent));
+      
       headingTexts.forEach((headingText, lineIndex) => {
         if (headingText) {
           // Split text into individual characters
           const text = headingText.textContent || '';
+          console.log(`Processing heading ${lineIndex + 1}: "${text}"`);
           const chars = text.split('').map(char => 
             char === ' ' ? '<span class="char-space">&nbsp;</span>' : `<span class="char inline-block">${char}</span>`
           );
           headingText.innerHTML = chars.join('');
         }
       });
+      
+      // Check if chars were created
+      const chars = document.querySelectorAll('.char');
+      console.log('Created character spans:', chars.length);
       
       // PHASE 1: Animate heading letters FIRST and COMPLETE before anything else
       heroTimeline.fromTo('.char', 
@@ -90,44 +137,69 @@ export default function Home() {
       );
       
       // PHASE 2: Wait 2 seconds then animate everything else sequentially
-      heroTimeline.to('.animate-slide-up-delay-1', 
-        {
-          opacity: 1,
-          y: 0,
-          duration: 0.8,
-          ease: "power2.out"
-        },
-        "+=2.0" // 2 second delay after heading completes
-      )
-      .to('.animate-slide-up-delay-3', 
-        {
-          opacity: 1,
-          y: 0,
-          duration: 0.8,
-          ease: "power2.out"
-        },
-        "+=0.2" // Small gap between animations
-      )
-      .to('.animate-slide-up-delay-4', 
-        {
-          opacity: 1,
-          y: 0,
-          duration: 0.8,
-          ease: "power2.out"
-        },
-        "+=0.2"
-      )
-      .to('.animate-slide-up-delay-5', 
-        {
-          opacity: 1,
-          y: 0,
-          duration: 0.8,
-          ease: "power2.out"
-        },
-        "+=0.2"
-      );
+      // Re-query elements to ensure they still exist
+      const delay1Elements = document.querySelectorAll('.animate-slide-up-delay-1');
+      const delay3Elements = document.querySelectorAll('.animate-slide-up-delay-3');
+      const delay4Elements = document.querySelectorAll('.animate-slide-up-delay-4');
+      const delay5Elements = document.querySelectorAll('.animate-slide-up-delay-5');
+      
+      console.log('Elements found for animation:', {
+        delay1: delay1Elements.length,
+        delay3: delay3Elements.length,
+        delay4: delay4Elements.length,
+        delay5: delay5Elements.length
+      });
+      
+      if (delay1Elements.length > 0) {
+        heroTimeline.to(delay1Elements, 
+          {
+            opacity: 1,
+            y: 0,
+            duration: 0.8,
+            ease: "power2.out"
+          },
+          "+=2.0" // 2 second delay after heading completes
+        );
+      }
+      
+      if (delay3Elements.length > 0) {
+        heroTimeline.to(delay3Elements, 
+          {
+            opacity: 1,
+            y: 0,
+            duration: 0.8,
+            ease: "power2.out"
+          },
+          "+=0.2" // Small gap between animations
+        );
+      }
+      
+      if (delay4Elements.length > 0) {
+        heroTimeline.to(delay4Elements, 
+          {
+            opacity: 1,
+            y: 0,
+            duration: 0.8,
+            ease: "power2.out"
+          },
+          "+=0.2"
+        );
+      }
+      
+      if (delay5Elements.length > 0) {
+        heroTimeline.to(delay5Elements, 
+          {
+            opacity: 1,
+            y: 0,
+            duration: 0.8,
+            ease: "power2.out"
+          },
+          "+=0.2"
+        );
+      }
       
       initParallaxEffect();
+      });
     };
 
     // Auto-scroll functionality
