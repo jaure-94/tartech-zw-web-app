@@ -24,21 +24,28 @@ export default function Home() {
     // Auto-scroll functionality
     let autoScrollInterval: NodeJS.Timeout;
     
-    if (isAutoScrolling && logoSliderRef.current) {
-      autoScrollInterval = setInterval(() => {
-        if (logoSliderRef.current) {
-          const container = logoSliderRef.current;
-          const maxScroll = container.scrollWidth - container.clientWidth;
-          
-          if (container.scrollLeft >= maxScroll) {
-            // Reset to beginning for seamless loop
-            container.scrollTo({ left: 0, behavior: 'smooth' });
-          } else {
-            // Scroll by one logo width
-            container.scrollBy({ left: 300, behavior: 'smooth' });
+    const startAutoScroll = () => {
+      if (logoSliderRef.current) {
+        autoScrollInterval = setInterval(() => {
+          if (logoSliderRef.current && isAutoScrolling) {
+            const container = logoSliderRef.current;
+            const maxScroll = container.scrollWidth - container.clientWidth;
+            
+            if (container.scrollLeft >= maxScroll - 10) {
+              // Reset to beginning for seamless loop
+              container.scrollTo({ left: 0, behavior: 'smooth' });
+            } else {
+              // Scroll by one logo width
+              container.scrollBy({ left: 300, behavior: 'smooth' });
+            }
           }
-        }
-      }, 4000); // Slow auto-scroll every 4 seconds
+        }, 4000); // Slow auto-scroll every 4 seconds
+      }
+    };
+
+    if (isAutoScrolling) {
+      // Delay the start to ensure the component is mounted
+      setTimeout(startAutoScroll, 1000);
     }
 
     return () => {
@@ -60,21 +67,27 @@ export default function Home() {
       // Temporarily disable auto-scroll when user interacts
       setIsAutoScrolling(false);
       
-      const scrollAmount = 300; // Width of one logo card (w-72 = 288px) plus gap
-      const currentScroll = logoSliderRef.current.scrollLeft;
-      const targetScroll = direction === 'left' 
-        ? Math.max(0, currentScroll - scrollAmount)
-        : currentScroll + scrollAmount;
+      const container = logoSliderRef.current;
+      const scrollAmount = 320; // Width of one logo card plus gap
+      const currentScroll = container.scrollLeft;
       
-      logoSliderRef.current.scrollTo({
+      let targetScroll;
+      if (direction === 'left') {
+        targetScroll = Math.max(0, currentScroll - scrollAmount);
+      } else {
+        const maxScroll = container.scrollWidth - container.clientWidth;
+        targetScroll = Math.min(maxScroll, currentScroll + scrollAmount);
+      }
+      
+      container.scrollTo({
         left: targetScroll,
         behavior: 'smooth'
       });
 
-      // Re-enable auto-scroll after 10 seconds of inactivity
+      // Re-enable auto-scroll after 8 seconds of inactivity
       setTimeout(() => {
         setIsAutoScrolling(true);
-      }, 10000);
+      }, 8000);
     }
   };
 
@@ -769,7 +782,7 @@ export default function Home() {
             {/* Navigation Arrows */}
             <button 
               onClick={() => scrollLogos('left')}
-              className="absolute left-4 top-1/2 -translate-y-1/2 z-10 bg-white/90 hover:bg-white border border-gray-200 hover:border-construction-yellow/50 rounded-full p-3 shadow-lg hover:shadow-xl transition-all duration-300 group backdrop-blur-sm"
+              className="absolute left-4 top-1/2 -translate-y-1/2 z-20 bg-white/90 hover:bg-white border border-gray-200 hover:border-construction-yellow/50 rounded-full p-3 shadow-lg hover:shadow-xl transition-all duration-300 group backdrop-blur-sm"
               aria-label="Scroll logos left"
             >
               <ChevronLeft className="h-6 w-6 text-industrial-black group-hover:text-construction-yellow transition-colors duration-300" />
@@ -777,7 +790,7 @@ export default function Home() {
             
             <button 
               onClick={() => scrollLogos('right')}
-              className="absolute right-4 top-1/2 -translate-y-1/2 z-10 bg-white/90 hover:bg-white border border-gray-200 hover:border-construction-yellow/50 rounded-full p-3 shadow-lg hover:shadow-xl transition-all duration-300 group backdrop-blur-sm"
+              className="absolute right-4 top-1/2 -translate-y-1/2 z-20 bg-white/90 hover:bg-white border border-gray-200 hover:border-construction-yellow/50 rounded-full p-3 shadow-lg hover:shadow-xl transition-all duration-300 group backdrop-blur-sm"
               aria-label="Scroll logos right"
             >
               <ChevronRight className="h-6 w-6 text-industrial-black group-hover:text-construction-yellow transition-colors duration-300" />
@@ -787,8 +800,8 @@ export default function Home() {
             <div className="overflow-hidden">
               <div 
                 ref={logoSliderRef}
-                className="flex space-x-8 items-center py-8 px-16 overflow-x-auto scrollbar-hide"
-                style={{ width: 'max-content', scrollbarWidth: 'none', msOverflowStyle: 'none' }}
+                className="flex space-x-6 items-center py-8 px-20 overflow-x-scroll scrollbar-hide"
+                style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
               >
               {/* City of Harare */}
               <div className="flex-shrink-0 group">
