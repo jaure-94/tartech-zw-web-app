@@ -1,13 +1,15 @@
-import { useEffect } from 'react';
+import { useEffect, useRef } from 'react';
 import { Link } from 'wouter';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
-import { Bolt, Calculator, Mountain, HardHat, Tractor, ArrowRight, ChevronDown, Shield, Award, Users, Clock, CheckCircle, Star, Phone, Drill } from 'lucide-react';
+import { Bolt, Calculator, Mountain, HardHat, Tractor, ArrowRight, ChevronDown, Shield, Award, Users, Clock, CheckCircle, Star, Phone, Drill, ChevronLeft, ChevronRight } from 'lucide-react';
 import { ScrollAnimations } from '@/components/ScrollAnimations';
 import bulldozerImage from '@assets/bulldozer-2195329_1920_1753976237868.jpg';
 
 export default function Home() {
+  const logoSliderRef = useRef<HTMLDivElement>(null);
+
   useEffect(() => {
     document.title = 'Tartech Contracting - Engineering Excellence in Harsh Environments';
     
@@ -23,6 +25,21 @@ export default function Home() {
     const servicesSection = document.getElementById('our-expertise');
     if (servicesSection) {
       servicesSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
+  const scrollLogos = (direction: 'left' | 'right') => {
+    if (logoSliderRef.current) {
+      const scrollAmount = 320; // Width of one logo card plus gap
+      const currentScroll = logoSliderRef.current.scrollLeft;
+      const targetScroll = direction === 'left' 
+        ? currentScroll - scrollAmount 
+        : currentScroll + scrollAmount;
+      
+      logoSliderRef.current.scrollTo({
+        left: targetScroll,
+        behavior: 'smooth'
+      });
     }
   };
 
@@ -713,8 +730,31 @@ export default function Home() {
           </div>
           
           {/* Client Logos Slider */}
-          <div className="relative overflow-hidden">
-            <div className="flex animate-slide-infinite space-x-16 items-center justify-center py-8">
+          <div className="relative">
+            {/* Navigation Arrows */}
+            <button 
+              onClick={() => scrollLogos('left')}
+              className="absolute left-4 top-1/2 -translate-y-1/2 z-10 bg-white/90 hover:bg-white border border-gray-200 hover:border-construction-yellow/50 rounded-full p-3 shadow-lg hover:shadow-xl transition-all duration-300 group backdrop-blur-sm"
+              aria-label="Scroll logos left"
+            >
+              <ChevronLeft className="h-6 w-6 text-industrial-black group-hover:text-construction-yellow transition-colors duration-300" />
+            </button>
+            
+            <button 
+              onClick={() => scrollLogos('right')}
+              className="absolute right-4 top-1/2 -translate-y-1/2 z-10 bg-white/90 hover:bg-white border border-gray-200 hover:border-construction-yellow/50 rounded-full p-3 shadow-lg hover:shadow-xl transition-all duration-300 group backdrop-blur-sm"
+              aria-label="Scroll logos right"
+            >
+              <ChevronRight className="h-6 w-6 text-industrial-black group-hover:text-construction-yellow transition-colors duration-300" />
+            </button>
+
+            {/* Scrollable Container */}
+            <div className="overflow-x-auto scrollbar-hide" style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}>
+              <div 
+                ref={logoSliderRef}
+                className="flex space-x-8 items-center py-8 px-16"
+                style={{ width: 'max-content' }}
+              >
               {/* City of Harare */}
               <div className="flex-shrink-0 group">
                 <div className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 w-72 h-40 flex flex-col items-center justify-center border border-gray-100 group-hover:border-construction-yellow/30">
@@ -815,6 +855,7 @@ export default function Home() {
                   <h3 className="text-industrial-black font-bold text-lg text-center">City of Marondera</h3>
                 </div>
               </div>
+            </div>
             </div>
             
             {/* Gradient Overlays for Smooth Fade */}

@@ -227,6 +227,16 @@
     }
   }
 
+  /* Hide scrollbar for logo slider */
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+
   @keyframes float-slow {
     0%, 100% {
       transform: translateY(0px) translateX(0px);
