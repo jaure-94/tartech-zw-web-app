@@ -229,7 +229,7 @@ export default function Home() {
               <div className="w-2 h-2 bg-construction-yellow rounded-full animate-pulse" style={{animationDelay: '400ms'}}></div>
             </div>
             
-            <p className="text-gray-400 text-sm mt-4 font-light">Loading industrial excellence...</p>
+            <p className="text-gray-400 text-sm mt-4 font-light">Loading...</p>
           </div>
         </div>
       )}
