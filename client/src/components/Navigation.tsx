@@ -3,6 +3,7 @@ import { Link, useLocation } from 'wouter';
 import { Button } from '@/components/ui/button';
 import { Menu, X, ChevronDown } from 'lucide-react';
 import { gsap } from '@/lib/gsap';
+import tartechLogo from '@assets/tartech-logo-cropped_1754990578081.png';
 
 export function Navigation() {
   const [location] = useLocation();
@@ -64,9 +65,11 @@ export function Navigation() {
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
           <Link href="/" className="flex-shrink-0" onClick={handleNavClick}>
-            <div className="text-2xl font-black text-industrial-black">
-              TARTECH <span className="text-construction-yellow">CONTRACTING</span>
-            </div>
+            <img 
+              src={tartechLogo} 
+              alt="Tartech Contracting - Industrial Solutions for Mining, Construction & Agriculture"
+              className="h-8 sm:h-10 md:h-12 w-auto object-contain hover:scale-105 transition-transform duration-300"
+            />
           </Link>
 
           {/* Desktop Navigation */}
