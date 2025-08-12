@@ -111,8 +111,8 @@ export function Navigation() {
                   servicesDropdownOpen ? 'opacity-100 visible translate-y-0' : 'opacity-0 invisible translate-y-2'
                 }`}>
                   
-                  {/* Mobile-style backdrop with 30% opacity and blur */}
-                  <div className="bg-white/30 backdrop-blur-md border border-construction-yellow/20 shadow-2xl overflow-hidden">
+                  {/* Mobile-style backdrop with 65% opacity and blur */}
+                  <div className="bg-white/65 backdrop-blur-md border border-construction-yellow/20 shadow-2xl overflow-hidden">
                     
                     {/* Service links with mobile nav styling */}
                     <div className="py-3">
