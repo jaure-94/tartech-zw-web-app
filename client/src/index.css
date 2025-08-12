@@ -68,9 +68,9 @@
   }
 
   .nav-font {
-    font-family: 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-    font-weight: 500;
-    letter-spacing: 0.025em;
+    font-family: 'Avenir', 'Futura', 'Century Gothic', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-weight: 400;
+    letter-spacing: 0.05em;
   }
 }
 

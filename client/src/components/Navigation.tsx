@@ -107,11 +107,7 @@ export function Navigation() {
                 </div>
               </div>
 
-              <Link href="/contact" onClick={handleNavClick}>
-                <Button className="bg-construction-yellow text-industrial-black hover:bg-safety-orange font-bold">
-                  GET QUOTE
-                </Button>
-              </Link>
+
             </div>
           </div>
 
@@ -156,13 +152,7 @@ export function Navigation() {
             </Link>
           ))}
           
-          <Link href="/contact" onClick={handleNavClick}>
-            <Button 
-              className="mx-3 mt-4 w-[calc(100%-1.5rem)] bg-construction-yellow text-industrial-black hover:bg-safety-orange font-bold"
-            >
-              GET QUOTE
-            </Button>
-          </Link>
+
         </div>
       </div>
     </nav>
