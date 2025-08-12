@@ -186,7 +186,9 @@ export default function Home() {
         console.log(`Card ${index + 1} classes:`, card.className);
       });
       
-      // Animate subtitle (delay-3)
+      // Animate paragraph AND cards simultaneously right after heading completes
+      
+      // Animate subtitle/paragraph (delay-3) - Start immediately after heading
       if (delay3Elements.length > 0) {
         heroTimeline.fromTo(delay3Elements, 
           {
@@ -198,51 +200,13 @@ export default function Home() {
             y: 0,
             duration: 0.8,
             ease: "power2.out",
-            onComplete: () => console.log('Subtitle animated')
+            onComplete: () => console.log('Paragraph animated')
           },
-          "+=1.0" // 1 second delay after heading completes
+          "+=0.5" // Start 0.5s after heading completes
         );
       }
       
-      // Animate stats (delay-4)
-      if (delay4Elements.length > 0) {
-        heroTimeline.fromTo(delay4Elements, 
-          {
-            opacity: 0,
-            y: 30
-          },
-          {
-            opacity: 1,
-            y: 0,
-            duration: 0.8,
-            ease: "power2.out",
-            onComplete: () => console.log('Stats animated')
-          },
-          "+=0.3"
-        );
-      }
-      
-      // Animate CTA button (delay-5)
-      if (delay5Elements.length > 0) {
-        heroTimeline.fromTo(delay5Elements, 
-          {
-            opacity: 0,
-            y: 30,
-            scale: 0.95
-          },
-          {
-            opacity: 1,
-            y: 0,
-            scale: 1,
-            duration: 0.8,
-            ease: "power2.out",
-            onComplete: () => console.log('CTA animated')
-          },
-          "+=0.3"
-        );
-      }
-      
-      // Animate cards one at a time right after heading completes
+      // Animate cards at the SAME TIME as paragraph (using same timing label)
       if (card1Elements.length > 0) {
         heroTimeline.fromTo(card1Elements, 
           {
@@ -258,7 +222,7 @@ export default function Home() {
             ease: "power2.out",
             onComplete: () => console.log('Card 1 animated')
           },
-          "+=0.2" // Start right after heading completes
+          "-=0.8" // Start at same time as paragraph
         );
       }
       
@@ -277,7 +241,7 @@ export default function Home() {
             ease: "power2.out",
             onComplete: () => console.log('Card 2 animated')
           },
-          "+=0.2" // Start 0.2s after card 1
+          "-=0.6" // Start 0.2s after card 1 (overlapping with paragraph)
         );
       }
       
@@ -296,7 +260,45 @@ export default function Home() {
             ease: "power2.out",
             onComplete: () => console.log('Card 3 animated')
           },
-          "+=0.2" // Start 0.2s after card 2
+          "-=0.4" // Start 0.2s after card 2 (still overlapping with paragraph)
+        );
+      }
+      
+      // Animate stats (delay-4) - After paragraph and cards
+      if (delay4Elements.length > 0) {
+        heroTimeline.fromTo(delay4Elements, 
+          {
+            opacity: 0,
+            y: 30
+          },
+          {
+            opacity: 1,
+            y: 0,
+            duration: 0.8,
+            ease: "power2.out",
+            onComplete: () => console.log('Stats animated')
+          },
+          "+=0.3"
+        );
+      }
+      
+      // Animate CTA button (delay-5) - After stats
+      if (delay5Elements.length > 0) {
+        heroTimeline.fromTo(delay5Elements, 
+          {
+            opacity: 0,
+            y: 30,
+            scale: 0.95
+          },
+          {
+            opacity: 1,
+            y: 0,
+            scale: 1,
+            duration: 0.8,
+            ease: "power2.out",
+            onComplete: () => console.log('CTA animated')
+          },
+          "+=0.3"
         );
       }
       
