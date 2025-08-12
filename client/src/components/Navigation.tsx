@@ -9,6 +9,7 @@ export function Navigation() {
   const [location] = useLocation();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [servicesDropdownOpen, setServicesDropdownOpen] = useState(false);
+  const [mobileServicesOpen, setMobileServicesOpen] = useState(false);
 
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -18,6 +19,11 @@ export function Navigation() {
     scrollToTop();
     setMobileMenuOpen(false);
     setServicesDropdownOpen(false);
+    setMobileServicesOpen(false);
+  };
+
+  const toggleMobileServices = () => {
+    setMobileServicesOpen(!mobileServicesOpen);
   };
 
   const toggleMobileMenu = () => {
@@ -125,35 +131,76 @@ export function Navigation() {
         </div>
       </div>
 
-      {/* Mobile Navigation Menu */}
+      {/* Mobile Navigation Menu - Redesigned */}
       <div 
         id="mobile-menu" 
-        className="md:hidden bg-white border-t opacity-0 invisible transition-all duration-300 transform -translate-y-4"
+        className="md:hidden bg-gradient-to-br from-white/98 to-white/95 backdrop-blur-xl border-t border-construction-yellow/20 shadow-2xl opacity-0 invisible transition-all duration-300 transform -translate-y-4"
       >
-        <div className="px-2 pt-2 pb-3 space-y-1">
-          {navLinks.map((link) => (
+        <div className="px-6 py-6 space-y-2">
+          {/* Main Navigation Links */}
+          {navLinks.map((link, index) => (
             <Link key={link.href} href={link.href} onClick={handleNavClick}>
-              <span 
-                className="block px-3 py-2 text-base font-bold text-industrial-black hover:text-construction-yellow transition-colors duration-300 cursor-pointer"
+              <div 
+                className="group relative overflow-hidden rounded-xl px-4 py-4 transition-all duration-300 hover:bg-gradient-to-r hover:from-construction-yellow/8 hover:to-construction-yellow/12 hover:shadow-lg cursor-pointer"
+                style={{ animationDelay: `${index * 50}ms` }}
               >
-                {link.label}
-              </span>
+                <div className="absolute inset-0 bg-gradient-to-r from-construction-yellow/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                <span className="nav-font relative z-10 text-lg font-light text-industrial-black group-hover:text-construction-yellow transition-all duration-300 tracking-wide">
+                  {link.label}
+                </span>
+                <div className="absolute bottom-0 left-4 right-4 h-0.5 bg-gradient-to-r from-construction-yellow to-construction-yellow/50 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500"></div>
+              </div>
             </Link>
           ))}
           
-          <div className="px-3 py-2 text-base font-bold text-industrial-black">SERVICES</div>
-          {serviceLinks.map((link) => (
-            <Link key={link.href} href={link.href} onClick={handleNavClick}>
-              <span 
-                className="block px-6 py-2 text-sm text-industrial-gray hover:text-construction-yellow transition-colors duration-300 cursor-pointer"
-              >
-                - {link.label}
-              </span>
-            </Link>
-          ))}
-          
-
+          {/* Services Dropdown */}
+          <div className="relative">
+            <button 
+              onClick={toggleMobileServices}
+              className="group w-full relative overflow-hidden rounded-xl px-4 py-4 transition-all duration-300 hover:bg-gradient-to-r hover:from-construction-yellow/8 hover:to-construction-yellow/12 hover:shadow-lg cursor-pointer"
+            >
+              <div className="absolute inset-0 bg-gradient-to-r from-construction-yellow/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+              <div className="relative z-10 flex items-center justify-between">
+                <span className="nav-font text-lg font-light text-industrial-black group-hover:text-construction-yellow transition-all duration-300 tracking-wide">
+                  SERVICES
+                </span>
+                <ChevronDown 
+                  className={`w-5 h-5 text-industrial-black group-hover:text-construction-yellow transition-all duration-300 ${
+                    mobileServicesOpen ? 'rotate-180' : ''
+                  }`}
+                />
+              </div>
+              <div className="absolute bottom-0 left-4 right-4 h-0.5 bg-gradient-to-r from-construction-yellow to-construction-yellow/50 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500"></div>
+            </button>
+            
+            {/* Services Submenu */}
+            <div 
+              className={`overflow-hidden transition-all duration-500 ease-in-out ${
+                mobileServicesOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
+              }`}
+            >
+              <div className="ml-4 mt-2 space-y-1 border-l-2 border-construction-yellow/20 pl-4">
+                {serviceLinks.map((link, index) => (
+                  <Link key={link.href} href={link.href} onClick={handleNavClick}>
+                    <div 
+                      className="group relative overflow-hidden rounded-lg px-3 py-3 transition-all duration-300 hover:bg-gradient-to-r hover:from-construction-yellow/5 hover:to-construction-yellow/8 cursor-pointer"
+                      style={{ animationDelay: `${(index + 3) * 50}ms` }}
+                    >
+                      <div className="absolute inset-0 bg-gradient-to-r from-construction-yellow/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                      <span className="nav-font relative z-10 text-base font-light text-industrial-gray group-hover:text-construction-yellow transition-all duration-300">
+                        {link.label}
+                      </span>
+                      <div className="absolute left-0 top-1/2 w-1 h-0 bg-construction-yellow transform -translate-y-1/2 group-hover:h-6 transition-all duration-300"></div>
+                    </div>
+                  </Link>
+                ))}
+              </div>
+            </div>
+          </div>
         </div>
+        
+        {/* Bottom Border Accent */}
+        <div className="h-1 bg-gradient-to-r from-transparent via-construction-yellow to-transparent"></div>
       </div>
     </nav>
   );
