@@ -378,7 +378,7 @@ export default function Home() {
   };
 
   return (
-    <div className="min-h-screen pt-20">
+    <div className="min-h-screen">
       {/* Loading Screen */}
       {isLoading && (
         <div className="loading-screen fixed inset-0 z-50 bg-industrial-black flex items-center justify-center">

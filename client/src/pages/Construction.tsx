@@ -9,7 +9,7 @@ export default function Construction() {
   }, []);
 
   return (
-    <div className="min-h-screen pt-20">
+    <div className="min-h-screen pt-16">
       <ScrollAnimations />
       
       {/* Construction Services Header */}
