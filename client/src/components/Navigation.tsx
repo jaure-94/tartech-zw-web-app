@@ -119,7 +119,7 @@ export function Navigation() {
                       {serviceLinks.map((link, index) => (
                         <Link key={link.href} href={link.href} onClick={handleNavClick}>
                           <div 
-                            className="group relative overflow-hidden mx-3 my-1 px-4 py-3 transition-all duration-300 hover:bg-gradient-to-r hover:from-construction-yellow/8 hover:to-construction-yellow/12 hover:shadow-lg cursor-pointer"
+                            className="group relative overflow-hidden mx-3 my-1 px-4 py-3 transition-all duration-300 hover:bg-construction-yellow/20 hover:shadow-lg cursor-pointer"
                             style={{ 
                               animationDelay: `${index * 50}ms`,
                               animation: servicesDropdownOpen ? 'slideInRight 0.3s ease-out forwards' : ''
