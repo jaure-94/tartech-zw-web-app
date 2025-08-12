@@ -14,9 +14,43 @@ export default function Home() {
   useEffect(() => {
     document.title = 'Tartech Contracting - Engineering Excellence in Harsh Environments';
     
-    // Initialize parallax effect
-    import('@/lib/gsap').then(({ initParallaxEffect }) => {
+    // Initialize animations and parallax effect
+    import('@/lib/gsap').then(({ gsap, initParallaxEffect }) => {
       setTimeout(() => {
+        // Letter stagger animation for main heading
+        const headingText = document.querySelector('.hero-heading-text');
+        if (headingText) {
+          // Split text into individual characters
+          const text = headingText.textContent || '';
+          const chars = text.split('').map(char => 
+            char === ' ' ? '<span class="char-space">&nbsp;</span>' : `<span class="char inline-block">${char}</span>`
+          );
+          headingText.innerHTML = chars.join('');
+          
+          // Animate each character with stagger
+          gsap.fromTo('.char', 
+            {
+              opacity: 0,
+              y: 50,
+              rotationX: -90,
+              scale: 0.8
+            },
+            {
+              opacity: 1,
+              y: 0,
+              rotationX: 0,
+              scale: 1,
+              duration: 0.8,
+              ease: "back.out(1.7)",
+              stagger: {
+                amount: 2.5,
+                from: "start"
+              },
+              delay: 0.5
+            }
+          );
+        }
+        
         initParallaxEffect();
       }, 100);
     });
@@ -166,17 +200,15 @@ export default function Home() {
               {/* Enhanced Headlines Structure */}
               <div className="space-y-10">
                 <div className="space-y-6">
-                  <h1 className="animate-slide-up-delay-2 text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black leading-[0.9] tracking-tight">
-                    <span className="block relative text-white font-black mb-2">
-                      INDUSTRIAL
-                      <div className="absolute -bottom-0.5 left-0 w-24 h-0.5 bg-construction-yellow/25 rounded-full"></div>
-                    </span>
-                    <span className="block relative mb-2">
-                      <span className="text-construction-yellow drop-shadow-2xl filter brightness-110 font-black">EXCELLENCE</span>
-                      <div className="absolute -bottom-3 left-0 w-full h-1.5 bg-gradient-to-r from-construction-yellow/90 via-construction-yellow to-construction-yellow/90 animate-expand-width rounded-full shadow-lg shadow-construction-yellow/40"></div>
-                    </span>
-                    <span className="block text-white/85 font-black tracking-tight text-4xl sm:text-5xl md:text-6xl lg:text-7xl mt-3">IN ZIMBABWE</span>
-                  </h1>
+                  <div className="relative">
+                    <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black leading-[0.9] tracking-tight">
+                      <span className="hero-heading-text block relative text-white font-black mb-2">
+                        INDUSTRIAL EXCELLENCE IN ZIMBABWE
+                      </span>
+                    </h1>
+                    <div className="absolute -bottom-0.5 left-0 w-24 h-0.5 bg-construction-yellow/25 rounded-full"></div>
+                    <div className="absolute -bottom-3 left-0 w-full h-1.5 bg-gradient-to-r from-construction-yellow/90 via-construction-yellow to-construction-yellow/90 animate-expand-width rounded-full shadow-lg shadow-construction-yellow/40"></div>
+                  </div>
                 </div>
                 
                 <div className="animate-slide-up-delay-3 space-y-6 max-w-3xl">
