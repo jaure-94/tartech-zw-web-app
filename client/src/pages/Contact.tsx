@@ -108,7 +108,7 @@ export default function Contact() {
   };
 
   return (
-    <div className="min-h-screen pt-16">
+    <div className="min-h-screen pt-20">
       <ScrollAnimations />
       
       {/* Contact Section */}

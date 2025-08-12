@@ -10,7 +10,7 @@ export default function Mining() {
   }, []);
 
   return (
-    <div className="min-h-screen pt-16">
+    <div className="min-h-screen pt-20">
       <ScrollAnimations />
       
       {/* Mining Services Header */}

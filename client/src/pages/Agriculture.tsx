@@ -26,7 +26,7 @@ export default function Agriculture() {
   }, []);
 
   return (
-    <div className="min-h-screen pt-16">
+    <div className="min-h-screen pt-20">
       <ScrollAnimations />
       
       {/* Hero Section */}
