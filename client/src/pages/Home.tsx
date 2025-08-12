@@ -71,7 +71,7 @@ export default function Home() {
       
       // Wait for elements and then animate
       Promise.all([
-        waitForElements('.animate-slide-up-delay-1, .animate-slide-up-delay-3, .animate-slide-up-delay-4, .animate-slide-up-delay-5, .animate-slide-left-delay-3'),
+        waitForElements('.animate-slide-up-delay-3, .animate-slide-up-delay-4, .animate-slide-up-delay-5, .animate-slide-left-delay-3'),
         waitForElements('.hero-heading-text-1, .hero-heading-text-2, .hero-heading-text-3')
       ]).then(([heroElements, headingElements]) => {
         console.log('Found hero elements:', heroElements.length);
@@ -155,41 +155,17 @@ export default function Home() {
       
       // PHASE 2: Wait for heading to complete, then animate everything else sequentially
       // Re-query elements to ensure they still exist
-      const delay1Elements = document.querySelectorAll('.animate-slide-up-delay-1');
       const delay3Elements = document.querySelectorAll('.animate-slide-up-delay-3');
       const delay4Elements = document.querySelectorAll('.animate-slide-up-delay-4');
       const delay5Elements = document.querySelectorAll('.animate-slide-up-delay-5');
       const slideLeftElements = document.querySelectorAll('.animate-slide-left-delay-3');
       
       console.log('Elements found for animation:', {
-        delay1: delay1Elements.length,
         delay3: delay3Elements.length,
         delay4: delay4Elements.length,
         delay5: delay5Elements.length,
         slideLeft: slideLeftElements.length
       });
-      
-      // Animate badge (delay-1)
-      if (delay1Elements.length > 0) {
-        console.log('Starting badge animation');
-        heroTimeline.fromTo(delay1Elements, 
-          {
-            opacity: 0,
-            y: 30,
-            scale: 0.9
-          },
-          {
-            opacity: 1,
-            y: 0,
-            scale: 1,
-            duration: 0.8,
-            ease: "power2.out",
-            onStart: () => console.log('Badge animation started'),
-            onComplete: () => console.log('Badge animation completed')
-          },
-          "+=1.0" // 1 second delay after heading completes
-        );
-      }
       
       // Animate subtitle (delay-3)
       if (delay3Elements.length > 0) {
@@ -205,7 +181,7 @@ export default function Home() {
             ease: "power2.out",
             onComplete: () => console.log('Subtitle animated')
           },
-          "+=0.3" // Small gap between animations
+          "+=1.0" // 1 second delay after heading completes
         );
       }
       
@@ -436,18 +412,7 @@ export default function Home() {
             
             {/* Left Column - Hero Content */}
             <div className="lg:col-span-7 space-y-12">
-              {/* Premium Company Badge */}
-              <div className="animate-slide-up-delay-1">
-                <div className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-construction-yellow/10 to-construction-yellow/15 backdrop-blur-xl border border-construction-yellow/30 rounded-full shadow-lg hover:shadow-construction-yellow/15 transition-all duration-500 hover:scale-105">
-                  <div className="p-1.5 bg-construction-yellow/20 rounded-full mr-3">
-                    <Shield className="w-4 h-4 text-construction-yellow" />
-                  </div>
-                  <div>
-                    <span className="text-construction-yellow font-bold text-xs uppercase tracking-[0.15em] block">Engineering Excellence</span>
-                    <span className="text-construction-yellow/60 font-medium text-[10px] uppercase tracking-wider">Since 1990</span>
-                  </div>
-                </div>
-              </div>
+
               
               {/* Enhanced Headlines Structure */}
               <div className="space-y-10">

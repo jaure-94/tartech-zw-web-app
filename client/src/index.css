@@ -278,7 +278,6 @@
   }
 
   /* Disable these animations for GSAP control in hero section */
-  .hero-section .animate-slide-up-delay-1,
   .hero-section .animate-slide-up-delay-3,
   .hero-section .animate-slide-up-delay-4,
   .hero-section .animate-slide-up-delay-5,
