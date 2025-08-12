@@ -40,32 +40,33 @@ export default function Home() {
           {/* Dynamic Overlay */}
           <div className="absolute inset-0 bg-gradient-to-br from-black/75 via-black/65 to-black/75 animate-fade-in"></div>
           
-          {/* Animated Grid Pattern */}
-          <div className="absolute inset-0 opacity-8">
+          {/* Subtle Grid Pattern */}
+          <div className="absolute inset-0 opacity-3">
             <svg className="w-full h-full" viewBox="0 0 100 100" preserveAspectRatio="none">
               <defs>
-                <pattern id="hero-grid" width="8" height="8" patternUnits="userSpaceOnUse">
-                  <path d="M 8 0 L 0 0 0 8" fill="none" stroke="currentColor" strokeWidth="0.3" className="text-construction-yellow"/>
+                <pattern id="hero-grid" width="12" height="12" patternUnits="userSpaceOnUse">
+                  <path d="M 12 0 L 0 0 0 12" fill="none" stroke="currentColor" strokeWidth="0.15" className="text-white"/>
                 </pattern>
               </defs>
-              <rect width="100%" height="100%" fill="url(#hero-grid)" className="animate-pulse" />
+              <rect width="100%" height="100%" fill="url(#hero-grid)" />
             </svg>
           </div>
           
-          {/* Floating Industrial Elements */}
+          {/* Subtle Floating Elements */}
           <div className="absolute inset-0 overflow-hidden">
-            <div className="absolute top-1/4 left-1/6 w-3 h-3 bg-construction-yellow/60 rounded-full animate-float-slow"></div>
-            <div className="absolute top-2/3 left-1/4 w-2 h-2 bg-safety-orange/50 rounded-full animate-float-medium"></div>
-            <div className="absolute top-1/3 right-1/5 w-4 h-4 bg-construction-yellow/40 rounded-full animate-float-fast"></div>
-            <div className="absolute bottom-1/3 right-1/3 w-2.5 h-2.5 bg-white/40 rounded-full animate-float-slow"></div>
-            <div className="absolute top-1/2 left-2/3 w-1.5 h-1.5 bg-construction-yellow/70 rounded-full animate-float-medium"></div>
+            <div className="absolute top-1/4 left-1/6 w-2 h-2 bg-construction-yellow/30 rounded-full animate-float-slow"></div>
+            <div className="absolute top-2/3 left-1/4 w-1.5 h-1.5 bg-white/25 rounded-full animate-float-medium"></div>
+            <div className="absolute top-1/3 right-1/5 w-3 h-3 bg-construction-yellow/20 rounded-full animate-float-fast"></div>
+            <div className="absolute bottom-1/3 right-1/3 w-2 h-2 bg-white/20 rounded-full animate-float-slow"></div>
+            <div className="absolute top-1/2 left-2/3 w-1 h-1 bg-construction-yellow/35 rounded-full animate-float-medium"></div>
+            <div className="absolute bottom-1/4 left-1/2 w-1.5 h-1.5 bg-white/15 rounded-full animate-float-slow"></div>
           </div>
           
-          {/* Geometric Accent Lines */}
+          {/* Refined Accent Lines */}
           <div className="absolute inset-0">
-            <div className="absolute top-1/4 left-0 w-32 h-0.5 bg-gradient-to-r from-construction-yellow/60 to-transparent animate-slide-right"></div>
-            <div className="absolute bottom-1/3 right-0 w-24 h-0.5 bg-gradient-to-l from-safety-orange/50 to-transparent animate-slide-left"></div>
-            <div className="absolute top-2/3 left-8 w-16 h-0.5 bg-gradient-to-r from-white/40 to-transparent animate-slide-right-delay"></div>
+            <div className="absolute top-1/4 left-0 w-24 h-px bg-gradient-to-r from-construction-yellow/25 to-transparent animate-slide-right"></div>
+            <div className="absolute bottom-1/3 right-0 w-20 h-px bg-gradient-to-l from-white/20 to-transparent animate-slide-left"></div>
+            <div className="absolute top-2/3 left-8 w-16 h-px bg-gradient-to-r from-construction-yellow/15 to-transparent animate-slide-right-delay"></div>
           </div>
         </div>
         
@@ -84,54 +85,75 @@ export default function Home() {
               </div>
               
               {/* Main Headlines */}
-              <div className="space-y-6">
-                <h1 className="animate-slide-up-delay-2 text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black text-white leading-[0.95] tracking-tight">
-                  INDUSTRIAL
-                  <br />
-                  <span className="relative">
-                    <span className="text-construction-yellow">EXCELLENCE</span>
-                    <div className="absolute -bottom-2 left-0 w-full h-1 bg-gradient-to-r from-construction-yellow to-safety-orange animate-expand-width"></div>
+              <div className="space-y-8">
+                <h1 className="animate-slide-up-delay-2 text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black text-white leading-[0.92] tracking-tight">
+                  <span className="block relative">
+                    INDUSTRIAL
+                    <div className="absolute -bottom-1 left-0 w-16 h-0.5 bg-construction-yellow/30"></div>
                   </span>
-                  <br />
-                  <span className="text-white/90">IN ZIMBABWE</span>
+                  <span className="block relative mt-2">
+                    <span className="text-construction-yellow drop-shadow-lg">EXCELLENCE</span>
+                    <div className="absolute -bottom-3 left-0 w-full h-1.5 bg-gradient-to-r from-construction-yellow via-safety-orange to-construction-yellow animate-expand-width rounded-full"></div>
+                  </span>
+                  <span className="block text-white/85 mt-2 font-bold">IN ZIMBABWE</span>
                 </h1>
                 
-                <p className="animate-slide-up-delay-3 text-lg sm:text-xl md:text-2xl text-gray-300 max-w-2xl font-light leading-relaxed">
-                  Leading contractor delivering world-class solutions in <span className="text-construction-yellow font-semibold">construction</span>, <span className="text-construction-yellow font-semibold">mining</span>, and <span className="text-construction-yellow font-semibold">agriculture</span> with unwavering safety standards.
-                </p>
-              </div>
-              
-              {/* Statistics Row */}
-              <div className="animate-slide-up-delay-4 grid grid-cols-3 gap-8 py-8">
-                <div className="text-center lg:text-left">
-                  <div className="text-3xl lg:text-4xl font-black text-construction-yellow mb-1">500+</div>
-                  <div className="text-sm text-gray-400 uppercase tracking-wide font-medium">Projects Delivered</div>
-                </div>
-                <div className="text-center lg:text-left">
-                  <div className="text-3xl lg:text-4xl font-black text-construction-yellow mb-1">100%</div>
-                  <div className="text-sm text-gray-400 uppercase tracking-wide font-medium">Safety Record</div>
-                </div>
-                <div className="text-center lg:text-left">
-                  <div className="text-3xl lg:text-4xl font-black text-construction-yellow mb-1">24/7</div>
-                  <div className="text-sm text-gray-400 uppercase tracking-wide font-medium">Support Available</div>
+                <div className="animate-slide-up-delay-3 space-y-4">
+                  <p className="text-xl sm:text-2xl md:text-3xl text-white/90 font-medium max-w-2xl leading-tight">
+                    Leading contractor delivering world-class solutions
+                  </p>
+                  <p className="text-lg sm:text-xl text-gray-300 max-w-2xl font-light leading-relaxed">
+                    Specialized in <span className="text-construction-yellow font-semibold px-2 py-1 bg-construction-yellow/10 rounded">construction</span>, <span className="text-construction-yellow font-semibold px-2 py-1 bg-construction-yellow/10 rounded">mining</span>, and <span className="text-construction-yellow font-semibold px-2 py-1 bg-construction-yellow/10 rounded">agriculture</span> with unwavering safety standards and three decades of proven expertise.
+                  </p>
                 </div>
               </div>
               
-              {/* CTA Buttons */}
+              {/* Enhanced Statistics */}
+              <div className="animate-slide-up-delay-4 grid grid-cols-3 gap-6 py-10">
+                <div className="text-center lg:text-left group">
+                  <div className="relative">
+                    <div className="text-3xl lg:text-5xl font-black text-construction-yellow mb-2 group-hover:scale-110 transition-transform duration-300">500+</div>
+                    <div className="absolute -bottom-1 left-1/2 lg:left-0 transform -translate-x-1/2 lg:translate-x-0 w-8 h-0.5 bg-construction-yellow/50 group-hover:w-12 transition-all duration-300"></div>
+                  </div>
+                  <div className="text-xs text-gray-400 uppercase tracking-widest font-semibold mt-3">Projects Delivered</div>
+                </div>
+                <div className="text-center lg:text-left group">
+                  <div className="relative">
+                    <div className="text-3xl lg:text-5xl font-black text-construction-yellow mb-2 group-hover:scale-110 transition-transform duration-300">100%</div>
+                    <div className="absolute -bottom-1 left-1/2 lg:left-0 transform -translate-x-1/2 lg:translate-x-0 w-8 h-0.5 bg-construction-yellow/50 group-hover:w-12 transition-all duration-300"></div>
+                  </div>
+                  <div className="text-xs text-gray-400 uppercase tracking-widest font-semibold mt-3">Safety Record</div>
+                </div>
+                <div className="text-center lg:text-left group">
+                  <div className="relative">
+                    <div className="text-3xl lg:text-5xl font-black text-construction-yellow mb-2 group-hover:scale-110 transition-transform duration-300">24/7</div>
+                    <div className="absolute -bottom-1 left-1/2 lg:left-0 transform -translate-x-1/2 lg:translate-x-0 w-8 h-0.5 bg-construction-yellow/50 group-hover:w-12 transition-all duration-300"></div>
+                  </div>
+                  <div className="text-xs text-gray-400 uppercase tracking-widest font-semibold mt-3">Support Available</div>
+                </div>
+              </div>
+              
+              {/* Premium CTA Buttons */}
               <div className="animate-slide-up-delay-5 flex flex-col sm:flex-row gap-6">
                 <Button 
                   size="lg" 
                   onClick={scrollToServices}
-                  className="group bg-construction-yellow text-industrial-black hover:bg-construction-yellow/90 text-lg px-8 py-4 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
+                  className="group relative bg-gradient-to-r from-construction-yellow to-construction-yellow/90 text-industrial-black hover:from-construction-yellow/95 hover:to-construction-yellow/85 text-lg font-bold px-10 py-5 rounded-2xl shadow-2xl hover:shadow-construction-yellow/25 transition-all duration-500 hover:scale-105 overflow-hidden"
                 >
-                  <Bolt className="mr-2 h-5 w-5 group-hover:rotate-12 transition-transform duration-300" />
-                  EXPLORE SERVICES
-                  <div className="ml-2 w-2 h-2 bg-industrial-black/30 rounded-full group-hover:bg-industrial-black/50 transition-colors duration-300"></div>
+                  <div className="absolute inset-0 bg-gradient-to-r from-white/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                  <div className="relative flex items-center">
+                    <Bolt className="mr-3 h-6 w-6 group-hover:rotate-12 transition-transform duration-300" />
+                    EXPLORE SERVICES
+                    <div className="ml-3 w-2 h-2 bg-industrial-black/40 rounded-full group-hover:bg-industrial-black/60 transition-colors duration-300"></div>
+                  </div>
                 </Button>
                 <Link href="/contact">
-                  <Button size="lg" variant="outline" className="group border-2 border-white/30 text-white hover:bg-white/10 hover:border-construction-yellow/50 text-lg px-8 py-4 rounded-xl backdrop-blur-sm transition-all duration-300 hover:scale-105">
-                    <Phone className="mr-2 h-5 w-5 group-hover:rotate-12 transition-transform duration-300" />
-                    GET A QUOTE
+                  <Button size="lg" variant="outline" className="group relative border-2 border-white/40 text-white hover:bg-white/8 hover:border-construction-yellow/60 text-lg font-medium px-10 py-5 rounded-2xl backdrop-blur-lg transition-all duration-500 hover:scale-105 overflow-hidden">
+                    <div className="absolute inset-0 bg-gradient-to-r from-construction-yellow/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    <div className="relative flex items-center">
+                      <Phone className="mr-3 h-6 w-6 group-hover:rotate-12 transition-transform duration-300" />
+                      GET A QUOTE
+                    </div>
                   </Button>
                 </Link>
               </div>
@@ -139,60 +161,65 @@ export default function Home() {
             
             {/* Right Column - Visual Elements */}
             <div className="lg:col-span-5 relative">
-              {/* Floating Feature Cards */}
-              <div className="animate-slide-left-delay-3 space-y-6">
+              {/* Premium Feature Cards */}
+              <div className="animate-slide-left-delay-3 space-y-4">
                 {/* Safety Card */}
-                <div className="bg-white/5 backdrop-blur-lg border border-white/10 rounded-2xl p-6 hover:bg-white/10 transition-all duration-300 hover:scale-105">
+                <div className="bg-gradient-to-r from-white/8 to-white/4 backdrop-blur-xl border border-white/20 rounded-2xl p-6 hover:from-white/12 hover:to-white/8 hover:border-construction-yellow/30 transition-all duration-500 hover:scale-105 hover:shadow-2xl hover:shadow-construction-yellow/10">
                   <div className="flex items-center space-x-4">
-                    <div className="p-3 bg-construction-yellow/20 rounded-xl">
-                      <Shield className="w-6 h-6 text-construction-yellow" />
+                    <div className="p-4 bg-construction-yellow/15 rounded-2xl border border-construction-yellow/30 group-hover:bg-construction-yellow/25 transition-all duration-300">
+                      <Shield className="w-7 h-7 text-construction-yellow" />
                     </div>
-                    <div>
-                      <h3 className="text-white font-bold text-lg">Zero Accident Policy</h3>
-                      <p className="text-gray-400 text-sm">Industry-leading safety protocols</p>
+                    <div className="flex-1">
+                      <h3 className="text-white font-bold text-lg mb-1">Zero Accident Policy</h3>
+                      <p className="text-gray-300 text-sm leading-relaxed">Industry-leading safety protocols and risk management</p>
                     </div>
                   </div>
                 </div>
                 
                 {/* Innovation Card */}
-                <div className="bg-white/5 backdrop-blur-lg border border-white/10 rounded-2xl p-6 hover:bg-white/10 transition-all duration-300 hover:scale-105 ml-8">
+                <div className="bg-gradient-to-r from-white/6 to-white/3 backdrop-blur-xl border border-white/15 rounded-2xl p-6 hover:from-white/10 hover:to-white/6 hover:border-safety-orange/30 transition-all duration-500 hover:scale-105 hover:shadow-2xl hover:shadow-safety-orange/10 ml-8">
                   <div className="flex items-center space-x-4">
-                    <div className="p-3 bg-safety-orange/20 rounded-xl">
-                      <Award className="w-6 h-6 text-safety-orange" />
+                    <div className="p-4 bg-safety-orange/15 rounded-2xl border border-safety-orange/30 group-hover:bg-safety-orange/25 transition-all duration-300">
+                      <Award className="w-7 h-7 text-safety-orange" />
                     </div>
-                    <div>
-                      <h3 className="text-white font-bold text-lg">Certified Excellence</h3>
-                      <p className="text-gray-400 text-sm">ISO & NSSA certified operations</p>
+                    <div className="flex-1">
+                      <h3 className="text-white font-bold text-lg mb-1">Certified Excellence</h3>
+                      <p className="text-gray-300 text-sm leading-relaxed">ISO & NSSA certified quality operations</p>
                     </div>
                   </div>
                 </div>
                 
                 {/* 24/7 Support Card */}
-                <div className="bg-white/5 backdrop-blur-lg border border-white/10 rounded-2xl p-6 hover:bg-white/10 transition-all duration-300 hover:scale-105">
+                <div className="bg-gradient-to-r from-white/8 to-white/4 backdrop-blur-xl border border-white/20 rounded-2xl p-6 hover:from-white/12 hover:to-white/8 hover:border-construction-yellow/30 transition-all duration-500 hover:scale-105 hover:shadow-2xl hover:shadow-construction-yellow/10">
                   <div className="flex items-center space-x-4">
-                    <div className="p-3 bg-construction-yellow/20 rounded-xl">
-                      <Clock className="w-6 h-6 text-construction-yellow" />
+                    <div className="p-4 bg-construction-yellow/15 rounded-2xl border border-construction-yellow/30 group-hover:bg-construction-yellow/25 transition-all duration-300">
+                      <Clock className="w-7 h-7 text-construction-yellow" />
                     </div>
-                    <div>
-                      <h3 className="text-white font-bold text-lg">Always Available</h3>
-                      <p className="text-gray-400 text-sm">Round-the-clock support coverage</p>
+                    <div className="flex-1">
+                      <h3 className="text-white font-bold text-lg mb-1">Always Available</h3>
+                      <p className="text-gray-300 text-sm leading-relaxed">Round-the-clock technical support coverage</p>
                     </div>
                   </div>
                 </div>
               </div>
               
-              {/* Decorative Elements */}
-              <div className="absolute -top-8 -right-8 w-32 h-32 bg-gradient-to-br from-construction-yellow/10 to-safety-orange/10 rounded-full blur-xl animate-pulse"></div>
-              <div className="absolute -bottom-8 -left-8 w-24 h-24 bg-gradient-to-tr from-white/10 to-construction-yellow/10 rounded-full blur-lg animate-pulse"></div>
+              {/* Ambient Light Effects */}
+              <div className="absolute -top-12 -right-12 w-40 h-40 bg-gradient-to-br from-construction-yellow/8 to-transparent rounded-full blur-2xl animate-pulse"></div>
+              <div className="absolute -bottom-12 -left-12 w-32 h-32 bg-gradient-to-tr from-white/6 to-construction-yellow/6 rounded-full blur-xl animate-pulse"></div>
+              <div className="absolute top-1/2 -right-8 w-24 h-24 bg-gradient-to-l from-construction-yellow/5 to-transparent rounded-full blur-lg animate-pulse"></div>
             </div>
           </div>
         </div>
         
-        {/* Enhanced Scroll Indicator */}
-        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 text-center">
+        {/* Sophisticated Scroll Indicator */}
+        <div className="absolute bottom-12 left-1/2 transform -translate-x-1/2 text-center group cursor-pointer" onClick={scrollToServices}>
           <div className="animate-bounce">
-            <div className="text-construction-yellow text-sm font-medium mb-2 uppercase tracking-wider">Discover More</div>
-            <ChevronDown className="h-6 w-6 text-construction-yellow mx-auto" />
+            <div className="text-construction-yellow/80 text-xs font-semibold mb-3 uppercase tracking-[0.2em] group-hover:text-construction-yellow transition-colors duration-300">Discover Our Expertise</div>
+            <div className="relative">
+              <div className="w-6 h-10 border-2 border-construction-yellow/60 rounded-full mx-auto relative group-hover:border-construction-yellow transition-colors duration-300">
+                <div className="w-1 h-3 bg-construction-yellow/80 rounded-full absolute top-2 left-1/2 transform -translate-x-1/2 group-hover:bg-construction-yellow animate-scroll-dot"></div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
