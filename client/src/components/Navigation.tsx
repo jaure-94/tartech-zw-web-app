@@ -128,8 +128,13 @@ export function Navigation() {
                             {/* Content - Simple text color transition only */}
                             <div className="flex items-center">
                               <span 
-                                className="nav-font text-base font-normal group-hover:text-construction-yellow transition-colors duration-500 tracking-wide" 
-                                style={{ color: '#000000' }}
+                                className="nav-font text-base font-normal transition-colors duration-500 tracking-wide" 
+                                style={{ 
+                                  color: '#000000',
+                                  transition: 'color 0.5s ease'
+                                }}
+                                onMouseEnter={(e) => e.currentTarget.style.color = '#F59E0B'}
+                                onMouseLeave={(e) => e.currentTarget.style.color = '#000000'}
                               >
                                 {link.label}
                               </span>
