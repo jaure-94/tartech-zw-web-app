@@ -62,9 +62,9 @@ export function Navigation() {
   return (
     <nav id="navbar" className="nav-transition fixed top-0 left-0 right-0 z-50 bg-white/60 backdrop-blur-md">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-16">
+        <div className="flex justify-between items-center h-20">
           {/* Logo */}
-          <Link href="/" className="flex-shrink-0 py-2 px-1" onClick={handleNavClick}>
+          <Link href="/" className="flex-shrink-0 py-3 px-2" onClick={handleNavClick}>
             <img 
               src={tartechLogo} 
               alt="Tartech Contracting - Industrial Solutions for Mining, Construction & Agriculture"

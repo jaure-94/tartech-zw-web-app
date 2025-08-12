@@ -14,7 +14,7 @@ export function Footer() {
           
           {/* Company Info */}
           <div className="lg:col-span-1">
-            <div className="mb-6 py-2">
+            <div className="mb-6 py-3">
               <img 
                 src={tartechLogo} 
                 alt="Tartech Contracting"
