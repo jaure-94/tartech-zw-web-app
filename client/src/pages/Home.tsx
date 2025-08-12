@@ -20,11 +20,12 @@ export default function Home() {
         // Create master timeline for hero section animations
         const heroTimeline = gsap.timeline();
         
-        // Disable CSS animations on hero elements since we're using GSAP
+        // Disable CSS animations and set initial states for hero elements
         const heroElements = document.querySelectorAll('.animate-slide-up-delay-1, .animate-slide-up-delay-3, .animate-slide-up-delay-4, .animate-slide-up-delay-5');
         heroElements.forEach(el => {
-          el.style.opacity = '0';
-          el.style.transform = 'translateY(30px)';
+          const htmlEl = el as HTMLElement;
+          htmlEl.style.opacity = '0';
+          htmlEl.style.transform = 'translateY(30px)';
         });
         
         // Letter stagger animation for main heading
@@ -45,7 +46,7 @@ export default function Home() {
           }
         });
         
-        // Step 1: Animate heading letters first (starts immediately - no delay)
+        // PHASE 1: Animate heading letters FIRST and COMPLETE before anything else
         heroTimeline.fromTo('.char', 
           {
             opacity: 0,
@@ -61,20 +62,23 @@ export default function Home() {
             stagger: {
               amount: 3.0,
               from: "start"
+            },
+            onComplete: () => {
+              console.log('Heading animation completed');
             }
           }
-        )
-        // Step 2: Animate company badge (starts after heading completes + 2 second delay)
-        .to('.animate-slide-up-delay-1', 
+        );
+        
+        // PHASE 2: Wait 2 seconds then animate everything else sequentially
+        heroTimeline.to('.animate-slide-up-delay-1', 
           {
             opacity: 1,
             y: 0,
             duration: 0.8,
             ease: "power2.out"
           },
-          "+=2.3" // Start 2.3 seconds after previous animation ends (2s delay + 0.3s spacing)
+          "+=2.0" // 2 second delay after heading completes
         )
-        // Step 3: Animate subtitle and description
         .to('.animate-slide-up-delay-3', 
           {
             opacity: 1,
@@ -82,9 +86,8 @@ export default function Home() {
             duration: 0.8,
             ease: "power2.out"
           },
-          "-=0.6"
+          "+=0.2" // Small gap between animations
         )
-        // Step 4: Animate statistics
         .to('.animate-slide-up-delay-4', 
           {
             opacity: 1,
@@ -92,9 +95,8 @@ export default function Home() {
             duration: 0.8,
             ease: "power2.out"
           },
-          "-=0.6"
+          "+=0.2"
         )
-        // Step 5: Animate CTA button
         .to('.animate-slide-up-delay-5', 
           {
             opacity: 1,
@@ -102,7 +104,7 @@ export default function Home() {
             duration: 0.8,
             ease: "power2.out"
           },
-          "-=0.4"
+          "+=0.2"
         );
         
         initParallaxEffect();
