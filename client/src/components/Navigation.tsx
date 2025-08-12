@@ -106,67 +106,45 @@ export function Navigation() {
                   />
                 </button>
                 
-                {/* Enhanced Professional Dropdown */}
-                <div className={`absolute top-full left-0 mt-3 w-72 transition-all duration-400 ease-out transform ${
-                  servicesDropdownOpen ? 'opacity-100 visible translate-y-0 scale-100' : 'opacity-0 invisible translate-y-4 scale-95'
+                {/* Enhanced Dropdown - Mobile Nav Style */}
+                <div className={`absolute top-full right-0 mt-0 w-64 transition-all duration-400 ease-out transform ${
+                  servicesDropdownOpen ? 'opacity-100 visible translate-y-0' : 'opacity-0 invisible translate-y-2'
                 }`}>
                   
-                  {/* Backdrop with sophisticated blur and gradient */}
-                  <div className="bg-white/95 backdrop-blur-xl rounded-2xl shadow-2xl border border-white/40 overflow-hidden">
+                  {/* Mobile-style backdrop */}
+                  <div className="bg-gradient-to-br from-white/98 to-white/95 backdrop-blur-xl border border-construction-yellow/20 shadow-2xl rounded-xl overflow-hidden">
                     
-                    {/* Premium header section */}
-                    <div className="bg-gradient-to-r from-construction-yellow/8 via-construction-yellow/5 to-transparent px-6 py-4 border-b border-construction-yellow/15">
-                      <h3 className="nav-font text-sm font-semibold text-industrial-black tracking-wider uppercase">
-                        Our Services
-                      </h3>
-                      <div className="mt-1 w-12 h-0.5 bg-gradient-to-r from-construction-yellow to-construction-yellow/50 rounded-full"></div>
-                    </div>
-                    
-                    {/* Service links with sophisticated animations */}
-                    <div className="py-2">
+                    {/* Service links with mobile nav styling */}
+                    <div className="py-3">
                       {serviceLinks.map((link, index) => (
                         <Link key={link.href} href={link.href} onClick={handleNavClick}>
                           <div 
-                            className="group relative overflow-hidden mx-2 rounded-xl transition-all duration-400 ease-out hover:bg-gradient-to-r hover:from-construction-yellow/8 hover:to-construction-yellow/3 hover:shadow-lg cursor-pointer"
+                            className="group relative overflow-hidden rounded-xl mx-3 my-1 px-4 py-3 transition-all duration-300 hover:bg-gradient-to-r hover:from-construction-yellow/8 hover:to-construction-yellow/12 hover:shadow-lg cursor-pointer"
                             style={{ 
                               animationDelay: `${index * 50}ms`,
                               animation: servicesDropdownOpen ? 'slideInRight 0.3s ease-out forwards' : ''
                             }}
                           >
                             {/* Animated background overlay */}
-                            <div className="absolute inset-0 bg-gradient-to-r from-construction-yellow/20 via-construction-yellow/10 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-500 transform translate-x-full group-hover:translate-x-0"></div>
+                            <div className="absolute inset-0 bg-gradient-to-r from-construction-yellow/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                             
-                            {/* Content container */}
-                            <div className="relative z-10 px-4 py-4 flex items-center">
-                              {/* Service indicator dot */}
-                              <div className="w-2 h-2 rounded-full bg-construction-yellow/30 group-hover:bg-construction-yellow group-hover:scale-125 transition-all duration-300 mr-4 flex-shrink-0"></div>
-                              
-                              {/* Service text */}
-                              <div className="flex-1">
-                                <span className="nav-font text-base font-medium text-industrial-black group-hover:text-construction-yellow transition-all duration-300 tracking-wide">
-                                  {link.label}
-                                </span>
-                              </div>
-                              
-                              {/* Hover arrow indicator */}
-                              <div className="opacity-0 group-hover:opacity-100 transform translate-x-2 group-hover:translate-x-0 transition-all duration-300">
-                                <div className="w-1 h-4 bg-gradient-to-b from-construction-yellow to-construction-yellow/70 rounded-full"></div>
-                              </div>
+                            {/* Content */}
+                            <div className="relative z-10 flex items-center">
+                              <span className="nav-font text-base font-light text-industrial-black group-hover:text-construction-yellow transition-all duration-300 tracking-wide">
+                                {link.label}
+                              </span>
                             </div>
                             
-                            {/* Bottom accent line */}
-                            <div className="absolute bottom-0 left-6 right-6 h-px bg-gradient-to-r from-transparent via-construction-yellow/20 to-transparent transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500"></div>
+                            {/* Animated underline */}
+                            <div className="absolute bottom-0 left-4 right-4 h-0.5 bg-gradient-to-r from-construction-yellow to-construction-yellow/50 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500"></div>
                           </div>
                         </Link>
                       ))}
                     </div>
                     
-                    {/* Elegant bottom accent */}
-                    <div className="h-1 bg-gradient-to-r from-transparent via-construction-yellow/30 to-transparent"></div>
+                    {/* Bottom border accent like mobile nav */}
+                    <div className="h-1 bg-gradient-to-r from-transparent via-construction-yellow to-transparent"></div>
                   </div>
-                  
-                  {/* Subtle drop shadow enhancement */}
-                  <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black/5 rounded-2xl -z-10 translate-y-1"></div>
                 </div>
               </div>
 
