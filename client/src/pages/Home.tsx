@@ -83,11 +83,19 @@ export default function Home() {
       heroElements.forEach((el, index) => {
         const htmlEl = el as HTMLElement;
         console.log(`Setting initial state for element ${index}:`, htmlEl.className);
-        // Override CSS animations without removing classes
-        htmlEl.style.animation = 'none !important';
-        htmlEl.style.opacity = '0';
-        htmlEl.style.transform = 'translateY(30px)';
-        htmlEl.style.visibility = 'visible'; // Ensure element is visible but transparent
+        // Completely disable CSS animations and set GSAP initial state
+        htmlEl.style.setProperty('animation', 'none', 'important');
+        htmlEl.style.setProperty('opacity', '0', 'important');
+        htmlEl.style.setProperty('transform', 'translateY(30px)', 'important');
+        htmlEl.style.setProperty('visibility', 'visible', 'important');
+        htmlEl.style.setProperty('transition', 'none', 'important');
+        
+        // Remove any animation delay classes to prevent CSS conflicts
+        htmlEl.classList.forEach(className => {
+          if (className.includes('animate-') && !className.includes('delay')) {
+            htmlEl.classList.remove(className);
+          }
+        });
       });
       
       // Letter stagger animation for main heading
@@ -155,10 +163,16 @@ export default function Home() {
       // Animate badge (delay-1)
       if (delay1Elements.length > 0) {
         console.log('Starting badge animation');
-        heroTimeline.to(delay1Elements, 
+        heroTimeline.fromTo(delay1Elements, 
+          {
+            opacity: 0,
+            y: 30,
+            scale: 0.9
+          },
           {
             opacity: 1,
             y: 0,
+            scale: 1,
             duration: 0.8,
             ease: "power2.out",
             onStart: () => console.log('Badge animation started'),
@@ -170,7 +184,11 @@ export default function Home() {
       
       // Animate subtitle (delay-3)
       if (delay3Elements.length > 0) {
-        heroTimeline.to(delay3Elements, 
+        heroTimeline.fromTo(delay3Elements, 
+          {
+            opacity: 0,
+            y: 30
+          },
           {
             opacity: 1,
             y: 0,
@@ -184,7 +202,11 @@ export default function Home() {
       
       // Animate stats (delay-4)
       if (delay4Elements.length > 0) {
-        heroTimeline.to(delay4Elements, 
+        heroTimeline.fromTo(delay4Elements, 
+          {
+            opacity: 0,
+            y: 30
+          },
           {
             opacity: 1,
             y: 0,
@@ -198,10 +220,16 @@ export default function Home() {
       
       // Animate CTA button (delay-5)
       if (delay5Elements.length > 0) {
-        heroTimeline.to(delay5Elements, 
+        heroTimeline.fromTo(delay5Elements, 
+          {
+            opacity: 0,
+            y: 30,
+            scale: 0.95
+          },
           {
             opacity: 1,
             y: 0,
+            scale: 1,
             duration: 0.8,
             ease: "power2.out",
             onComplete: () => console.log('CTA animated')
