@@ -171,27 +171,25 @@ export default function Home() {
                 </div>
               </div>
               
-              {/* Premium CTA Buttons */}
-              <div className="animate-slide-up-delay-5 flex flex-col sm:flex-row gap-6 mb-20">
-                <Button 
-                  size="lg" 
-                  onClick={scrollToServices}
-                  className="group relative bg-gradient-to-r from-construction-yellow via-construction-yellow to-construction-yellow/95 text-industrial-black hover:from-construction-yellow/98 hover:to-construction-yellow/88 text-xl font-bold px-12 py-6 rounded-3xl shadow-2xl hover:shadow-construction-yellow/30 transition-all duration-500 hover:scale-105 overflow-hidden border border-construction-yellow/20"
-                >
-                  <div className="absolute inset-0 bg-gradient-to-r from-white/25 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                  <div className="relative flex items-center">
-                    <Bolt className="mr-4 h-7 w-7 group-hover:rotate-12 transition-transform duration-300" />
-                    EXPLORE SERVICES
-                    <div className="ml-4 w-2.5 h-2.5 bg-industrial-black/50 rounded-full group-hover:bg-industrial-black/70 transition-colors duration-300"></div>
-                  </div>
-                </Button>
+              {/* Primary CTA Button */}
+              <div className="animate-slide-up-delay-5 mb-20">
                 <Link href="/contact">
-                  <Button size="lg" variant="outline" className="group relative border-2 border-white/50 text-construction-yellow hover:text-white hover:bg-white/10 hover:border-construction-yellow/70 text-xl font-normal px-12 py-6 rounded-3xl backdrop-blur-xl transition-all duration-500 hover:scale-105 overflow-hidden shadow-lg hover:shadow-white/10">
-                    <div className="absolute inset-0 bg-gradient-to-r from-construction-yellow/8 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                    <div className="relative flex items-center">
-                      <Phone className="mr-4 h-7 w-7 group-hover:rotate-12 transition-transform duration-300 text-construction-yellow group-hover:text-white" />
-                      <span className="font-medium">GET IN TOUCH</span>
+                  <Button size="lg" className="group relative bg-gradient-to-r from-construction-yellow via-construction-yellow/95 to-construction-yellow text-industrial-black hover:from-construction-yellow hover:to-construction-yellow/90 text-2xl font-bold px-16 py-8 rounded-3xl shadow-2xl hover:shadow-construction-yellow/40 transition-all duration-700 hover:scale-110 overflow-hidden border-2 border-construction-yellow/30 hover:border-construction-yellow/50">
+                    {/* Animated Background Overlay */}
+                    <div className="absolute inset-0 bg-gradient-to-r from-white/30 via-white/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                    
+                    {/* Pulse Ring Effect */}
+                    <div className="absolute inset-0 rounded-3xl border-2 border-construction-yellow/0 group-hover:border-construction-yellow/30 group-hover:scale-110 transition-all duration-700"></div>
+                    
+                    {/* Button Content */}
+                    <div className="relative flex items-center justify-center">
+                      <Phone className="mr-5 h-8 w-8 group-hover:rotate-12 group-hover:scale-110 transition-all duration-500" />
+                      <span className="tracking-wide">GET IN TOUCH</span>
+                      <div className="ml-5 w-3 h-3 bg-industrial-black/60 rounded-full group-hover:bg-industrial-black/80 group-hover:scale-125 transition-all duration-500"></div>
                     </div>
+                    
+                    {/* Shimmer Effect */}
+                    <div className="absolute inset-0 -top-2 -bottom-2 bg-gradient-to-r from-transparent via-white/25 to-transparent opacity-0 group-hover:opacity-100 group-hover:translate-x-full transition-all duration-1000 transform -translate-x-full skew-x-12"></div>
                   </Button>
                 </Link>
               </div>
