@@ -20,6 +20,13 @@ export default function Home() {
         // Create master timeline for hero section animations
         const heroTimeline = gsap.timeline();
         
+        // Disable CSS animations on hero elements since we're using GSAP
+        const heroElements = document.querySelectorAll('.animate-slide-up-delay-1, .animate-slide-up-delay-3, .animate-slide-up-delay-4, .animate-slide-up-delay-5');
+        heroElements.forEach(el => {
+          el.style.opacity = '0';
+          el.style.transform = 'translateY(30px)';
+        });
+        
         // Letter stagger animation for main heading
         const headingTexts = [
           document.querySelector('.hero-heading-text-1'),
@@ -58,11 +65,7 @@ export default function Home() {
           }
         )
         // Step 2: Animate company badge (starts after heading completes)
-        .fromTo('.animate-slide-up-delay-1', 
-          {
-            opacity: 0,
-            y: 30
-          },
+        .to('.animate-slide-up-delay-1', 
           {
             opacity: 1,
             y: 0,
@@ -72,11 +75,7 @@ export default function Home() {
           "+=0.3" // Start 0.3 seconds after previous animation ends
         )
         // Step 3: Animate subtitle and description
-        .fromTo('.animate-slide-up-delay-3', 
-          {
-            opacity: 0,
-            y: 30
-          },
+        .to('.animate-slide-up-delay-3', 
           {
             opacity: 1,
             y: 0,
@@ -86,11 +85,7 @@ export default function Home() {
           "-=0.6"
         )
         // Step 4: Animate statistics
-        .fromTo('.animate-slide-up-delay-4', 
-          {
-            opacity: 0,
-            y: 30
-          },
+        .to('.animate-slide-up-delay-4', 
           {
             opacity: 1,
             y: 0,
@@ -100,11 +95,7 @@ export default function Home() {
           "-=0.6"
         )
         // Step 5: Animate CTA button
-        .fromTo('.animate-slide-up-delay-5', 
-          {
-            opacity: 0,
-            y: 30
-          },
+        .to('.animate-slide-up-delay-5', 
           {
             opacity: 1,
             y: 0,
