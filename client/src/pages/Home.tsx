@@ -80,12 +80,14 @@ export default function Home() {
         // Create master timeline for hero section animations
         const heroTimeline = gsap.timeline();
       
-      heroElements.forEach(el => {
+      heroElements.forEach((el, index) => {
         const htmlEl = el as HTMLElement;
+        console.log(`Setting initial state for element ${index}:`, htmlEl.className);
         // Override CSS animations without removing classes
         htmlEl.style.animation = 'none !important';
         htmlEl.style.opacity = '0';
         htmlEl.style.transform = 'translateY(30px)';
+        htmlEl.style.visibility = 'visible'; // Ensure element is visible but transparent
       });
       
       // Letter stagger animation for main heading
@@ -136,7 +138,7 @@ export default function Home() {
         }
       );
       
-      // PHASE 2: Wait 2 seconds then animate everything else sequentially
+      // PHASE 2: Wait for heading to complete, then animate everything else sequentially
       // Re-query elements to ensure they still exist
       const delay1Elements = document.querySelectorAll('.animate-slide-up-delay-1');
       const delay3Elements = document.querySelectorAll('.animate-slide-up-delay-3');
@@ -150,51 +152,61 @@ export default function Home() {
         delay5: delay5Elements.length
       });
       
+      // Animate badge (delay-1)
       if (delay1Elements.length > 0) {
+        console.log('Starting badge animation');
         heroTimeline.to(delay1Elements, 
           {
             opacity: 1,
             y: 0,
             duration: 0.8,
-            ease: "power2.out"
+            ease: "power2.out",
+            onStart: () => console.log('Badge animation started'),
+            onComplete: () => console.log('Badge animation completed')
           },
-          "+=2.0" // 2 second delay after heading completes
+          "+=1.0" // 1 second delay after heading completes
         );
       }
       
+      // Animate subtitle (delay-3)
       if (delay3Elements.length > 0) {
         heroTimeline.to(delay3Elements, 
           {
             opacity: 1,
             y: 0,
             duration: 0.8,
-            ease: "power2.out"
+            ease: "power2.out",
+            onComplete: () => console.log('Subtitle animated')
           },
-          "+=0.2" // Small gap between animations
+          "+=0.3" // Small gap between animations
         );
       }
       
+      // Animate stats (delay-4)
       if (delay4Elements.length > 0) {
         heroTimeline.to(delay4Elements, 
           {
             opacity: 1,
             y: 0,
             duration: 0.8,
-            ease: "power2.out"
+            ease: "power2.out",
+            onComplete: () => console.log('Stats animated')
           },
-          "+=0.2"
+          "+=0.3"
         );
       }
       
+      // Animate CTA button (delay-5)
       if (delay5Elements.length > 0) {
         heroTimeline.to(delay5Elements, 
           {
             opacity: 1,
             y: 0,
             duration: 0.8,
-            ease: "power2.out"
+            ease: "power2.out",
+            onComplete: () => console.log('CTA animated')
           },
-          "+=0.2"
+          "+=0.3"
         );
       }
       
