@@ -1,4 +1,4 @@
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { Link } from 'wouter';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
@@ -9,6 +9,7 @@ import bulldozerImage from '@assets/bulldozer-2195329_1920_1753976237868.jpg';
 
 export default function Home() {
   const logoSliderRef = useRef<HTMLDivElement>(null);
+  const [isAutoScrolling, setIsAutoScrolling] = useState(true);
 
   useEffect(() => {
     document.title = 'Tartech Contracting - Engineering Excellence in Harsh Environments';
@@ -19,7 +20,33 @@ export default function Home() {
         initParallaxEffect();
       }, 100);
     });
-  }, []);
+
+    // Auto-scroll functionality
+    let autoScrollInterval: NodeJS.Timeout;
+    
+    if (isAutoScrolling && logoSliderRef.current) {
+      autoScrollInterval = setInterval(() => {
+        if (logoSliderRef.current) {
+          const container = logoSliderRef.current;
+          const maxScroll = container.scrollWidth - container.clientWidth;
+          
+          if (container.scrollLeft >= maxScroll) {
+            // Reset to beginning for seamless loop
+            container.scrollTo({ left: 0, behavior: 'smooth' });
+          } else {
+            // Scroll by one logo width
+            container.scrollBy({ left: 300, behavior: 'smooth' });
+          }
+        }
+      }, 4000); // Slow auto-scroll every 4 seconds
+    }
+
+    return () => {
+      if (autoScrollInterval) {
+        clearInterval(autoScrollInterval);
+      }
+    };
+  }, [isAutoScrolling]);
 
   const scrollToServices = () => {
     const servicesSection = document.getElementById('our-expertise');
@@ -30,16 +57,24 @@ export default function Home() {
 
   const scrollLogos = (direction: 'left' | 'right') => {
     if (logoSliderRef.current) {
-      const scrollAmount = 320; // Width of one logo card plus gap
+      // Temporarily disable auto-scroll when user interacts
+      setIsAutoScrolling(false);
+      
+      const scrollAmount = 300; // Width of one logo card (w-72 = 288px) plus gap
       const currentScroll = logoSliderRef.current.scrollLeft;
       const targetScroll = direction === 'left' 
-        ? currentScroll - scrollAmount 
+        ? Math.max(0, currentScroll - scrollAmount)
         : currentScroll + scrollAmount;
       
       logoSliderRef.current.scrollTo({
         left: targetScroll,
         behavior: 'smooth'
       });
+
+      // Re-enable auto-scroll after 10 seconds of inactivity
+      setTimeout(() => {
+        setIsAutoScrolling(true);
+      }, 10000);
     }
   };
 
@@ -749,11 +784,11 @@ export default function Home() {
             </button>
 
             {/* Scrollable Container */}
-            <div className="overflow-x-auto scrollbar-hide" style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}>
+            <div className="overflow-hidden">
               <div 
                 ref={logoSliderRef}
-                className="flex space-x-8 items-center py-8 px-16"
-                style={{ width: 'max-content' }}
+                className="flex space-x-8 items-center py-8 px-16 overflow-x-auto scrollbar-hide"
+                style={{ width: 'max-content', scrollbarWidth: 'none', msOverflowStyle: 'none' }}
               >
               {/* City of Harare */}
               <div className="flex-shrink-0 group">
@@ -834,27 +869,7 @@ export default function Home() {
                   <h3 className="text-industrial-black font-bold text-lg text-center">Zimplats</h3>
                 </div>
               </div>
-              
-              {/* Duplicate set for seamless loop */}
-              {/* City of Harare */}
-              <div className="flex-shrink-0 group">
-                <div className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 w-72 h-40 flex flex-col items-center justify-center border border-gray-100 group-hover:border-construction-yellow/30">
-                  <div className="w-16 h-16 bg-gradient-to-br from-construction-yellow to-construction-yellow/80 rounded-full flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
-                    <span className="text-industrial-black font-black text-xl">CH</span>
-                  </div>
-                  <h3 className="text-industrial-black font-bold text-lg text-center">City of Harare</h3>
-                </div>
-              </div>
-              
-              {/* City of Marondera */}
-              <div className="flex-shrink-0 group">
-                <div className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 w-72 h-40 flex flex-col items-center justify-center border border-gray-100 group-hover:border-construction-yellow/30">
-                  <div className="w-16 h-16 bg-gradient-to-br from-construction-yellow to-construction-yellow/80 rounded-full flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
-                    <span className="text-industrial-black font-black text-xl">CM</span>
-                  </div>
-                  <h3 className="text-industrial-black font-bold text-lg text-center">City of Marondera</h3>
-                </div>
-              </div>
+
             </div>
             </div>
             
