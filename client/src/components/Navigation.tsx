@@ -107,12 +107,12 @@ export function Navigation() {
                 </button>
                 
                 {/* Enhanced Dropdown - Mobile Nav Style */}
-                <div className={`absolute top-full right-0 w-64 transition-all duration-400 ease-out transform ${
+                <div className={`absolute top-full right-0 mt-20 w-64 transition-all duration-400 ease-out transform ${
                   servicesDropdownOpen ? 'opacity-100 visible translate-y-0' : 'opacity-0 invisible translate-y-2'
                 }`}>
                   
-                  {/* Mobile-style backdrop with 40% opacity white background */}
-                  <div className="bg-white/40 backdrop-blur-xl border border-construction-yellow/20 shadow-2xl overflow-hidden">
+                  {/* Mobile-style backdrop with 30% opacity and blur */}
+                  <div className="bg-white/30 backdrop-blur-md border border-construction-yellow/20 shadow-2xl overflow-hidden">
                     
                     {/* Service links with mobile nav styling */}
                     <div className="py-3">
@@ -130,7 +130,7 @@ export function Navigation() {
                             
                             {/* Content */}
                             <div className="relative z-10 flex items-center">
-                              <span className="nav-font text-base font-light text-industrial-black group-hover:text-construction-yellow transition-all duration-300 tracking-wide">
+                              <span className="nav-font text-base font-light text-black group-hover:text-construction-yellow transition-all duration-500 tracking-wide">
                                 {link.label}
                               </span>
                             </div>
