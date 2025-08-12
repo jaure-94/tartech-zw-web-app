@@ -130,7 +130,7 @@ export function Navigation() {
                             
                             {/* Content */}
                             <div className="relative z-10 flex items-center">
-                              <span className="nav-font text-base font-normal text-black group-hover:text-construction-yellow transition-colors duration-500 tracking-wide">
+                              <span className="nav-font text-base font-normal group-hover:text-construction-yellow transition-colors duration-500 tracking-wide" style={{ color: '#000000' }}>
                                 {link.label}
                               </span>
                             </div>
