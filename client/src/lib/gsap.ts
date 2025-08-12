@@ -109,7 +109,7 @@ export const initParallaxEffect = () => {
   const heroImage = document.querySelector('.hero-parallax-image');
   if (heroImage) {
     gsap.to(heroImage, {
-      yPercent: -50,
+      yPercent: -15,
       ease: "none",
       scrollTrigger: {
         trigger: ".hero-section",

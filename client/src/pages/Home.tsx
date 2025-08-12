@@ -38,7 +38,7 @@ export default function Home() {
           <img 
             src={bulldozerImage} 
             alt="Heavy industrial bulldozer and excavator equipment at construction site with dramatic sky" 
-            className="hero-parallax-image w-full h-[120%] object-cover opacity-35 animate-zoom-in"
+            className="hero-parallax-image w-full h-[110%] object-cover opacity-35 animate-zoom-in"
             onError={(e) => {
               e.currentTarget.src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&h=1080";
             }}
@@ -80,8 +80,8 @@ export default function Home() {
         </div>
         
         {/* Cinematic Content Container */}
-        <div className="relative w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-20 items-center min-h-[75vh]">
+        <div className="relative w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-20 items-center min-h-[70vh]">
             
             {/* Left Column - Hero Content */}
             <div className="lg:col-span-7 space-y-12">
@@ -152,7 +152,7 @@ export default function Home() {
               </div>
               
               {/* Premium CTA Buttons */}
-              <div className="animate-slide-up-delay-5 flex flex-col sm:flex-row gap-8 mb-16">
+              <div className="animate-slide-up-delay-5 flex flex-col sm:flex-row gap-8 mb-24">
                 <Button 
                   size="lg" 
                   onClick={scrollToServices}
@@ -166,11 +166,11 @@ export default function Home() {
                   </div>
                 </Button>
                 <Link href="/contact">
-                  <Button size="lg" variant="outline" className="group relative border-2 border-white/50 text-white hover:bg-white/10 hover:border-construction-yellow/70 text-xl font-normal px-12 py-6 rounded-3xl backdrop-blur-xl transition-all duration-500 hover:scale-105 overflow-hidden shadow-lg hover:shadow-white/10">
+                  <Button size="lg" variant="outline" className="group relative border-2 border-white/50 text-construction-yellow hover:text-white hover:bg-white/10 hover:border-construction-yellow/70 text-xl font-normal px-12 py-6 rounded-3xl backdrop-blur-xl transition-all duration-500 hover:scale-105 overflow-hidden shadow-lg hover:shadow-white/10">
                     <div className="absolute inset-0 bg-gradient-to-r from-construction-yellow/8 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                     <div className="relative flex items-center">
-                      <Phone className="mr-4 h-7 w-7 group-hover:rotate-12 transition-transform duration-300" />
-                      <span className="text-white font-medium">GET IN TOUCH</span>
+                      <Phone className="mr-4 h-7 w-7 group-hover:rotate-12 transition-transform duration-300 text-construction-yellow group-hover:text-white" />
+                      <span className="font-medium">GET IN TOUCH</span>
                     </div>
                   </Button>
                 </Link>
@@ -233,7 +233,7 @@ export default function Home() {
         </div>
         
         {/* Elegant Scroll Indicator */}
-        <div className="absolute bottom-16 left-1/2 transform -translate-x-1/2 text-center group cursor-pointer" onClick={scrollToServices}>
+        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 text-center group cursor-pointer" onClick={scrollToServices}>
           <div className="animate-bounce">
             <div className="text-construction-yellow/75 text-xs font-semibold mb-4 uppercase tracking-[0.25em] group-hover:text-construction-yellow transition-colors duration-300">Discover Our Expertise</div>
             <div className="relative">
