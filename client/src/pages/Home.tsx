@@ -17,6 +17,9 @@ export default function Home() {
     // Initialize animations and parallax effect
     import('@/lib/gsap').then(({ gsap, initParallaxEffect }) => {
       setTimeout(() => {
+        // Create master timeline for hero section animations
+        const heroTimeline = gsap.timeline();
+        
         // Letter stagger animation for main heading
         const headingTexts = [
           document.querySelector('.hero-heading-text-1'),
@@ -35,8 +38,8 @@ export default function Home() {
           }
         });
         
-        // Animate each character with stagger across all lines
-        gsap.fromTo('.char', 
+        // Step 1: Animate heading letters first
+        heroTimeline.fromTo('.char', 
           {
             opacity: 0,
             y: -60,
@@ -51,9 +54,64 @@ export default function Home() {
             stagger: {
               amount: 3.0,
               from: "start"
-            },
-            delay: 0.5
+            }
           }
+        )
+        // Step 2: Animate company badge
+        .fromTo('.animate-slide-up-delay-1', 
+          {
+            opacity: 0,
+            y: 30
+          },
+          {
+            opacity: 1,
+            y: 0,
+            duration: 0.8,
+            ease: "power2.out"
+          },
+          "-=1.5" // Start 1.5 seconds before previous animation ends
+        )
+        // Step 3: Animate subtitle and description
+        .fromTo('.animate-slide-up-delay-3', 
+          {
+            opacity: 0,
+            y: 30
+          },
+          {
+            opacity: 1,
+            y: 0,
+            duration: 0.8,
+            ease: "power2.out"
+          },
+          "-=0.8"
+        )
+        // Step 4: Animate statistics
+        .fromTo('.animate-slide-up-delay-4', 
+          {
+            opacity: 0,
+            y: 30
+          },
+          {
+            opacity: 1,
+            y: 0,
+            duration: 0.8,
+            ease: "power2.out"
+          },
+          "-=0.6"
+        )
+        // Step 5: Animate CTA button
+        .fromTo('.animate-slide-up-delay-5', 
+          {
+            opacity: 0,
+            y: 30
+          },
+          {
+            opacity: 1,
+            y: 0,
+            duration: 0.8,
+            ease: "power2.out"
+          },
+          "-=0.4"
         );
         
         initParallaxEffect();
