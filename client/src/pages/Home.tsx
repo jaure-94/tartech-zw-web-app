@@ -110,7 +110,7 @@ export default function Home() {
                       <span className="text-construction-yellow drop-shadow-2xl filter brightness-110 font-black">EXCELLENCE</span>
                       <div className="absolute -bottom-3 left-0 w-full h-1.5 bg-gradient-to-r from-construction-yellow/90 via-construction-yellow to-construction-yellow/90 animate-expand-width rounded-full shadow-lg shadow-construction-yellow/40"></div>
                     </span>
-                    <span className="block text-white/85 font-bold tracking-wider text-3xl sm:text-4xl md:text-5xl lg:text-6xl mt-3">IN ZIMBABWE</span>
+                    <span className="block text-white/85 font-black tracking-tight text-4xl sm:text-5xl md:text-6xl lg:text-8xl mt-3">IN ZIMBABWE</span>
                   </h1>
                 </div>
                 
@@ -174,22 +174,15 @@ export default function Home() {
               {/* Primary CTA Button */}
               <div className="animate-slide-up-delay-5 mb-20">
                 <Link href="/contact">
-                  <Button size="lg" className="group relative bg-gradient-to-r from-construction-yellow via-construction-yellow/95 to-construction-yellow text-industrial-black hover:from-construction-yellow hover:to-construction-yellow/90 text-2xl font-bold px-16 py-8 rounded-3xl shadow-2xl hover:shadow-construction-yellow/40 transition-all duration-700 hover:scale-110 overflow-hidden border-2 border-construction-yellow/30 hover:border-construction-yellow/50">
-                    {/* Animated Background Overlay */}
-                    <div className="absolute inset-0 bg-gradient-to-r from-white/30 via-white/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                    
-                    {/* Pulse Ring Effect */}
-                    <div className="absolute inset-0 rounded-3xl border-2 border-construction-yellow/0 group-hover:border-construction-yellow/30 group-hover:scale-110 transition-all duration-700"></div>
+                  <Button size="lg" className="group relative bg-gradient-to-r from-construction-yellow to-construction-yellow/95 text-industrial-black hover:from-construction-yellow/95 hover:to-construction-yellow/85 text-xl font-semibold px-12 py-5 rounded-2xl shadow-lg hover:shadow-construction-yellow/25 transition-all duration-400 hover:scale-105 overflow-hidden border border-construction-yellow/20 hover:border-construction-yellow/30">
+                    {/* Subtle Background Overlay */}
+                    <div className="absolute inset-0 bg-gradient-to-r from-white/15 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                     
                     {/* Button Content */}
                     <div className="relative flex items-center justify-center">
-                      <Phone className="mr-5 h-8 w-8 group-hover:rotate-12 group-hover:scale-110 transition-all duration-500" />
+                      <Phone className="mr-4 h-6 w-6 group-hover:rotate-6 transition-transform duration-300" />
                       <span className="tracking-wide">GET IN TOUCH</span>
-                      <div className="ml-5 w-3 h-3 bg-industrial-black/60 rounded-full group-hover:bg-industrial-black/80 group-hover:scale-125 transition-all duration-500"></div>
                     </div>
-                    
-                    {/* Shimmer Effect */}
-                    <div className="absolute inset-0 -top-2 -bottom-2 bg-gradient-to-r from-transparent via-white/25 to-transparent opacity-0 group-hover:opacity-100 group-hover:translate-x-full transition-all duration-1000 transform -translate-x-full skew-x-12"></div>
                   </Button>
                 </Link>
               </div>
@@ -253,7 +246,7 @@ export default function Home() {
         {/* Elegant Scroll Indicator */}
         <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 text-center group cursor-pointer" onClick={scrollToServices}>
           <div className="animate-bounce">
-            <div className="text-construction-yellow/75 text-xs font-semibold mb-4 uppercase tracking-[0.25em] group-hover:text-construction-yellow transition-colors duration-300">Discover Our Expertise</div>
+            <div className="text-white/75 text-xs font-semibold mb-4 uppercase tracking-[0.25em] group-hover:text-construction-yellow transition-colors duration-300">Discover Our Expertise</div>
             <div className="relative">
               <div className="w-7 h-12 border-2 border-construction-yellow/50 rounded-full mx-auto relative group-hover:border-construction-yellow/80 transition-all duration-300 shadow-lg shadow-construction-yellow/10">
                 <div className="w-1.5 h-4 bg-construction-yellow/70 rounded-full absolute top-2 left-1/2 transform -translate-x-1/2 group-hover:bg-construction-yellow animate-scroll-dot"></div>
