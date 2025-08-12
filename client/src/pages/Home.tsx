@@ -71,7 +71,7 @@ export default function Home() {
       
       // Wait for elements and then animate
       Promise.all([
-        waitForElements('.animate-slide-up-delay-1, .animate-slide-up-delay-3, .animate-slide-up-delay-4, .animate-slide-up-delay-5'),
+        waitForElements('.animate-slide-up-delay-1, .animate-slide-up-delay-3, .animate-slide-up-delay-4, .animate-slide-up-delay-5, .animate-slide-left-delay-3'),
         waitForElements('.hero-heading-text-1, .hero-heading-text-2, .hero-heading-text-3')
       ]).then(([heroElements, headingElements]) => {
         console.log('Found hero elements:', heroElements.length);
@@ -86,7 +86,14 @@ export default function Home() {
         // Completely disable CSS animations and set GSAP initial state
         htmlEl.style.setProperty('animation', 'none', 'important');
         htmlEl.style.setProperty('opacity', '0', 'important');
-        htmlEl.style.setProperty('transform', 'translateY(30px)', 'important');
+        
+        // Set different initial transforms for slide-left vs slide-up elements
+        if (htmlEl.className.includes('slide-left')) {
+          htmlEl.style.setProperty('transform', 'translateX(50px)', 'important');
+        } else {
+          htmlEl.style.setProperty('transform', 'translateY(30px)', 'important');
+        }
+        
         htmlEl.style.setProperty('visibility', 'visible', 'important');
         htmlEl.style.setProperty('transition', 'none', 'important');
         
@@ -152,12 +159,14 @@ export default function Home() {
       const delay3Elements = document.querySelectorAll('.animate-slide-up-delay-3');
       const delay4Elements = document.querySelectorAll('.animate-slide-up-delay-4');
       const delay5Elements = document.querySelectorAll('.animate-slide-up-delay-5');
+      const slideLeftElements = document.querySelectorAll('.animate-slide-left-delay-3');
       
       console.log('Elements found for animation:', {
         delay1: delay1Elements.length,
         delay3: delay3Elements.length,
         delay4: delay4Elements.length,
-        delay5: delay5Elements.length
+        delay5: delay5Elements.length,
+        slideLeft: slideLeftElements.length
       });
       
       // Animate badge (delay-1)
@@ -235,6 +244,28 @@ export default function Home() {
             onComplete: () => console.log('CTA animated')
           },
           "+=0.3"
+        );
+      }
+      
+      // Animate right column cards (slide-left-delay-3)
+      if (slideLeftElements.length > 0) {
+        console.log('Starting cards animation with', slideLeftElements.length, 'elements');
+        heroTimeline.fromTo(slideLeftElements, 
+          {
+            opacity: 0,
+            x: 50,
+            scale: 0.95
+          },
+          {
+            opacity: 1,
+            x: 0,
+            scale: 1,
+            duration: 1.0,
+            ease: "power2.out",
+            onStart: () => console.log('Cards animation started'),
+            onComplete: () => console.log('Cards animation completed')
+          },
+          "-=0.5" // Start slightly before CTA finishes for overlapping effect
         );
       }
       

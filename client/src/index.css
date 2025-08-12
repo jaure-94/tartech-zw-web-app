@@ -281,10 +281,15 @@
   .hero-section .animate-slide-up-delay-1,
   .hero-section .animate-slide-up-delay-3,
   .hero-section .animate-slide-up-delay-4,
-  .hero-section .animate-slide-up-delay-5 {
+  .hero-section .animate-slide-up-delay-5,
+  .hero-section .animate-slide-left-delay-3 {
     animation: none !important;
     opacity: 0;
     transform: translateY(30px);
+  }
+  
+  .hero-section .animate-slide-left-delay-3 {
+    transform: translateX(50px);
   }
 
   /* Keep animations for other sections */
