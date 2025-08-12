@@ -36,11 +36,11 @@ export default function About() {
           <img 
             src="https://images.unsplash.com/photo-1577962917302-cd874c4e31d2?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&h=1080" 
             alt="Professional construction team in hard hats and safety gear on industrial site" 
-            className="w-full h-full object-cover opacity-15 animate-zoom-in"
+            className="w-full h-full object-cover opacity-30 animate-zoom-in"
           />
           
           {/* Dynamic Overlay with Animation */}
-          <div className="absolute inset-0 bg-black/95 animate-fade-in"></div>
+          <div className="absolute inset-0 bg-black/75 animate-fade-in"></div>
           
           {/* Animated Grid Pattern */}
           <div className="absolute inset-0 opacity-10">
@@ -111,20 +111,7 @@ export default function About() {
                 </div>
               </div>
               
-              {/* Call-to-Action Buttons */}
-              <div className="flex flex-col sm:flex-row gap-4 animate-slide-up-delay-5">
-                <Link href="/contact">
-                  <Button size="lg" className="group bg-construction-yellow text-industrial-black hover:bg-construction-yellow/90 text-lg font-bold px-8 py-4 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105">
-                    <Phone className="mr-2 h-5 w-5 group-hover:rotate-12 transition-transform duration-300" />
-                    GET IN TOUCH
-                    <div className="ml-2 w-2 h-2 bg-industrial-black/30 rounded-full group-hover:bg-industrial-black/50 transition-colors duration-300"></div>
-                  </Button>
-                </Link>
-                <Button size="lg" variant="outline" className="group border-2 border-white/30 text-white hover:bg-white/10 hover:border-construction-yellow/50 text-lg font-bold px-8 py-4 rounded-xl backdrop-blur-sm transition-all duration-300 hover:scale-105">
-                  <Mail className="mr-2 h-5 w-5 group-hover:rotate-12 transition-transform duration-300" />
-                  REQUEST QUOTE
-                </Button>
-              </div>
+
             </div>
             
             {/* Right Column - Mission & Vision */}
