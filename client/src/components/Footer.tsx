@@ -46,37 +46,37 @@ export function Footer() {
             <ul className="space-y-3">
               <li>
                 <Link href="/services/mining" onClick={scrollToTop}>
-                  <span className="relative inline-block text-gray-300 cursor-pointer h-auto px-0 border-transparent after:transition-all after:duration-500 after:content-[''] after:h-[1.5px] after:w-0 after:absolute after:top-full after:bg-construction-yellow hover:after:w-full hover:text-construction-yellow hover:transition-all hover:duration-500">
+                  <span className="relative inline-block text-gray-300 cursor-pointer h-auto px-0 border-transparent after:transition-all after:duration-500 after:content-[''] after:h-[1.5px] after:w-0 after:absolute after:top-full after:left-0 after:bg-construction-yellow hover:after:w-full hover:text-construction-yellow hover:transition-all hover:duration-500">
                     Mining Operations
                   </span>
                 </Link>
               </li>
               <li>
                 <Link href="/services/construction" onClick={scrollToTop}>
-                  <span className="relative inline-block text-gray-300 cursor-pointer h-auto px-0 border-transparent after:transition-all after:duration-500 after:content-[''] after:h-[1.5px] after:w-0 after:absolute after:top-full after:bg-construction-yellow hover:after:w-full hover:text-construction-yellow hover:transition-all hover:duration-500">
+                  <span className="relative inline-block text-gray-300 cursor-pointer h-auto px-0 border-transparent after:transition-all after:duration-500 after:content-[''] after:h-[1.5px] after:w-0 after:absolute after:top-full after:left-0 after:bg-construction-yellow hover:after:w-full hover:text-construction-yellow hover:transition-all hover:duration-500">
                     Construction Services
                   </span>
                 </Link>
               </li>
               <li>
                 <Link href="/services/agriculture" onClick={scrollToTop}>
-                  <span className="relative inline-block text-gray-300 cursor-pointer h-auto px-0 border-transparent after:transition-all after:duration-500 after:content-[''] after:h-[1.5px] after:w-0 after:absolute after:top-full after:bg-construction-yellow hover:after:w-full hover:text-construction-yellow hover:transition-all hover:duration-500">
+                  <span className="relative inline-block text-gray-300 cursor-pointer h-auto px-0 border-transparent after:transition-all after:duration-500 after:content-[''] after:h-[1.5px] after:w-0 after:absolute after:top-full after:left-0 after:bg-construction-yellow hover:after:w-full hover:text-construction-yellow hover:transition-all hover:duration-500">
                     Agricultural Solutions
                   </span>
                 </Link>
               </li>
               <li>
-                <span className="relative inline-block text-gray-300 cursor-pointer h-auto px-0 border-transparent after:transition-all after:duration-500 after:content-[''] after:h-[1.5px] after:w-0 after:absolute after:top-full after:bg-construction-yellow hover:after:w-full hover:text-construction-yellow hover:transition-all hover:duration-500">
+                <span className="relative inline-block text-gray-300 cursor-pointer h-auto px-0 border-transparent after:transition-all after:duration-500 after:content-[''] after:h-[1.5px] after:w-0 after:absolute after:top-full after:left-0 after:bg-construction-yellow hover:after:w-full hover:text-construction-yellow hover:transition-all hover:duration-500">
                   Project Management
                 </span>
               </li>
               <li>
-                <span className="relative inline-block text-gray-300 cursor-pointer h-auto px-0 border-transparent after:transition-all after:duration-500 after:content-[''] after:h-[1.5px] after:w-0 after:absolute after:top-full after:bg-construction-yellow hover:after:w-full hover:text-construction-yellow hover:transition-all hover:duration-500">
+                <span className="relative inline-block text-gray-300 cursor-pointer h-auto px-0 border-transparent after:transition-all after:duration-500 after:content-[''] after:h-[1.5px] after:w-0 after:absolute after:top-full after:left-0 after:bg-construction-yellow hover:after:w-full hover:text-construction-yellow hover:transition-all hover:duration-500">
                   Equipment Rental
                 </span>
               </li>
               <li>
-                <span className="relative inline-block text-gray-300 cursor-pointer h-auto px-0 border-transparent after:transition-all after:duration-500 after:content-[''] after:h-[1.5px] after:w-0 after:absolute after:top-full after:bg-construction-yellow hover:after:w-full hover:text-construction-yellow hover:transition-all hover:duration-500">
+                <span className="relative inline-block text-gray-300 cursor-pointer h-auto px-0 border-transparent after:transition-all after:duration-500 after:content-[''] after:h-[1.5px] after:w-0 after:absolute after:top-full after:left-0 after:bg-construction-yellow hover:after:w-full hover:text-construction-yellow hover:transition-all hover:duration-500">
                   Maintenance & Repair
                 </span>
               </li>
@@ -89,14 +89,14 @@ export function Footer() {
             <ul className="space-y-3">
               <li>
                 <Link href="/" onClick={scrollToTop}>
-                  <span className="relative inline-block text-gray-300 cursor-pointer h-auto px-0 border-transparent after:transition-all after:duration-500 after:content-[''] after:h-[1.5px] after:w-0 after:absolute after:top-full after:bg-construction-yellow hover:after:w-full hover:text-construction-yellow hover:transition-all hover:duration-500">
+                  <span className="relative inline-block text-gray-300 cursor-pointer h-auto px-0 border-transparent after:transition-all after:duration-500 after:content-[''] after:h-[1.5px] after:w-0 after:absolute after:top-full after:left-0 after:bg-construction-yellow hover:after:w-full hover:text-construction-yellow hover:transition-all hover:duration-500">
                     Home
                   </span>
                 </Link>
               </li>
               <li>
                 <Link href="/about" onClick={scrollToTop}>
-                  <span className="relative inline-block text-gray-300 cursor-pointer h-auto px-0 border-transparent after:transition-all after:duration-500 after:content-[''] after:h-[1.5px] after:w-0 after:absolute after:top-full after:bg-construction-yellow hover:after:w-full hover:text-construction-yellow hover:transition-all hover:duration-500">
+                  <span className="relative inline-block text-gray-300 cursor-pointer h-auto px-0 border-transparent after:transition-all after:duration-500 after:content-[''] after:h-[1.5px] after:w-0 after:absolute after:top-full after:left-0 after:bg-construction-yellow hover:after:w-full hover:text-construction-yellow hover:transition-all hover:duration-500">
                     About Us
                   </span>
                 </Link>
@@ -104,13 +104,13 @@ export function Footer() {
 
               <li>
                 <Link href="/contact" onClick={scrollToTop}>
-                  <span className="relative inline-block text-gray-300 cursor-pointer h-auto px-0 border-transparent after:transition-all after:duration-500 after:content-[''] after:h-[1.5px] after:w-0 after:absolute after:top-full after:bg-construction-yellow hover:after:w-full hover:text-construction-yellow hover:transition-all hover:duration-500">
+                  <span className="relative inline-block text-gray-300 cursor-pointer h-auto px-0 border-transparent after:transition-all after:duration-500 after:content-[''] after:h-[1.5px] after:w-0 after:absolute after:top-full after:left-0 after:bg-construction-yellow hover:after:w-full hover:text-construction-yellow hover:transition-all hover:duration-500">
                     Contact
                   </span>
                 </Link>
               </li>
               <li>
-                <span className="relative inline-block text-gray-300 cursor-pointer h-auto px-0 border-transparent after:transition-all after:duration-500 after:content-[''] after:h-[1.5px] after:w-0 after:absolute after:top-full after:bg-construction-yellow hover:after:w-full hover:text-construction-yellow hover:transition-all hover:duration-500">
+                <span className="relative inline-block text-gray-300 cursor-pointer h-auto px-0 border-transparent after:transition-all after:duration-500 after:content-[''] after:h-[1.5px] after:w-0 after:absolute after:top-full after:left-0 after:bg-construction-yellow hover:after:w-full hover:text-construction-yellow hover:transition-all hover:duration-500">
                   Safety Standards
                 </span>
               </li>
