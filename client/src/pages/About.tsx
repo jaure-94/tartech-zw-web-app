@@ -29,65 +29,151 @@ export default function About() {
       <ScrollAnimations />
       
       {/* Hero Section */}
-      <section className="relative py-24 bg-gradient-to-br from-industrial-black via-gray-900 to-industrial-black overflow-hidden">
+      <section className="relative min-h-screen flex items-center bg-gradient-to-br from-industrial-black via-gray-900 to-industrial-black overflow-hidden">
+        {/* Animated Background Elements */}
         <div className="absolute inset-0">
+          {/* Primary Background Image */}
           <img 
             src="https://images.unsplash.com/photo-1577962917302-cd874c4e31d2?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&h=1080" 
             alt="Professional construction team in hard hats and safety gear on industrial site" 
-            className="w-full h-full object-cover opacity-20"
+            className="w-full h-full object-cover opacity-25 animate-zoom-in"
           />
-          <div className="absolute inset-0 bg-black/70"></div>
+          
+          {/* Dynamic Overlay with Animation */}
+          <div className="absolute inset-0 bg-gradient-to-br from-black/75 via-black/70 to-black/80 animate-fade-in"></div>
+          
+          {/* Animated Grid Pattern */}
+          <div className="absolute inset-0 opacity-10">
+            <svg className="w-full h-full" viewBox="0 0 100 100" preserveAspectRatio="none">
+              <defs>
+                <pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse">
+                  <path d="M 10 0 L 0 0 0 10" fill="none" stroke="currentColor" strokeWidth="0.5" className="text-construction-yellow"/>
+                </pattern>
+              </defs>
+              <rect width="100%" height="100%" fill="url(#grid)" className="animate-pulse" />
+            </svg>
+          </div>
+          
+          {/* Floating Particles */}
+          <div className="absolute inset-0 overflow-hidden">
+            <div className="absolute top-1/4 left-1/4 w-2 h-2 bg-construction-yellow rounded-full opacity-60 animate-float-slow"></div>
+            <div className="absolute top-3/4 left-1/3 w-1 h-1 bg-safety-orange rounded-full opacity-40 animate-float-medium"></div>
+            <div className="absolute top-1/2 right-1/4 w-3 h-3 bg-construction-yellow/30 rounded-full animate-float-fast"></div>
+            <div className="absolute bottom-1/4 right-1/3 w-1.5 h-1.5 bg-white/50 rounded-full animate-float-slow"></div>
+          </div>
         </div>
         
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div className="animate-slide-in-left">
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black text-white mb-6 leading-tight">
-                WHO <span className="text-construction-yellow">WE ARE</span>
-              </h1>
-              <p className="text-xl text-gray-200 mb-8 leading-relaxed">
+        {/* Main Content */}
+        <div className="relative w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            {/* Left Column - Main Content */}
+            <div className="space-y-8">
+              {/* Animated Title */}
+              <div className="space-y-4">
+                <div className="animate-slide-up-delay-1">
+                  <div className="inline-flex items-center px-4 py-2 bg-construction-yellow/20 backdrop-blur-sm rounded-full border border-construction-yellow/30 mb-6">
+                    <span className="text-construction-yellow text-sm font-bold tracking-wider">TARTECH CONTRACTING</span>
+                    <div className="w-2 h-2 bg-construction-yellow rounded-full ml-2 animate-pulse"></div>
+                  </div>
+                </div>
+                
+                <h1 className="text-5xl sm:text-6xl lg:text-7xl font-black text-white leading-tight animate-slide-up-delay-2">
+                  WHO <span className="text-construction-yellow relative">
+                    WE ARE
+                    <div className="absolute -bottom-2 left-0 w-full h-1 bg-gradient-to-r from-construction-yellow to-safety-orange animate-expand-width"></div>
+                  </span>
+                </h1>
+              </div>
+              
+              {/* Animated Description */}
+              <p className="text-xl lg:text-2xl text-gray-200 leading-relaxed max-w-2xl animate-slide-up-delay-3">
                 Three decades of industrial excellence, delivering world-class contracting solutions across Zimbabwe's construction, mining, and agricultural sectors with unwavering commitment to safety and innovation.
               </p>
               
-              {/* Stats Grid */}
-              <div className="grid grid-cols-3 gap-4">
-                <div className="bg-construction-yellow/90 backdrop-blur-sm p-4 rounded-lg text-center border border-construction-yellow/20">
-                  <div className="text-2xl lg:text-3xl font-black text-industrial-black">500+</div>
-                  <div className="text-xs lg:text-sm font-bold text-industrial-black">PROJECTS</div>
+              {/* Enhanced Stats Grid */}
+              <div className="grid grid-cols-3 gap-6 animate-slide-up-delay-4">
+                <div className="group relative bg-gradient-to-br from-construction-yellow/90 to-construction-yellow backdrop-blur-sm p-6 rounded-xl text-center border border-construction-yellow/30 hover:scale-105 transition-all duration-500 hover:shadow-xl hover:shadow-construction-yellow/20">
+                  <div className="text-3xl lg:text-4xl font-black text-industrial-black mb-1 group-hover:scale-110 transition-transform duration-300">500+</div>
+                  <div className="text-sm font-bold text-industrial-black tracking-wide">PROJECTS</div>
+                  <div className="absolute top-2 right-2 w-2 h-2 bg-industrial-black/30 rounded-full"></div>
                 </div>
-                <div className="bg-white/10 backdrop-blur-sm p-4 rounded-lg text-center border border-white/20">
-                  <div className="text-2xl lg:text-3xl font-black text-construction-yellow">30+</div>
-                  <div className="text-xs lg:text-sm font-bold text-white">YEARS</div>
+                
+                <div className="group relative bg-gradient-to-br from-white/15 to-white/10 backdrop-blur-sm p-6 rounded-xl text-center border border-white/30 hover:scale-105 transition-all duration-500 hover:shadow-xl hover:shadow-white/10">
+                  <div className="text-3xl lg:text-4xl font-black text-construction-yellow mb-1 group-hover:scale-110 transition-transform duration-300">30+</div>
+                  <div className="text-sm font-bold text-white tracking-wide">YEARS</div>
+                  <div className="absolute top-2 right-2 w-2 h-2 bg-construction-yellow rounded-full animate-pulse"></div>
                 </div>
-                <div className="bg-safety-orange/90 backdrop-blur-sm p-4 rounded-lg text-center border border-safety-orange/20">
-                  <div className="text-2xl lg:text-3xl font-black text-white">100%</div>
-                  <div className="text-xs lg:text-sm font-bold text-white">SAFETY</div>
+                
+                <div className="group relative bg-gradient-to-br from-safety-orange/90 to-safety-orange backdrop-blur-sm p-6 rounded-xl text-center border border-safety-orange/30 hover:scale-105 transition-all duration-500 hover:shadow-xl hover:shadow-safety-orange/20">
+                  <div className="text-3xl lg:text-4xl font-black text-white mb-1 group-hover:scale-110 transition-transform duration-300">100%</div>
+                  <div className="text-sm font-bold text-white tracking-wide">SAFETY</div>
+                  <div className="absolute top-2 right-2 w-2 h-2 bg-white/50 rounded-full"></div>
                 </div>
+              </div>
+              
+              {/* Call-to-Action Buttons */}
+              <div className="flex flex-col sm:flex-row gap-4 animate-slide-up-delay-5">
+                <Link href="/contact">
+                  <Button size="lg" className="group bg-construction-yellow text-industrial-black hover:bg-construction-yellow/90 text-lg font-bold px-8 py-4 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105">
+                    <Phone className="mr-2 h-5 w-5 group-hover:rotate-12 transition-transform duration-300" />
+                    GET IN TOUCH
+                    <div className="ml-2 w-2 h-2 bg-industrial-black/30 rounded-full group-hover:bg-industrial-black/50 transition-colors duration-300"></div>
+                  </Button>
+                </Link>
+                <Button size="lg" variant="outline" className="group border-2 border-white/30 text-white hover:bg-white/10 hover:border-construction-yellow/50 text-lg font-bold px-8 py-4 rounded-xl backdrop-blur-sm transition-all duration-300 hover:scale-105">
+                  <Mail className="mr-2 h-5 w-5 group-hover:rotate-12 transition-transform duration-300" />
+                  REQUEST QUOTE
+                </Button>
               </div>
             </div>
             
-            <div className="animate-slide-in-right">
-              <div className="space-y-6">
-                <div>
-                  <h3 className="text-2xl font-bold text-construction-yellow mb-4 flex items-center">
-                    <Target className="text-construction-yellow mr-3 h-6 w-6" />
-                    OUR MISSION
-                  </h3>
-                  <p className="text-gray-200 leading-relaxed">
-                    To deliver industrial-grade contracting solutions that exceed safety standards and performance expectations, empowering Zimbabwe's construction, mining, and agricultural sectors with world-class expertise.
-                  </p>
+            {/* Right Column - Mission & Vision */}
+            <div className="space-y-8 animate-slide-up-delay-6">
+              <div className="space-y-8">
+                {/* Mission Card */}
+                <div className="group relative bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-md p-8 rounded-2xl border border-white/20 hover:border-construction-yellow/30 transition-all duration-500 hover:shadow-xl hover:shadow-construction-yellow/10">
+                  <div className="flex items-start space-x-4">
+                    <div className="flex-shrink-0 w-12 h-12 bg-construction-yellow rounded-xl flex items-center justify-center group-hover:scale-110 group-hover:rotate-3 transition-all duration-300">
+                      <Target className="h-6 w-6 text-industrial-black" />
+                    </div>
+                    <div>
+                      <h3 className="text-2xl font-black text-construction-yellow mb-4 group-hover:text-construction-yellow/90 transition-colors duration-300">
+                        OUR MISSION
+                      </h3>
+                      <p className="text-gray-200 leading-relaxed group-hover:text-white transition-colors duration-300">
+                        To deliver industrial-grade contracting solutions that exceed safety standards and performance expectations, empowering Zimbabwe's construction, mining, and agricultural sectors with world-class expertise.
+                      </p>
+                    </div>
+                  </div>
+                  <div className="absolute top-4 right-4 w-3 h-3 bg-construction-yellow/30 rounded-full group-hover:bg-construction-yellow/60 transition-colors duration-300"></div>
                 </div>
-                <div>
-                  <h3 className="text-2xl font-bold text-construction-yellow mb-4 flex items-center">
-                    <Eye className="text-construction-yellow mr-3 h-6 w-6" />
-                    OUR VISION
-                  </h3>
-                  <p className="text-gray-200 leading-relaxed">
-                    To be Zimbabwe's most trusted industrial contractor, recognized for our unwavering commitment to safety, innovation, and excellence in the harshest working environments.
-                  </p>
+                
+                {/* Vision Card */}
+                <div className="group relative bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-md p-8 rounded-2xl border border-white/20 hover:border-construction-yellow/30 transition-all duration-500 hover:shadow-xl hover:shadow-construction-yellow/10">
+                  <div className="flex items-start space-x-4">
+                    <div className="flex-shrink-0 w-12 h-12 bg-safety-orange rounded-xl flex items-center justify-center group-hover:scale-110 group-hover:rotate-3 transition-all duration-300">
+                      <Eye className="h-6 w-6 text-white" />
+                    </div>
+                    <div>
+                      <h3 className="text-2xl font-black text-construction-yellow mb-4 group-hover:text-construction-yellow/90 transition-colors duration-300">
+                        OUR VISION
+                      </h3>
+                      <p className="text-gray-200 leading-relaxed group-hover:text-white transition-colors duration-300">
+                        To be Zimbabwe's most trusted industrial contractor, recognized for our unwavering commitment to safety, innovation, and excellence in the harshest working environments.
+                      </p>
+                    </div>
+                  </div>
+                  <div className="absolute top-4 right-4 w-3 h-3 bg-safety-orange/30 rounded-full group-hover:bg-safety-orange/60 transition-colors duration-300"></div>
                 </div>
               </div>
             </div>
+          </div>
+        </div>
+        
+        {/* Scroll Indicator */}
+        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+          <div className="w-6 h-10 border-2 border-construction-yellow/50 rounded-full flex justify-center">
+            <div className="w-1 h-3 bg-construction-yellow rounded-full mt-2 animate-pulse"></div>
           </div>
         </div>
       </section>
