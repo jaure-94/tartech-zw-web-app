@@ -700,6 +700,130 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Trusted Clients Section */}
+      <section className="py-20 bg-gradient-to-br from-gray-50 via-white to-gray-50 border-t border-gray-200">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="animate-fade-in text-3xl sm:text-4xl font-black text-industrial-black mb-4">
+              TRUSTED BY <span className="text-construction-yellow">INDUSTRY LEADERS</span>
+            </h2>
+            <p className="animate-fade-in text-lg text-industrial-gray max-w-2xl mx-auto">
+              Partnering with Zimbabwe's most respected organizations across public and private sectors
+            </p>
+          </div>
+          
+          {/* Client Logos Slider */}
+          <div className="relative overflow-hidden">
+            <div className="flex animate-slide-infinite space-x-16 items-center justify-center py-8">
+              {/* City of Harare */}
+              <div className="flex-shrink-0 group">
+                <div className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 w-72 h-40 flex flex-col items-center justify-center border border-gray-100 group-hover:border-construction-yellow/30">
+                  <div className="w-16 h-16 bg-gradient-to-br from-construction-yellow to-construction-yellow/80 rounded-full flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
+                    <span className="text-industrial-black font-black text-xl">CH</span>
+                  </div>
+                  <h3 className="text-industrial-black font-bold text-lg text-center">City of Harare</h3>
+                </div>
+              </div>
+              
+              {/* City of Marondera */}
+              <div className="flex-shrink-0 group">
+                <div className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 w-72 h-40 flex flex-col items-center justify-center border border-gray-100 group-hover:border-construction-yellow/30">
+                  <div className="w-16 h-16 bg-gradient-to-br from-construction-yellow to-construction-yellow/80 rounded-full flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
+                    <span className="text-industrial-black font-black text-xl">CM</span>
+                  </div>
+                  <h3 className="text-industrial-black font-bold text-lg text-center">City of Marondera</h3>
+                </div>
+              </div>
+              
+              {/* Bikita Minerals */}
+              <div className="flex-shrink-0 group">
+                <div className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 w-72 h-40 flex flex-col items-center justify-center border border-gray-100 group-hover:border-construction-yellow/30">
+                  <div className="w-16 h-16 bg-gradient-to-br from-construction-yellow to-construction-yellow/80 rounded-full flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
+                    <Drill className="text-industrial-black h-8 w-8" />
+                  </div>
+                  <h3 className="text-industrial-black font-bold text-lg text-center">Bikita Minerals</h3>
+                </div>
+              </div>
+              
+              {/* Ministry of Transport */}
+              <div className="flex-shrink-0 group">
+                <div className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 w-72 h-40 flex flex-col items-center justify-center border border-gray-100 group-hover:border-construction-yellow/30">
+                  <div className="w-16 h-16 bg-gradient-to-br from-construction-yellow to-construction-yellow/80 rounded-full flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
+                    <span className="text-industrial-black font-black text-sm">MOT</span>
+                  </div>
+                  <h3 className="text-industrial-black font-bold text-lg text-center leading-tight">Min of Transport<br/>Department of Roads</h3>
+                </div>
+              </div>
+              
+              {/* Freda Rebecca Mines */}
+              <div className="flex-shrink-0 group">
+                <div className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 w-72 h-40 flex flex-col items-center justify-center border border-gray-100 group-hover:border-construction-yellow/30">
+                  <div className="w-16 h-16 bg-gradient-to-br from-construction-yellow to-construction-yellow/80 rounded-full flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
+                    <Mountain className="text-industrial-black h-8 w-8" />
+                  </div>
+                  <h3 className="text-industrial-black font-bold text-lg text-center">Freda Rebecca Mines</h3>
+                </div>
+              </div>
+              
+              {/* Bindura Nickel Corporation */}
+              <div className="flex-shrink-0 group">
+                <div className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 w-72 h-40 flex flex-col items-center justify-center border border-gray-100 group-hover:border-construction-yellow/30">
+                  <div className="w-16 h-16 bg-gradient-to-br from-construction-yellow to-construction-yellow/80 rounded-full flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
+                    <span className="text-industrial-black font-black text-sm">BNC</span>
+                  </div>
+                  <h3 className="text-industrial-black font-bold text-lg text-center leading-tight">Bindura Nickel<br/>Corporation</h3>
+                </div>
+              </div>
+              
+              {/* Khaya Cement */}
+              <div className="flex-shrink-0 group">
+                <div className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 w-72 h-40 flex flex-col items-center justify-center border border-gray-100 group-hover:border-construction-yellow/30">
+                  <div className="w-16 h-16 bg-gradient-to-br from-construction-yellow to-construction-yellow/80 rounded-full flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
+                    <HardHat className="text-industrial-black h-8 w-8" />
+                  </div>
+                  <h3 className="text-industrial-black font-bold text-lg text-center">Khaya Cement</h3>
+                </div>
+              </div>
+              
+              {/* Zimplats */}
+              <div className="flex-shrink-0 group">
+                <div className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 w-72 h-40 flex flex-col items-center justify-center border border-gray-100 group-hover:border-construction-yellow/30">
+                  <div className="w-16 h-16 bg-gradient-to-br from-construction-yellow to-construction-yellow/80 rounded-full flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
+                    <span className="text-industrial-black font-black text-xl">ZP</span>
+                  </div>
+                  <h3 className="text-industrial-black font-bold text-lg text-center">Zimplats</h3>
+                </div>
+              </div>
+              
+              {/* Duplicate set for seamless loop */}
+              {/* City of Harare */}
+              <div className="flex-shrink-0 group">
+                <div className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 w-72 h-40 flex flex-col items-center justify-center border border-gray-100 group-hover:border-construction-yellow/30">
+                  <div className="w-16 h-16 bg-gradient-to-br from-construction-yellow to-construction-yellow/80 rounded-full flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
+                    <span className="text-industrial-black font-black text-xl">CH</span>
+                  </div>
+                  <h3 className="text-industrial-black font-bold text-lg text-center">City of Harare</h3>
+                </div>
+              </div>
+              
+              {/* City of Marondera */}
+              <div className="flex-shrink-0 group">
+                <div className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 w-72 h-40 flex flex-col items-center justify-center border border-gray-100 group-hover:border-construction-yellow/30">
+                  <div className="w-16 h-16 bg-gradient-to-br from-construction-yellow to-construction-yellow/80 rounded-full flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
+                    <span className="text-industrial-black font-black text-xl">CM</span>
+                  </div>
+                  <h3 className="text-industrial-black font-bold text-lg text-center">City of Marondera</h3>
+                </div>
+              </div>
+            </div>
+            
+            {/* Gradient Overlays for Smooth Fade */}
+            <div className="absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-gray-50 to-transparent pointer-events-none"></div>
+            <div className="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-gray-50 to-transparent pointer-events-none"></div>
+          </div>
+        </div>
+      </section>
+
       {/* Call to Action */}
       <section className="py-24 bg-construction-yellow">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">

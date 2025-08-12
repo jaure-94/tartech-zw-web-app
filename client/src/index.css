@@ -218,6 +218,15 @@
     }
   }
 
+  @keyframes slide-infinite {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+
   @keyframes float-slow {
     0%, 100% {
       transform: translateY(0px) translateX(0px);
