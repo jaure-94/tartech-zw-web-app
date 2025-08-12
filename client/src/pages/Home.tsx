@@ -130,7 +130,9 @@ export default function Home() {
       const chars = document.querySelectorAll('.char');
       console.log('Created character spans:', chars.length);
       
-      // PHASE 1: Animate heading letters FIRST and COMPLETE before anything else
+      // PHASE 1: First make heading visible, then animate letters
+      heroTimeline.set('h1', { opacity: 1 });
+      
       heroTimeline.fromTo('.char', 
         {
           opacity: 0,
@@ -417,8 +419,8 @@ export default function Home() {
               {/* Enhanced Headlines Structure */}
               <div className="space-y-10">
                 <div className="space-y-6">
-                  <div className="relative">
-                    <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black leading-[0.9] tracking-tight">
+                  <div className="relative py-8">
+                    <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black leading-[0.9] tracking-tight opacity-0">
                       <span className="hero-heading-text-1 block text-white font-black mb-2">
                         INDUSTRIAL
                       </span>
