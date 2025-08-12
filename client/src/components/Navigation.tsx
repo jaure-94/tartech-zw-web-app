@@ -107,7 +107,7 @@ export function Navigation() {
                 </button>
                 
                 {/* Enhanced Dropdown - Mobile Nav Style */}
-                <div className={`absolute top-full right-0 mt-20 w-64 transition-all duration-400 ease-out transform ${
+                <div className={`absolute top-full right-0 w-64 transition-all duration-400 ease-out transform ${
                   servicesDropdownOpen ? 'opacity-100 visible translate-y-0' : 'opacity-0 invisible translate-y-2'
                 }`}>
                   
