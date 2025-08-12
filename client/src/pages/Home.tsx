@@ -595,10 +595,10 @@ export default function Home() {
             </p>
           </div>
           
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 lg:gap-8">
             {/* Mining Industry */}
-            <div className="animate-slide-in-left">
-              <Card className="bg-white/10 backdrop-blur-sm border-0 overflow-hidden group cursor-pointer">
+            <div className="animate-slide-in-left md:col-span-1 xl:col-span-1">
+              <Card className="bg-white/10 backdrop-blur-sm border-0 overflow-hidden group cursor-pointer h-full flex flex-col">
                 <div className="h-64 overflow-hidden">
                   <img 
                     src="https://images.unsplash.com/photo-1611273426858-450d8e3c9fce?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=600&h=400" 
@@ -606,16 +606,16 @@ export default function Home() {
                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" 
                   />
                 </div>
-                <CardContent className="p-8 text-white">
+                <CardContent className="p-6 lg:p-8 text-white flex-1 flex flex-col">
                   <Mountain className="h-12 w-12 text-construction-yellow mb-4" />
-                  <h3 className="text-2xl font-bold mb-4">MINING SECTOR</h3>
-                  <ul className="space-y-2 text-gray-300 mb-6">
-                    <li className="flex items-center"><CheckCircle className="h-4 w-4 text-construction-yellow mr-2" /> Gold & Platinum Extraction</li>
-                    <li className="flex items-center"><CheckCircle className="h-4 w-4 text-construction-yellow mr-2" /> Open-Pit Operations</li>
-                    <li className="flex items-center"><CheckCircle className="h-4 w-4 text-construction-yellow mr-2" /> Underground Mining</li>
-                    <li className="flex items-center"><CheckCircle className="h-4 w-4 text-construction-yellow mr-2" /> Environmental Rehabilitation</li>
+                  <h3 className="text-xl lg:text-2xl font-bold mb-4">MINING SECTOR</h3>
+                  <ul className="space-y-2 text-gray-300 mb-6 flex-1">
+                    <li className="flex items-center"><CheckCircle className="h-4 w-4 text-construction-yellow mr-2 flex-shrink-0" /> Gold & Platinum Extraction</li>
+                    <li className="flex items-center"><CheckCircle className="h-4 w-4 text-construction-yellow mr-2 flex-shrink-0" /> Open-Pit Operations</li>
+                    <li className="flex items-center"><CheckCircle className="h-4 w-4 text-construction-yellow mr-2 flex-shrink-0" /> Underground Mining</li>
+                    <li className="flex items-center"><CheckCircle className="h-4 w-4 text-construction-yellow mr-2 flex-shrink-0" /> Environmental Rehabilitation</li>
                   </ul>
-                  <Link href="/services/mining">
+                  <Link href="/services/mining" className="mt-auto">
                     <Button className="w-full bg-construction-yellow text-industrial-black hover:bg-white font-bold">
                       LEARN MORE
                     </Button>
@@ -625,8 +625,8 @@ export default function Home() {
             </div>
             
             {/* Construction Industry */}
-            <div className="animate-fade-in">
-              <Card className="bg-white/10 backdrop-blur-sm border-0 overflow-hidden group cursor-pointer">
+            <div className="animate-fade-in md:col-span-1 xl:col-span-1">
+              <Card className="bg-white/10 backdrop-blur-sm border-0 overflow-hidden group cursor-pointer h-full flex flex-col">
                 <div className="h-64 overflow-hidden">
                   <img 
                     src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=600&h=400" 
@@ -634,16 +634,16 @@ export default function Home() {
                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" 
                   />
                 </div>
-                <CardContent className="p-8 text-white">
+                <CardContent className="p-6 lg:p-8 text-white flex-1 flex flex-col">
                   <HardHat className="h-12 w-12 text-construction-yellow mb-4" />
-                  <h3 className="text-2xl font-bold mb-4">CONSTRUCTION</h3>
-                  <ul className="space-y-2 text-gray-300 mb-6">
-                    <li className="flex items-center"><CheckCircle className="h-4 w-4 text-construction-yellow mr-2" /> Industrial Facilities</li>
-                    <li className="flex items-center"><CheckCircle className="h-4 w-4 text-construction-yellow mr-2" /> Commercial Buildings</li>
-                    <li className="flex items-center"><CheckCircle className="h-4 w-4 text-construction-yellow mr-2" /> Heavy Foundations</li>
-                    <li className="flex items-center"><CheckCircle className="h-4 w-4 text-construction-yellow mr-2" /> Structural Steelwork</li>
+                  <h3 className="text-xl lg:text-2xl font-bold mb-4">CONSTRUCTION</h3>
+                  <ul className="space-y-2 text-gray-300 mb-6 flex-1">
+                    <li className="flex items-center"><CheckCircle className="h-4 w-4 text-construction-yellow mr-2 flex-shrink-0" /> Industrial Facilities</li>
+                    <li className="flex items-center"><CheckCircle className="h-4 w-4 text-construction-yellow mr-2 flex-shrink-0" /> Commercial Buildings</li>
+                    <li className="flex items-center"><CheckCircle className="h-4 w-4 text-construction-yellow mr-2 flex-shrink-0" /> Heavy Foundations</li>
+                    <li className="flex items-center"><CheckCircle className="h-4 w-4 text-construction-yellow mr-2 flex-shrink-0" /> Structural Steelwork</li>
                   </ul>
-                  <Link href="/services/construction">
+                  <Link href="/services/construction" className="mt-auto">
                     <Button className="w-full bg-construction-yellow text-industrial-black hover:bg-white font-bold">
                       LEARN MORE
                     </Button>
@@ -653,8 +653,8 @@ export default function Home() {
             </div>
             
             {/* Agriculture Industry */}
-            <div className="animate-slide-in-right">
-              <Card className="bg-white/10 backdrop-blur-sm border-0 overflow-hidden group cursor-pointer">
+            <div className="animate-slide-in-right md:col-span-2 xl:col-span-1">
+              <Card className="bg-white/10 backdrop-blur-sm border-0 overflow-hidden group cursor-pointer h-full flex flex-col">
                 <div className="h-64 overflow-hidden">
                   <img 
                     src="https://images.unsplash.com/photo-1560493676-04071c5f467b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=600&h=400" 
@@ -662,16 +662,16 @@ export default function Home() {
                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" 
                   />
                 </div>
-                <CardContent className="p-8 text-white">
+                <CardContent className="p-6 lg:p-8 text-white flex-1 flex flex-col">
                   <Tractor className="h-12 w-12 text-construction-yellow mb-4" />
-                  <h3 className="text-2xl font-bold mb-4">AGRICULTURE</h3>
-                  <ul className="space-y-2 text-gray-300 mb-6">
-                    <li className="flex items-center"><CheckCircle className="h-4 w-4 text-construction-yellow mr-2" /> Irrigation Systems</li>
-                    <li className="flex items-center"><CheckCircle className="h-4 w-4 text-construction-yellow mr-2" /> Storage Facilities</li>
-                    <li className="flex items-center"><CheckCircle className="h-4 w-4 text-construction-yellow mr-2" /> Farm Mechanization</li>
-                    <li className="flex items-center"><CheckCircle className="h-4 w-4 text-construction-yellow mr-2" /> Infrastructure Development</li>
+                  <h3 className="text-xl lg:text-2xl font-bold mb-4">AGRICULTURE</h3>
+                  <ul className="space-y-2 text-gray-300 mb-6 flex-1">
+                    <li className="flex items-center"><CheckCircle className="h-4 w-4 text-construction-yellow mr-2 flex-shrink-0" /> Irrigation Systems</li>
+                    <li className="flex items-center"><CheckCircle className="h-4 w-4 text-construction-yellow mr-2 flex-shrink-0" /> Storage Facilities</li>
+                    <li className="flex items-center"><CheckCircle className="h-4 w-4 text-construction-yellow mr-2 flex-shrink-0" /> Farm Mechanization</li>
+                    <li className="flex items-center"><CheckCircle className="h-4 w-4 text-construction-yellow mr-2 flex-shrink-0" /> Infrastructure Development</li>
                   </ul>
-                  <Link href="/services/agriculture">
+                  <Link href="/services/agriculture" className="mt-auto">
                     <Button className="w-full bg-construction-yellow text-industrial-black hover:bg-white font-bold">
                       LEARN MORE
                     </Button>
