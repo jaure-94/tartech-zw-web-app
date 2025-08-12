@@ -39,17 +39,15 @@ export default function Home() {
         gsap.fromTo('.char', 
           {
             opacity: 0,
-            y: 50,
-            rotationX: -90,
-            scale: 0.8
+            y: -60,
+            scale: 0.9
           },
           {
             opacity: 1,
             y: 0,
-            rotationX: 0,
             scale: 1,
-            duration: 0.8,
-            ease: "back.out(1.7)",
+            duration: 1.0,
+            ease: "power3.out",
             stagger: {
               amount: 3.0,
               from: "start"
