@@ -24,48 +24,176 @@ export default function Home() {
       <ScrollAnimations />
       
       {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-16">
-        <div className="absolute inset-0 z-0">
+      <section className="relative min-h-screen flex items-center bg-gradient-to-br from-industrial-black via-gray-900 to-industrial-black overflow-hidden">
+        {/* Advanced Background Layer */}
+        <div className="absolute inset-0">
+          {/* Primary Background Image */}
           <img 
             src={bulldozerImage} 
             alt="Heavy industrial bulldozer and excavator equipment at construction site with dramatic sky" 
-            className="w-full h-full object-cover"
+            className="w-full h-full object-cover opacity-35 animate-zoom-in"
             onError={(e) => {
               e.currentTarget.src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&h=1080";
             }}
           />
-          <div className="hero-overlay absolute inset-0"></div>
-        </div>
-        
-        <div className="relative z-20 text-center px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
-          <h1 className="animate-fade-in text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-black text-white mb-8 leading-tight tracking-tight">
-            ENGINEERING EXCELLENCE<br />
-            <span className="text-construction-yellow">IN HARSH ENVIRONMENTS</span>
-          </h1>
-          <p className="animate-fade-in text-base sm:text-lg md:text-xl lg:text-2xl text-gray-200 mb-12 max-w-5xl mx-auto font-light leading-relaxed">
-            Zimbabwe's premier industrial contractor delivering world-class solutions in construction, mining, and agriculture with three decades of proven expertise and unwavering safety standards.
-          </p>
-          <div className="animate-fade-in flex flex-col sm:flex-row gap-6 justify-center">
-            <Button 
-              size="lg" 
-              onClick={scrollToServices}
-              className="bg-construction-yellow text-industrial-black hover:bg-white text-xl px-10 py-6 rounded-xl shadow-2xl transform hover:scale-105 transition-all duration-300"
-            >
-              <Bolt className="mr-3 h-6 w-6" />
-              EXPLORE SERVICES
-            </Button>
-            <Link href="/contact">
-              <Button size="lg" variant="outline" className="border-3 border-white text-black hover:bg-white hover:text-black text-xl px-10 py-6 rounded-xl shadow-2xl transform hover:scale-105 transition-all duration-300">
-                <Calculator className="mr-3 h-6 w-6" />
-                GET A QUOTE
-              </Button>
-            </Link>
+          
+          {/* Dynamic Overlay */}
+          <div className="absolute inset-0 bg-gradient-to-br from-black/75 via-black/65 to-black/75 animate-fade-in"></div>
+          
+          {/* Animated Grid Pattern */}
+          <div className="absolute inset-0 opacity-8">
+            <svg className="w-full h-full" viewBox="0 0 100 100" preserveAspectRatio="none">
+              <defs>
+                <pattern id="hero-grid" width="8" height="8" patternUnits="userSpaceOnUse">
+                  <path d="M 8 0 L 0 0 0 8" fill="none" stroke="currentColor" strokeWidth="0.3" className="text-construction-yellow"/>
+                </pattern>
+              </defs>
+              <rect width="100%" height="100%" fill="url(#hero-grid)" className="animate-pulse" />
+            </svg>
+          </div>
+          
+          {/* Floating Industrial Elements */}
+          <div className="absolute inset-0 overflow-hidden">
+            <div className="absolute top-1/4 left-1/6 w-3 h-3 bg-construction-yellow/60 rounded-full animate-float-slow"></div>
+            <div className="absolute top-2/3 left-1/4 w-2 h-2 bg-safety-orange/50 rounded-full animate-float-medium"></div>
+            <div className="absolute top-1/3 right-1/5 w-4 h-4 bg-construction-yellow/40 rounded-full animate-float-fast"></div>
+            <div className="absolute bottom-1/3 right-1/3 w-2.5 h-2.5 bg-white/40 rounded-full animate-float-slow"></div>
+            <div className="absolute top-1/2 left-2/3 w-1.5 h-1.5 bg-construction-yellow/70 rounded-full animate-float-medium"></div>
+          </div>
+          
+          {/* Geometric Accent Lines */}
+          <div className="absolute inset-0">
+            <div className="absolute top-1/4 left-0 w-32 h-0.5 bg-gradient-to-r from-construction-yellow/60 to-transparent animate-slide-right"></div>
+            <div className="absolute bottom-1/3 right-0 w-24 h-0.5 bg-gradient-to-l from-safety-orange/50 to-transparent animate-slide-left"></div>
+            <div className="absolute top-2/3 left-8 w-16 h-0.5 bg-gradient-to-r from-white/40 to-transparent animate-slide-right-delay"></div>
           </div>
         </div>
         
-        {/* Scroll indicator */}
-        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 text-white animate-bounce">
-          <ChevronDown className="h-8 w-8" />
+        {/* Main Content Container */}
+        <div className="relative w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center min-h-[80vh]">
+            
+            {/* Left Column - Hero Content */}
+            <div className="lg:col-span-7 space-y-10">
+              {/* Animated Company Badge */}
+              <div className="animate-slide-up-delay-1">
+                <div className="inline-flex items-center px-6 py-3 bg-construction-yellow/10 backdrop-blur-sm border border-construction-yellow/30 rounded-full">
+                  <Shield className="w-5 h-5 text-construction-yellow mr-3" />
+                  <span className="text-construction-yellow font-bold text-sm uppercase tracking-wider">30+ Years Engineering Excellence</span>
+                </div>
+              </div>
+              
+              {/* Main Headlines */}
+              <div className="space-y-6">
+                <h1 className="animate-slide-up-delay-2 text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black text-white leading-[0.95] tracking-tight">
+                  INDUSTRIAL
+                  <br />
+                  <span className="relative">
+                    <span className="text-construction-yellow">EXCELLENCE</span>
+                    <div className="absolute -bottom-2 left-0 w-full h-1 bg-gradient-to-r from-construction-yellow to-safety-orange animate-expand-width"></div>
+                  </span>
+                  <br />
+                  <span className="text-white/90">IN ZIMBABWE</span>
+                </h1>
+                
+                <p className="animate-slide-up-delay-3 text-lg sm:text-xl md:text-2xl text-gray-300 max-w-2xl font-light leading-relaxed">
+                  Leading contractor delivering world-class solutions in <span className="text-construction-yellow font-semibold">construction</span>, <span className="text-construction-yellow font-semibold">mining</span>, and <span className="text-construction-yellow font-semibold">agriculture</span> with unwavering safety standards.
+                </p>
+              </div>
+              
+              {/* Statistics Row */}
+              <div className="animate-slide-up-delay-4 grid grid-cols-3 gap-8 py-8">
+                <div className="text-center lg:text-left">
+                  <div className="text-3xl lg:text-4xl font-black text-construction-yellow mb-1">500+</div>
+                  <div className="text-sm text-gray-400 uppercase tracking-wide font-medium">Projects Delivered</div>
+                </div>
+                <div className="text-center lg:text-left">
+                  <div className="text-3xl lg:text-4xl font-black text-construction-yellow mb-1">100%</div>
+                  <div className="text-sm text-gray-400 uppercase tracking-wide font-medium">Safety Record</div>
+                </div>
+                <div className="text-center lg:text-left">
+                  <div className="text-3xl lg:text-4xl font-black text-construction-yellow mb-1">24/7</div>
+                  <div className="text-sm text-gray-400 uppercase tracking-wide font-medium">Support Available</div>
+                </div>
+              </div>
+              
+              {/* CTA Buttons */}
+              <div className="animate-slide-up-delay-5 flex flex-col sm:flex-row gap-6">
+                <Button 
+                  size="lg" 
+                  onClick={scrollToServices}
+                  className="group bg-construction-yellow text-industrial-black hover:bg-construction-yellow/90 text-lg px-8 py-4 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
+                >
+                  <Bolt className="mr-2 h-5 w-5 group-hover:rotate-12 transition-transform duration-300" />
+                  EXPLORE SERVICES
+                  <div className="ml-2 w-2 h-2 bg-industrial-black/30 rounded-full group-hover:bg-industrial-black/50 transition-colors duration-300"></div>
+                </Button>
+                <Link href="/contact">
+                  <Button size="lg" variant="outline" className="group border-2 border-white/30 text-white hover:bg-white/10 hover:border-construction-yellow/50 text-lg px-8 py-4 rounded-xl backdrop-blur-sm transition-all duration-300 hover:scale-105">
+                    <Phone className="mr-2 h-5 w-5 group-hover:rotate-12 transition-transform duration-300" />
+                    GET A QUOTE
+                  </Button>
+                </Link>
+              </div>
+            </div>
+            
+            {/* Right Column - Visual Elements */}
+            <div className="lg:col-span-5 relative">
+              {/* Floating Feature Cards */}
+              <div className="animate-slide-left-delay-3 space-y-6">
+                {/* Safety Card */}
+                <div className="bg-white/5 backdrop-blur-lg border border-white/10 rounded-2xl p-6 hover:bg-white/10 transition-all duration-300 hover:scale-105">
+                  <div className="flex items-center space-x-4">
+                    <div className="p-3 bg-construction-yellow/20 rounded-xl">
+                      <Shield className="w-6 h-6 text-construction-yellow" />
+                    </div>
+                    <div>
+                      <h3 className="text-white font-bold text-lg">Zero Accident Policy</h3>
+                      <p className="text-gray-400 text-sm">Industry-leading safety protocols</p>
+                    </div>
+                  </div>
+                </div>
+                
+                {/* Innovation Card */}
+                <div className="bg-white/5 backdrop-blur-lg border border-white/10 rounded-2xl p-6 hover:bg-white/10 transition-all duration-300 hover:scale-105 ml-8">
+                  <div className="flex items-center space-x-4">
+                    <div className="p-3 bg-safety-orange/20 rounded-xl">
+                      <Award className="w-6 h-6 text-safety-orange" />
+                    </div>
+                    <div>
+                      <h3 className="text-white font-bold text-lg">Certified Excellence</h3>
+                      <p className="text-gray-400 text-sm">ISO & NSSA certified operations</p>
+                    </div>
+                  </div>
+                </div>
+                
+                {/* 24/7 Support Card */}
+                <div className="bg-white/5 backdrop-blur-lg border border-white/10 rounded-2xl p-6 hover:bg-white/10 transition-all duration-300 hover:scale-105">
+                  <div className="flex items-center space-x-4">
+                    <div className="p-3 bg-construction-yellow/20 rounded-xl">
+                      <Clock className="w-6 h-6 text-construction-yellow" />
+                    </div>
+                    <div>
+                      <h3 className="text-white font-bold text-lg">Always Available</h3>
+                      <p className="text-gray-400 text-sm">Round-the-clock support coverage</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+              {/* Decorative Elements */}
+              <div className="absolute -top-8 -right-8 w-32 h-32 bg-gradient-to-br from-construction-yellow/10 to-safety-orange/10 rounded-full blur-xl animate-pulse"></div>
+              <div className="absolute -bottom-8 -left-8 w-24 h-24 bg-gradient-to-tr from-white/10 to-construction-yellow/10 rounded-full blur-lg animate-pulse"></div>
+            </div>
+          </div>
+        </div>
+        
+        {/* Enhanced Scroll Indicator */}
+        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 text-center">
+          <div className="animate-bounce">
+            <div className="text-construction-yellow text-sm font-medium mb-2 uppercase tracking-wider">Discover More</div>
+            <ChevronDown className="h-6 w-6 text-construction-yellow mx-auto" />
+          </div>
         </div>
       </section>
 
