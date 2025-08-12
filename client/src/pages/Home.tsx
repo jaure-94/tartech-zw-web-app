@@ -38,7 +38,7 @@ export default function Home() {
           }
         });
         
-        // Step 1: Animate heading letters first
+        // Step 1: Animate heading letters first (complete before others start)
         heroTimeline.fromTo('.char', 
           {
             opacity: 0,
@@ -57,7 +57,7 @@ export default function Home() {
             }
           }
         )
-        // Step 2: Animate company badge
+        // Step 2: Animate company badge (starts after heading completes)
         .fromTo('.animate-slide-up-delay-1', 
           {
             opacity: 0,
@@ -69,7 +69,7 @@ export default function Home() {
             duration: 0.8,
             ease: "power2.out"
           },
-          "-=1.5" // Start 1.5 seconds before previous animation ends
+          "+=0.3" // Start 0.3 seconds after previous animation ends
         )
         // Step 3: Animate subtitle and description
         .fromTo('.animate-slide-up-delay-3', 
@@ -83,7 +83,7 @@ export default function Home() {
             duration: 0.8,
             ease: "power2.out"
           },
-          "-=0.8"
+          "-=0.6"
         )
         // Step 4: Animate statistics
         .fromTo('.animate-slide-up-delay-4', 
