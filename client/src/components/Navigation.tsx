@@ -119,22 +119,32 @@ export function Navigation() {
                       {serviceLinks.map((link, index) => (
                         <Link key={link.href} href={link.href} onClick={handleNavClick}>
                           <div 
-                            className="group mx-3 my-1 px-4 py-3 cursor-pointer"
+                            className="group mx-3 my-1 cursor-pointer transition-all duration-500 hover:px-6 hover:py-4"
                             style={{ 
                               animationDelay: `${index * 50}ms`,
-                              animation: servicesDropdownOpen ? 'slideInRight 0.3s ease-out forwards' : ''
+                              animation: servicesDropdownOpen ? 'slideInRight 0.3s ease-out forwards' : '',
+                              padding: '12px 16px',
+                              transition: 'padding 0.5s ease'
+                            }}
+                            onMouseEnter={(e) => {
+                              const span = e.currentTarget.querySelector('span');
+                              if (span) span.style.color = '#F59E0B';
+                              e.currentTarget.style.padding = '16px 24px';
+                            }}
+                            onMouseLeave={(e) => {
+                              const span = e.currentTarget.querySelector('span');
+                              if (span) span.style.color = '#000000';
+                              e.currentTarget.style.padding = '12px 16px';
                             }}
                           >
-                            {/* Content - Simple text color transition only */}
+                            {/* Content */}
                             <div className="flex items-center">
                               <span 
-                                className="nav-font text-base font-normal transition-colors duration-500 tracking-wide" 
+                                className="nav-font text-base font-normal tracking-wide" 
                                 style={{ 
                                   color: '#000000',
                                   transition: 'color 0.5s ease'
                                 }}
-                                onMouseEnter={(e) => e.currentTarget.style.color = '#F59E0B'}
-                                onMouseLeave={(e) => e.currentTarget.style.color = '#000000'}
                               >
                                 {link.label}
                               </span>
