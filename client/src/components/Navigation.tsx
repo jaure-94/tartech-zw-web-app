@@ -119,21 +119,21 @@ export function Navigation() {
                       {serviceLinks.map((link, index) => (
                         <Link key={link.href} href={link.href} onClick={handleNavClick}>
                           <div 
-                            className="group relative mx-3 my-1 px-4 py-3 transition-all duration-300 hover:bg-construction-yellow/20 hover:shadow-lg cursor-pointer rounded-md"
+                            className="group mx-3 my-1 px-4 py-3 cursor-pointer"
                             style={{ 
                               animationDelay: `${index * 50}ms`,
                               animation: servicesDropdownOpen ? 'slideInRight 0.3s ease-out forwards' : ''
                             }}
                           >
-                            {/* Content */}
+                            {/* Content - Simple text color transition only */}
                             <div className="flex items-center">
-                              <span className="nav-font text-base font-normal group-hover:text-construction-yellow transition-colors duration-500 tracking-wide" style={{ color: '#000000' }}>
+                              <span 
+                                className="nav-font text-base font-normal group-hover:text-construction-yellow transition-colors duration-500 tracking-wide" 
+                                style={{ color: '#000000' }}
+                              >
                                 {link.label}
                               </span>
                             </div>
-                            
-                            {/* Animated underline */}
-                            <div className="absolute bottom-0 left-4 right-4 h-0.5 bg-gradient-to-r from-construction-yellow to-construction-yellow/50 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500"></div>
                           </div>
                         </Link>
                       ))}
