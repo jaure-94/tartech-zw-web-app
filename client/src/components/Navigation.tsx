@@ -107,19 +107,19 @@ export function Navigation() {
                 </button>
                 
                 {/* Enhanced Dropdown - Mobile Nav Style */}
-                <div className={`absolute top-full right-0 mt-0 w-64 transition-all duration-400 ease-out transform ${
+                <div className={`absolute top-full right-0 w-64 transition-all duration-400 ease-out transform ${
                   servicesDropdownOpen ? 'opacity-100 visible translate-y-0' : 'opacity-0 invisible translate-y-2'
                 }`}>
                   
-                  {/* Mobile-style backdrop */}
-                  <div className="bg-gradient-to-br from-white/98 to-white/95 backdrop-blur-xl border border-construction-yellow/20 shadow-2xl rounded-xl overflow-hidden">
+                  {/* Mobile-style backdrop with 40% opacity white background */}
+                  <div className="bg-white/40 backdrop-blur-xl border border-construction-yellow/20 shadow-2xl overflow-hidden">
                     
                     {/* Service links with mobile nav styling */}
                     <div className="py-3">
                       {serviceLinks.map((link, index) => (
                         <Link key={link.href} href={link.href} onClick={handleNavClick}>
                           <div 
-                            className="group relative overflow-hidden rounded-xl mx-3 my-1 px-4 py-3 transition-all duration-300 hover:bg-gradient-to-r hover:from-construction-yellow/8 hover:to-construction-yellow/12 hover:shadow-lg cursor-pointer"
+                            className="group relative overflow-hidden mx-3 my-1 px-4 py-3 transition-all duration-300 hover:bg-gradient-to-r hover:from-construction-yellow/8 hover:to-construction-yellow/12 hover:shadow-lg cursor-pointer"
                             style={{ 
                               animationDelay: `${index * 50}ms`,
                               animation: servicesDropdownOpen ? 'slideInRight 0.3s ease-out forwards' : ''
