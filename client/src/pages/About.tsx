@@ -36,7 +36,7 @@ export default function About() {
             alt="Professional construction team in hard hats and safety gear on industrial site" 
             className="w-full h-full object-cover opacity-30"
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-industrial-black/90 via-industrial-black/85 to-industrial-black/90"></div>
+          <div className="absolute inset-0 bg-gradient-to-r from-industrial-black/95 via-industrial-black/90 to-industrial-black/95"></div>
         </div>
         
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
