@@ -84,75 +84,95 @@ export default function Home() {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-20 items-center min-h-[70vh]">
             
             {/* Left Column - Hero Content */}
-            <div className="lg:col-span-7 space-y-12">
+            <div className="lg:col-span-7 space-y-16">
               {/* Premium Company Badge */}
               <div className="animate-slide-up-delay-1">
-                <div className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-construction-yellow/8 to-construction-yellow/12 backdrop-blur-xl border border-construction-yellow/25 rounded-2xl shadow-lg hover:shadow-construction-yellow/10 transition-all duration-500 hover:scale-105">
-                  <div className="p-2 bg-construction-yellow/15 rounded-xl mr-4">
-                    <Shield className="w-5 h-5 text-construction-yellow" />
+                <div className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-construction-yellow/10 to-construction-yellow/15 backdrop-blur-xl border border-construction-yellow/30 rounded-full shadow-lg hover:shadow-construction-yellow/15 transition-all duration-500 hover:scale-105">
+                  <div className="p-1.5 bg-construction-yellow/20 rounded-full mr-3">
+                    <Shield className="w-4 h-4 text-construction-yellow" />
                   </div>
                   <div>
-                    <span className="text-construction-yellow font-bold text-sm uppercase tracking-[0.1em] block">Engineering Excellence</span>
-                    <span className="text-construction-yellow/70 font-medium text-xs uppercase tracking-wider">Since 1990</span>
+                    <span className="text-construction-yellow font-bold text-xs uppercase tracking-[0.15em] block">Engineering Excellence</span>
+                    <span className="text-construction-yellow/60 font-medium text-[10px] uppercase tracking-wider">Since 1990</span>
                   </div>
                 </div>
               </div>
               
-              {/* Main Headlines */}
-              <div className="space-y-8">
-                <h1 className="animate-slide-up-delay-2 text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black leading-[0.88] tracking-tight">
-                  <span className="block relative text-white/95">
-                    INDUSTRIAL
-                    <div className="absolute -bottom-1 left-0 w-20 h-0.5 bg-construction-yellow/20 rounded-full"></div>
-                  </span>
-                  <span className="block relative mt-3">
-                    <span className="text-construction-yellow drop-shadow-2xl filter brightness-110">EXCELLENCE</span>
-                    <div className="absolute -bottom-4 left-0 w-full h-2 bg-gradient-to-r from-construction-yellow/80 via-construction-yellow to-construction-yellow/80 animate-expand-width rounded-full shadow-lg shadow-construction-yellow/30"></div>
-                  </span>
-                  <span className="block text-white/90 mt-4 font-bold tracking-wide">IN ZIMBABWE</span>
-                </h1>
+              {/* Enhanced Headlines Structure */}
+              <div className="space-y-12">
+                <div className="space-y-6">
+                  <h1 className="animate-slide-up-delay-2 text-4xl sm:text-5xl md:text-6xl lg:text-8xl font-black leading-[0.85] tracking-tight">
+                    <span className="block relative text-white font-black mb-2">
+                      INDUSTRIAL
+                      <div className="absolute -bottom-0.5 left-0 w-24 h-0.5 bg-construction-yellow/25 rounded-full"></div>
+                    </span>
+                    <span className="block relative mb-2">
+                      <span className="text-construction-yellow drop-shadow-2xl filter brightness-110 font-black">EXCELLENCE</span>
+                      <div className="absolute -bottom-3 left-0 w-full h-1.5 bg-gradient-to-r from-construction-yellow/90 via-construction-yellow to-construction-yellow/90 animate-expand-width rounded-full shadow-lg shadow-construction-yellow/40"></div>
+                    </span>
+                    <span className="block text-white/85 font-bold tracking-wider text-3xl sm:text-4xl md:text-5xl lg:text-6xl mt-3">IN ZIMBABWE</span>
+                  </h1>
+                </div>
                 
-                <div className="animate-slide-up-delay-3 space-y-6">
-                  <p className="text-xl sm:text-2xl md:text-3xl text-white/95 font-medium max-w-2xl leading-tight tracking-wide">
-                    Leading contractor delivering world-class solutions across Zimbabwe's most demanding industrial sectors
-                  </p>
-                  <p className="text-lg sm:text-xl text-gray-300 max-w-2xl font-light leading-relaxed">
-                    Specialized in <span className="text-construction-yellow font-semibold px-3 py-1.5 bg-gradient-to-r from-construction-yellow/8 to-construction-yellow/12 rounded-lg">construction</span>, <span className="text-construction-yellow font-semibold px-3 py-1.5 bg-gradient-to-r from-construction-yellow/8 to-construction-yellow/12 rounded-lg">mining</span>, and <span className="text-construction-yellow font-semibold px-3 py-1.5 bg-gradient-to-r from-construction-yellow/8 to-construction-yellow/12 rounded-lg">agriculture</span> with unwavering safety standards and three decades of proven expertise.
-                  </p>
+                <div className="animate-slide-up-delay-3 space-y-8 max-w-3xl">
+                  <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-white font-light leading-tight tracking-wide">
+                    Leading contractor delivering <span className="font-semibold text-white/95">world-class solutions</span> across Zimbabwe's most demanding industrial sectors
+                  </h2>
+                  
+                  <div className="space-y-6">
+                    <p className="text-lg sm:text-xl lg:text-2xl text-gray-300/90 font-light leading-relaxed max-w-2xl">
+                      Three decades of unwavering commitment to safety, innovation, and excellence across multiple industrial domains.
+                    </p>
+                    
+                    <div className="flex flex-wrap gap-3">
+                      <span className="inline-flex items-center text-construction-yellow font-semibold text-base px-4 py-2 bg-gradient-to-r from-construction-yellow/10 to-construction-yellow/15 rounded-xl border border-construction-yellow/20">
+                        <div className="w-2 h-2 bg-construction-yellow rounded-full mr-3"></div>
+                        Construction
+                      </span>
+                      <span className="inline-flex items-center text-construction-yellow font-semibold text-base px-4 py-2 bg-gradient-to-r from-construction-yellow/10 to-construction-yellow/15 rounded-xl border border-construction-yellow/20">
+                        <div className="w-2 h-2 bg-construction-yellow rounded-full mr-3"></div>
+                        Mining
+                      </span>
+                      <span className="inline-flex items-center text-construction-yellow font-semibold text-base px-4 py-2 bg-gradient-to-r from-construction-yellow/10 to-construction-yellow/15 rounded-xl border border-construction-yellow/20">
+                        <div className="w-2 h-2 bg-construction-yellow rounded-full mr-3"></div>
+                        Agriculture
+                      </span>
+                    </div>
+                  </div>
                 </div>
               </div>
               
               {/* Premium Statistics Display */}
-              <div className="animate-slide-up-delay-4 py-12">
-                <div className="bg-gradient-to-r from-white/5 to-white/8 backdrop-blur-xl rounded-3xl border border-white/10 p-8 shadow-2xl">
-                  <div className="grid grid-cols-3 gap-8">
+              <div className="animate-slide-up-delay-4 py-8">
+                <div className="bg-gradient-to-r from-white/6 to-white/10 backdrop-blur-xl rounded-2xl border border-white/15 p-6 shadow-2xl">
+                  <div className="grid grid-cols-3 gap-6">
                     <div className="text-center group cursor-default">
                       <div className="relative">
-                        <div className="text-4xl lg:text-6xl font-black text-construction-yellow mb-3 group-hover:scale-110 transition-transform duration-500 filter drop-shadow-lg">500+</div>
-                        <div className="absolute -bottom-1 left-1/2 transform -translate-x-1/2 w-10 h-1 bg-gradient-to-r from-construction-yellow/60 to-construction-yellow/80 rounded-full group-hover:w-16 transition-all duration-500 shadow-lg shadow-construction-yellow/20"></div>
+                        <div className="text-3xl lg:text-5xl font-black text-construction-yellow mb-2 group-hover:scale-110 transition-transform duration-500 filter drop-shadow-lg">500+</div>
+                        <div className="absolute -bottom-0.5 left-1/2 transform -translate-x-1/2 w-8 h-0.5 bg-gradient-to-r from-construction-yellow/70 to-construction-yellow/90 rounded-full group-hover:w-12 transition-all duration-500 shadow-md shadow-construction-yellow/25"></div>
                       </div>
-                      <div className="text-xs text-gray-300 uppercase tracking-[0.15em] font-bold mt-4">Projects Delivered</div>
+                      <div className="text-[11px] text-gray-300 uppercase tracking-[0.2em] font-semibold mt-3">Projects Delivered</div>
                     </div>
                     <div className="text-center group cursor-default">
                       <div className="relative">
-                        <div className="text-4xl lg:text-6xl font-black text-construction-yellow mb-3 group-hover:scale-110 transition-transform duration-500 filter drop-shadow-lg">100%</div>
-                        <div className="absolute -bottom-1 left-1/2 transform -translate-x-1/2 w-10 h-1 bg-gradient-to-r from-construction-yellow/60 to-construction-yellow/80 rounded-full group-hover:w-16 transition-all duration-500 shadow-lg shadow-construction-yellow/20"></div>
+                        <div className="text-3xl lg:text-5xl font-black text-construction-yellow mb-2 group-hover:scale-110 transition-transform duration-500 filter drop-shadow-lg">100%</div>
+                        <div className="absolute -bottom-0.5 left-1/2 transform -translate-x-1/2 w-8 h-0.5 bg-gradient-to-r from-construction-yellow/70 to-construction-yellow/90 rounded-full group-hover:w-12 transition-all duration-500 shadow-md shadow-construction-yellow/25"></div>
                       </div>
-                      <div className="text-xs text-gray-300 uppercase tracking-[0.15em] font-bold mt-4">Safety Record</div>
+                      <div className="text-[11px] text-gray-300 uppercase tracking-[0.2em] font-semibold mt-3">Safety Record</div>
                     </div>
                     <div className="text-center group cursor-default">
                       <div className="relative">
-                        <div className="text-4xl lg:text-6xl font-black text-construction-yellow mb-3 group-hover:scale-110 transition-transform duration-500 filter drop-shadow-lg">24/7</div>
-                        <div className="absolute -bottom-1 left-1/2 transform -translate-x-1/2 w-10 h-1 bg-gradient-to-r from-construction-yellow/60 to-construction-yellow/80 rounded-full group-hover:w-16 transition-all duration-500 shadow-lg shadow-construction-yellow/20"></div>
+                        <div className="text-3xl lg:text-5xl font-black text-construction-yellow mb-2 group-hover:scale-110 transition-transform duration-500 filter drop-shadow-lg">24/7</div>
+                        <div className="absolute -bottom-0.5 left-1/2 transform -translate-x-1/2 w-8 h-0.5 bg-gradient-to-r from-construction-yellow/70 to-construction-yellow/90 rounded-full group-hover:w-12 transition-all duration-500 shadow-md shadow-construction-yellow/25"></div>
                       </div>
-                      <div className="text-xs text-gray-300 uppercase tracking-[0.15em] font-bold mt-4">Support Available</div>
+                      <div className="text-[11px] text-gray-300 uppercase tracking-[0.2em] font-semibold mt-3">Support Available</div>
                     </div>
                   </div>
                 </div>
               </div>
               
               {/* Premium CTA Buttons */}
-              <div className="animate-slide-up-delay-5 flex flex-col sm:flex-row gap-8 mb-24">
+              <div className="animate-slide-up-delay-5 flex flex-col sm:flex-row gap-6 mb-20">
                 <Button 
                   size="lg" 
                   onClick={scrollToServices}
