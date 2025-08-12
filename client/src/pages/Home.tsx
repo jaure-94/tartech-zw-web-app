@@ -18,7 +18,7 @@ export default function Home() {
     
     // Simulate loading time and then hide loader
     const loadingTimer = setTimeout(() => {
-      import('@/lib/gsap').then(({ gsap }) => {
+      import('@/lib/gsap').then(({ gsap, initParallaxEffect }) => {
         // Animate loading screen out
         gsap.to('.loading-screen', {
           opacity: 0,
@@ -26,107 +26,109 @@ export default function Home() {
           ease: "power2.out",
           onComplete: () => {
             setIsLoading(false);
+            
+            // Start hero animations after loading screen is gone
+            setTimeout(() => {
+              initHeroAnimations(gsap, initParallaxEffect);
+            }, 200);
           }
         });
       });
     }, 2000); // Show loader for 2 seconds
-    
-    // Initialize animations and parallax effect
-    import('@/lib/gsap').then(({ gsap, initParallaxEffect }) => {
-      setTimeout(() => {
-        // Create master timeline for hero section animations
-        const heroTimeline = gsap.timeline();
-        
-        // Disable CSS animations and set initial states for hero elements
-        const heroElements = document.querySelectorAll('.animate-slide-up-delay-1, .animate-slide-up-delay-3, .animate-slide-up-delay-4, .animate-slide-up-delay-5');
-        heroElements.forEach(el => {
-          const htmlEl = el as HTMLElement;
-          htmlEl.style.opacity = '0';
-          htmlEl.style.transform = 'translateY(30px)';
-        });
-        
-        // Letter stagger animation for main heading
-        const headingTexts = [
-          document.querySelector('.hero-heading-text-1'),
-          document.querySelector('.hero-heading-text-2'),
-          document.querySelector('.hero-heading-text-3')
-        ];
-        
-        headingTexts.forEach((headingText, lineIndex) => {
-          if (headingText) {
-            // Split text into individual characters
-            const text = headingText.textContent || '';
-            const chars = text.split('').map(char => 
-              char === ' ' ? '<span class="char-space">&nbsp;</span>' : `<span class="char inline-block">${char}</span>`
-            );
-            headingText.innerHTML = chars.join('');
+
+    const initHeroAnimations = (gsap: any, initParallaxEffect: any) => {
+      // Create master timeline for hero section animations
+      const heroTimeline = gsap.timeline();
+      
+      // Disable CSS animations and set initial states for hero elements
+      const heroElements = document.querySelectorAll('.animate-slide-up-delay-1, .animate-slide-up-delay-3, .animate-slide-up-delay-4, .animate-slide-up-delay-5');
+      heroElements.forEach(el => {
+        const htmlEl = el as HTMLElement;
+        htmlEl.style.opacity = '0';
+        htmlEl.style.transform = 'translateY(30px)';
+      });
+      
+      // Letter stagger animation for main heading
+      const headingTexts = [
+        document.querySelector('.hero-heading-text-1'),
+        document.querySelector('.hero-heading-text-2'),
+        document.querySelector('.hero-heading-text-3')
+      ];
+      
+      headingTexts.forEach((headingText, lineIndex) => {
+        if (headingText) {
+          // Split text into individual characters
+          const text = headingText.textContent || '';
+          const chars = text.split('').map(char => 
+            char === ' ' ? '<span class="char-space">&nbsp;</span>' : `<span class="char inline-block">${char}</span>`
+          );
+          headingText.innerHTML = chars.join('');
+        }
+      });
+      
+      // PHASE 1: Animate heading letters FIRST and COMPLETE before anything else
+      heroTimeline.fromTo('.char', 
+        {
+          opacity: 0,
+          y: -60,
+          scale: 0.9
+        },
+        {
+          opacity: 1,
+          y: 0,
+          scale: 1,
+          duration: 1.0,
+          ease: "power3.out",
+          stagger: {
+            amount: 3.0,
+            from: "start"
+          },
+          onComplete: () => {
+            console.log('Heading animation completed');
           }
-        });
-        
-        // PHASE 1: Animate heading letters FIRST and COMPLETE before anything else
-        heroTimeline.fromTo('.char', 
-          {
-            opacity: 0,
-            y: -60,
-            scale: 0.9
-          },
-          {
-            opacity: 1,
-            y: 0,
-            scale: 1,
-            duration: 1.0,
-            ease: "power3.out",
-            stagger: {
-              amount: 3.0,
-              from: "start"
-            },
-            onComplete: () => {
-              console.log('Heading animation completed');
-            }
-          }
-        );
-        
-        // PHASE 2: Wait 2 seconds then animate everything else sequentially
-        heroTimeline.to('.animate-slide-up-delay-1', 
-          {
-            opacity: 1,
-            y: 0,
-            duration: 0.8,
-            ease: "power2.out"
-          },
-          "+=2.0" // 2 second delay after heading completes
-        )
-        .to('.animate-slide-up-delay-3', 
-          {
-            opacity: 1,
-            y: 0,
-            duration: 0.8,
-            ease: "power2.out"
-          },
-          "+=0.2" // Small gap between animations
-        )
-        .to('.animate-slide-up-delay-4', 
-          {
-            opacity: 1,
-            y: 0,
-            duration: 0.8,
-            ease: "power2.out"
-          },
-          "+=0.2"
-        )
-        .to('.animate-slide-up-delay-5', 
-          {
-            opacity: 1,
-            y: 0,
-            duration: 0.8,
-            ease: "power2.out"
-          },
-          "+=0.2"
-        );
-        
-        initParallaxEffect();
-      }, 100);
-    });
+        }
+      );
+      
+      // PHASE 2: Wait 2 seconds then animate everything else sequentially
+      heroTimeline.to('.animate-slide-up-delay-1', 
+        {
+          opacity: 1,
+          y: 0,
+          duration: 0.8,
+          ease: "power2.out"
+        },
+        "+=2.0" // 2 second delay after heading completes
+      )
+      .to('.animate-slide-up-delay-3', 
+        {
+          opacity: 1,
+          y: 0,
+          duration: 0.8,
+          ease: "power2.out"
+        },
+        "+=0.2" // Small gap between animations
+      )
+      .to('.animate-slide-up-delay-4', 
+        {
+          opacity: 1,
+          y: 0,
+          duration: 0.8,
+          ease: "power2.out"
+        },
+        "+=0.2"
+      )
+      .to('.animate-slide-up-delay-5', 
+        {
+          opacity: 1,
+          y: 0,
+          duration: 0.8,
+          ease: "power2.out"
+        },
+        "+=0.2"
+      );
+      
+      initParallaxEffect();
+    };
 
     // Auto-scroll functionality
     let autoScrollInterval: NodeJS.Timeout;
