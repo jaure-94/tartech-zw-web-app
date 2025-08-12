@@ -71,7 +71,7 @@ export default function Home() {
       
       // Wait for elements and then animate
       Promise.all([
-        waitForElements('.animate-slide-up-delay-3, .animate-slide-up-delay-4, .animate-slide-up-delay-5, .animate-slide-left-delay-3'),
+        waitForElements('.animate-slide-up-delay-3, .animate-slide-up-delay-4, .animate-slide-up-delay-5, .animate-slide-left-card-1, .animate-slide-left-card-2, .animate-slide-left-card-3'),
         waitForElements('.hero-heading-text-1, .hero-heading-text-2, .hero-heading-text-3')
       ]).then(([heroElements, headingElements]) => {
         console.log('Found hero elements:', heroElements.length);
@@ -88,7 +88,7 @@ export default function Home() {
         htmlEl.style.setProperty('opacity', '0', 'important');
         
         // Set different initial transforms for slide-left vs slide-up elements
-        if (htmlEl.className.includes('slide-left')) {
+        if (htmlEl.className.includes('slide-left') || htmlEl.className.includes('card-')) {
           htmlEl.style.setProperty('transform', 'translateX(50px)', 'important');
         } else {
           htmlEl.style.setProperty('transform', 'translateY(30px)', 'important');
@@ -99,7 +99,7 @@ export default function Home() {
         
         // Remove any animation delay classes to prevent CSS conflicts
         htmlEl.classList.forEach(className => {
-          if (className.includes('animate-') && !className.includes('delay')) {
+          if (className.includes('animate-') && !className.includes('delay') && !className.includes('card-')) {
             htmlEl.classList.remove(className);
           }
         });
@@ -160,13 +160,30 @@ export default function Home() {
       const delay3Elements = document.querySelectorAll('.animate-slide-up-delay-3');
       const delay4Elements = document.querySelectorAll('.animate-slide-up-delay-4');
       const delay5Elements = document.querySelectorAll('.animate-slide-up-delay-5');
-      const slideLeftElements = document.querySelectorAll('.animate-slide-left-delay-3');
+      const card1Elements = document.querySelectorAll('.animate-slide-left-card-1');
+      const card2Elements = document.querySelectorAll('.animate-slide-left-card-2');
+      const card3Elements = document.querySelectorAll('.animate-slide-left-card-3');
       
       console.log('Elements found for animation:', {
         delay3: delay3Elements.length,
         delay4: delay4Elements.length,
         delay5: delay5Elements.length,
-        slideLeft: slideLeftElements.length
+        card1: card1Elements.length,
+        card2: card2Elements.length,
+        card3: card3Elements.length
+      });
+      
+      console.log('Card elements found:', {
+        card1: card1Elements,
+        card2: card2Elements,
+        card3: card3Elements
+      });
+      
+      // Debug: Check if cards are being found on mobile vs desktop
+      const allCards = document.querySelectorAll('[class*="animate-slide-left-card"]');
+      console.log('All card elements found:', allCards.length);
+      allCards.forEach((card, index) => {
+        console.log(`Card ${index + 1} classes:`, card.className);
       });
       
       // Animate subtitle (delay-3)
@@ -225,10 +242,9 @@ export default function Home() {
         );
       }
       
-      // Animate right column cards (slide-left-delay-3)
-      if (slideLeftElements.length > 0) {
-        console.log('Starting cards animation with', slideLeftElements.length, 'elements');
-        heroTimeline.fromTo(slideLeftElements, 
+      // Animate cards one at a time right after heading completes
+      if (card1Elements.length > 0) {
+        heroTimeline.fromTo(card1Elements, 
           {
             opacity: 0,
             x: 50,
@@ -238,12 +254,49 @@ export default function Home() {
             opacity: 1,
             x: 0,
             scale: 1,
-            duration: 1.0,
+            duration: 0.6,
             ease: "power2.out",
-            onStart: () => console.log('Cards animation started'),
-            onComplete: () => console.log('Cards animation completed')
+            onComplete: () => console.log('Card 1 animated')
           },
-          "-=0.5" // Start slightly before CTA finishes for overlapping effect
+          "+=0.2" // Start right after heading completes
+        );
+      }
+      
+      if (card2Elements.length > 0) {
+        heroTimeline.fromTo(card2Elements, 
+          {
+            opacity: 0,
+            x: 50,
+            scale: 0.95
+          },
+          {
+            opacity: 1,
+            x: 0,
+            scale: 1,
+            duration: 0.6,
+            ease: "power2.out",
+            onComplete: () => console.log('Card 2 animated')
+          },
+          "+=0.2" // Start 0.2s after card 1
+        );
+      }
+      
+      if (card3Elements.length > 0) {
+        heroTimeline.fromTo(card3Elements, 
+          {
+            opacity: 0,
+            x: 50,
+            scale: 0.95
+          },
+          {
+            opacity: 1,
+            x: 0,
+            scale: 1,
+            duration: 0.6,
+            ease: "power2.out",
+            onComplete: () => console.log('Card 3 animated')
+          },
+          "+=0.2" // Start 0.2s after card 2
         );
       }
       
@@ -419,7 +472,7 @@ export default function Home() {
               {/* Enhanced Headlines Structure */}
               <div className="space-y-10">
                 <div className="space-y-6">
-                  <div className="relative py-8">
+                  <div className="relative pt-16 pb-8">
                     <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black leading-[0.9] tracking-tight opacity-0">
                       <span className="hero-heading-text-1 block text-white font-black mb-2">
                         INDUSTRIAL
@@ -513,9 +566,9 @@ export default function Home() {
             {/* Right Column - Visual Excellence */}
             <div className="lg:col-span-5 relative hidden lg:block">
               {/* Premium Feature Cards */}
-              <div className="animate-slide-left-delay-3 space-y-4">
+              <div className="space-y-4">
                 {/* Safety Card */}
-                <div className="bg-gradient-to-r from-white/8 to-white/4 backdrop-blur-xl border border-white/20 rounded-2xl p-6 hover:from-white/12 hover:to-white/8 hover:border-construction-yellow/30 transition-all duration-500 hover:scale-105 hover:shadow-2xl hover:shadow-construction-yellow/10">
+                <div className="animate-slide-left-card-1 bg-gradient-to-r from-white/8 to-white/4 backdrop-blur-xl border border-white/20 rounded-2xl p-6 hover:from-white/12 hover:to-white/8 hover:border-construction-yellow/30 transition-all duration-500 hover:scale-105 hover:shadow-2xl hover:shadow-construction-yellow/10">
                   <div className="flex items-center space-x-4">
                     <div className="p-4 bg-construction-yellow/15 rounded-2xl border border-construction-yellow/30 group-hover:bg-construction-yellow/25 transition-all duration-300">
                       <Shield className="w-7 h-7 text-construction-yellow" />
@@ -528,7 +581,7 @@ export default function Home() {
                 </div>
                 
                 {/* Innovation Card */}
-                <div className="bg-gradient-to-r from-white/6 to-white/3 backdrop-blur-xl border border-white/15 rounded-2xl p-6 hover:from-white/10 hover:to-white/6 hover:border-safety-orange/30 transition-all duration-500 hover:scale-105 hover:shadow-2xl hover:shadow-safety-orange/10 ml-8">
+                <div className="animate-slide-left-card-2 bg-gradient-to-r from-white/6 to-white/3 backdrop-blur-xl border border-white/15 rounded-2xl p-6 hover:from-white/10 hover:to-white/6 hover:border-safety-orange/30 transition-all duration-500 hover:scale-105 hover:shadow-2xl hover:shadow-safety-orange/10 ml-8">
                   <div className="flex items-center space-x-4">
                     <div className="p-4 bg-safety-orange/15 rounded-2xl border border-safety-orange/30 group-hover:bg-safety-orange/25 transition-all duration-300">
                       <Award className="w-7 h-7 text-safety-orange" />
@@ -541,7 +594,7 @@ export default function Home() {
                 </div>
                 
                 {/* 24/7 Support Card */}
-                <div className="bg-gradient-to-r from-white/8 to-white/4 backdrop-blur-xl border border-white/20 rounded-2xl p-6 hover:from-white/12 hover:to-white/8 hover:border-construction-yellow/30 transition-all duration-500 hover:scale-105 hover:shadow-2xl hover:shadow-construction-yellow/10">
+                <div className="animate-slide-left-card-3 bg-gradient-to-r from-white/8 to-white/4 backdrop-blur-xl border border-white/20 rounded-2xl p-6 hover:from-white/12 hover:to-white/8 hover:border-construction-yellow/30 transition-all duration-500 hover:scale-105 hover:shadow-2xl hover:shadow-construction-yellow/10">
                   <div className="flex items-center space-x-4">
                     <div className="p-4 bg-construction-yellow/15 rounded-2xl border border-construction-yellow/30 group-hover:bg-construction-yellow/25 transition-all duration-300">
                       <Clock className="w-7 h-7 text-construction-yellow" />
