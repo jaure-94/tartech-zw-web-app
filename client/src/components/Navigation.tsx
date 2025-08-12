@@ -111,8 +111,8 @@ export function Navigation() {
                   servicesDropdownOpen ? 'opacity-100 visible translate-y-0' : 'opacity-0 invisible translate-y-2'
                 }`}>
                   
-                  {/* Mobile-style backdrop with 85% opacity and blur */}
-                  <div className="bg-white/85 backdrop-blur-md border border-construction-yellow/20 shadow-2xl overflow-hidden">
+                  {/* Glass blur backdrop with enhanced opacity */}
+                  <div className="bg-white/85 backdrop-blur-xl border border-white/20 shadow-2xl overflow-hidden" style={{ backdropFilter: 'blur(20px) saturate(180%)' }}>
                     
                     {/* Service links with mobile nav styling */}
                     <div className="py-3">
@@ -130,7 +130,7 @@ export function Navigation() {
                             
                             {/* Content */}
                             <div className="relative z-10 flex items-center">
-                              <span className="nav-font text-base font-light text-gray-900 group-hover:text-construction-yellow transition-colors duration-500 tracking-wide">
+                              <span className="nav-font text-base font-normal text-black group-hover:text-construction-yellow transition-colors duration-500 tracking-wide">
                                 {link.label}
                               </span>
                             </div>
