@@ -422,7 +422,7 @@ export default function Home() {
           <img 
             src={bulldozerImage} 
             alt="Heavy industrial bulldozer and excavator equipment at construction site with dramatic sky" 
-            className="hero-parallax-image w-full h-[110%] object-cover opacity-35 animate-zoom-in"
+            className="hero-parallax-image w-full h-[120%] object-cover opacity-35 animate-zoom-in"
             onError={(e) => {
               e.currentTarget.src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&h=1080";
             }}
@@ -633,29 +633,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Trust Indicators */}
-      <section className="py-16 bg-industrial-black">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-            <div className="animate-fade-in">
-              <div className="text-4xl md:text-5xl font-black text-construction-yellow mb-2">30+</div>
-              <div className="text-sm md:text-base font-bold text-white uppercase tracking-wide">Years Experience</div>
-            </div>
-            <div className="animate-fade-in">
-              <div className="text-4xl md:text-5xl font-black text-construction-yellow mb-2">500+</div>
-              <div className="text-sm md:text-base font-bold text-white uppercase tracking-wide">Projects Completed</div>
-            </div>
-            <div className="animate-fade-in">
-              <div className="text-4xl md:text-5xl font-black text-construction-yellow mb-2">100%</div>
-              <div className="text-sm md:text-base font-bold text-white uppercase tracking-wide">Safety Record</div>
-            </div>
-            <div className="animate-fade-in">
-              <div className="text-4xl md:text-5xl font-black text-construction-yellow mb-2">24/7</div>
-              <div className="text-sm md:text-base font-bold text-white uppercase tracking-wide">Support Available</div>
-            </div>
-          </div>
-        </div>
-      </section>
+
 
       {/* Services Overview */}
       <section id="our-expertise" className="py-20 bg-light-industrial">
