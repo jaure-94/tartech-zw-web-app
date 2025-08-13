@@ -30,7 +30,7 @@ export default function Agriculture() {
       <ScrollAnimations />
       
       {/* Hero Section */}
-      <section className="relative py-24 bg-gradient-to-br from-industrial-black via-gray-900 to-industrial-black overflow-hidden">
+      <section className="relative py-12 sm:py-16 md:py-20 lg:py-24 bg-gradient-to-br from-industrial-black via-gray-900 to-industrial-black overflow-hidden">
         <div className="absolute inset-0">
           <img 
             src="https://images.unsplash.com/photo-1625246333195-78d9c38ad449?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&h=1080" 
@@ -41,43 +41,43 @@ export default function Agriculture() {
         </div>
         
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center max-w-4xl mx-auto">
-            <div className="animate-slide-in-left">
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black text-white mb-6 leading-tight">
+          <div className="text-center max-w-5xl mx-auto">
+            <div>
+              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-black text-white mb-4 sm:mb-6 leading-tight">
                 AGRI-INFRASTRUCTURE <span className="text-construction-yellow">EXPERTS</span>
               </h1>
-              <p className="text-xl text-gray-200 mb-12 leading-relaxed max-w-3xl mx-auto">
+              <p className="text-base sm:text-lg md:text-xl lg:text-xl text-gray-200 mb-8 sm:mb-10 md:mb-12 leading-relaxed max-w-4xl mx-auto px-2 sm:px-4">
                 Transforming Zimbabwe's agricultural landscape with cutting-edge technology, precision engineering, and three decades of expertise in land development and infrastructure.
               </p>
             </div>
             
-            <div className="animate-slide-in-right">
-              <div className="bg-white/10 backdrop-blur-md rounded-2xl p-8 border border-white/20 max-w-3xl mx-auto">
-                <h3 className="text-2xl font-bold text-construction-yellow mb-6">OUR AGRICULTURE SERVICES</h3>
-                <div className="grid grid-cols-2 md:grid-cols-3 gap-4 text-white">
+            <div>
+              <div className="bg-white/10 backdrop-blur-md rounded-2xl p-4 sm:p-6 md:p-8 border border-white/20 max-w-4xl mx-auto">
+                <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-construction-yellow mb-4 sm:mb-6">OUR AGRICULTURE SERVICES</h3>
+                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3 sm:gap-4 text-white">
                   <div className="flex items-center space-x-2">
-                    <TreePine className="h-5 w-5 text-construction-yellow" />
-                    <span className="text-sm">Bush Clearing</span>
+                    <TreePine className="h-4 w-4 sm:h-5 sm:w-5 text-construction-yellow" />
+                    <span className="text-xs sm:text-sm">Bush Clearing</span>
                   </div>
                   <div className="flex items-center space-x-2">
-                    <Mountain className="h-5 w-5 text-construction-yellow" />
-                    <span className="text-sm">Land Preparation</span>
+                    <Mountain className="h-4 w-4 sm:h-5 sm:w-5 text-construction-yellow" />
+                    <span className="text-xs sm:text-sm">Land Preparation</span>
                   </div>
                   <div className="flex items-center space-x-2">
-                    <Ruler className="h-5 w-5 text-construction-yellow" />
-                    <span className="text-sm">Land Levelling</span>
+                    <Ruler className="h-4 w-4 sm:h-5 sm:w-5 text-construction-yellow" />
+                    <span className="text-xs sm:text-sm">Land Levelling</span>
                   </div>
                   <div className="flex items-center space-x-2">
-                    <Navigation className="h-5 w-5 text-construction-yellow" />
-                    <span className="text-sm">GPS Laser Levelling</span>
+                    <Navigation className="h-4 w-4 sm:h-5 sm:w-5 text-construction-yellow" />
+                    <span className="text-xs sm:text-sm">GPS Laser Levelling</span>
                   </div>
                   <div className="flex items-center space-x-2">
-                    <Droplets className="h-5 w-5 text-construction-yellow" />
-                    <span className="text-sm">Drainage Systems</span>
+                    <Droplets className="h-4 w-4 sm:h-5 sm:w-5 text-construction-yellow" />
+                    <span className="text-xs sm:text-sm">Drainage Systems</span>
                   </div>
                   <div className="flex items-center space-x-2">
-                    <Dam className="h-5 w-5 text-construction-yellow" />
-                    <span className="text-sm">Dam Construction</span>
+                    <Dam className="h-4 w-4 sm:h-5 sm:w-5 text-construction-yellow" />
+                    <span className="text-xs sm:text-sm">Dam Construction</span>
                   </div>
                 </div>
               </div>
@@ -87,18 +87,18 @@ export default function Agriculture() {
       </section>
 
       {/* Core Services Section */}
-      <section className="py-20 bg-white">
+      <section className="py-12 sm:py-16 md:py-20 lg:py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="animate-fade-in text-4xl sm:text-5xl font-black text-industrial-black mb-6">
+          <div className="text-center mb-12 sm:mb-14 md:mb-16">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black text-industrial-black mb-4 sm:mb-6 leading-tight">
               COMPREHENSIVE <span className="text-construction-yellow">AGRICULTURAL SOLUTIONS</span>
             </h2>
-            <p className="animate-fade-in text-lg text-industrial-gray max-w-4xl mx-auto">
+            <p className="text-base sm:text-lg md:text-xl text-industrial-gray max-w-4xl mx-auto leading-relaxed px-2 sm:px-4">
               From land preparation to infrastructure development, we provide end-to-end agricultural services that maximize productivity and ensure sustainable farming practices across Zimbabwe.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 mb-20">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-10 md:gap-12 lg:gap-16 mb-16 sm:mb-18 md:mb-20">
             {/* Bush Clearing */}
             <div className="animate-slide-in-left">
               <Card className="h-full overflow-hidden shadow-2xl border-4 border-transparent hover:border-construction-yellow transition-all duration-500">
@@ -109,10 +109,10 @@ export default function Agriculture() {
                     className="w-full h-full object-cover hover:scale-110 transition-transform duration-700" 
                   />
                 </div>
-                <CardContent className="p-8">
-                  <div className="flex items-center mb-4">
-                    <TreePine className="h-8 w-8 text-construction-yellow mr-3" />
-                    <h3 className="text-2xl font-black text-industrial-black">BUSH CLEARING</h3>
+                <CardContent className="p-6 sm:p-8">
+                  <div className="flex flex-col sm:flex-row sm:items-center mb-4 sm:mb-6">
+                    <TreePine className="h-6 w-6 sm:h-8 sm:w-8 text-construction-yellow mr-0 sm:mr-3 mb-2 sm:mb-0" />
+                    <h3 className="text-lg sm:text-xl md:text-2xl font-black text-industrial-black">BUSH CLEARING</h3>
                   </div>
                   <p className="text-industrial-gray mb-6 leading-relaxed">
                     Professional vegetation removal and land clearing services using state-of-the-art bulldozers and clearing equipment. We safely clear dense bush, remove tree stumps, and prepare raw land for agricultural development while preserving topsoil integrity.
@@ -149,10 +149,10 @@ export default function Agriculture() {
                     className="w-full h-full object-cover hover:scale-110 transition-transform duration-700" 
                   />
                 </div>
-                <CardContent className="p-8">
-                  <div className="flex items-center mb-4">
-                    <Mountain className="h-8 w-8 text-construction-yellow mr-3" />
-                    <h3 className="text-2xl font-black text-industrial-black">LAND PREPARATION</h3>
+                <CardContent className="p-6 sm:p-8">
+                  <div className="flex flex-col sm:flex-row sm:items-center mb-4 sm:mb-6">
+                    <Mountain className="h-6 w-6 sm:h-8 sm:w-8 text-construction-yellow mr-0 sm:mr-3 mb-2 sm:mb-0" />
+                    <h3 className="text-lg sm:text-xl md:text-2xl font-black text-industrial-black">LAND PREPARATION</h3>
                   </div>
                   <p className="text-industrial-gray mb-6 leading-relaxed">
                     Comprehensive land preparation services including deep tillage, soil conditioning, and field establishment. Our heavy-duty equipment ensures optimal soil structure for maximum crop yields and sustainable farming practices.
@@ -180,21 +180,21 @@ export default function Agriculture() {
             </div>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 mb-20">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-10 md:gap-12 lg:gap-16 mb-16 sm:mb-18 md:mb-20">
             {/* Land Levelling */}
-            <div className="animate-slide-in-left">
+            <div>
               <Card className="h-full overflow-hidden shadow-2xl border-4 border-transparent hover:border-construction-yellow transition-all duration-500">
-                <div className="h-64 overflow-hidden">
+                <div className="h-48 sm:h-56 md:h-64 overflow-hidden">
                   <img 
                     src="https://images.unsplash.com/photo-1581833971358-2c8b550f87b3?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600" 
                     alt="Land leveling equipment creating precise field gradients"
                     className="w-full h-full object-cover hover:scale-110 transition-transform duration-700" 
                   />
                 </div>
-                <CardContent className="p-8">
-                  <div className="flex items-center mb-4">
-                    <Ruler className="h-8 w-8 text-construction-yellow mr-3" />
-                    <h3 className="text-2xl font-black text-industrial-black">LAND LEVELLING</h3>
+                <CardContent className="p-6 sm:p-8">
+                  <div className="flex flex-col sm:flex-row sm:items-center mb-4 sm:mb-6">
+                    <Ruler className="h-6 w-6 sm:h-8 sm:w-8 text-construction-yellow mr-0 sm:mr-3 mb-2 sm:mb-0" />
+                    <h3 className="text-lg sm:text-xl md:text-2xl font-black text-industrial-black">LAND LEVELLING</h3>
                   </div>
                   <p className="text-industrial-gray mb-6 leading-relaxed">
                     Precision land levelling services to optimize water distribution and improve farming efficiency. Our experienced operators create perfect field gradients for irrigation, drainage, and mechanized farming operations.
@@ -224,17 +224,17 @@ export default function Agriculture() {
             {/* GPS Laser Levelling */}
             <div className="animate-slide-in-right">
               <Card className="h-full overflow-hidden shadow-2xl border-4 border-transparent hover:border-construction-yellow transition-all duration-500">
-                <div className="h-64 overflow-hidden">
+                <div className="h-48 sm:h-56 md:h-64 overflow-hidden">
                   <img 
                     src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600" 
                     alt="GPS-guided laser leveling equipment with surveying technology"
                     className="w-full h-full object-cover hover:scale-110 transition-transform duration-700" 
                   />
                 </div>
-                <CardContent className="p-8">
-                  <div className="flex items-center mb-4">
-                    <Navigation className="h-8 w-8 text-construction-yellow mr-3" />
-                    <h3 className="text-2xl font-black text-industrial-black">GPS LASER LEVELLING</h3>
+                <CardContent className="p-6 sm:p-8">
+                  <div className="flex flex-col sm:flex-row sm:items-center mb-4 sm:mb-6">
+                    <Navigation className="h-6 w-6 sm:h-8 sm:w-8 text-construction-yellow mr-0 sm:mr-3 mb-2 sm:mb-0" />
+                    <h3 className="text-lg sm:text-xl md:text-2xl font-black text-industrial-black">GPS LASER LEVELLING</h3>
                   </div>
                   <p className="text-industrial-gray mb-6 leading-relaxed">
                     Advanced GPS-guided laser levelling and surveying services for ultra-precise field preparation. Our cutting-edge technology ensures millimeter-accurate land grading for optimal irrigation efficiency and crop performance.
@@ -262,21 +262,21 @@ export default function Agriculture() {
             </div>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 mb-20">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-10 md:gap-12 lg:gap-16 mb-16 sm:mb-18 md:mb-20">
             {/* Drainage Systems */}
-            <div className="animate-slide-in-left">
+            <div>
               <Card className="h-full overflow-hidden shadow-2xl border-4 border-transparent hover:border-construction-yellow transition-all duration-500">
-                <div className="h-64 overflow-hidden">
+                <div className="h-48 sm:h-56 md:h-64 overflow-hidden">
                   <img 
                     src="https://images.unsplash.com/photo-1586771107445-d3ca888129ff?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600" 
                     alt="Agricultural drainage system construction with excavator"
                     className="w-full h-full object-cover hover:scale-110 transition-transform duration-700" 
                   />
                 </div>
-                <CardContent className="p-8">
-                  <div className="flex items-center mb-4">
-                    <Droplets className="h-8 w-8 text-construction-yellow mr-3" />
-                    <h3 className="text-2xl font-black text-industrial-black">DRAINAGE SYSTEMS</h3>
+                <CardContent className="p-6 sm:p-8">
+                  <div className="flex flex-col sm:flex-row sm:items-center mb-4 sm:mb-6">
+                    <Droplets className="h-6 w-6 sm:h-8 sm:w-8 text-construction-yellow mr-0 sm:mr-3 mb-2 sm:mb-0" />
+                    <h3 className="text-lg sm:text-xl md:text-2xl font-black text-industrial-black">DRAINAGE SYSTEMS</h3>
                   </div>
                   <p className="text-industrial-gray mb-6 leading-relaxed">
                     Professional agricultural drainage solutions to prevent waterlogging and protect crops. We design and install comprehensive drainage networks including subsurface drains, ditches, and water management systems.
@@ -304,19 +304,19 @@ export default function Agriculture() {
             </div>
 
             {/* Dam and Canal Construction */}
-            <div className="animate-slide-in-right">
+            <div>
               <Card className="h-full overflow-hidden shadow-2xl border-4 border-transparent hover:border-construction-yellow transition-all duration-500">
-                <div className="h-64 overflow-hidden">
+                <div className="h-48 sm:h-56 md:h-64 overflow-hidden">
                   <img 
                     src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600" 
                     alt="Dam construction with heavy earthmoving equipment"
                     className="w-full h-full object-cover hover:scale-110 transition-transform duration-700" 
                   />
                 </div>
-                <CardContent className="p-8">
-                  <div className="flex items-center mb-4">
-                    <Dam className="h-8 w-8 text-construction-yellow mr-3" />
-                    <h3 className="text-2xl font-black text-industrial-black">DAM & CANAL CONSTRUCTION</h3>
+                <CardContent className="p-6 sm:p-8">
+                  <div className="flex flex-col sm:flex-row sm:items-center mb-4 sm:mb-6">
+                    <Dam className="h-6 w-6 sm:h-8 sm:w-8 text-construction-yellow mr-0 sm:mr-3 mb-2 sm:mb-0" />
+                    <h3 className="text-lg sm:text-xl md:text-2xl font-black text-industrial-black">DAM & CANAL CONSTRUCTION</h3>
                   </div>
                   <p className="text-industrial-gray mb-6 leading-relaxed">
                     Large-scale water infrastructure development including farm dams, irrigation canals, and water storage facilities. Our expertise ensures reliable water supply systems for agricultural operations throughout seasonal variations.
@@ -345,20 +345,20 @@ export default function Agriculture() {
           </div>
 
           {/* Agriculture Infrastructure */}
-          <div className="animate-fade-in">
+          <div>
             <Card className="overflow-hidden shadow-2xl border-4 border-transparent hover:border-construction-yellow transition-all duration-500">
               <div className="grid grid-cols-1 lg:grid-cols-2">
-                <div className="h-64 lg:h-auto overflow-hidden">
+                <div className="h-48 sm:h-56 md:h-64 lg:h-auto overflow-hidden">
                   <img 
                     src="https://images.unsplash.com/photo-1566740933430-b5e70b06d2d5?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600" 
                     alt="Modern agricultural infrastructure and storage facilities"
                     className="w-full h-full object-cover hover:scale-110 transition-transform duration-700" 
                   />
                 </div>
-                <CardContent className="p-8 lg:p-12">
-                  <div className="flex items-center mb-6">
-                    <Building2 className="h-10 w-10 text-construction-yellow mr-4" />
-                    <h3 className="text-3xl font-black text-industrial-black">AGRICULTURE INFRASTRUCTURE</h3>
+                <CardContent className="p-6 sm:p-8 lg:p-12">
+                  <div className="flex flex-col sm:flex-row sm:items-center mb-4 sm:mb-6">
+                    <Building2 className="h-8 w-8 sm:h-10 sm:w-10 text-construction-yellow mr-0 sm:mr-4 mb-2 sm:mb-0" />
+                    <h3 className="text-xl sm:text-2xl md:text-3xl font-black text-industrial-black">AGRICULTURE INFRASTRUCTURE</h3>
                   </div>
                   <p className="text-industrial-gray mb-8 text-lg leading-relaxed">
                     Complete agricultural infrastructure development including storage facilities, processing buildings, and farm operations centers. We build durable, efficient structures designed for Zimbabwe's agricultural climate and operational demands.
@@ -407,54 +407,54 @@ export default function Agriculture() {
       </section>
 
       {/* Why Choose Tartech Section */}
-      <section className="py-20 bg-industrial-black">
+      <section className="py-12 sm:py-16 md:py-20 lg:py-24 bg-industrial-black">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="animate-fade-in text-4xl sm:text-5xl font-black text-white mb-6">
+          <div className="text-center mb-12 sm:mb-14 md:mb-16">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black text-white mb-4 sm:mb-6 leading-tight">
               WHY <span className="text-construction-yellow">TARTECH</span> FOR AGRICULTURE?
             </h2>
-            <p className="animate-fade-in text-lg text-gray-300 max-w-3xl mx-auto">
+            <p className="text-base sm:text-lg md:text-xl text-gray-300 max-w-4xl mx-auto leading-relaxed px-2 sm:px-4">
               Three decades of agricultural expertise, cutting-edge equipment, and unwavering commitment to Zimbabwe's farming success.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            <div className="animate-fade-in text-center">
-              <div className="w-16 h-16 bg-construction-yellow rounded-xl flex items-center justify-center mx-auto mb-6">
-                <Tractor className="h-8 w-8 text-industrial-black" />
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
+            <div className="text-center">
+              <div className="w-14 h-14 sm:w-16 sm:h-16 bg-construction-yellow rounded-xl flex items-center justify-center mx-auto mb-4 sm:mb-6">
+                <Tractor className="h-6 w-6 sm:h-8 sm:w-8 text-industrial-black" />
               </div>
-              <h3 className="text-xl font-bold text-white mb-4">ADVANCED EQUIPMENT</h3>
-              <p className="text-gray-300">
+              <h3 className="text-lg sm:text-xl font-bold text-white mb-3 sm:mb-4">ADVANCED EQUIPMENT</h3>
+              <p className="text-sm sm:text-base text-gray-300 leading-relaxed">
                 State-of-the-art agricultural machinery and GPS-guided precision equipment for optimal results.
               </p>
             </div>
             
-            <div className="animate-fade-in text-center">
-              <div className="w-16 h-16 bg-construction-yellow rounded-xl flex items-center justify-center mx-auto mb-6">
-                <CheckCircle className="h-8 w-8 text-industrial-black" />
+            <div className="text-center">
+              <div className="w-14 h-14 sm:w-16 sm:h-16 bg-construction-yellow rounded-xl flex items-center justify-center mx-auto mb-4 sm:mb-6">
+                <CheckCircle className="h-6 w-6 sm:h-8 sm:w-8 text-industrial-black" />
               </div>
-              <h3 className="text-xl font-bold text-white mb-4">PROVEN EXPERTISE</h3>
-              <p className="text-gray-300">
+              <h3 className="text-lg sm:text-xl font-bold text-white mb-3 sm:mb-4">PROVEN EXPERTISE</h3>
+              <p className="text-sm sm:text-base text-gray-300 leading-relaxed">
                 Over 30 years of successful agricultural projects across Zimbabwe's diverse farming regions.
               </p>
             </div>
             
-            <div className="animate-fade-in text-center">
-              <div className="w-16 h-16 bg-construction-yellow rounded-xl flex items-center justify-center mx-auto mb-6">
-                <Sprout className="h-8 w-8 text-industrial-black" />
+            <div className="text-center">
+              <div className="w-14 h-14 sm:w-16 sm:h-16 bg-construction-yellow rounded-xl flex items-center justify-center mx-auto mb-4 sm:mb-6">
+                <Sprout className="h-6 w-6 sm:h-8 sm:w-8 text-industrial-black" />
               </div>
-              <h3 className="text-xl font-bold text-white mb-4">SUSTAINABLE SOLUTIONS</h3>
-              <p className="text-gray-300">
+              <h3 className="text-lg sm:text-xl font-bold text-white mb-3 sm:mb-4">SUSTAINABLE SOLUTIONS</h3>
+              <p className="text-sm sm:text-base text-gray-300 leading-relaxed">
                 Environmentally conscious practices that preserve soil health and promote long-term productivity.
               </p>
             </div>
             
-            <div className="animate-fade-in text-center">
-              <div className="w-16 h-16 bg-construction-yellow rounded-xl flex items-center justify-center mx-auto mb-6">
-                <Phone className="h-8 w-8 text-industrial-black" />
+            <div className="text-center">
+              <div className="w-14 h-14 sm:w-16 sm:h-16 bg-construction-yellow rounded-xl flex items-center justify-center mx-auto mb-4 sm:mb-6">
+                <Phone className="h-6 w-6 sm:h-8 sm:w-8 text-industrial-black" />
               </div>
-              <h3 className="text-xl font-bold text-white mb-4">24/7 SUPPORT</h3>
-              <p className="text-gray-300">
+              <h3 className="text-lg sm:text-xl font-bold text-white mb-3 sm:mb-4">24/7 SUPPORT</h3>
+              <p className="text-sm sm:text-base text-gray-300 leading-relaxed">
                 Round-the-clock technical support and emergency services during critical farming seasons.
               </p>
             </div>
@@ -463,18 +463,18 @@ export default function Agriculture() {
       </section>
 
       {/* Contact CTA Section */}
-      <section className="py-20 bg-construction-yellow">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="animate-fade-in text-4xl font-black text-industrial-black mb-6">
+      <section className="py-12 sm:py-16 md:py-20 lg:py-24 bg-construction-yellow">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-black text-industrial-black mb-4 sm:mb-6 leading-tight">
             READY TO TRANSFORM YOUR AGRICULTURAL OPERATIONS?
           </h2>
-          <p className="animate-fade-in text-lg text-industrial-black mb-8 max-w-2xl mx-auto">
+          <p className="text-base sm:text-lg md:text-xl text-industrial-black mb-6 sm:mb-8 max-w-4xl mx-auto leading-relaxed px-2 sm:px-4">
             Get a free consultation and project quote from Zimbabwe's most trusted agricultural contractor. Let's discuss your land development and infrastructure needs.
           </p>
-          <div className="animate-fade-in flex justify-center">
+          <div className="flex justify-center">
             <Link href="/contact">
-              <Button size="lg" className="bg-industrial-black text-construction-yellow hover:bg-gray-800 text-lg px-8 py-4">
-                <Mail className="mr-2 h-5 w-5" />
+              <Button size="lg" className="bg-industrial-black text-construction-yellow hover:bg-gray-800 text-base sm:text-lg px-6 sm:px-8 py-3 sm:py-4">
+                <Mail className="mr-2 h-4 w-4 sm:h-5 sm:w-5" />
                 EMAIL US TODAY
               </Button>
             </Link>

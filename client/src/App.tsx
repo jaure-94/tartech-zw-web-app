@@ -28,6 +28,7 @@ function Router() {
       <Route path="/services/mining" component={Mining} />
       <Route path="/construction" component={Construction} />
       <Route path="/services/construction" component={Construction} />
+      <Route path="/agriculture" component={Agriculture} />
       <Route path="/services/agriculture" component={Agriculture} />
       <Route path="/contact" component={Contact} />
       <Route component={NotFound} />
