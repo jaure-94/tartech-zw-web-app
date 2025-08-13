@@ -1,4 +1,5 @@
 import { useEffect, useRef } from 'react';
+import tartechLogoSymbol from '@assets/tartech-logo-symbol_1755071044733.png';
 
 interface GoogleMapProps {
   address: string;
@@ -160,11 +161,16 @@ export function GoogleMap({ address, className = "" }: GoogleMapProps) {
             // Create info window
             const infoWindow = new window.google.maps.InfoWindow({
               content: `
-                <div style="padding: 8px;">
-                  <h3 style="font-weight: bold; font-size: 16px; color: #333; margin-bottom: 4px;">Tartech Contracting</h3>
-                  <p style="color: #666; font-size: 14px; margin-bottom: 8px;">6 Beryl Road, Msasa, Harare, Zimbabwe</p>
-                  <div style="display: flex; align-items: center; gap: 8px; font-size: 12px; color: #999;">
-                    <span>Industrial Excellence</span>
+                <div style="padding: 8px; min-width: 200px;">
+                  <div style="display: flex; align-items: flex-start; gap: 8px; margin-bottom: 8px;">
+                    <img src="${tartechLogoSymbol}" alt="Tartech Logo" style="width: 24px; height: 24px; flex-shrink: 0; margin-top: 2px;" />
+                    <div style="flex: 1;">
+                      <h3 style="font-weight: bold; font-size: 16px; color: #333; margin: 0 0 4px 0; line-height: 1.2;">Tartech Contracting</h3>
+                      <p style="color: #666; font-size: 14px; margin: 0 0 8px 0; line-height: 1.3;">6 Beryl Road, Msasa, Harare, Zimbabwe</p>
+                      <div style="font-size: 12px; color: #999;">
+                        <span>Industrial Excellence</span>
+                      </div>
+                    </div>
                   </div>
                 </div>
               `
