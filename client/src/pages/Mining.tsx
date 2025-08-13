@@ -14,9 +14,8 @@ export default function Mining() {
       <ScrollAnimations />
       
       {/* Mining Services Header */}
-      <section className="py-12 sm:py-16 md:py-20 lg:py-24 bg-gradient-to-br from-industrial-black via-gray-900 to-industrial-black relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-r from-construction-yellow/10 to-transparent"></div>
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <section className="py-12 sm:py-16 md:py-20 lg:py-24 bg-industrial-black text-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12 sm:mb-14 md:mb-16">
             <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-black mb-4 sm:mb-6 leading-tight">
               <span className="text-construction-yellow font-black">MINING</span> <span className="text-white font-black">OPERATIONS</span>
