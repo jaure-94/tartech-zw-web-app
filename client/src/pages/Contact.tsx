@@ -318,12 +318,14 @@ export default function Contact() {
               </Card>
               
               {/* Google Maps */}
-              <Card className="bg-white rounded-xl md:rounded-2xl shadow-xl overflow-hidden">
-                <CardContent className="p-0">
-                  <GoogleMap 
-                    address="6 beryl road, msasa, harare, zimbabwe"
-                    className="rounded-xl md:rounded-2xl"
-                  />
+              <Card className="bg-white rounded-xl md:rounded-2xl shadow-xl overflow-hidden h-fit">
+                <CardContent className="p-0 h-full">
+                  <div className="w-full h-[250px] sm:h-[300px] md:h-[350px] lg:h-[400px]">
+                    <GoogleMap 
+                      address="6 beryl road, msasa, harare, zimbabwe"
+                      className="rounded-xl md:rounded-2xl w-full h-full"
+                    />
+                  </div>
                 </CardContent>
               </Card>
             </div>
