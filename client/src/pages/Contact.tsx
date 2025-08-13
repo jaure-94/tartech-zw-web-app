@@ -10,7 +10,6 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@
 import { Textarea } from '@/components/ui/textarea';
 import { MapPin, Phone, Mail, Clock, Send, CheckCircle } from 'lucide-react';
 import { ScrollAnimations } from '@/components/ScrollAnimations';
-import LoadingScreen from '@/components/LoadingScreen';
 import { gsap } from '@/lib/gsap';
 import { GoogleMap } from '@/components/GoogleMap';
 import { useMutation } from '@tanstack/react-query';
@@ -29,17 +28,12 @@ const contactFormSchema = z.object({
 type ContactFormData = z.infer<typeof contactFormSchema>;
 
 export default function Contact() {
-  const [isLoading, setIsLoading] = useState(true);
   const [showSuccess, setShowSuccess] = useState(false);
   const { toast } = useToast();
 
   useEffect(() => {
     document.title = 'Contact Us - Tartech Contracting';
   }, []);
-
-  const handleLoadingComplete = () => {
-    setIsLoading(false);
-  };
 
   const form = useForm<ContactFormData>({
     resolver: zodResolver(contactFormSchema),
@@ -116,11 +110,6 @@ export default function Contact() {
 
   return (
     <div className="min-h-screen">
-      <LoadingScreen 
-        isVisible={isLoading}
-        onLoadingComplete={handleLoadingComplete}
-        duration={1500}
-      />
       <ScrollAnimations />
       
       {/* Contact Section */}
