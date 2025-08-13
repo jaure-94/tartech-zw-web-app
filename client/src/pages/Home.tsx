@@ -661,11 +661,11 @@ export default function Home() {
       {/* Services Overview */}
       <section id="our-expertise" className="py-20 bg-light-industrial">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="animate-fade-in text-4xl sm:text-5xl font-black text-industrial-black mb-6">
+          <div className="text-center mb-12 md:mb-16">
+            <h2 className="animate-fade-in text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black text-industrial-black mb-4 md:mb-6">
               OUR <span className="text-construction-yellow">EXPERTISE</span>
             </h2>
-            <p className="animate-fade-in text-lg text-industrial-gray max-w-3xl mx-auto">
+            <p className="animate-fade-in text-sm sm:text-base md:text-lg text-industrial-gray max-w-3xl mx-auto leading-relaxed">
               Three decades of delivering industrial-grade solutions across Zimbabwe's most demanding sectors
             </p>
           </div>
@@ -840,53 +840,53 @@ export default function Home() {
                 </AccordionContent>
               </AccordionItem>
 
-              <AccordionItem value="team" className="border border-gray-200 rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300">
-                <AccordionTrigger className="px-8 py-6 bg-gradient-to-r from-white to-gray-50 hover:from-construction-yellow/10 hover:to-construction-yellow/5 transition-all duration-300 text-left [&[data-state=open]]:bg-construction-yellow/10">
-                  <div className="flex items-center space-x-4">
-                    <div className="w-12 h-12 bg-construction-yellow rounded-full flex items-center justify-center flex-shrink-0">
-                      <Users className="h-6 w-6 text-industrial-black" />
+              <AccordionItem value="team" className="border border-gray-200 rounded-lg md:rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300">
+                <AccordionTrigger className="px-4 py-4 sm:px-6 sm:py-5 md:px-8 md:py-6 bg-gradient-to-r from-white to-gray-50 hover:from-construction-yellow/10 hover:to-construction-yellow/5 transition-all duration-300 text-left [&[data-state=open]]:bg-construction-yellow/10">
+                  <div className="flex items-center space-x-3 md:space-x-4">
+                    <div className="w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 bg-construction-yellow rounded-full flex items-center justify-center flex-shrink-0">
+                      <Users className="h-4 w-4 sm:h-5 sm:w-5 md:h-6 md:w-6 text-industrial-black" />
                     </div>
                     <div>
-                      <h3 className="text-xl font-bold text-industrial-black">EXPERT TEAM</h3>
-                      <p className="text-sm text-industrial-gray">Decades of specialized experience</p>
+                      <h3 className="text-sm sm:text-base md:text-xl font-bold text-industrial-black">EXPERT TEAM</h3>
+                      <p className="text-xs sm:text-sm text-industrial-gray">Decades of specialized experience</p>
                     </div>
                   </div>
                 </AccordionTrigger>
-                <AccordionContent className="px-8 pb-6 bg-white">
-                  <div className="pl-16 space-y-4">
-                    <p className="text-industrial-gray leading-relaxed">
+                <AccordionContent className="px-4 pb-4 sm:px-6 sm:pb-5 md:px-8 md:pb-6 bg-white">
+                  <div className="pl-8 sm:pl-12 md:pl-16 space-y-3 md:space-y-4">
+                    <p className="text-sm md:text-base text-industrial-gray leading-relaxed">
                       Highly skilled professionals with decades of experience in harsh industrial environments. Our team combines local knowledge with international expertise.
                     </p>
-                    <ul className="space-y-2 text-industrial-gray">
-                      <li className="flex items-center"><CheckCircle className="h-4 w-4 text-construction-yellow mr-3 flex-shrink-0" /> Certified engineers and project managers</li>
-                      <li className="flex items-center"><CheckCircle className="h-4 w-4 text-construction-yellow mr-3 flex-shrink-0" /> Specialized heavy equipment operators</li>
-                      <li className="flex items-center"><CheckCircle className="h-4 w-4 text-construction-yellow mr-3 flex-shrink-0" /> Continuous professional development programs</li>
+                    <ul className="space-y-1.5 md:space-y-2 text-sm md:text-base text-industrial-gray">
+                      <li className="flex items-center"><CheckCircle className="h-3 w-3 md:h-4 md:w-4 text-construction-yellow mr-2 md:mr-3 flex-shrink-0" /> Certified engineers and project managers</li>
+                      <li className="flex items-center"><CheckCircle className="h-3 w-3 md:h-4 md:w-4 text-construction-yellow mr-2 md:mr-3 flex-shrink-0" /> Specialized heavy equipment operators</li>
+                      <li className="flex items-center"><CheckCircle className="h-3 w-3 md:h-4 md:w-4 text-construction-yellow mr-2 md:mr-3 flex-shrink-0" /> Continuous professional development programs</li>
                     </ul>
                   </div>
                 </AccordionContent>
               </AccordionItem>
 
-              <AccordionItem value="delivery" className="border border-gray-200 rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300">
-                <AccordionTrigger className="px-8 py-6 bg-gradient-to-r from-white to-gray-50 hover:from-construction-yellow/10 hover:to-construction-yellow/5 transition-all duration-300 text-left [&[data-state=open]]:bg-construction-yellow/10">
-                  <div className="flex items-center space-x-4">
-                    <div className="w-12 h-12 bg-construction-yellow rounded-full flex items-center justify-center flex-shrink-0">
-                      <Clock className="h-6 w-6 text-industrial-black" />
+              <AccordionItem value="delivery" className="border border-gray-200 rounded-lg md:rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300">
+                <AccordionTrigger className="px-4 py-4 sm:px-6 sm:py-5 md:px-8 md:py-6 bg-gradient-to-r from-white to-gray-50 hover:from-construction-yellow/10 hover:to-construction-yellow/5 transition-all duration-300 text-left [&[data-state=open]]:bg-construction-yellow/10">
+                  <div className="flex items-center space-x-3 md:space-x-4">
+                    <div className="w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 bg-construction-yellow rounded-full flex items-center justify-center flex-shrink-0">
+                      <Clock className="h-4 w-4 sm:h-5 sm:w-5 md:h-6 md:w-6 text-industrial-black" />
                     </div>
                     <div>
-                      <h3 className="text-xl font-bold text-industrial-black">ON-TIME DELIVERY</h3>
-                      <p className="text-sm text-industrial-gray">Reliable project completion</p>
+                      <h3 className="text-sm sm:text-base md:text-xl font-bold text-industrial-black">ON-TIME DELIVERY</h3>
+                      <p className="text-xs sm:text-sm text-industrial-gray">Reliable project completion</p>
                     </div>
                   </div>
                 </AccordionTrigger>
-                <AccordionContent className="px-8 pb-6 bg-white">
-                  <div className="pl-16 space-y-4">
-                    <p className="text-industrial-gray leading-relaxed">
+                <AccordionContent className="px-4 pb-4 sm:px-6 sm:pb-5 md:px-8 md:pb-6 bg-white">
+                  <div className="pl-8 sm:pl-12 md:pl-16 space-y-3 md:space-y-4">
+                    <p className="text-sm md:text-base text-industrial-gray leading-relaxed">
                       Consistent project completion within deadlines and budget constraints. Our proven project management methodology ensures predictable outcomes.
                     </p>
-                    <ul className="space-y-2 text-industrial-gray">
-                      <li className="flex items-center"><CheckCircle className="h-4 w-4 text-construction-yellow mr-3 flex-shrink-0" /> 95% on-time delivery rate across all projects</li>
-                      <li className="flex items-center"><CheckCircle className="h-4 w-4 text-construction-yellow mr-3 flex-shrink-0" /> Advanced project scheduling and monitoring</li>
-                      <li className="flex items-center"><CheckCircle className="h-4 w-4 text-construction-yellow mr-3 flex-shrink-0" /> Transparent communication and progress reporting</li>
+                    <ul className="space-y-1.5 md:space-y-2 text-sm md:text-base text-industrial-gray">
+                      <li className="flex items-center"><CheckCircle className="h-3 w-3 md:h-4 md:w-4 text-construction-yellow mr-2 md:mr-3 flex-shrink-0" /> 95% on-time delivery rate across all projects</li>
+                      <li className="flex items-center"><CheckCircle className="h-3 w-3 md:h-4 md:w-4 text-construction-yellow mr-2 md:mr-3 flex-shrink-0" /> Advanced project scheduling and monitoring</li>
+                      <li className="flex items-center"><CheckCircle className="h-3 w-3 md:h-4 md:w-4 text-construction-yellow mr-2 md:mr-3 flex-shrink-0" /> Transparent communication and progress reporting</li>
                     </ul>
                   </div>
                 </AccordionContent>
@@ -899,11 +899,11 @@ export default function Home() {
       {/* Industries We Serve */}
       <section className="py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="animate-fade-in text-3xl sm:text-4xl font-black text-industrial-black mb-6">
+          <div className="text-center mb-12 md:mb-16">
+            <h2 className="animate-fade-in text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black text-industrial-black mb-4 md:mb-6">
               WE ARE GOOD AT <span className="text-construction-yellow">SOLVING PROBLEMS</span>
             </h2>
-            <p className="animate-fade-in text-lg text-industrial-gray max-w-3xl mx-auto">
+            <p className="animate-fade-in text-sm sm:text-base md:text-lg text-industrial-gray max-w-3xl mx-auto leading-relaxed">
               From the depths of Zimbabwe's mines to expansive agricultural lands, we deliver specialized solutions across every major industrial sector.
             </p>
           </div>
@@ -999,11 +999,11 @@ export default function Home() {
       {/* Client Testimonials */}
       <section className="py-24 bg-light-industrial">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="animate-fade-in text-4xl sm:text-5xl font-black text-industrial-black mb-6">
+          <div className="text-center mb-12 md:mb-16">
+            <h2 className="animate-fade-in text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black text-industrial-black mb-4 md:mb-6">
               CLIENT <span className="text-construction-yellow">TESTIMONIALS</span>
             </h2>
-            <p className="animate-fade-in text-lg text-industrial-gray max-w-3xl mx-auto">
+            <p className="animate-fade-in text-sm sm:text-base md:text-lg text-industrial-gray max-w-3xl mx-auto leading-relaxed">
               Hear from industry leaders who trust Tartech Contracting for their most critical projects.
             </p>
           </div>
@@ -1081,11 +1081,11 @@ export default function Home() {
       {/* Trusted Clients Section */}
       <section className="py-20 bg-gradient-to-br from-gray-50 via-white to-gray-50 border-t border-gray-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="animate-fade-in text-3xl sm:text-4xl font-black text-industrial-black mb-4">
+          <div className="text-center mb-12 md:mb-16">
+            <h2 className="animate-fade-in text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black text-industrial-black mb-4 md:mb-6">
               TRUSTED BY <span className="text-construction-yellow">INDUSTRY LEADERS</span>
             </h2>
-            <p className="animate-fade-in text-lg text-industrial-gray max-w-2xl mx-auto">
+            <p className="animate-fade-in text-sm sm:text-base md:text-lg text-industrial-gray max-w-2xl mx-auto leading-relaxed">
               Partnering with Zimbabwe's most respected organizations across public and private sectors
             </p>
           </div>
