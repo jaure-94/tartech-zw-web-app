@@ -183,7 +183,7 @@ export function Navigation() {
       {/* Mobile Navigation Menu - Redesigned */}
       <div 
         id="mobile-menu" 
-        className="md:hidden bg-gradient-to-br from-white/98 to-white/95 backdrop-blur-xl border-t border-construction-yellow/20 shadow-2xl opacity-0 invisible transition-all duration-300 transform -translate-y-4"
+        className="md:hidden bg-white border-t border-construction-yellow/20 shadow-2xl opacity-0 invisible transition-all duration-300 transform -translate-y-4"
       >
         <div className="px-6 py-6 space-y-2">
           {/* Main Navigation Links */}
