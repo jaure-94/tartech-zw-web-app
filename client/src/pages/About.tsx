@@ -19,6 +19,7 @@ import {
 } from 'lucide-react';
 import { ScrollAnimations } from '@/components/ScrollAnimations';
 import PageLoader from '@/components/PageLoader';
+import tartechLogo from '@assets/tartech-logo-symbol_1755071044733.png';
 
 export default function About() {
   const [isLoading, setIsLoading] = useState(true);
@@ -30,14 +31,23 @@ export default function About() {
     const loadingTimer = setTimeout(() => {
       import('@/lib/gsap').then(({ gsap }) => {
         // Animate loading screen out
-        gsap.to('.loading-screen', {
-          opacity: 0,
-          duration: 0.8,
-          ease: "power2.out",
-          onComplete: () => {
-            setIsLoading(false);
-          }
-        });
+        const loadingElement = document.querySelector('.loading-screen');
+        if (loadingElement) {
+          gsap.to(loadingElement, {
+            opacity: 0,
+            duration: 0.8,
+            ease: "power2.out",
+            onComplete: () => {
+              setIsLoading(false);
+            }
+          });
+        } else {
+          // Fallback if GSAP target not found
+          setIsLoading(false);
+        }
+      }).catch(() => {
+        // Fallback if GSAP import fails
+        setIsLoading(false);
       });
     }, 1500); // Show loader for 1.5 seconds
 
@@ -57,7 +67,7 @@ export default function About() {
                 <div className="absolute inset-0 border-4 border-construction-yellow border-t-transparent rounded-full animate-spin"></div>
                 <div className="absolute inset-2 bg-construction-yellow/10 rounded-full flex items-center justify-center">
                   <img 
-                    src="/attached_assets/tartech-logo-symbol_1755071044733.png" 
+                    src={tartechLogo} 
                     alt="Tartech Logo" 
                     className="w-10 h-10 object-contain"
                   />
