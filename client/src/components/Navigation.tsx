@@ -17,6 +17,19 @@ export function Navigation() {
 
   const handleNavClick = () => {
     scrollToTop();
+    
+    // Close mobile menu with animation
+    const mobileMenu = document.getElementById('mobile-menu');
+    if (mobileMenu && mobileMenuOpen) {
+      gsap.to(mobileMenu, {
+        duration: 0.3,
+        opacity: 0,
+        visibility: 'hidden',
+        y: -16,
+        ease: "power2.in"
+      });
+    }
+    
     setMobileMenuOpen(false);
     setServicesDropdownOpen(false);
     setMobileServicesOpen(false);
