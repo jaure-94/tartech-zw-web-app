@@ -548,19 +548,15 @@ export default function Home() {
                 </div>
               </div>
               
-              {/* Primary CTA Button */}
-              <div className="animate-slide-up-delay-5 mb-16">
+              {/* Modern Gradient CTA Button */}
+              <div className="animate-slide-up-delay-5 mb-20 sm:mb-24 md:mb-28">
                 <Link href="/contact">
-                  <Button size="lg" className="group relative bg-gradient-to-r from-construction-yellow to-construction-yellow/95 text-industrial-black hover:from-construction-yellow/95 hover:to-construction-yellow/85 text-xl font-semibold px-12 py-5 rounded-2xl shadow-lg hover:shadow-construction-yellow/25 transition-all duration-400 hover:scale-105 overflow-hidden border border-construction-yellow/20 hover:border-construction-yellow/30">
-                    {/* Subtle Background Overlay */}
-                    <div className="absolute inset-0 bg-gradient-to-r from-white/15 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                    
-                    {/* Button Content */}
-                    <div className="relative flex items-center justify-center">
-                      <Phone className="mr-4 h-6 w-6 group-hover:rotate-6 transition-transform duration-300" />
-                      <span className="tracking-wide">GET IN TOUCH</span>
-                    </div>
-                  </Button>
+                  <button className="relative inline-flex items-center justify-center p-0.5 overflow-hidden text-base sm:text-lg font-semibold text-white rounded-lg group bg-gradient-to-br from-construction-yellow to-safety-orange hover:from-construction-yellow hover:to-construction-yellow/90 focus:ring-4 focus:outline-none focus:ring-construction-yellow/50 transition-all duration-300 hover:scale-105 shadow-xl hover:shadow-2xl hover:shadow-construction-yellow/25">
+                    <span className="relative px-6 py-3 sm:px-8 sm:py-4 md:px-10 md:py-5 transition-all ease-in duration-200 bg-industrial-black rounded-md group-hover:bg-transparent flex items-center justify-center">
+                      <Phone className="mr-3 sm:mr-4 h-5 w-5 sm:h-6 sm:w-6 group-hover:rotate-6 transition-transform duration-300" />
+                      <span className="tracking-wide font-bold text-sm sm:text-base md:text-lg">GET IN TOUCH</span>
+                    </span>
+                  </button>
                 </Link>
               </div>
             </div>
@@ -621,12 +617,12 @@ export default function Home() {
         </div>
         
         {/* Elegant Scroll Indicator */}
-        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 text-center group cursor-pointer" onClick={scrollToServices}>
+        <div className="absolute bottom-4 sm:bottom-6 md:bottom-8 left-1/2 transform -translate-x-1/2 text-center group cursor-pointer" onClick={scrollToServices}>
           <div className="animate-bounce">
-            <div className="text-white/75 text-xs font-semibold mb-4 uppercase tracking-[0.25em] group-hover:text-construction-yellow transition-colors duration-300">Discover Our Expertise</div>
+            <div className="text-white/75 text-[10px] sm:text-xs font-semibold mb-3 sm:mb-4 uppercase tracking-[0.25em] group-hover:text-construction-yellow transition-colors duration-300">Discover Our Expertise</div>
             <div className="relative">
-              <div className="w-7 h-12 border-2 border-construction-yellow/50 rounded-full mx-auto relative group-hover:border-construction-yellow/80 transition-all duration-300 shadow-lg shadow-construction-yellow/10">
-                <div className="w-1.5 h-4 bg-construction-yellow/70 rounded-full absolute top-2 left-1/2 transform -translate-x-1/2 group-hover:bg-construction-yellow animate-scroll-dot"></div>
+              <div className="w-6 h-10 sm:w-7 sm:h-12 border-2 border-construction-yellow/50 rounded-full mx-auto relative group-hover:border-construction-yellow/80 transition-all duration-300 shadow-lg shadow-construction-yellow/10">
+                <div className="w-1 h-3 sm:w-1.5 sm:h-4 bg-construction-yellow/70 rounded-full absolute top-2 left-1/2 transform -translate-x-1/2 group-hover:bg-construction-yellow animate-scroll-dot"></div>
               </div>
             </div>
           </div>
