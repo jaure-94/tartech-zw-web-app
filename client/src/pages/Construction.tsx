@@ -202,12 +202,9 @@ export default function Construction() {
                 <p className="text-gray-300 text-base sm:text-lg md:text-xl mb-6 sm:mb-8 max-w-4xl mx-auto leading-relaxed px-2 sm:px-4">
                   From planning to completion, our experienced team delivers construction projects that meet the highest standards and specifications.
                 </p>
-                <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center">
+                <div className="flex justify-center">
                   <button className="px-6 sm:px-8 py-3 sm:py-4 bg-construction-yellow text-industrial-black font-bold rounded-lg hover:bg-yellow-400 transition-colors duration-200 text-sm sm:text-base">
                     REQUEST QUOTE
-                  </button>
-                  <button className="px-6 sm:px-8 py-3 sm:py-4 border-2 border-construction-yellow text-construction-yellow font-bold rounded-lg hover:bg-construction-yellow hover:text-industrial-black transition-all duration-200 text-sm sm:text-base">
-                    VIEW PORTFOLIO
                   </button>
                 </div>
               </CardContent>
