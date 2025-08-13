@@ -14,7 +14,6 @@ declare global {
 
 export function GoogleMap({ address, className = "" }: GoogleMapProps) {
   const mapRef = useRef<HTMLDivElement>(null);
-  const mapInstanceRef = useRef<any>(null);
 
   useEffect(() => {
     // Check if Google Maps API is already loaded
@@ -26,153 +25,193 @@ export function GoogleMap({ address, className = "" }: GoogleMapProps) {
     // Set up global callback
     window.initMap = initializeMap;
 
-    // Load Google Maps API - we'll handle the API key through server endpoint
-    const script = document.createElement('script');
-    
-    // Fetch API key from server
+    const showFallbackMap = () => {
+      if (mapRef.current) {
+        mapRef.current.innerHTML = `
+          <div class="w-full h-full bg-gradient-to-br from-gray-50 to-gray-100 rounded-lg border border-gray-200">
+            <div class="flex flex-col items-center justify-center h-full p-6 text-center">
+              <div class="w-16 h-16 bg-construction-yellow rounded-full flex items-center justify-center mb-4">
+                <svg class="w-8 h-8 text-industrial-black" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+                </svg>
+              </div>
+              <h3 class="font-bold text-lg text-industrial-black mb-2">Tartech Contracting</h3>
+              <p class="text-sm text-gray-600 mb-3">6 Beryl Road, Msasa<br>Harare, Zimbabwe</p>
+              <div class="space-y-2 text-xs text-gray-500">
+                <p>📍 Located in Msasa Industrial Area</p>
+                <p>🚗 Accessible via major highways</p>
+                <p>🏭 Industrial equipment and machinery visible</p>
+              </div>
+              <a 
+                href="https://www.google.com/maps/search/6+beryl+road+msasa+harare+zimbabwe" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                class="mt-4 inline-flex items-center px-4 py-2 bg-construction-yellow text-industrial-black text-sm font-medium rounded-lg hover:bg-yellow-500 transition-colors duration-200"
+              >
+                <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+                </svg>
+                Open in Google Maps
+              </a>
+            </div>
+          </div>
+        `;
+      }
+    };
+
+    // Load Google Maps API through server endpoint
     fetch('/api/maps-config')
       .then(response => response.json())
       .then(data => {
-        script.src = `https://maps.googleapis.com/maps/api/js?key=${data.apiKey}&callback=initMap&libraries=places`;
+        if (!data.apiKey) {
+          throw new Error('No API key provided');
+        }
+        
+        const script = document.createElement('script');
+        script.src = `https://maps.googleapis.com/maps/api/js?key=${data.apiKey}&callback=initMap&libraries=places&loading=async`;
+        script.async = true;
+        script.defer = true;
+        
+        script.onerror = () => {
+          console.error('Failed to load Google Maps API');
+          showFallbackMap();
+        };
+        
         document.head.appendChild(script);
       })
       .catch(error => {
         console.error('Failed to get Maps API key:', error);
-        if (mapRef.current) {
-          mapRef.current.innerHTML = `
-            <div class="flex items-center justify-center h-full bg-gray-100 rounded-lg">
-              <div class="text-center p-4">
-                <div class="text-red-500 text-lg mb-2">⚠️</div>
-                <p class="text-gray-600 text-sm">Unable to load map</p>
-                <p class="text-gray-500 text-xs mt-1">API configuration error</p>
-              </div>
-            </div>
-          `;
-        }
+        showFallbackMap();
       });
 
-    return () => {
-      // Cleanup function - handled by browser automatically
-    };
-  }, []);
-
-  const initializeMap = () => {
-    if (!mapRef.current || !window.google) return;
-
-    // Create geocoder
-    const geocoder = new window.google.maps.Geocoder();
-    
-    // Default coordinates for Harare, Zimbabwe as fallback
-    const defaultLocation = { lat: -17.8292, lng: 31.0522 };
-
-    // Create map with default location
-    const map = new window.google.maps.Map(mapRef.current, {
-      zoom: 15,
-      center: defaultLocation,
-      styles: [
-        {
-          featureType: "all",
-          elementType: "geometry.fill",
-          stylers: [{ color: "#f5f5f5" }]
-        },
-        {
-          featureType: "road",
-          elementType: "geometry",
-          stylers: [{ color: "#ffffff" }]
-        },
-        {
-          featureType: "road",
-          elementType: "labels.text.fill",
-          stylers: [{ color: "#2d2d2d" }]
-        },
-        {
-          featureType: "poi",
-          elementType: "geometry",
-          stylers: [{ color: "#eeeeee" }]
-        },
-        {
-          featureType: "water",
-          elementType: "geometry",
-          stylers: [{ color: "#c9c9c9" }]
-        },
-        {
-          featureType: "poi.business",
-          stylers: [{ visibility: "on" }]
-        }
-      ],
-      mapTypeControl: true,
-      streetViewControl: true,
-      fullscreenControl: true,
-      zoomControl: true
-    });
-
-    mapInstanceRef.current = map;
-
-    // Geocode the address
-    geocoder.geocode({ address: address }, (results: any, status: any) => {
-      if (status === 'OK' && results[0]) {
-        const location = results[0].geometry.location;
-        map.setCenter(location);
-        
-        // Create custom marker
-        const marker = new window.google.maps.Marker({
-          position: location,
-          map: map,
-          title: 'Tartech Contracting',
-          icon: {
-            path: window.google.maps.SymbolPath.CIRCLE,
-            scale: 10,
-            fillColor: '#FFD700', // Construction yellow
-            fillOpacity: 1,
-            strokeColor: '#2d2d2d', // Industrial black
-            strokeWeight: 2
-          }
-        });
-
-        // Create info window
-        const infoWindow = new window.google.maps.InfoWindow({
-          content: `
-            <div class="p-2">
-              <h3 class="font-bold text-lg text-gray-800 mb-1">Tartech Contracting</h3>
-              <p class="text-gray-600 text-sm mb-2">${address}</p>
-              <div class="flex items-center space-x-4 text-xs text-gray-500">
-                <span>Industrial Excellence</span>
-                <span>•</span>
-                <span>Since 1994</span>
-              </div>
-            </div>
-          `
-        });
-
-        // Add click event to marker
-        marker.addListener('click', () => {
-          infoWindow.open(map, marker);
-        });
-
-        // Auto-open info window
-        setTimeout(() => {
-          infoWindow.open(map, marker);
-        }, 1000);
-
-      } else {
-        console.warn('Geocoding failed:', status);
-        // If geocoding fails, still show the map with default location
-        const marker = new window.google.maps.Marker({
-          position: defaultLocation,
-          map: map,
-          title: 'Tartech Contracting - Harare, Zimbabwe',
-          icon: {
-            path: window.google.maps.SymbolPath.CIRCLE,
-            scale: 10,
-            fillColor: '#FFD700',
-            fillOpacity: 1,
-            strokeColor: '#2d2d2d',
-            strokeWeight: 2
-          }
-        });
+    function initializeMap() {
+      if (!mapRef.current) return;
+      
+      if (!window.google || !window.google.maps) {
+        console.error('Google Maps API not loaded');
+        showFallbackMap();
+        return;
       }
-    });
-  };
+
+      try {
+        // Default coordinates for Harare, Zimbabwe as fallback
+        const defaultLocation = { lat: -17.8292, lng: 31.0522 };
+
+        // Create map with default location
+        const map = new window.google.maps.Map(mapRef.current, {
+          zoom: 15,
+          center: defaultLocation,
+          styles: [
+            {
+              featureType: "all",
+              elementType: "geometry.fill",
+              stylers: [{ color: "#f5f5f5" }]
+            },
+            {
+              featureType: "road",
+              elementType: "geometry",
+              stylers: [{ color: "#ffffff" }]
+            },
+            {
+              featureType: "road",
+              elementType: "labels.text.fill",
+              stylers: [{ color: "#2d2d2d" }]
+            },
+            {
+              featureType: "poi",
+              elementType: "geometry",
+              stylers: [{ color: "#eeeeee" }]
+            },
+            {
+              featureType: "water",
+              elementType: "geometry",
+              stylers: [{ color: "#c9c9c9" }]
+            }
+          ],
+          mapTypeControl: true,
+          streetViewControl: true,
+          fullscreenControl: true,
+          zoomControl: true
+        });
+
+        // Create geocoder
+        const geocoder = new window.google.maps.Geocoder();
+        
+        // Geocode the address
+        geocoder.geocode({ address: address }, (results: any, status: any) => {
+          if (status === 'OK' && results[0]) {
+            const location = results[0].geometry.location;
+            map.setCenter(location);
+            
+            // Create custom marker
+            const marker = new window.google.maps.Marker({
+              position: location,
+              map: map,
+              title: 'Tartech Contracting',
+              icon: {
+                path: window.google.maps.SymbolPath.CIRCLE,
+                scale: 10,
+                fillColor: '#FFD700',
+                fillOpacity: 1,
+                strokeColor: '#2d2d2d',
+                strokeWeight: 2
+              }
+            });
+
+            // Create info window
+            const infoWindow = new window.google.maps.InfoWindow({
+              content: `
+                <div style="padding: 8px;">
+                  <h3 style="font-weight: bold; font-size: 16px; color: #333; margin-bottom: 4px;">Tartech Contracting</h3>
+                  <p style="color: #666; font-size: 14px; margin-bottom: 8px;">${address}</p>
+                  <div style="display: flex; align-items: center; gap: 8px; font-size: 12px; color: #999;">
+                    <span>Industrial Excellence</span>
+                    <span>•</span>
+                    <span>Since 1994</span>
+                  </div>
+                </div>
+              `
+            });
+
+            // Add click event to marker
+            marker.addListener('click', () => {
+              infoWindow.open(map, marker);
+            });
+
+            // Auto-open info window
+            setTimeout(() => {
+              infoWindow.open(map, marker);
+            }, 1000);
+
+          } else {
+            console.warn('Geocoding failed:', status);
+            // If geocoding fails, still show the map with default location
+            const marker = new window.google.maps.Marker({
+              position: defaultLocation,
+              map: map,
+              title: 'Tartech Contracting - Harare, Zimbabwe',
+              icon: {
+                path: window.google.maps.SymbolPath.CIRCLE,
+                scale: 10,
+                fillColor: '#FFD700',
+                fillOpacity: 1,
+                strokeColor: '#2d2d2d',
+                strokeWeight: 2
+              }
+            });
+          }
+        });
+
+      } catch (error) {
+        console.error('Error initializing map:', error);
+        showFallbackMap();
+      }
+    }
+
+    return () => {
+      // Cleanup handled by browser
+    };
+  }, [address]);
 
   return (
     <div className={`w-full h-full min-h-[300px] rounded-lg overflow-hidden ${className}`}>
