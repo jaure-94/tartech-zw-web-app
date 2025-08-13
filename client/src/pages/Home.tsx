@@ -520,29 +520,29 @@ export default function Home() {
               </div>
               
               {/* Premium Statistics Display */}
-              <div className="animate-slide-up-delay-4 py-6">
-                <div className="bg-gradient-to-r from-white/6 to-white/10 backdrop-blur-xl rounded-2xl border border-white/15 p-6 shadow-2xl">
-                  <div className="grid grid-cols-3 gap-6">
+              <div className="animate-slide-up-delay-4 py-4 md:py-6">
+                <div className="bg-gradient-to-r from-white/6 to-white/10 backdrop-blur-xl rounded-xl md:rounded-2xl border border-white/15 p-4 md:p-6 shadow-2xl">
+                  <div className="grid grid-cols-3 gap-3 md:gap-6">
                     <div className="text-center group cursor-default">
                       <div className="relative">
-                        <div className="text-3xl lg:text-5xl font-black text-construction-yellow mb-2 group-hover:scale-110 transition-transform duration-500 filter drop-shadow-lg">500+</div>
-                        <div className="absolute -bottom-0.5 left-1/2 transform -translate-x-1/2 w-8 h-0.5 bg-gradient-to-r from-construction-yellow/70 to-construction-yellow/90 rounded-full group-hover:w-12 transition-all duration-500 shadow-md shadow-construction-yellow/25"></div>
+                        <div className="text-xl sm:text-2xl md:text-3xl lg:text-5xl font-black text-construction-yellow mb-1 md:mb-2 group-hover:scale-110 transition-transform duration-500 filter drop-shadow-lg">20+</div>
+                        <div className="absolute -bottom-0.5 left-1/2 transform -translate-x-1/2 w-6 md:w-8 h-0.5 bg-gradient-to-r from-construction-yellow/70 to-construction-yellow/90 rounded-full group-hover:w-8 md:group-hover:w-12 transition-all duration-500 shadow-md shadow-construction-yellow/25"></div>
                       </div>
-                      <div className="text-[11px] text-gray-300 uppercase tracking-[0.2em] font-semibold mt-3">Projects Delivered</div>
+                      <div className="text-[9px] sm:text-[10px] md:text-[11px] text-gray-300 uppercase tracking-[0.15em] md:tracking-[0.2em] font-semibold mt-2 md:mt-3">Projects Delivered</div>
                     </div>
                     <div className="text-center group cursor-default">
                       <div className="relative">
-                        <div className="text-3xl lg:text-5xl font-black text-construction-yellow mb-2 group-hover:scale-110 transition-transform duration-500 filter drop-shadow-lg">100%</div>
-                        <div className="absolute -bottom-0.5 left-1/2 transform -translate-x-1/2 w-8 h-0.5 bg-gradient-to-r from-construction-yellow/70 to-construction-yellow/90 rounded-full group-hover:w-12 transition-all duration-500 shadow-md shadow-construction-yellow/25"></div>
+                        <div className="text-xl sm:text-2xl md:text-3xl lg:text-5xl font-black text-construction-yellow mb-1 md:mb-2 group-hover:scale-110 transition-transform duration-500 filter drop-shadow-lg">100%</div>
+                        <div className="absolute -bottom-0.5 left-1/2 transform -translate-x-1/2 w-6 md:w-8 h-0.5 bg-gradient-to-r from-construction-yellow/70 to-construction-yellow/90 rounded-full group-hover:w-8 md:group-hover:w-12 transition-all duration-500 shadow-md shadow-construction-yellow/25"></div>
                       </div>
-                      <div className="text-[11px] text-gray-300 uppercase tracking-[0.2em] font-semibold mt-3">Safety Record</div>
+                      <div className="text-[9px] sm:text-[10px] md:text-[11px] text-gray-300 uppercase tracking-[0.15em] md:tracking-[0.2em] font-semibold mt-2 md:mt-3">Safety Record</div>
                     </div>
                     <div className="text-center group cursor-default">
                       <div className="relative">
-                        <div className="text-3xl lg:text-5xl font-black text-construction-yellow mb-2 group-hover:scale-110 transition-transform duration-500 filter drop-shadow-lg">24/7</div>
-                        <div className="absolute -bottom-0.5 left-1/2 transform -translate-x-1/2 w-8 h-0.5 bg-gradient-to-r from-construction-yellow/70 to-construction-yellow/90 rounded-full group-hover:w-12 transition-all duration-500 shadow-md shadow-construction-yellow/25"></div>
+                        <div className="text-xl sm:text-2xl md:text-3xl lg:text-5xl font-black text-construction-yellow mb-1 md:mb-2 group-hover:scale-110 transition-transform duration-500 filter drop-shadow-lg">10+</div>
+                        <div className="absolute -bottom-0.5 left-1/2 transform -translate-x-1/2 w-6 md:w-8 h-0.5 bg-gradient-to-r from-construction-yellow/70 to-construction-yellow/90 rounded-full group-hover:w-8 md:group-hover:w-12 transition-all duration-500 shadow-md shadow-construction-yellow/25"></div>
                       </div>
-                      <div className="text-[11px] text-gray-300 uppercase tracking-[0.2em] font-semibold mt-3">Support Available</div>
+                      <div className="text-[9px] sm:text-[10px] md:text-[11px] text-gray-300 uppercase tracking-[0.15em] md:tracking-[0.2em] font-semibold mt-2 md:mt-3">Years Experience</div>
                     </div>
                   </div>
                 </div>
@@ -775,66 +775,66 @@ export default function Home() {
       </section>
 
       {/* Why Choose Us */}
-      <section className="py-24 bg-white">
+      <section className="py-16 md:py-20 lg:py-24 bg-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="animate-fade-in text-4xl sm:text-5xl font-black text-industrial-black mb-6">
+          <div className="text-center mb-12 md:mb-16">
+            <h2 className="animate-fade-in text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black text-industrial-black mb-4 md:mb-6">
               WHY CHOOSE <span className="text-construction-yellow">TARTECH</span>
             </h2>
-            <p className="animate-fade-in text-lg text-industrial-gray max-w-3xl mx-auto">
+            <p className="animate-fade-in text-sm sm:text-base md:text-lg text-industrial-gray max-w-3xl mx-auto leading-relaxed">
               Three decades of excellence in Zimbabwe's most demanding industrial environments, backed by cutting-edge equipment and unwavering commitment to safety.
             </p>
           </div>
           
           <div className="animate-fade-in">
             <Accordion type="single" collapsible className="w-full space-y-4">
-              <AccordionItem value="safety" className="border border-gray-200 rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300">
-                <AccordionTrigger className="px-8 py-6 bg-gradient-to-r from-white to-gray-50 hover:from-construction-yellow/10 hover:to-construction-yellow/5 transition-all duration-300 text-left [&[data-state=open]]:bg-construction-yellow/10">
-                  <div className="flex items-center space-x-4">
-                    <div className="w-12 h-12 bg-construction-yellow rounded-full flex items-center justify-center flex-shrink-0">
-                      <Shield className="h-6 w-6 text-industrial-black" />
+              <AccordionItem value="safety" className="border border-gray-200 rounded-lg md:rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300">
+                <AccordionTrigger className="px-4 py-4 sm:px-6 sm:py-5 md:px-8 md:py-6 bg-gradient-to-r from-white to-gray-50 hover:from-construction-yellow/10 hover:to-construction-yellow/5 transition-all duration-300 text-left [&[data-state=open]]:bg-construction-yellow/10">
+                  <div className="flex items-center space-x-3 md:space-x-4">
+                    <div className="w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 bg-construction-yellow rounded-full flex items-center justify-center flex-shrink-0">
+                      <Shield className="h-4 w-4 sm:h-5 sm:w-5 md:h-6 md:w-6 text-industrial-black" />
                     </div>
                     <div>
-                      <h3 className="text-xl font-bold text-industrial-black">SAFETY FIRST</h3>
-                      <p className="text-sm text-industrial-gray">Our commitment to zero-incident operations</p>
+                      <h3 className="text-sm sm:text-base md:text-xl font-bold text-industrial-black">SAFETY FIRST</h3>
+                      <p className="text-xs sm:text-sm text-industrial-gray">Our commitment to zero-incident operations</p>
                     </div>
                   </div>
                 </AccordionTrigger>
-                <AccordionContent className="px-8 pb-6 bg-white">
-                  <div className="pl-16 space-y-4">
-                    <p className="text-industrial-gray leading-relaxed">
+                <AccordionContent className="px-4 pb-4 sm:px-6 sm:pb-5 md:px-8 md:pb-6 bg-white">
+                  <div className="pl-8 sm:pl-12 md:pl-16 space-y-3 md:space-y-4">
+                    <p className="text-sm md:text-base text-industrial-gray leading-relaxed">
                       Zero-incident safety record with comprehensive training and international safety protocols. Our commitment to safety goes beyond compliance – it's ingrained in every aspect of our operations.
                     </p>
-                    <ul className="space-y-2 text-industrial-gray">
-                      <li className="flex items-center"><CheckCircle className="h-4 w-4 text-construction-yellow mr-3 flex-shrink-0" /> International safety certifications and standards</li>
-                      <li className="flex items-center"><CheckCircle className="h-4 w-4 text-construction-yellow mr-3 flex-shrink-0" /> Regular safety training and equipment updates</li>
-                      <li className="flex items-center"><CheckCircle className="h-4 w-4 text-construction-yellow mr-3 flex-shrink-0" /> 24/7 safety monitoring and incident prevention</li>
+                    <ul className="space-y-1.5 md:space-y-2 text-sm md:text-base text-industrial-gray">
+                      <li className="flex items-center"><CheckCircle className="h-3 w-3 md:h-4 md:w-4 text-construction-yellow mr-2 md:mr-3 flex-shrink-0" /> International safety certifications and standards</li>
+                      <li className="flex items-center"><CheckCircle className="h-3 w-3 md:h-4 md:w-4 text-construction-yellow mr-2 md:mr-3 flex-shrink-0" /> Regular safety training and equipment updates</li>
+                      <li className="flex items-center"><CheckCircle className="h-3 w-3 md:h-4 md:w-4 text-construction-yellow mr-2 md:mr-3 flex-shrink-0" /> 24/7 safety monitoring and incident prevention</li>
                     </ul>
                   </div>
                 </AccordionContent>
               </AccordionItem>
 
-              <AccordionItem value="excellence" className="border border-gray-200 rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300">
-                <AccordionTrigger className="px-8 py-6 bg-gradient-to-r from-white to-gray-50 hover:from-construction-yellow/10 hover:to-construction-yellow/5 transition-all duration-300 text-left [&[data-state=open]]:bg-construction-yellow/10">
-                  <div className="flex items-center space-x-4">
-                    <div className="w-12 h-12 bg-construction-yellow rounded-full flex items-center justify-center flex-shrink-0">
-                      <Award className="h-6 w-6 text-industrial-black" />
+              <AccordionItem value="excellence" className="border border-gray-200 rounded-lg md:rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300">
+                <AccordionTrigger className="px-4 py-4 sm:px-6 sm:py-5 md:px-8 md:py-6 bg-gradient-to-r from-white to-gray-50 hover:from-construction-yellow/10 hover:to-construction-yellow/5 transition-all duration-300 text-left [&[data-state=open]]:bg-construction-yellow/10">
+                  <div className="flex items-center space-x-3 md:space-x-4">
+                    <div className="w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 bg-construction-yellow rounded-full flex items-center justify-center flex-shrink-0">
+                      <Award className="h-4 w-4 sm:h-5 sm:w-5 md:h-6 md:w-6 text-industrial-black" />
                     </div>
                     <div>
-                      <h3 className="text-xl font-bold text-industrial-black">PROVEN EXCELLENCE</h3>
-                      <p className="text-sm text-industrial-gray">Award-winning quality and innovation</p>
+                      <h3 className="text-sm sm:text-base md:text-xl font-bold text-industrial-black">PROVEN EXCELLENCE</h3>
+                      <p className="text-xs sm:text-sm text-industrial-gray">Award-winning quality and innovation</p>
                     </div>
                   </div>
                 </AccordionTrigger>
-                <AccordionContent className="px-8 pb-6 bg-white">
-                  <div className="pl-16 space-y-4">
-                    <p className="text-industrial-gray leading-relaxed">
+                <AccordionContent className="px-4 pb-4 sm:px-6 sm:pb-5 md:px-8 md:pb-6 bg-white">
+                  <div className="pl-8 sm:pl-12 md:pl-16 space-y-3 md:space-y-4">
+                    <p className="text-sm md:text-base text-industrial-gray leading-relaxed">
                       Industry awards and certifications recognizing our commitment to quality and innovation. Our excellence is measured not just by what we build, but how we build it.
                     </p>
-                    <ul className="space-y-2 text-industrial-gray">
-                      <li className="flex items-center"><CheckCircle className="h-4 w-4 text-construction-yellow mr-3 flex-shrink-0" /> Zimbabwe Engineering Excellence Awards</li>
-                      <li className="flex items-center"><CheckCircle className="h-4 w-4 text-construction-yellow mr-3 flex-shrink-0" /> ISO 9001 Quality Management certification</li>
-                      <li className="flex items-center"><CheckCircle className="h-4 w-4 text-construction-yellow mr-3 flex-shrink-0" /> Industry leadership in sustainable practices</li>
+                    <ul className="space-y-1.5 md:space-y-2 text-sm md:text-base text-industrial-gray">
+                      <li className="flex items-center"><CheckCircle className="h-3 w-3 md:h-4 md:w-4 text-construction-yellow mr-2 md:mr-3 flex-shrink-0" /> Zimbabwe Engineering Excellence Awards</li>
+                      <li className="flex items-center"><CheckCircle className="h-3 w-3 md:h-4 md:w-4 text-construction-yellow mr-2 md:mr-3 flex-shrink-0" /> ISO 9001 Quality Management certification</li>
+                      <li className="flex items-center"><CheckCircle className="h-3 w-3 md:h-4 md:w-4 text-construction-yellow mr-2 md:mr-3 flex-shrink-0" /> Industry leadership in sustainable practices</li>
                     </ul>
                   </div>
                 </AccordionContent>
@@ -1207,24 +1207,19 @@ export default function Home() {
       </section>
 
       {/* Call to Action */}
-      <section className="py-24 bg-construction-yellow">
+      <section className="py-16 md:py-20 lg:py-24 bg-construction-yellow">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="animate-fade-in text-4xl sm:text-5xl font-black text-industrial-black mb-6">
+          <h2 className="animate-fade-in text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black text-industrial-black mb-4 md:mb-6">
             READY TO START YOUR PROJECT?
           </h2>
-          <p className="animate-fade-in text-xl text-industrial-black mb-8 max-w-3xl mx-auto">
+          <p className="animate-fade-in text-sm sm:text-base md:text-lg lg:text-xl text-industrial-black mb-6 md:mb-8 max-w-3xl mx-auto leading-relaxed">
             Get in touch with Zimbabwe's leading industrial contractor. Our expert team is ready to deliver excellence for your next construction, mining, or agricultural project.
           </p>
-          <div className="animate-fade-in flex flex-col sm:flex-row gap-6 justify-center">
+          <div className="animate-fade-in flex justify-center">
             <Link href="/contact">
-              <Button size="lg" className="bg-industrial-black text-construction-yellow hover:bg-gray-800 font-bold text-xl px-10 py-6 rounded-xl shadow-2xl transform hover:scale-105 transition-all duration-300">
-                <Phone className="mr-3 h-6 w-6" />
-                GET FREE QUOTE
-              </Button>
-            </Link>
-            <Link href="/services">
-              <Button size="lg" variant="outline" className="border-3 border-industrial-black text-industrial-black hover:bg-industrial-black hover:text-construction-yellow font-bold text-xl px-10 py-6 rounded-xl shadow-2xl transform hover:scale-105 transition-all duration-300">
-                VIEW ALL SERVICES
+              <Button size="lg" className="bg-industrial-black text-construction-yellow hover:bg-gray-800 font-bold text-sm sm:text-base md:text-lg lg:text-xl px-6 py-3 sm:px-8 sm:py-4 md:px-10 md:py-6 rounded-xl shadow-2xl transform hover:scale-105 transition-all duration-300">
+                <Phone className="mr-2 sm:mr-3 h-4 w-4 sm:h-5 sm:w-5 md:h-6 md:w-6" />
+                GET IN TOUCH
               </Button>
             </Link>
           </div>
