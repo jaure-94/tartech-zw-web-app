@@ -164,8 +164,9 @@ export function GoogleMap({ address, className = "" }: GoogleMapProps) {
             
             const infoWindow = new window.google.maps.InfoWindow({
               maxWidth: isMobile ? 200 : 320,
+              disableAutoPan: false,
               content: `
-                <div style="padding: ${isMobile ? '6px' : '12px'}; width: ${isMobile ? '180px' : '300px'}; text-align: ${isMobile ? 'left' : 'center'};">
+                <div style="padding: ${isMobile ? '6px' : '12px'}; width: ${isMobile ? '180px' : '300px'}; text-align: ${isMobile ? 'left' : 'center'}; position: relative;">
                   <div style="display: flex; align-items: flex-start; gap: ${isMobile ? '6px' : '8px'};">
                     <img src="${tartechLogoSymbol}" alt="Tartech Logo" style="width: ${isMobile ? '20px' : '32px'}; height: ${isMobile ? '20px' : '32px'}; flex-shrink: 0; margin-top: 2px;" />
                     <div style="flex: 1; min-width: 0;">
@@ -184,6 +185,25 @@ export function GoogleMap({ address, className = "" }: GoogleMapProps) {
             marker.addListener('click', () => {
               infoWindow.open(map, marker);
             });
+
+            // Add styling for info window close button after it opens
+            const styleInfoWindow = () => {
+              const infoWindowCloseBtn = document.querySelector('.gm-ui-hover-effect');
+              if (infoWindowCloseBtn) {
+                const closeButton = infoWindowCloseBtn as HTMLElement;
+                closeButton.style.right = isMobile ? '8px' : '10px';
+                closeButton.style.top = isMobile ? '6px' : '8px';
+                closeButton.style.width = isMobile ? '20px' : '24px';
+                closeButton.style.height = isMobile ? '20px' : '24px';
+                closeButton.style.opacity = '0.8';
+                closeButton.style.backgroundColor = 'rgba(255, 255, 255, 0.9)';
+                closeButton.style.borderRadius = '50%';
+                closeButton.style.boxShadow = '0 2px 4px rgba(0,0,0,0.1)';
+              }
+            };
+
+            // Listen for info window open events to style the close button
+            infoWindow.addListener('domready', styleInfoWindow);
 
             // Auto-open info window
             setTimeout(() => {
