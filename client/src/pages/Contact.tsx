@@ -317,14 +317,12 @@ export default function Contact() {
                 </CardContent>
               </Card>
               
-              {/* Interactive Map */}
-              <Card className="bg-white rounded-xl md:rounded-2xl shadow-xl">
-                <CardContent className="p-4 md:p-6 lg:p-8">
-                  <h4 className="font-bold text-base md:text-lg mb-3 md:mb-4 text-center text-industrial-black">INTERACTIVE MAP</h4>
-                  <p className="text-xs md:text-sm text-industrial-gray text-center mb-4">View our location and get directions</p>
+              {/* Google Maps */}
+              <Card className="bg-white rounded-xl md:rounded-2xl shadow-xl overflow-hidden">
+                <CardContent className="p-0">
                   <GoogleMap 
                     address="6 beryl road, msasa, harare, zimbabwe"
-                    className="border border-gray-200 shadow-inner"
+                    className="rounded-xl md:rounded-2xl"
                   />
                 </CardContent>
               </Card>
