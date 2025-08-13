@@ -162,11 +162,9 @@ export function GoogleMap({ address, className = "" }: GoogleMapProps) {
               content: `
                 <div style="padding: 8px;">
                   <h3 style="font-weight: bold; font-size: 16px; color: #333; margin-bottom: 4px;">Tartech Contracting</h3>
-                  <p style="color: #666; font-size: 14px; margin-bottom: 8px;">${address}</p>
+                  <p style="color: #666; font-size: 14px; margin-bottom: 8px;">6 Beryl Road, Msasa, Harare, Zimbabwe</p>
                   <div style="display: flex; align-items: center; gap: 8px; font-size: 12px; color: #999;">
                     <span>Industrial Excellence</span>
-                    <span>•</span>
-                    <span>Since 1994</span>
                   </div>
                 </div>
               `
@@ -213,13 +211,14 @@ export function GoogleMap({ address, className = "" }: GoogleMapProps) {
   }, [address]);
 
   return (
-    <div className={`w-full min-h-[250px] sm:min-h-[300px] md:min-h-[350px] lg:min-h-[400px] ${className}`}>
+    <div className={`w-full h-full ${className}`}>
       <div 
         ref={mapRef} 
         className="w-full h-full"
         style={{ 
-          minHeight: '250px',
-          height: 'clamp(250px, 40vh, 400px)'
+          width: '100%',
+          height: '100%',
+          minHeight: 'inherit'
         }}
       />
     </div>
