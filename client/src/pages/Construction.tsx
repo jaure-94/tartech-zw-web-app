@@ -1,15 +1,27 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { Card, CardContent } from '@/components/ui/card';
 import { CheckCircle2, Compass, Shovel, Hammer, Key, Building, MapPin, Droplets, Mountain } from 'lucide-react';
 import { ScrollAnimations } from '@/components/ScrollAnimations';
+import LoadingScreen from '@/components/LoadingScreen';
 
 export default function Construction() {
+  const [isLoading, setIsLoading] = useState(true);
+
   useEffect(() => {
     document.title = 'Construction Services - Tartech Contracting';
   }, []);
 
+  const handleLoadingComplete = () => {
+    setIsLoading(false);
+  };
+
   return (
     <div className="min-h-screen pt-16">
+      <LoadingScreen 
+        isVisible={isLoading}
+        onLoadingComplete={handleLoadingComplete}
+        duration={1500}
+      />
       <ScrollAnimations />
       
       {/* Construction Services Header */}

@@ -1,16 +1,28 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { Card, CardContent } from '@/components/ui/card';
 import { Gem, Box, Mountain, CheckCircle, Building2, Truck, Pickaxe, Zap, Package, Layers, Shovel, Droplets } from 'lucide-react';
 import { ScrollAnimations } from '@/components/ScrollAnimations';
+import LoadingScreen from '@/components/LoadingScreen';
 import dewateringImage from '@assets/Dewatering_1754640759227.jpg';
 
 export default function Mining() {
+  const [isLoading, setIsLoading] = useState(true);
+
   useEffect(() => {
     document.title = 'Mining Operations - Tartech Contracting';
   }, []);
 
+  const handleLoadingComplete = () => {
+    setIsLoading(false);
+  };
+
   return (
     <div className="min-h-screen pt-16">
+      <LoadingScreen 
+        isVisible={isLoading}
+        onLoadingComplete={handleLoadingComplete}
+        duration={1500}
+      />
       <ScrollAnimations />
       
       {/* Mining Services Header */}

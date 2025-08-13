@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Link } from 'wouter';
@@ -19,14 +19,26 @@ import {
   Mail
 } from 'lucide-react';
 import { ScrollAnimations } from '@/components/ScrollAnimations';
+import LoadingScreen from '@/components/LoadingScreen';
 
 export default function Agriculture() {
+  const [isLoading, setIsLoading] = useState(true);
+
   useEffect(() => {
     document.title = 'Agricultural Services - Tartech Contracting Zimbabwe';
   }, []);
 
+  const handleLoadingComplete = () => {
+    setIsLoading(false);
+  };
+
   return (
     <div className="min-h-screen pt-16">
+      <LoadingScreen 
+        isVisible={isLoading}
+        onLoadingComplete={handleLoadingComplete}
+        duration={1500}
+      />
       <ScrollAnimations />
       
       {/* Hero Section */}
