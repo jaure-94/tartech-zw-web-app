@@ -186,23 +186,102 @@ export function GoogleMap({ address, className = "" }: GoogleMapProps) {
               infoWindow.open(map, marker);
             });
 
-            // Add styling for info window close button after it opens
+            // Add styling and functionality for info window close button
             const styleInfoWindow = () => {
-              const infoWindowCloseBtn = document.querySelector('.gm-ui-hover-effect');
-              if (infoWindowCloseBtn) {
-                const closeButton = infoWindowCloseBtn as HTMLElement;
-                closeButton.style.right = isMobile ? '8px' : '10px';
-                closeButton.style.top = isMobile ? '6px' : '8px';
-                closeButton.style.width = isMobile ? '20px' : '24px';
-                closeButton.style.height = isMobile ? '20px' : '24px';
-                closeButton.style.opacity = '0.8';
-                closeButton.style.backgroundColor = 'rgba(255, 255, 255, 0.9)';
-                closeButton.style.borderRadius = '50%';
-                closeButton.style.boxShadow = '0 2px 4px rgba(0,0,0,0.1)';
-              }
+              setTimeout(() => {
+                // Look for all possible close button selectors
+                const closeButtonSelectors = [
+                  'button[title="Close"]',
+                  '.gm-ui-hover-effect',
+                  '[data-value="Close"]',
+                  '.gm-control-active',
+                  'img[src*="close"]',
+                  '.gm-infowindow button'
+                ];
+                
+                let closeButton: HTMLElement | null = null;
+                
+                // Try each selector
+                for (const selector of closeButtonSelectors) {
+                  const elements = document.querySelectorAll(selector);
+                  for (const el of elements) {
+                    const element = el as HTMLElement;
+                    // Check if it's likely a close button
+                    if (element.title?.toLowerCase().includes('close') || 
+                        element.getAttribute('data-value') === 'Close' ||
+                        element.innerHTML.includes('×') ||
+                        element.innerHTML.includes('close')) {
+                      closeButton = element;
+                      break;
+                    }
+                  }
+                  if (closeButton) break;
+                }
+                
+                console.log('Found close button:', closeButton);
+                
+                if (closeButton) {
+                  // Style the button
+                  closeButton.style.position = 'absolute';
+                  closeButton.style.right = isMobile ? '8px' : '10px';
+                  closeButton.style.top = isMobile ? '6px' : '8px';
+                  closeButton.style.width = isMobile ? '20px' : '24px';
+                  closeButton.style.height = isMobile ? '20px' : '24px';
+                  closeButton.style.opacity = '0.9';
+                  closeButton.style.backgroundColor = 'rgba(255, 255, 255, 0.9)';
+                  closeButton.style.borderRadius = '50%';
+                  closeButton.style.boxShadow = '0 2px 4px rgba(0,0,0,0.2)';
+                  closeButton.style.cursor = 'pointer';
+                  closeButton.style.zIndex = '1001';
+                  closeButton.style.border = '1px solid #ccc';
+                  
+                  // Remove existing event listeners and add new ones
+                  closeButton.onclick = (e) => {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    console.log('Close button clicked');
+                    infoWindow.close();
+                  };
+                  
+                  // Also try addEventListener
+                  closeButton.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    console.log('Close button event listener triggered');
+                    infoWindow.close();
+                  });
+                } else {
+                  console.warn('Close button not found, trying alternative approach');
+                  // Add our own close button if we can't find the default one
+                  const infoContent = document.querySelector('.gm-style-iw-d');
+                  if (infoContent) {
+                    const customCloseBtn = document.createElement('button');
+                    customCloseBtn.innerHTML = '×';
+                    customCloseBtn.style.position = 'absolute';
+                    customCloseBtn.style.right = isMobile ? '8px' : '10px';
+                    customCloseBtn.style.top = isMobile ? '6px' : '8px';
+                    customCloseBtn.style.width = isMobile ? '20px' : '24px';
+                    customCloseBtn.style.height = isMobile ? '20px' : '24px';
+                    customCloseBtn.style.backgroundColor = 'rgba(255, 255, 255, 0.9)';
+                    customCloseBtn.style.border = '1px solid #ccc';
+                    customCloseBtn.style.borderRadius = '50%';
+                    customCloseBtn.style.cursor = 'pointer';
+                    customCloseBtn.style.fontSize = '16px';
+                    customCloseBtn.style.color = '#333';
+                    customCloseBtn.style.zIndex = '1001';
+                    
+                    customCloseBtn.onclick = () => {
+                      console.log('Custom close button clicked');
+                      infoWindow.close();
+                    };
+                    
+                    infoContent.appendChild(customCloseBtn);
+                  }
+                }
+              }, 100);
             };
 
-            // Listen for info window open events to style the close button
+            // Listen for info window open events
             infoWindow.addListener('domready', styleInfoWindow);
 
             // Auto-open info window
