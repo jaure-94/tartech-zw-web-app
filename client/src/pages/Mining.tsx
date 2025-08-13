@@ -381,27 +381,27 @@ export default function Mining() {
                 </div>
                 
                 <div className="text-center">
-                  <div className="w-20 h-20 bg-construction-yellow rounded-full flex items-center justify-center mx-auto mb-6">
-                    <Zap className="text-industrial-black h-10 w-10" />
+                  <div className="w-16 h-16 sm:w-20 sm:h-20 bg-construction-yellow rounded-full flex items-center justify-center mx-auto mb-4 sm:mb-6">
+                    <Zap className="text-industrial-black h-8 w-8 sm:h-10 sm:w-10" />
                   </div>
-                  <h4 className="text-xl font-bold text-white mb-3">EXTRACTION</h4>
-                  <p className="text-gray-300">Precision drilling, blasting, and material extraction</p>
+                  <h4 className="text-lg sm:text-xl font-bold text-white mb-2 sm:mb-3">EXTRACTION</h4>
+                  <p className="text-gray-300 text-sm sm:text-base leading-relaxed">Precision drilling, blasting, and material extraction</p>
                 </div>
                 
                 <div className="text-center">
-                  <div className="w-20 h-20 bg-construction-yellow rounded-full flex items-center justify-center mx-auto mb-6">
-                    <Truck className="text-industrial-black h-10 w-10" />
+                  <div className="w-16 h-16 sm:w-20 sm:h-20 bg-construction-yellow rounded-full flex items-center justify-center mx-auto mb-4 sm:mb-6">
+                    <Truck className="text-industrial-black h-8 w-8 sm:h-10 sm:w-10" />
                   </div>
-                  <h4 className="text-xl font-bold text-white mb-3">TRANSPORT</h4>
-                  <p className="text-gray-300">Efficient loading and hauling operations</p>
+                  <h4 className="text-lg sm:text-xl font-bold text-white mb-2 sm:mb-3">TRANSPORT</h4>
+                  <p className="text-gray-300 text-sm sm:text-base leading-relaxed">Efficient loading and hauling operations</p>
                 </div>
                 
                 <div className="text-center">
-                  <div className="w-20 h-20 bg-construction-yellow rounded-full flex items-center justify-center mx-auto mb-6">
-                    <Shovel className="text-industrial-black h-10 w-10" />
+                  <div className="w-16 h-16 sm:w-20 sm:h-20 bg-construction-yellow rounded-full flex items-center justify-center mx-auto mb-4 sm:mb-6">
+                    <Shovel className="text-industrial-black h-8 w-8 sm:h-10 sm:w-10" />
                   </div>
-                  <h4 className="text-xl font-bold text-white mb-3">REHABILITATION</h4>
-                  <p className="text-gray-300">Environmental restoration and site closure</p>
+                  <h4 className="text-lg sm:text-xl font-bold text-white mb-2 sm:mb-3">REHABILITATION</h4>
+                  <p className="text-gray-300 text-sm sm:text-base leading-relaxed">Environmental restoration and site closure</p>
                 </div>
               </div>
             </CardContent>
@@ -410,19 +410,16 @@ export default function Mining() {
           {/* Call to Action */}
           <div className="text-center">
             <Card className="bg-light-industrial rounded-2xl">
-              <CardContent className="p-12">
-                <h3 className="text-3xl font-black text-industrial-black mb-4">
+              <CardContent className="p-6 sm:p-8 lg:p-12">
+                <h3 className="text-2xl sm:text-3xl md:text-4xl font-black text-industrial-black mb-3 sm:mb-4 leading-tight">
                   PARTNER WITH ZIMBABWE'S <span className="text-construction-yellow">MINING EXPERTS</span>
                 </h3>
-                <p className="text-industrial-gray text-lg mb-8 max-w-2xl mx-auto">
+                <p className="text-industrial-gray text-base sm:text-lg md:text-xl mb-6 sm:mb-8 max-w-4xl mx-auto leading-relaxed px-2 sm:px-4">
                   From small-scale operations to major mining projects, our experienced team delivers reliable mining services with safety and efficiency as top priorities.
                 </p>
-                <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                  <button className="px-8 py-4 bg-construction-yellow text-industrial-black font-bold rounded-lg hover:bg-yellow-400 transition-colors duration-200">
+                <div className="flex justify-center">
+                  <button className="px-6 sm:px-8 py-3 sm:py-4 bg-construction-yellow text-industrial-black font-bold rounded-lg hover:bg-yellow-400 transition-colors duration-200 text-sm sm:text-base">
                     DISCUSS YOUR PROJECT
-                  </button>
-                  <button className="px-8 py-4 border-2 border-industrial-black text-industrial-black font-bold rounded-lg hover:bg-industrial-black hover:text-white transition-all duration-200">
-                    VIEW CAPABILITIES
                   </button>
                 </div>
               </CardContent>
