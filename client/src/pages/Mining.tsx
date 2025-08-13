@@ -5,6 +5,7 @@ import { ScrollAnimations } from '@/components/ScrollAnimations';
 import PageLoader from '@/components/PageLoader';
 import tartechLogo from '@assets/tartech-logo-symbol_1755071044733.png';
 import dewateringImage from '@assets/Dewatering_1754640759227.jpg';
+import miningInfrastructureImage from '@assets/view-heavy-machinery-used-construction-industry (1)-min_1755102340110.jpg';
 
 export default function Mining() {
   const [isLoading, setIsLoading] = useState(true);
@@ -164,7 +165,7 @@ export default function Mining() {
               <CardContent className="p-0">
                 <div className="relative">
                   <img 
-                    src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&h=300" 
+                    src={miningInfrastructureImage} 
                     alt="Mining site infrastructure with processing facilities and haul roads" 
                     className="w-full h-48 object-cover rounded-t-lg" 
                   />
