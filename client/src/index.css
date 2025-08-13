@@ -133,6 +133,26 @@
     left: 100%;
   }
 
+  .footer-link {
+    @apply relative inline-block text-gray-300 cursor-pointer transition-all duration-300;
+    @apply hover:text-construction-yellow;
+  }
+
+  .footer-link::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 1.5px;
+    bottom: -2px;
+    left: 0;
+    background-color: var(--construction-yellow);
+    transition: width 0.3s ease;
+  }
+
+  .footer-link:hover::after {
+    width: 100%;
+  }
+
   /* Professional Hero Animations */
   @keyframes zoom-in {
     from {
