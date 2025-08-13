@@ -14,68 +14,69 @@ export default function Mining() {
       <ScrollAnimations />
       
       {/* Mining Services Header */}
-      <section className="py-20 bg-industrial-black text-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h1 className="animate-fade-in text-4xl sm:text-5xl font-black mb-6">
-              <span className="text-construction-yellow">MINING</span> OPERATIONS
+      <section className="py-12 sm:py-16 md:py-20 lg:py-24 bg-gradient-to-br from-industrial-black via-gray-900 to-industrial-black relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-r from-construction-yellow/10 to-transparent"></div>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div className="text-center mb-12 sm:mb-14 md:mb-16">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-black mb-4 sm:mb-6 leading-tight">
+              <span className="text-construction-yellow font-black">MINING</span> <span className="text-white font-black">OPERATIONS</span>
             </h1>
-            <p className="animate-fade-in text-lg text-gray-300 max-w-3xl mx-auto">
+            <p className="text-base sm:text-lg md:text-xl lg:text-xl text-gray-300 max-w-4xl mx-auto leading-relaxed px-2 sm:px-4">
               Specialized mining contracting with cutting-edge equipment and expertise in both surface and underground operations across Zimbabwe's mineral-rich landscape.
             </p>
           </div>
           
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-16">
-            <div className="animate-slide-in-left">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-10 md:gap-12 items-center mb-12 sm:mb-14 md:mb-16">
+            <div className="order-2 lg:order-1">
               <img 
                 src="https://images.unsplash.com/photo-1611273426858-450d8e3c9fce?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=600" 
                 alt="Massive mining dump truck operating in open pit mine" 
                 className="rounded-xl shadow-2xl w-full" 
               />
             </div>
-            <div className="animate-slide-in-right">
-              <h3 className="text-3xl font-black text-construction-yellow mb-6">SURFACE MINING EXPERTISE</h3>
-              <ul className="space-y-4 text-lg">
+            <div className="order-1 lg:order-2">
+              <h3 className="text-2xl sm:text-3xl md:text-4xl font-black text-construction-yellow mb-4 sm:mb-6 leading-tight">SURFACE MINING EXPERTISE</h3>
+              <ul className="space-y-3 sm:space-y-4 text-base sm:text-lg">
                 <li className="flex items-start">
-                  <CheckCircle className="text-construction-yellow mr-3 mt-1 h-5 w-5 flex-shrink-0" />
-                  <span>Open-pit mining operations with heavy-duty excavation equipment</span>
+                  <CheckCircle className="text-construction-yellow mr-3 mt-1 h-4 w-4 sm:h-5 sm:w-5 flex-shrink-0" />
+                  <span className="leading-relaxed">Open-pit mining operations with heavy-duty excavation equipment</span>
                 </li>
                 <li className="flex items-start">
-                  <CheckCircle className="text-construction-yellow mr-3 mt-1 h-5 w-5 flex-shrink-0" />
-                  <span>Overburden removal and waste rock management</span>
+                  <CheckCircle className="text-construction-yellow mr-3 mt-1 h-4 w-4 sm:h-5 sm:w-5 flex-shrink-0" />
+                  <span className="leading-relaxed">Overburden removal and waste rock management</span>
                 </li>
                 <li className="flex items-start">
-                  <CheckCircle className="text-construction-yellow mr-3 mt-1 h-5 w-5 flex-shrink-0" />
-                  <span>Precision blasting and controlled demolition services</span>
+                  <CheckCircle className="text-construction-yellow mr-3 mt-1 h-4 w-4 sm:h-5 sm:w-5 flex-shrink-0" />
+                  <span className="leading-relaxed">Precision blasting and controlled demolition services</span>
                 </li>
                 <li className="flex items-start">
-                  <CheckCircle className="text-construction-yellow mr-3 mt-1 h-5 w-5 flex-shrink-0" />
-                  <span>Environmental rehabilitation and mine closure planning</span>
+                  <CheckCircle className="text-construction-yellow mr-3 mt-1 h-4 w-4 sm:h-5 sm:w-5 flex-shrink-0" />
+                  <span className="leading-relaxed">Environmental rehabilitation and mine closure planning</span>
                 </li>
               </ul>
             </div>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <Card className="animate-fade-in bg-white/10 backdrop-blur-sm border-0">
-              <CardContent className="p-8 text-center">
-                <Gem className="text-construction-yellow h-12 w-12 mx-auto mb-4" />
-                <h4 className="text-xl font-bold mb-4 text-white">PRECIOUS METALS</h4>
-                <p className="text-gray-300">Gold and platinum mining operations with specialized recovery techniques</p>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
+            <Card className="bg-white/10 backdrop-blur-sm border-0">
+              <CardContent className="p-6 sm:p-8 text-center">
+                <Gem className="text-construction-yellow h-10 w-10 sm:h-12 sm:w-12 mx-auto mb-3 sm:mb-4" />
+                <h4 className="text-lg sm:text-xl font-bold mb-3 sm:mb-4 text-white">PRECIOUS METALS</h4>
+                <p className="text-gray-300 text-sm sm:text-base leading-relaxed">Gold and platinum mining operations with specialized recovery techniques</p>
               </CardContent>
             </Card>
-            <Card className="animate-fade-in bg-white/10 backdrop-blur-sm border-0">
-              <CardContent className="p-8 text-center">
-                <Box className="text-construction-yellow h-12 w-12 mx-auto mb-4" />
-                <h4 className="text-xl font-bold mb-4 text-white">BASE METALS</h4>
-                <p className="text-gray-300">Copper, nickel, and chrome extraction with modern processing methods</p>
+            <Card className="bg-white/10 backdrop-blur-sm border-0">
+              <CardContent className="p-6 sm:p-8 text-center">
+                <Box className="text-construction-yellow h-10 w-10 sm:h-12 sm:w-12 mx-auto mb-3 sm:mb-4" />
+                <h4 className="text-lg sm:text-xl font-bold mb-3 sm:mb-4 text-white">BASE METALS</h4>
+                <p className="text-gray-300 text-sm sm:text-base leading-relaxed">Copper, nickel, and chrome extraction with modern processing methods</p>
               </CardContent>
             </Card>
-            <Card className="animate-fade-in bg-white/10 backdrop-blur-sm border-0">
-              <CardContent className="p-8 text-center">
-                <Mountain className="text-construction-yellow h-12 w-12 mx-auto mb-4" />
-                <h4 className="text-xl font-bold mb-4 text-white">INDUSTRIAL MINERALS</h4>
-                <p className="text-gray-300">Coal, diamond, and aggregate mining for industrial applications</p>
+            <Card className="bg-white/10 backdrop-blur-sm border-0">
+              <CardContent className="p-6 sm:p-8 text-center">
+                <Mountain className="text-construction-yellow h-10 w-10 sm:h-12 sm:w-12 mx-auto mb-3 sm:mb-4" />
+                <h4 className="text-lg sm:text-xl font-bold mb-3 sm:mb-4 text-white">INDUSTRIAL MINERALS</h4>
+                <p className="text-gray-300 text-sm sm:text-base leading-relaxed">Coal, diamond, and aggregate mining for industrial applications</p>
               </CardContent>
             </Card>
           </div>
@@ -83,18 +84,18 @@ export default function Mining() {
       </section>
 
       {/* Detailed Mining Services */}
-      <section className="py-20 bg-white">
+      <section className="py-12 sm:py-16 md:py-20 lg:py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-black text-industrial-black mb-6">
+          <div className="text-center mb-12 sm:mb-14 md:mb-16">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black text-industrial-black mb-4 sm:mb-6 leading-tight">
               COMPREHENSIVE <span className="text-construction-yellow">MINING</span> SERVICES
             </h2>
-            <p className="text-lg text-industrial-gray max-w-3xl mx-auto">
+            <p className="text-base sm:text-lg md:text-xl text-industrial-gray max-w-4xl mx-auto leading-relaxed px-2 sm:px-4">
               From site development to contract mining operations, we deliver complete mining solutions across Zimbabwe's diverse mineral landscape
             </p>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-16">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 sm:gap-8 mb-12 sm:mb-14 md:mb-16">
             {/* Mine Site Infrastructure */}
             <Card className="group hover:shadow-2xl transition-all duration-300 border-2 hover:border-construction-yellow bg-white">
               <CardContent className="p-0">
@@ -210,77 +211,77 @@ export default function Mining() {
       </section>
 
         {/* Dewatering Services Section */}
-        <section className="py-20 bg-white">
+        <section className="py-12 sm:py-16 md:py-20 lg:py-24 bg-white">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-16">
-              <h2 className="text-4xl font-black text-industrial-black mb-4">
+            <div className="text-center mb-12 sm:mb-14 md:mb-16">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black text-industrial-black mb-3 sm:mb-4 leading-tight">
                 DEWATERING <span className="text-construction-yellow">SERVICES</span>
               </h2>
-              <p className="text-lg text-industrial-gray max-w-3xl mx-auto">
+              <p className="text-base sm:text-lg md:text-xl text-industrial-gray max-w-4xl mx-auto leading-relaxed px-2 sm:px-4">
                 Keeping mining operations dry and efficient with professional water management solutions
               </p>
             </div>
 
             {/* Main Dewatering Feature Card */}
-            <Card className="group hover:shadow-2xl transition-all duration-300 border-2 hover:border-construction-yellow bg-white mb-16 overflow-hidden">
+            <Card className="group hover:shadow-2xl transition-all duration-300 border-2 hover:border-construction-yellow bg-white mb-12 sm:mb-14 md:mb-16 overflow-hidden">
               <CardContent className="p-0">
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-0">
                   <div className="relative order-2 lg:order-1">
                     <img 
                       src={dewateringImage} 
                       alt="Professional dewatering operations with excavator and submersible pump removing water from mining excavation site" 
-                      className="w-full h-80 lg:h-full object-cover lg:rounded-l-lg shadow-inner" 
+                      className="w-full h-64 sm:h-80 lg:h-full object-cover lg:rounded-l-lg shadow-inner" 
                     />
-                    <div className="absolute top-6 right-6">
-                      <div className="w-20 h-20 bg-construction-yellow rounded-full flex items-center justify-center shadow-2xl border-4 border-white">
-                        <Droplets className="text-industrial-black h-10 w-10" />
+                    <div className="absolute top-4 sm:top-6 right-4 sm:right-6">
+                      <div className="w-16 h-16 sm:w-20 sm:h-20 bg-construction-yellow rounded-full flex items-center justify-center shadow-2xl border-2 sm:border-4 border-white">
+                        <Droplets className="text-industrial-black h-8 w-8 sm:h-10 sm:w-10" />
                       </div>
                     </div>
-                    <div className="absolute bottom-4 left-4 right-4">
-                      <div className="bg-industrial-black/80 backdrop-blur-sm rounded-lg p-4">
-                        <p className="text-construction-yellow font-bold text-sm">ADVANCED PUMP SYSTEMS</p>
+                    <div className="absolute bottom-3 sm:bottom-4 left-3 sm:left-4 right-3 sm:right-4">
+                      <div className="bg-industrial-black/80 backdrop-blur-sm rounded-lg p-3 sm:p-4">
+                        <p className="text-construction-yellow font-bold text-xs sm:text-sm">ADVANCED PUMP SYSTEMS</p>
                         <p className="text-white text-xs">Continuous water removal & site management</p>
                       </div>
                     </div>
                   </div>
-                  <div className="p-8 lg:p-12 flex flex-col justify-center order-1 lg:order-2 bg-gradient-to-br from-gray-50 to-white">
-                    <div className="mb-6">
-                      <span className="inline-block bg-construction-yellow text-industrial-black text-xs font-bold px-3 py-1 rounded-full mb-4">
+                  <div className="p-6 sm:p-8 lg:p-12 flex flex-col justify-center order-1 lg:order-2 bg-gradient-to-br from-gray-50 to-white">
+                    <div className="mb-4 sm:mb-6">
+                      <span className="inline-block bg-construction-yellow text-industrial-black text-xs font-bold px-3 py-1 rounded-full mb-3 sm:mb-4">
                         MINING DEWATERING SPECIALISTS
                       </span>
-                      <h3 className="text-4xl font-black text-industrial-black mb-4 leading-tight">WE REMOVE WATER AND WASTE</h3>
-                      <p className="text-2xl text-construction-yellow font-bold mb-6">We keep operations dry. Simple.</p>
+                      <h3 className="text-2xl sm:text-3xl md:text-4xl font-black text-industrial-black mb-3 sm:mb-4 leading-tight">WE REMOVE WATER AND WASTE</h3>
+                      <p className="text-lg sm:text-xl md:text-2xl text-construction-yellow font-bold mb-4 sm:mb-6">We keep operations dry. Simple.</p>
                     </div>
-                    <p className="text-industrial-gray leading-relaxed mb-8 text-lg">
+                    <p className="text-industrial-gray leading-relaxed mb-6 sm:mb-8 text-base sm:text-lg">
                       Our submersible pumps keep groundwater out and operational efficiency in. We bring safe and secure working operations from mines to construction sites across Zimbabwe.
                     </p>
                     
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                      <div className="bg-white rounded-lg p-6 shadow-md border-l-4 border-construction-yellow">
-                        <div className="flex items-center mb-3">
-                          <CheckCircle className="text-construction-yellow mr-3 h-7 w-7 flex-shrink-0" />
-                          <span className="text-industrial-black font-bold text-lg">Groundwater Management</span>
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
+                      <div className="bg-white rounded-lg p-4 sm:p-6 shadow-md border-l-4 border-construction-yellow">
+                        <div className="flex items-center mb-2 sm:mb-3">
+                          <CheckCircle className="text-construction-yellow mr-2 sm:mr-3 h-5 w-5 sm:h-7 sm:w-7 flex-shrink-0" />
+                          <span className="text-industrial-black font-bold text-base sm:text-lg">Groundwater Management</span>
                         </div>
                         <p className="text-industrial-gray text-sm leading-relaxed">Advanced submersible pump systems for continuous water removal from mining excavations</p>
                       </div>
-                      <div className="bg-white rounded-lg p-6 shadow-md border-l-4 border-construction-yellow">
-                        <div className="flex items-center mb-3">
-                          <CheckCircle className="text-construction-yellow mr-3 h-7 w-7 flex-shrink-0" />
-                          <span className="text-industrial-black font-bold text-lg">Operational Efficiency</span>
+                      <div className="bg-white rounded-lg p-4 sm:p-6 shadow-md border-l-4 border-construction-yellow">
+                        <div className="flex items-center mb-2 sm:mb-3">
+                          <CheckCircle className="text-construction-yellow mr-2 sm:mr-3 h-5 w-5 sm:h-7 sm:w-7 flex-shrink-0" />
+                          <span className="text-industrial-black font-bold text-base sm:text-lg">Operational Efficiency</span>
                         </div>
                         <p className="text-industrial-gray text-sm leading-relaxed">Maintaining dry working conditions to ensure uninterrupted mining operations and equipment performance</p>
                       </div>
-                      <div className="bg-white rounded-lg p-6 shadow-md border-l-4 border-construction-yellow">
-                        <div className="flex items-center mb-3">
-                          <CheckCircle className="text-construction-yellow mr-3 h-7 w-7 flex-shrink-0" />
-                          <span className="text-industrial-black font-bold text-lg">Safety & Security</span>
+                      <div className="bg-white rounded-lg p-4 sm:p-6 shadow-md border-l-4 border-construction-yellow">
+                        <div className="flex items-center mb-2 sm:mb-3">
+                          <CheckCircle className="text-construction-yellow mr-2 sm:mr-3 h-5 w-5 sm:h-7 sm:w-7 flex-shrink-0" />
+                          <span className="text-industrial-black font-bold text-base sm:text-lg">Safety & Security</span>
                         </div>
                         <p className="text-industrial-gray text-sm leading-relaxed">Creating safe working environments through professional water control and waste management</p>
                       </div>
-                      <div className="bg-white rounded-lg p-6 shadow-md border-l-4 border-construction-yellow">
-                        <div className="flex items-center mb-3">
-                          <CheckCircle className="text-construction-yellow mr-3 h-7 w-7 flex-shrink-0" />
-                          <span className="text-industrial-black font-bold text-lg">Cross-Industry Application</span>
+                      <div className="bg-white rounded-lg p-4 sm:p-6 shadow-md border-l-4 border-construction-yellow">
+                        <div className="flex items-center mb-2 sm:mb-3">
+                          <CheckCircle className="text-construction-yellow mr-2 sm:mr-3 h-5 w-5 sm:h-7 sm:w-7 flex-shrink-0" />
+                          <span className="text-industrial-black font-bold text-base sm:text-lg">Cross-Industry Application</span>
                         </div>
                         <p className="text-industrial-gray text-sm leading-relaxed">Dewatering solutions for mining operations, construction sites, and industrial projects</p>
                       </div>
@@ -291,64 +292,64 @@ export default function Mining() {
             </Card>
 
             {/* Dewatering Process Workflow */}
-            <div className="bg-white border-2 border-gray-200 rounded-2xl p-8 lg:p-12 mb-16 shadow-lg">
-              <div className="text-center mb-12">
-                <h3 className="text-3xl font-black text-industrial-black mb-4">
+            <div className="bg-white border-2 border-gray-200 rounded-2xl p-6 sm:p-8 lg:p-12 mb-12 sm:mb-14 md:mb-16 shadow-lg">
+              <div className="text-center mb-8 sm:mb-10 md:mb-12">
+                <h3 className="text-2xl sm:text-3xl md:text-4xl font-black text-industrial-black mb-3 sm:mb-4 leading-tight">
                   DEWATERING <span className="text-construction-yellow">PROCESS</span>
                 </h3>
-                <p className="text-industrial-gray text-lg max-w-3xl mx-auto">
+                <p className="text-industrial-gray text-base sm:text-lg md:text-xl max-w-4xl mx-auto leading-relaxed px-2 sm:px-4">
                   Systematic approach to maintaining dry, safe, and productive mining operations
                 </p>
               </div>
               
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
                 <div className="relative">
-                  <Card className="animate-fade-in bg-industrial-black border-2 border-construction-yellow hover:shadow-xl transition-all duration-300 group">
-                    <CardContent className="p-8 text-center relative">
-                      <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
-                        <div className="w-12 h-12 bg-construction-yellow rounded-full flex items-center justify-center text-industrial-black font-black text-xl shadow-lg">
+                  <Card className="bg-industrial-black border-2 border-construction-yellow hover:shadow-xl transition-all duration-300 group">
+                    <CardContent className="p-6 sm:p-8 text-center relative">
+                      <div className="absolute -top-3 sm:-top-4 left-1/2 transform -translate-x-1/2">
+                        <div className="w-10 h-10 sm:w-12 sm:h-12 bg-construction-yellow rounded-full flex items-center justify-center text-industrial-black font-black text-lg sm:text-xl shadow-lg">
                           01
                         </div>
                       </div>
-                      <div className="w-20 h-20 bg-construction-yellow/20 rounded-full flex items-center justify-center mx-auto mb-6 mt-4 group-hover:bg-construction-yellow/30 transition-colors">
-                        <Mountain className="text-construction-yellow h-10 w-10" />
+                      <div className="w-16 h-16 sm:w-20 sm:h-20 bg-construction-yellow/20 rounded-full flex items-center justify-center mx-auto mb-4 sm:mb-6 mt-3 sm:mt-4 group-hover:bg-construction-yellow/30 transition-colors">
+                        <Mountain className="text-construction-yellow h-8 w-8 sm:h-10 sm:w-10" />
                       </div>
-                      <h4 className="text-xl font-bold mb-4 text-white">SITE ASSESSMENT</h4>
-                      <p className="text-gray-300">Comprehensive evaluation of groundwater conditions and drainage requirements for optimal pump placement and system design</p>
+                      <h4 className="text-lg sm:text-xl font-bold mb-3 sm:mb-4 text-white">SITE ASSESSMENT</h4>
+                      <p className="text-gray-300 text-sm sm:text-base leading-relaxed">Comprehensive evaluation of groundwater conditions and drainage requirements for optimal pump placement and system design</p>
                     </CardContent>
                   </Card>
                 </div>
                 
                 <div className="relative">
-                  <Card className="animate-fade-in bg-industrial-black border-2 border-construction-yellow hover:shadow-xl transition-all duration-300 group">
-                    <CardContent className="p-8 text-center relative">
-                      <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
-                        <div className="w-12 h-12 bg-construction-yellow rounded-full flex items-center justify-center text-industrial-black font-black text-xl shadow-lg">
+                  <Card className="bg-industrial-black border-2 border-construction-yellow hover:shadow-xl transition-all duration-300 group">
+                    <CardContent className="p-6 sm:p-8 text-center relative">
+                      <div className="absolute -top-3 sm:-top-4 left-1/2 transform -translate-x-1/2">
+                        <div className="w-10 h-10 sm:w-12 sm:h-12 bg-construction-yellow rounded-full flex items-center justify-center text-industrial-black font-black text-lg sm:text-xl shadow-lg">
                           02
                         </div>
                       </div>
-                      <div className="w-20 h-20 bg-construction-yellow/20 rounded-full flex items-center justify-center mx-auto mb-6 mt-4 group-hover:bg-construction-yellow/30 transition-colors">
-                        <Droplets className="text-construction-yellow h-10 w-10" />
+                      <div className="w-16 h-16 sm:w-20 sm:h-20 bg-construction-yellow/20 rounded-full flex items-center justify-center mx-auto mb-4 sm:mb-6 mt-3 sm:mt-4 group-hover:bg-construction-yellow/30 transition-colors">
+                        <Droplets className="text-construction-yellow h-8 w-8 sm:h-10 sm:w-10" />
                       </div>
-                      <h4 className="text-xl font-bold mb-4 text-white">PUMP DEPLOYMENT</h4>
-                      <p className="text-gray-300">Strategic installation of high-capacity submersible pumps for continuous water removal and comprehensive site management</p>
+                      <h4 className="text-lg sm:text-xl font-bold mb-3 sm:mb-4 text-white">PUMP DEPLOYMENT</h4>
+                      <p className="text-gray-300 text-sm sm:text-base leading-relaxed">Strategic installation of high-capacity submersible pumps for continuous water removal and comprehensive site management</p>
                     </CardContent>
                   </Card>
                 </div>
                 
                 <div className="relative">
-                  <Card className="animate-fade-in bg-industrial-black border-2 border-construction-yellow hover:shadow-xl transition-all duration-300 group">
-                    <CardContent className="p-8 text-center relative">
-                      <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
-                        <div className="w-12 h-12 bg-construction-yellow rounded-full flex items-center justify-center text-industrial-black font-black text-xl shadow-lg">
+                  <Card className="bg-industrial-black border-2 border-construction-yellow hover:shadow-xl transition-all duration-300 group">
+                    <CardContent className="p-6 sm:p-8 text-center relative">
+                      <div className="absolute -top-3 sm:-top-4 left-1/2 transform -translate-x-1/2">
+                        <div className="w-10 h-10 sm:w-12 sm:h-12 bg-construction-yellow rounded-full flex items-center justify-center text-industrial-black font-black text-lg sm:text-xl shadow-lg">
                           03
                         </div>
                       </div>
-                      <div className="w-20 h-20 bg-construction-yellow/20 rounded-full flex items-center justify-center mx-auto mb-6 mt-4 group-hover:bg-construction-yellow/30 transition-colors">
-                        <CheckCircle className="text-construction-yellow h-10 w-10" />
+                      <div className="w-16 h-16 sm:w-20 sm:h-20 bg-construction-yellow/20 rounded-full flex items-center justify-center mx-auto mb-4 sm:mb-6 mt-3 sm:mt-4 group-hover:bg-construction-yellow/30 transition-colors">
+                        <CheckCircle className="text-construction-yellow h-8 w-8 sm:h-10 sm:w-10" />
                       </div>
-                      <h4 className="text-xl font-bold mb-4 text-white">CONTINUOUS MONITORING</h4>
-                      <p className="text-gray-300">24/7 system monitoring and proactive maintenance to ensure uninterrupted operations and optimal performance</p>
+                      <h4 className="text-lg sm:text-xl font-bold mb-3 sm:mb-4 text-white">CONTINUOUS MONITORING</h4>
+                      <p className="text-gray-300 text-sm sm:text-base leading-relaxed">24/7 system monitoring and proactive maintenance to ensure uninterrupted operations and optimal performance</p>
                     </CardContent>
                   </Card>
                 </div>
@@ -358,26 +359,26 @@ export default function Mining() {
         </section>
 
         {/* Mining Process Overview */}
-        <section className="py-20 bg-gradient-to-br from-industrial-black via-gray-900 to-industrial-black relative overflow-hidden">
+        <section className="py-12 sm:py-16 md:py-20 lg:py-24 bg-gradient-to-br from-industrial-black via-gray-900 to-industrial-black relative overflow-hidden">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <Card className="bg-industrial-black rounded-2xl mb-16">
-            <CardContent className="p-12">
-              <div className="text-center mb-12">
-                <h3 className="text-3xl font-black text-white mb-4">
+          <Card className="bg-industrial-black rounded-2xl mb-12 sm:mb-14 md:mb-16">
+            <CardContent className="p-6 sm:p-8 lg:p-12">
+              <div className="text-center mb-8 sm:mb-10 md:mb-12">
+                <h3 className="text-2xl sm:text-3xl md:text-4xl font-black text-white mb-3 sm:mb-4 leading-tight">
                   OUR <span className="text-construction-yellow">MINING</span> PROCESS
                 </h3>
-                <p className="text-gray-300 text-lg max-w-3xl mx-auto">
+                <p className="text-gray-300 text-base sm:text-lg md:text-xl max-w-4xl mx-auto leading-relaxed px-2 sm:px-4">
                   Comprehensive mining operations from exploration to rehabilitation, utilizing cutting-edge equipment and sustainable practices
                 </p>
               </div>
               
-              <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8">
                 <div className="text-center">
-                  <div className="w-20 h-20 bg-construction-yellow rounded-full flex items-center justify-center mx-auto mb-6">
-                    <Layers className="text-industrial-black h-10 w-10" />
+                  <div className="w-16 h-16 sm:w-20 sm:h-20 bg-construction-yellow rounded-full flex items-center justify-center mx-auto mb-4 sm:mb-6">
+                    <Layers className="text-industrial-black h-8 w-8 sm:h-10 sm:w-10" />
                   </div>
-                  <h4 className="text-xl font-bold text-white mb-3">SITE PREPARATION</h4>
-                  <p className="text-gray-300">Infrastructure development and site establishment</p>
+                  <h4 className="text-lg sm:text-xl font-bold text-white mb-2 sm:mb-3">SITE PREPARATION</h4>
+                  <p className="text-gray-300 text-sm sm:text-base leading-relaxed">Infrastructure development and site establishment</p>
                 </div>
                 
                 <div className="text-center">
