@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Link } from 'wouter';
@@ -19,15 +19,79 @@ import {
   Mail
 } from 'lucide-react';
 import { ScrollAnimations } from '@/components/ScrollAnimations';
+import PageLoader from '@/components/PageLoader';
+import tartechLogo from '@assets/tartech-logo-symbol_1755071044733.png';
 
 export default function Agriculture() {
+  const [isLoading, setIsLoading] = useState(true);
+
   useEffect(() => {
     document.title = 'Agricultural Services - Tartech Contracting Zimbabwe';
+    
+    // Simulate loading time and then hide loader
+    const loadingTimer = setTimeout(() => {
+      import('@/lib/gsap').then(({ gsap }) => {
+        // Animate loading screen out
+        const loadingElement = document.querySelector('.loading-screen');
+        if (loadingElement) {
+          gsap.to(loadingElement, {
+            opacity: 0,
+            duration: 0.8,
+            ease: "power2.out",
+            onComplete: () => {
+              setIsLoading(false);
+            }
+          });
+        } else {
+          // Fallback if GSAP target not found
+          setIsLoading(false);
+        }
+      }).catch(() => {
+        // Fallback if GSAP import fails
+        setIsLoading(false);
+      });
+    }, 1500); // Show loader for 1.5 seconds
+
+    return () => clearTimeout(loadingTimer);
   }, []);
 
   return (
     <div className="min-h-screen pt-16">
-      <ScrollAnimations />
+      {/* Loading Screen */}
+      {isLoading && (
+        <div className="loading-screen fixed inset-0 z-50 bg-industrial-black flex items-center justify-center">
+          <div className="text-center">
+            {/* Animated Logo/Brand */}
+            <div className="mb-8">
+              <div className="w-24 h-24 mx-auto mb-6 relative">
+                <div className="absolute inset-0 border-4 border-construction-yellow/20 rounded-full"></div>
+                <div className="absolute inset-0 border-4 border-construction-yellow border-t-transparent rounded-full animate-spin"></div>
+                <div className="absolute inset-2 bg-construction-yellow/10 rounded-full flex items-center justify-center">
+                  <img 
+                    src={tartechLogo} 
+                    alt="Tartech Logo" 
+                    className="w-10 h-10 object-contain"
+                  />
+                </div>
+              </div>
+              <h2 className="text-2xl font-bold text-white mb-2">AGRICULTURE</h2>
+              <p className="text-construction-yellow/80 text-sm font-medium tracking-wider">TARTECH CONTRACTING</p>
+            </div>
+            
+            {/* Loading Animation */}
+            <div className="flex items-center justify-center space-x-1">
+              <div className="w-2 h-2 bg-construction-yellow rounded-full animate-pulse" style={{animationDelay: '0ms'}}></div>
+              <div className="w-2 h-2 bg-construction-yellow rounded-full animate-pulse" style={{animationDelay: '200ms'}}></div>
+              <div className="w-2 h-2 bg-construction-yellow rounded-full animate-pulse" style={{animationDelay: '400ms'}}></div>
+            </div>
+            
+            <p className="text-gray-400 text-sm mt-4 font-light">Loading...</p>
+          </div>
+        </div>
+      )}
+
+      <PageLoader enableHeroAnimation={!isLoading}>
+        <ScrollAnimations />
       
       {/* Hero Section */}
       <section className="relative py-12 sm:py-16 md:py-20 lg:py-24 bg-gradient-to-br from-industrial-black via-gray-900 to-industrial-black overflow-hidden">
@@ -481,6 +545,7 @@ export default function Agriculture() {
           </div>
         </div>
       </section>
+      </PageLoader>
     </div>
   );
 }
