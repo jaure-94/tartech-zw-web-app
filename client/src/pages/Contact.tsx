@@ -8,9 +8,10 @@ import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from '
 import { Input } from '@/components/ui/input';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { Textarea } from '@/components/ui/textarea';
-import { MapPin, Phone, Mail, Clock, Send, CheckCircle, Map } from 'lucide-react';
+import { MapPin, Phone, Mail, Clock, Send, CheckCircle } from 'lucide-react';
 import { ScrollAnimations } from '@/components/ScrollAnimations';
 import { gsap } from '@/lib/gsap';
+import { GoogleMap } from '@/components/GoogleMap';
 import { useMutation } from '@tanstack/react-query';
 import { apiRequest } from '@/lib/queryClient';
 import { useToast } from '@/hooks/use-toast';
@@ -280,40 +281,51 @@ export default function Contact() {
                       <MapPin className="text-construction-yellow h-5 w-5 md:h-6 md:w-6 mr-3 md:mr-4 mt-1 flex-shrink-0" />
                       <div>
                         <h4 className="font-bold mb-1 text-sm md:text-base text-industrial-black">HEAD OFFICE</h4>
-                        <p className="text-xs md:text-sm text-industrial-gray">123 Industrial Avenue<br />Harare, Zimbabwe</p>
+                        <p className="text-xs md:text-sm text-industrial-gray">6 Beryl Road, Msasa<br />Harare, Zimbabwe</p>
                       </div>
                     </div>
                     <div className="flex items-start">
                       <Phone className="text-construction-yellow h-5 w-5 md:h-6 md:w-6 mr-3 md:mr-4 mt-1 flex-shrink-0" />
                       <div>
                         <h4 className="font-bold mb-1 text-sm md:text-base text-industrial-black">PHONE</h4>
-                        <p className="text-xs md:text-sm text-industrial-gray">+263 4 123 4567</p>
+                        <div className="space-y-1">
+                          <p className="text-xs md:text-sm text-industrial-gray hover:text-construction-yellow transition-colors duration-300 cursor-pointer">+263 785 881 520</p>
+                          <p className="text-xs md:text-sm text-industrial-gray hover:text-construction-yellow transition-colors duration-300 cursor-pointer">+263 785 990 836</p>
+                          <p className="text-xs md:text-sm text-industrial-gray hover:text-construction-yellow transition-colors duration-300 cursor-pointer">+263 785 834 557</p>
+                        </div>
                       </div>
                     </div>
                     <div className="flex items-start">
                       <Mail className="text-construction-yellow h-5 w-5 md:h-6 md:w-6 mr-3 md:mr-4 mt-1 flex-shrink-0" />
                       <div>
                         <h4 className="font-bold mb-1 text-sm md:text-base text-industrial-black">EMAIL</h4>
-                        <p className="text-xs md:text-sm text-industrial-gray">info@tartech.co.zw</p>
+                        <a href="mailto:info@tartech.co.zw" className="text-xs md:text-sm text-industrial-gray hover:text-construction-yellow transition-colors duration-300">info@tartech.co.zw</a>
                       </div>
                     </div>
                     <div className="flex items-start">
                       <Clock className="text-construction-yellow h-5 w-5 md:h-6 md:w-6 mr-3 md:mr-4 mt-1 flex-shrink-0" />
                       <div>
                         <h4 className="font-bold mb-1 text-sm md:text-base text-industrial-black">BUSINESS HOURS</h4>
-                        <p className="text-xs md:text-sm text-industrial-gray">Monday - Friday: 7:00 AM - 6:00 PM<br />Saturday: 8:00 AM - 2:00 PM</p>
+                        <div className="text-xs md:text-sm text-industrial-gray leading-relaxed">
+                          <span className="block">Mon - Fri: 7:00 AM - 6:00 PM</span>
+                          <span className="block">Sat: 8:00 AM - 4:00 PM</span>
+                          <span className="block text-construction-yellow font-medium">Emergency: 24/7</span>
+                        </div>
                       </div>
                     </div>
                   </div>
                 </CardContent>
               </Card>
               
-              {/* Map Placeholder */}
+              {/* Interactive Map */}
               <Card className="bg-white rounded-xl md:rounded-2xl shadow-xl">
-                <CardContent className="p-4 md:p-6 lg:p-8 text-center">
-                  <Map className="text-construction-yellow h-8 w-8 md:h-10 md:w-10 lg:h-12 lg:w-12 mx-auto mb-3 md:mb-4" />
-                  <h4 className="font-bold text-base md:text-lg mb-2 text-industrial-black">INTERACTIVE MAP</h4>
-                  <p className="text-xs md:text-sm text-industrial-gray">View our location and get directions</p>
+                <CardContent className="p-4 md:p-6 lg:p-8">
+                  <h4 className="font-bold text-base md:text-lg mb-3 md:mb-4 text-center text-industrial-black">INTERACTIVE MAP</h4>
+                  <p className="text-xs md:text-sm text-industrial-gray text-center mb-4">View our location and get directions</p>
+                  <GoogleMap 
+                    address="6 beryl road, msasa, harare, zimbabwe"
+                    className="border border-gray-200 shadow-inner"
+                  />
                 </CardContent>
               </Card>
             </div>
