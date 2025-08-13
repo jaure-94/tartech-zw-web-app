@@ -23,6 +23,7 @@ import PageLoader from '@/components/PageLoader';
 import tartechLogo from '@assets/tartech-logo-symbol_1755071044733.png';
 import bushClearingImage from '@assets/WhatsApp Image 2025-08-01 at 12.39.54_1755097414696.jpeg';
 import landLevellingImage from '@assets/tractor-agricultural-machine-cultivating-field-min_1755102581325.jpg';
+import gpsLevellingImage from '@assets/construction-site (1)-min_1755102726620.jpg';
 
 export default function Agriculture() {
   const [isLoading, setIsLoading] = useState(true);
@@ -292,7 +293,7 @@ export default function Agriculture() {
               <Card className="h-full overflow-hidden shadow-2xl border-4 border-transparent hover:border-construction-yellow transition-all duration-500">
                 <div className="h-48 sm:h-56 md:h-64 overflow-hidden">
                   <img 
-                    src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600" 
+                    src={gpsLevellingImage} 
                     alt="GPS-guided laser leveling equipment with surveying technology"
                     className="w-full h-full object-cover hover:scale-110 transition-transform duration-700" 
                   />
