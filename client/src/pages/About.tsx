@@ -20,6 +20,7 @@ import {
 import { ScrollAnimations } from '@/components/ScrollAnimations';
 import PageLoader from '@/components/PageLoader';
 import tartechLogo from '@assets/tartech-logo-symbol_1755071044733.png';
+import constructionSiteImage from '@assets/construction-site-min_1755117902164.jpg';
 
 export default function About() {
   const [isLoading, setIsLoading] = useState(true);
@@ -325,7 +326,7 @@ export default function About() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 items-center mb-12 md:mb-16">
             <div className="animate-slide-in-left">
               <img 
-                src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600" 
+                src={constructionSiteImage} 
                 alt="Professional construction management team reviewing project plans" 
                 className="rounded-xl shadow-2xl w-full" 
               />
