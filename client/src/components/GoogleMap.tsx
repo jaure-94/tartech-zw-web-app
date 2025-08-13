@@ -186,96 +186,66 @@ export function GoogleMap({ address, className = "" }: GoogleMapProps) {
               infoWindow.open(map, marker);
             });
 
-            // Add a more aggressive approach to ensure close button visibility
-            const ensureCloseButtonVisible = () => {
-              console.log('Ensuring close button is visible...');
-              
-              // Always create our own custom close button
-              const infoWindowContainer = document.querySelector('.gm-style-iw');
-              console.log('InfoWindow container found:', infoWindowContainer);
-              
-              if (infoWindowContainer) {
-                // Remove any existing custom buttons
-                const existingBtn = infoWindowContainer.querySelector('.tartech-close-btn');
-                if (existingBtn) existingBtn.remove();
+            // Style Google's default close button to be more visible
+            const styleDefaultCloseButton = () => {
+              setTimeout(() => {
+                // Find Google's default close button
+                const defaultCloseButton = document.querySelector('button[title="Close"]') as HTMLElement;
+                console.log('Default close button found:', defaultCloseButton);
                 
-                // Create a highly visible close button
-                const closeBtn = document.createElement('div');
-                closeBtn.className = 'tartech-close-btn';
-                closeBtn.innerHTML = '✕';
-                closeBtn.title = 'Close';
-                
-                // Apply aggressive styling that can't be overridden
-                const buttonStyle = `
-                  position: absolute !important;
-                  top: ${isMobile ? '6px' : '8px'} !important;
-                  right: ${isMobile ? '8px' : '10px'} !important;
-                  width: ${isMobile ? '22px' : '26px'} !important;
-                  height: ${isMobile ? '22px' : '26px'} !important;
-                  background: linear-gradient(135deg, #ffffff 0%, #f5f5f5 100%) !important;
-                  border: 2px solid #333 !important;
-                  border-radius: 50% !important;
-                  cursor: pointer !important;
-                  z-index: 999999 !important;
-                  display: flex !important;
-                  align-items: center !important;
-                  justify-content: center !important;
-                  font-size: ${isMobile ? '18px' : '20px'} !important;
-                  font-weight: 900 !important;
-                  color: #000 !important;
-                  font-family: Arial, sans-serif !important;
-                  line-height: 1 !important;
-                  text-align: center !important;
-                  box-shadow: 0 3px 8px rgba(0,0,0,0.4) !important;
-                  opacity: 1 !important;
-                  pointer-events: auto !important;
-                `;
-                
-                closeBtn.setAttribute('style', buttonStyle);
-                
-                // Add click handler
-                closeBtn.onclick = (e) => {
-                  e.preventDefault();
-                  e.stopPropagation();
-                  console.log('Tartech close button clicked!');
-                  infoWindow.close();
-                };
-                
-                // Add hover effects
-                closeBtn.onmouseenter = () => {
-                  closeBtn.style.backgroundColor = '#ff4444';
-                  closeBtn.style.color = '#fff';
-                  closeBtn.style.transform = 'scale(1.1)';
-                };
-                
-                closeBtn.onmouseleave = () => {
-                  closeBtn.style.backgroundColor = '#ffffff';
-                  closeBtn.style.color = '#000';
-                  closeBtn.style.transform = 'scale(1)';
-                };
-                
-                infoWindowContainer.appendChild(closeBtn);
-                console.log('Custom close button added successfully');
-                
-                // Keep re-applying styles in case Google overrides them
-                const keepStyling = () => {
-                  if (closeBtn.parentElement) {
-                    closeBtn.setAttribute('style', buttonStyle);
-                    setTimeout(keepStyling, 500);
+                if (defaultCloseButton) {
+                  // Apply styling to make it more visible and centered
+                  const buttonStyles = `
+                    position: absolute !important;
+                    top: ${isMobile ? '8px' : '10px'} !important;
+                    right: ${isMobile ? '8px' : '10px'} !important;
+                    width: ${isMobile ? '24px' : '28px'} !important;
+                    height: ${isMobile ? '24px' : '28px'} !important;
+                    background: rgba(255, 255, 255, 0.95) !important;
+                    border: 2px solid #333 !important;
+                    border-radius: 50% !important;
+                    cursor: pointer !important;
+                    z-index: 1000 !important;
+                    display: flex !important;
+                    align-items: center !important;
+                    justify-content: center !important;
+                    box-shadow: 0 2px 6px rgba(0,0,0,0.3) !important;
+                    opacity: 1 !important;
+                  `;
+                  
+                  defaultCloseButton.setAttribute('style', buttonStyles);
+                  
+                  // Style the inner content (usually an image or text)
+                  const buttonContent = defaultCloseButton.querySelector('img, span, div');
+                  if (buttonContent) {
+                    (buttonContent as HTMLElement).style.cssText = `
+                      width: ${isMobile ? '16px' : '18px'} !important;
+                      height: ${isMobile ? '16px' : '18px'} !important;
+                      opacity: 1 !important;
+                      filter: contrast(2) brightness(0) !important;
+                    `;
+                  } else {
+                    // If no inner content, add our own X
+                    defaultCloseButton.innerHTML = '×';
+                    defaultCloseButton.style.fontSize = isMobile ? '16px' : '18px';
+                    defaultCloseButton.style.fontWeight = 'bold';
+                    defaultCloseButton.style.color = '#000';
+                    defaultCloseButton.style.fontFamily = 'Arial, sans-serif';
                   }
-                };
-                setTimeout(keepStyling, 100);
-              } else {
-                console.warn('InfoWindow container not found');
-              }
+                  
+                  console.log('Default close button styled successfully');
+                } else {
+                  console.warn('Default close button not found');
+                }
+              }, 100);
             };
 
-            // Listen for info window open events with multiple attempts
+            // Listen for info window open events and style the default close button
             infoWindow.addListener('domready', () => {
               console.log('InfoWindow DOM ready');
-              setTimeout(ensureCloseButtonVisible, 50);
-              setTimeout(ensureCloseButtonVisible, 200);
-              setTimeout(ensureCloseButtonVisible, 500);
+              styleDefaultCloseButton();
+              setTimeout(styleDefaultCloseButton, 200);
+              setTimeout(styleDefaultCloseButton, 500);
             });
 
             // Auto-open info window
