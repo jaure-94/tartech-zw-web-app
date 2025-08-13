@@ -468,7 +468,7 @@ export default function Home() {
           <div className="flex flex-col lg:grid lg:grid-cols-12 gap-8 md:gap-12 lg:gap-20 items-center min-h-[60vh] md:min-h-[65vh] lg:min-h-[70vh]">
             
             {/* Main Content Section - Full width on mobile/tablet */}
-            <div className="w-full lg:col-span-7 flex flex-col space-y-8 md:space-y-10 lg:space-y-12 pb-16 md:pb-20 lg:pb-0">
+            <div className="w-full lg:col-span-7 flex flex-col space-y-8 md:space-y-10 lg:space-y-12 pb-20 md:pb-24 lg:pb-0">
 
               
               {/* Enhanced Headlines Structure */}
