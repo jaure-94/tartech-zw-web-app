@@ -72,6 +72,27 @@ export default function PageLoader({
           card3: animationElements.card3.length,
         });
 
+        // Add heading letter-by-letter animation for Home page
+        const headingTexts = [
+          document.querySelector('.hero-heading-text-1'),
+          document.querySelector('.hero-heading-text-2'),
+          document.querySelector('.hero-heading-text-3')
+        ];
+        
+        let hasHeadings = false;
+        headingTexts.forEach((headingText, lineIndex) => {
+          if (headingText) {
+            hasHeadings = true;
+            // Split text into individual characters
+            const text = headingText.textContent || '';
+            console.log(`Processing heading ${lineIndex + 1}: "${text}"`);
+            const chars = text.split('').map(char => 
+              char === ' ' ? '<span class="char-space">&nbsp;</span>' : `<span class="char inline-block">${char}</span>`
+            );
+            headingText.innerHTML = chars.join('');
+          }
+        });
+
         // Create animation timeline
         const timeline = gsap.timeline({ 
           delay: 0.5,
@@ -80,6 +101,40 @@ export default function PageLoader({
             onAnimationComplete?.();
           }
         });
+
+        // If we have headings, animate them first
+        if (hasHeadings) {
+          const chars = document.querySelectorAll('.char');
+          console.log('Created character spans:', chars.length);
+          
+          // First make heading visible, then animate letters
+          timeline.set('h1', { opacity: 1 });
+          
+          timeline.fromTo('.char', 
+            {
+              opacity: 0,
+              y: -60,
+              scale: 0.9
+            },
+            {
+              opacity: 1,
+              y: 0,
+              scale: 1,
+              duration: 1.0,
+              ease: "power3.out",
+              stagger: {
+                amount: 3.0,
+                from: "start"
+              },
+              onComplete: () => {
+                console.log('Heading animation completed');
+              }
+            }
+          );
+          
+          // Add delay before other animations start
+          timeline.to({}, { duration: 0.5 });
+        }
 
         // Cards animation
         if (animationElements.card1.length > 0) {
