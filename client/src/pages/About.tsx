@@ -25,7 +25,7 @@ export default function About() {
   }, []);
 
   return (
-    <div className="min-h-screen pt-16">
+    <div className="min-h-screen">
       <ScrollAnimations />
       
       {/* Hero Section */}
@@ -64,10 +64,10 @@ export default function About() {
         </div>
         
         {/* Main Content */}
-        <div className="relative w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-24">
+        <div className="relative w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-20 lg:py-24 pb-20 md:pb-24 lg:pb-28">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-16 items-center">
             {/* Left Column - Main Content */}
-            <div className="space-y-6 md:space-y-8">
+            <div className="space-y-8 md:space-y-12 lg:space-y-16">
               {/* Animated Title */}
               <div className="space-y-4">
                 <div className="animate-slide-up-delay-1">
@@ -86,30 +86,27 @@ export default function About() {
               </div>
               
               {/* Animated Description */}
-              <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-gray-200 leading-relaxed max-w-2xl animate-slide-up-delay-3">
-                Three decades of industrial excellence, delivering world-class contracting solutions across Zimbabwe's construction, mining, and agricultural sectors with unwavering commitment to safety and innovation.
-              </p>
-              
-              {/* Enhanced Stats Grid */}
-              <div className="grid grid-cols-3 gap-3 sm:gap-4 md:gap-6 animate-slide-up-delay-4">
-                <div className="group relative bg-gradient-to-br from-construction-yellow/90 to-construction-yellow backdrop-blur-sm p-3 sm:p-4 md:p-6 rounded-lg md:rounded-xl text-center border border-construction-yellow/30 hover:scale-105 transition-all duration-500 hover:shadow-xl hover:shadow-construction-yellow/20">
-                  <div className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-black text-industrial-black mb-1 group-hover:scale-110 transition-transform duration-300">500+</div>
-                  <div className="text-xs sm:text-sm font-bold text-industrial-black tracking-wide">PROJECTS</div>
-                  <div className="absolute top-1 right-1 md:top-2 md:right-2 w-1.5 h-1.5 md:w-2 md:h-2 bg-industrial-black/30 rounded-full"></div>
-                </div>
-                
-                <div className="group relative bg-gradient-to-br from-white/15 to-white/10 backdrop-blur-sm p-3 sm:p-4 md:p-6 rounded-lg md:rounded-xl text-center border border-white/30 hover:scale-105 transition-all duration-500 hover:shadow-xl hover:shadow-white/10">
-                  <div className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-black text-construction-yellow mb-1 group-hover:scale-110 transition-transform duration-300">30+</div>
-                  <div className="text-xs sm:text-sm font-bold text-white tracking-wide">YEARS</div>
-                  <div className="absolute top-1 right-1 md:top-2 md:right-2 w-1.5 h-1.5 md:w-2 md:h-2 bg-construction-yellow rounded-full animate-pulse"></div>
-                </div>
-                
-                <div className="group relative bg-gradient-to-br from-safety-orange/90 to-safety-orange backdrop-blur-sm p-3 sm:p-4 md:p-6 rounded-lg md:rounded-xl text-center border border-safety-orange/30 hover:scale-105 transition-all duration-500 hover:shadow-xl hover:shadow-safety-orange/20">
-                  <div className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-black text-white mb-1 group-hover:scale-110 transition-transform duration-300">100%</div>
-                  <div className="text-xs sm:text-sm font-bold text-white tracking-wide">SAFETY</div>
-                  <div className="absolute top-1 right-1 md:top-2 md:right-2 w-1.5 h-1.5 md:w-2 md:h-2 bg-white/50 rounded-full"></div>
-                </div>
+              <div className="text-base sm:text-lg md:text-xl text-gray-200 leading-relaxed max-w-2xl animate-slide-up-delay-3 space-y-4 md:space-y-6">
+                <p>
+                  Tartech Contracting is a diverse contractor with proven expertise in multi-disciplined
+                  construction services, mining and agriculture solutions, and significant social contributions
+                  across Zimbabwe.
+                </p>
+                <p>
+                  With over a decade of hands on expertise we deliver end-to-end construction, mining, and
+                  agriculture services—on time and on budget. From pre-construction planning to flawless
+                  execution, Tartech combines innovation, efficiency, and a commitment to excellence to bring
+                  your vision to life.
+                </p>
+                <p>
+                  Operating throughout Sub-Saharan Africa our executive and management teams adopt a
+                  hands-on solutions-driven approach. We are committed to building Africa and creating
+                  opportunities by employing local people when possible to develop the skills of the local
+                  workforce and uplift surrounding communities.
+                </p>
               </div>
+              
+
               
 
             </div>
@@ -158,7 +155,7 @@ export default function About() {
         </div>
         
         {/* Scroll Indicator */}
-        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+        <div className="absolute bottom-4 md:bottom-6 lg:bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce z-10">
           <div className="w-6 h-10 border-2 border-construction-yellow/50 rounded-full flex justify-center">
             <div className="w-1 h-3 bg-construction-yellow rounded-full mt-2 animate-pulse"></div>
           </div>
