@@ -18,6 +18,7 @@ import {
   Phone
 } from 'lucide-react';
 import { ScrollAnimations } from '@/components/ScrollAnimations';
+import PageLoader from '@/components/PageLoader';
 
 export default function About() {
   useEffect(() => {
@@ -26,7 +27,8 @@ export default function About() {
 
   return (
     <div className="min-h-screen">
-      <ScrollAnimations />
+      <PageLoader enableHeroAnimation={true}>
+        <ScrollAnimations />
       
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center bg-gradient-to-br from-industrial-black via-gray-900 to-industrial-black overflow-hidden">
@@ -646,6 +648,7 @@ export default function About() {
           </div>
         </div>
       </section>
+      </PageLoader>
     </div>
   );
 }
