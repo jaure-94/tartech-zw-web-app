@@ -26,6 +26,7 @@ function Router() {
       <Route path="/services/borehole-drilling" component={Services} />
       <Route path="/mining" component={Mining} />
       <Route path="/services/mining" component={Mining} />
+      <Route path="/construction" component={Construction} />
       <Route path="/services/construction" component={Construction} />
       <Route path="/services/agriculture" component={Agriculture} />
       <Route path="/contact" component={Contact} />
