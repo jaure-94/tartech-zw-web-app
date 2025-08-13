@@ -60,7 +60,9 @@ export function Footer() {
                 </Link>
               </li>
               <li>
-                <span className="footer-link text-sm lg:text-base">Project Management</span>
+                <Link href="/services/borehole-drilling" onClick={scrollToTop}>
+                  <span className="footer-link text-sm lg:text-base">Borehole Drilling</span>
+                </Link>
               </li>
             </ul>
           </div>
