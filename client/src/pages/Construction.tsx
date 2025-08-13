@@ -4,6 +4,7 @@ import { CheckCircle2, Compass, Shovel, Hammer, Key, Building, MapPin, Droplets,
 import { ScrollAnimations } from '@/components/ScrollAnimations';
 import PageLoader from '@/components/PageLoader';
 import tartechLogo from '@assets/tartech-logo-symbol_1755071044733.png';
+import constructionHeroImage from '@assets/large-building-site-min_1755102476346.jpg';
 
 export default function Construction() {
   const [isLoading, setIsLoading] = useState(true);
@@ -112,7 +113,7 @@ export default function Construction() {
             </div>
             <div className="order-1 lg:order-2">
               <img 
-                src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=600" 
+                src={constructionHeroImage} 
                 alt="Modern industrial building under construction with steel framework" 
                 className="rounded-xl shadow-2xl w-full" 
               />
