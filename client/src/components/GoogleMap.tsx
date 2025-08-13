@@ -28,17 +28,18 @@ export function GoogleMap({ address, className = "" }: GoogleMapProps) {
 
     const showFallbackMap = () => {
       if (mapRef.current) {
+        const isMobile = window.innerWidth < 768;
         mapRef.current.innerHTML = `
           <div class="w-full h-full bg-gradient-to-br from-gray-50 to-gray-100 flex items-center justify-center" style="min-height: 250px;">
-            <div class="flex flex-col items-center justify-center h-full p-4 sm:p-6 md:p-8 text-center max-w-sm">
-              <div class="w-12 h-12 sm:w-16 sm:h-16 md:w-20 md:h-20 bg-construction-yellow rounded-full flex items-center justify-center mb-3 sm:mb-4 md:mb-6">
-                <svg class="w-6 h-6 sm:w-8 sm:h-8 md:w-10 md:h-10 text-industrial-black" fill="currentColor" viewBox="0 0 24 24">
+            <div class="flex flex-col items-center justify-center h-full p-${isMobile ? '3' : '4 sm:p-6 md:p-8'} text-center max-w-${isMobile ? 'xs' : 'sm'}">
+              <div class="w-${isMobile ? '10 h-10' : '12 h-12 sm:w-16 sm:h-16 md:w-20 md:h-20'} bg-construction-yellow rounded-full flex items-center justify-center mb-${isMobile ? '2' : '3 sm:mb-4 md:mb-6'}">
+                <svg class="w-${isMobile ? '5 h-5' : '6 h-6 sm:w-8 sm:h-8 md:w-10 md:h-10'} text-industrial-black" fill="currentColor" viewBox="0 0 24 24">
                   <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
                 </svg>
               </div>
-              <h3 class="font-bold text-base sm:text-lg md:text-xl text-industrial-black mb-1 sm:mb-2 md:mb-3">Tartech Contracting</h3>
-              <p class="text-xs sm:text-sm md:text-base text-gray-600 mb-2 sm:mb-3 md:mb-4">6 Beryl Road, Msasa<br>Harare, Zimbabwe</p>
-              <div class="space-y-1 sm:space-y-2 text-xs sm:text-sm text-gray-500 mb-3 sm:mb-4 md:mb-6">
+              <h3 class="font-bold text-${isMobile ? 'sm' : 'base sm:text-lg md:text-xl'} text-industrial-black mb-${isMobile ? '1' : '1 sm:mb-2 md:mb-3'}">Tartech Contracting</h3>
+              <p class="text-${isMobile ? 'xs' : 'xs sm:text-sm md:text-base'} text-gray-600 mb-${isMobile ? '2' : '2 sm:mb-3 md:mb-4'} leading-tight">6 Beryl Road, Msasa<br>Harare, Zimbabwe</p>
+              <div class="space-y-${isMobile ? '0.5' : '1 sm:space-y-2'} text-${isMobile ? 'xs' : 'xs sm:text-sm'} text-gray-500 mb-${isMobile ? '3' : '3 sm:mb-4 md:mb-6'}">
                 <p>📍 Msasa Industrial Area</p>
                 <p>🚗 Major highway access</p>
               </div>
@@ -46,12 +47,12 @@ export function GoogleMap({ address, className = "" }: GoogleMapProps) {
                 href="https://www.google.com/maps/search/6+beryl+road+msasa+harare+zimbabwe" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                class="inline-flex items-center px-4 py-2 sm:px-5 sm:py-3 md:px-6 md:py-3 bg-construction-yellow text-industrial-black text-xs sm:text-sm md:text-base font-medium rounded-lg hover:bg-yellow-500 transition-colors duration-200 shadow-lg hover:shadow-xl"
+                class="inline-flex items-center px-${isMobile ? '3 py-2' : '4 py-2 sm:px-5 sm:py-3 md:px-6 md:py-3'} bg-construction-yellow text-industrial-black text-${isMobile ? 'xs' : 'xs sm:text-sm md:text-base'} font-medium rounded-lg hover:bg-yellow-500 transition-colors duration-200 shadow-lg hover:shadow-xl"
               >
-                <svg class="w-3 h-3 sm:w-4 sm:h-4 md:w-5 md:h-5 mr-1 sm:mr-2 md:mr-3" fill="currentColor" viewBox="0 0 24 24">
+                <svg class="w-${isMobile ? '3 h-3' : '3 h-3 sm:w-4 sm:h-4 md:w-5 md:h-5'} mr-${isMobile ? '1' : '1 sm:mr-2 md:mr-3'}" fill="currentColor" viewBox="0 0 24 24">
                   <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
                 </svg>
-                Open in Google Maps
+                ${isMobile ? 'Open Map' : 'Open in Google Maps'}
               </a>
             </div>
           </div>
@@ -158,15 +159,18 @@ export function GoogleMap({ address, className = "" }: GoogleMapProps) {
               }
             });
 
-            // Create info window
+            // Create info window with mobile-responsive content
+            const isMobile = window.innerWidth < 768;
+            
             const infoWindow = new window.google.maps.InfoWindow({
+              maxWidth: isMobile ? 280 : 320,
               content: `
-                <div style="padding: 12px; min-width: 200px; text-align: center;">
-                  <div style="margin-bottom: 8px;">
-                    <img src="${tartechLogoSymbol}" alt="Tartech Logo" style="width: 32px; height: 32px; margin: 0 auto 8px auto; display: block;" />
-                    <h3 style="font-weight: bold; font-size: 16px; color: #333; margin: 0 0 8px 0; line-height: 1.2;">Tartech Contracting</h3>
-                    <p style="color: #666; font-size: 14px; margin: 0 0 8px 0; line-height: 1.3;">6 Beryl Road, Msasa, Harare, Zimbabwe</p>
-                    <div style="font-size: 12px; color: #999;">
+                <div style="padding: ${isMobile ? '8px' : '12px'}; width: ${isMobile ? '260px' : '300px'}; text-align: center;">
+                  <div style="margin-bottom: ${isMobile ? '4px' : '8px'};">
+                    <img src="${tartechLogoSymbol}" alt="Tartech Logo" style="width: ${isMobile ? '24px' : '32px'}; height: ${isMobile ? '24px' : '32px'}; margin: 0 auto ${isMobile ? '4px' : '8px'} auto; display: block;" />
+                    <h3 style="font-weight: bold; font-size: ${isMobile ? '14px' : '16px'}; color: #333; margin: 0 0 ${isMobile ? '4px' : '8px'} 0; line-height: 1.2;">Tartech Contracting</h3>
+                    <p style="color: #666; font-size: ${isMobile ? '12px' : '14px'}; margin: 0 0 ${isMobile ? '4px' : '8px'} 0; line-height: 1.3;">6 Beryl Road, Msasa<br>Harare, Zimbabwe</p>
+                    <div style="font-size: ${isMobile ? '10px' : '12px'}; color: #999;">
                       <span>Industrial Excellence</span>
                     </div>
                   </div>
