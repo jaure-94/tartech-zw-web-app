@@ -56,7 +56,11 @@ export default function About() {
                 <div className="absolute inset-0 border-4 border-construction-yellow/20 rounded-full"></div>
                 <div className="absolute inset-0 border-4 border-construction-yellow border-t-transparent rounded-full animate-spin"></div>
                 <div className="absolute inset-2 bg-construction-yellow/10 rounded-full flex items-center justify-center">
-                  <Building2 className="w-8 h-8 text-construction-yellow" />
+                  <img 
+                    src="/attached_assets/tartech-logo-symbol_1755071044733.png" 
+                    alt="Tartech Logo" 
+                    className="w-10 h-10 object-contain"
+                  />
                 </div>
               </div>
               <h2 className="text-2xl font-bold text-white mb-2">ABOUT US</h2>
