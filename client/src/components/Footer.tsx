@@ -62,12 +62,6 @@ export function Footer() {
               <li>
                 <span className="footer-link text-sm lg:text-base">Project Management</span>
               </li>
-              <li>
-                <span className="footer-link text-sm lg:text-base">Equipment Rental</span>
-              </li>
-              <li>
-                <span className="footer-link text-sm lg:text-base">Maintenance & Repair</span>
-              </li>
             </ul>
           </div>
 
@@ -93,9 +87,6 @@ export function Footer() {
               <li>
                 <span className="footer-link text-sm lg:text-base">Safety Standards</span>
               </li>
-              <li>
-                <span className="footer-link text-sm lg:text-base">Careers</span>
-              </li>
             </ul>
           </div>
 
@@ -107,9 +98,8 @@ export function Footer() {
                 <MapPin className="h-5 w-5 text-construction-yellow mt-1 flex-shrink-0" />
                 <div>
                   <p className="text-gray-300 text-sm lg:text-base leading-relaxed">
-                    123 Industrial Avenue<br />
-                    Harare, Zimbabwe<br />
-                    PO Box 456
+                    6 Beryl Road, Msasa<br />
+                    Harare, Zimbabwe
                   </p>
                 </div>
               </div>
@@ -117,15 +107,16 @@ export function Footer() {
               <div className="flex items-start space-x-3">
                 <Phone className="h-5 w-5 text-construction-yellow mt-1 flex-shrink-0" />
                 <div className="space-y-1">
-                  <p className="text-gray-300 text-sm lg:text-base hover:text-construction-yellow transition-colors duration-300 cursor-pointer">+263 4 123 4567</p>
-                  <p className="text-gray-300 text-sm lg:text-base hover:text-construction-yellow transition-colors duration-300 cursor-pointer">+263 77 890 1234</p>
+                  <p className="text-gray-300 text-sm lg:text-base hover:text-construction-yellow transition-colors duration-300 cursor-pointer">+263 785 881 520</p>
+                  <p className="text-gray-300 text-sm lg:text-base hover:text-construction-yellow transition-colors duration-300 cursor-pointer">+263 785 990 836</p>
+                  <p className="text-gray-300 text-sm lg:text-base hover:text-construction-yellow transition-colors duration-300 cursor-pointer">+263 785 834 557</p>
                 </div>
               </div>
               
               <div className="flex items-center space-x-3">
                 <Mail className="h-5 w-5 text-construction-yellow flex-shrink-0" />
-                <a href="mailto:info@tartechcontracting.co.zw" className="text-gray-300 text-sm lg:text-base hover:text-construction-yellow transition-colors duration-300">
-                  info@tartechcontracting.co.zw
+                <a href="mailto:info@tartech.co.zw" className="text-gray-300 text-sm lg:text-base hover:text-construction-yellow transition-colors duration-300">
+                  info@tartech.co.zw
                 </a>
               </div>
               

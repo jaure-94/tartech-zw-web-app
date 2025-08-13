@@ -1091,107 +1091,107 @@ export default function Home() {
           
           {/* Client Logos Slider */}
           <div className="relative">
-            {/* Navigation Arrows */}
+            {/* Navigation Arrows - Hidden on mobile, visible on larger screens */}
             <button 
               onClick={() => scrollLogos('left')}
-              className="absolute left-4 top-1/2 -translate-y-1/2 z-20 bg-white/90 hover:bg-white border border-gray-200 hover:border-construction-yellow/50 rounded-full p-3 shadow-lg hover:shadow-xl transition-all duration-300 group backdrop-blur-sm"
+              className="hidden sm:block absolute left-2 md:left-4 top-1/2 -translate-y-1/2 z-20 bg-white/90 hover:bg-white border border-gray-200 hover:border-construction-yellow/50 rounded-full p-2 md:p-3 shadow-lg hover:shadow-xl transition-all duration-300 group backdrop-blur-sm"
               aria-label="Scroll logos left"
             >
-              <ChevronLeft className="h-6 w-6 text-industrial-black group-hover:text-construction-yellow transition-colors duration-300" />
+              <ChevronLeft className="h-4 w-4 md:h-6 md:w-6 text-industrial-black group-hover:text-construction-yellow transition-colors duration-300" />
             </button>
             
             <button 
               onClick={() => scrollLogos('right')}
-              className="absolute right-4 top-1/2 -translate-y-1/2 z-20 bg-white/90 hover:bg-white border border-gray-200 hover:border-construction-yellow/50 rounded-full p-3 shadow-lg hover:shadow-xl transition-all duration-300 group backdrop-blur-sm"
+              className="hidden sm:block absolute right-2 md:right-4 top-1/2 -translate-y-1/2 z-20 bg-white/90 hover:bg-white border border-gray-200 hover:border-construction-yellow/50 rounded-full p-2 md:p-3 shadow-lg hover:shadow-xl transition-all duration-300 group backdrop-blur-sm"
               aria-label="Scroll logos right"
             >
-              <ChevronRight className="h-6 w-6 text-industrial-black group-hover:text-construction-yellow transition-colors duration-300" />
+              <ChevronRight className="h-4 w-4 md:h-6 md:w-6 text-industrial-black group-hover:text-construction-yellow transition-colors duration-300" />
             </button>
 
             {/* Scrollable Container */}
             <div className="overflow-hidden">
               <div 
                 ref={logoSliderRef}
-                className="flex space-x-6 items-center py-8 px-20 overflow-x-scroll scrollbar-hide"
+                className="flex space-x-4 sm:space-x-6 items-center py-6 sm:py-8 px-4 sm:px-8 md:px-16 lg:px-20 overflow-x-scroll scrollbar-hide"
                 style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
               >
               {/* City of Harare */}
               <div className="flex-shrink-0 group">
-                <div className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 w-72 h-40 flex flex-col items-center justify-center border border-gray-100 group-hover:border-construction-yellow/30">
-                  <div className="w-16 h-16 bg-gradient-to-br from-construction-yellow to-construction-yellow/80 rounded-full flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
-                    <span className="text-industrial-black font-black text-xl">CH</span>
+                <div className="bg-white rounded-xl sm:rounded-2xl p-4 sm:p-6 md:p-8 shadow-lg hover:shadow-xl transition-all duration-300 w-48 sm:w-60 md:w-72 h-32 sm:h-36 md:h-40 flex flex-col items-center justify-center border border-gray-100 group-hover:border-construction-yellow/30">
+                  <div className="w-10 h-10 sm:w-12 sm:h-12 md:w-16 md:h-16 bg-gradient-to-br from-construction-yellow to-construction-yellow/80 rounded-full flex items-center justify-center mb-2 sm:mb-3 md:mb-4 group-hover:scale-110 transition-transform duration-300">
+                    <span className="text-industrial-black font-black text-sm sm:text-lg md:text-xl">CH</span>
                   </div>
-                  <h3 className="text-industrial-black font-bold text-lg text-center">City of Harare</h3>
+                  <h3 className="text-industrial-black font-bold text-sm sm:text-base md:text-lg text-center">City of Harare</h3>
                 </div>
               </div>
               
               {/* City of Marondera */}
               <div className="flex-shrink-0 group">
-                <div className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 w-72 h-40 flex flex-col items-center justify-center border border-gray-100 group-hover:border-construction-yellow/30">
-                  <div className="w-16 h-16 bg-gradient-to-br from-construction-yellow to-construction-yellow/80 rounded-full flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
-                    <span className="text-industrial-black font-black text-xl">CM</span>
+                <div className="bg-white rounded-xl sm:rounded-2xl p-4 sm:p-6 md:p-8 shadow-lg hover:shadow-xl transition-all duration-300 w-48 sm:w-60 md:w-72 h-32 sm:h-36 md:h-40 flex flex-col items-center justify-center border border-gray-100 group-hover:border-construction-yellow/30">
+                  <div className="w-10 h-10 sm:w-12 sm:h-12 md:w-16 md:h-16 bg-gradient-to-br from-construction-yellow to-construction-yellow/80 rounded-full flex items-center justify-center mb-2 sm:mb-3 md:mb-4 group-hover:scale-110 transition-transform duration-300">
+                    <span className="text-industrial-black font-black text-sm sm:text-lg md:text-xl">CM</span>
                   </div>
-                  <h3 className="text-industrial-black font-bold text-lg text-center">City of Marondera</h3>
+                  <h3 className="text-industrial-black font-bold text-sm sm:text-base md:text-lg text-center">City of Marondera</h3>
                 </div>
               </div>
               
               {/* Bikita Minerals */}
               <div className="flex-shrink-0 group">
-                <div className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 w-72 h-40 flex flex-col items-center justify-center border border-gray-100 group-hover:border-construction-yellow/30">
-                  <div className="w-16 h-16 bg-gradient-to-br from-construction-yellow to-construction-yellow/80 rounded-full flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
-                    <Drill className="text-industrial-black h-8 w-8" />
+                <div className="bg-white rounded-xl sm:rounded-2xl p-4 sm:p-6 md:p-8 shadow-lg hover:shadow-xl transition-all duration-300 w-48 sm:w-60 md:w-72 h-32 sm:h-36 md:h-40 flex flex-col items-center justify-center border border-gray-100 group-hover:border-construction-yellow/30">
+                  <div className="w-10 h-10 sm:w-12 sm:h-12 md:w-16 md:h-16 bg-gradient-to-br from-construction-yellow to-construction-yellow/80 rounded-full flex items-center justify-center mb-2 sm:mb-3 md:mb-4 group-hover:scale-110 transition-transform duration-300">
+                    <Drill className="text-industrial-black h-5 w-5 sm:h-6 sm:w-6 md:h-8 md:w-8" />
                   </div>
-                  <h3 className="text-industrial-black font-bold text-lg text-center">Bikita Minerals</h3>
+                  <h3 className="text-industrial-black font-bold text-sm sm:text-base md:text-lg text-center">Bikita Minerals</h3>
                 </div>
               </div>
               
               {/* Ministry of Transport */}
               <div className="flex-shrink-0 group">
-                <div className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 w-72 h-40 flex flex-col items-center justify-center border border-gray-100 group-hover:border-construction-yellow/30">
-                  <div className="w-16 h-16 bg-gradient-to-br from-construction-yellow to-construction-yellow/80 rounded-full flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
-                    <span className="text-industrial-black font-black text-sm">MOT</span>
+                <div className="bg-white rounded-xl sm:rounded-2xl p-4 sm:p-6 md:p-8 shadow-lg hover:shadow-xl transition-all duration-300 w-48 sm:w-60 md:w-72 h-32 sm:h-36 md:h-40 flex flex-col items-center justify-center border border-gray-100 group-hover:border-construction-yellow/30">
+                  <div className="w-10 h-10 sm:w-12 sm:h-12 md:w-16 md:h-16 bg-gradient-to-br from-construction-yellow to-construction-yellow/80 rounded-full flex items-center justify-center mb-2 sm:mb-3 md:mb-4 group-hover:scale-110 transition-transform duration-300">
+                    <span className="text-industrial-black font-black text-xs sm:text-sm md:text-sm">MOT</span>
                   </div>
-                  <h3 className="text-industrial-black font-bold text-lg text-center leading-tight">Min of Transport<br/>Department of Roads</h3>
+                  <h3 className="text-industrial-black font-bold text-xs sm:text-sm md:text-lg text-center leading-tight">Min of Transport<br/>Department of Roads</h3>
                 </div>
               </div>
               
               {/* Freda Rebecca Mines */}
               <div className="flex-shrink-0 group">
-                <div className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 w-72 h-40 flex flex-col items-center justify-center border border-gray-100 group-hover:border-construction-yellow/30">
-                  <div className="w-16 h-16 bg-gradient-to-br from-construction-yellow to-construction-yellow/80 rounded-full flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
-                    <Mountain className="text-industrial-black h-8 w-8" />
+                <div className="bg-white rounded-xl sm:rounded-2xl p-4 sm:p-6 md:p-8 shadow-lg hover:shadow-xl transition-all duration-300 w-48 sm:w-60 md:w-72 h-32 sm:h-36 md:h-40 flex flex-col items-center justify-center border border-gray-100 group-hover:border-construction-yellow/30">
+                  <div className="w-10 h-10 sm:w-12 sm:h-12 md:w-16 md:h-16 bg-gradient-to-br from-construction-yellow to-construction-yellow/80 rounded-full flex items-center justify-center mb-2 sm:mb-3 md:mb-4 group-hover:scale-110 transition-transform duration-300">
+                    <Mountain className="text-industrial-black h-5 w-5 sm:h-6 sm:w-6 md:h-8 md:w-8" />
                   </div>
-                  <h3 className="text-industrial-black font-bold text-lg text-center">Freda Rebecca Mines</h3>
+                  <h3 className="text-industrial-black font-bold text-sm sm:text-base md:text-lg text-center">Freda Rebecca Mines</h3>
                 </div>
               </div>
               
               {/* Bindura Nickel Corporation */}
               <div className="flex-shrink-0 group">
-                <div className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 w-72 h-40 flex flex-col items-center justify-center border border-gray-100 group-hover:border-construction-yellow/30">
-                  <div className="w-16 h-16 bg-gradient-to-br from-construction-yellow to-construction-yellow/80 rounded-full flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
-                    <span className="text-industrial-black font-black text-sm">BNC</span>
+                <div className="bg-white rounded-xl sm:rounded-2xl p-4 sm:p-6 md:p-8 shadow-lg hover:shadow-xl transition-all duration-300 w-48 sm:w-60 md:w-72 h-32 sm:h-36 md:h-40 flex flex-col items-center justify-center border border-gray-100 group-hover:border-construction-yellow/30">
+                  <div className="w-10 h-10 sm:w-12 sm:h-12 md:w-16 md:h-16 bg-gradient-to-br from-construction-yellow to-construction-yellow/80 rounded-full flex items-center justify-center mb-2 sm:mb-3 md:mb-4 group-hover:scale-110 transition-transform duration-300">
+                    <span className="text-industrial-black font-black text-xs sm:text-sm md:text-sm">BNC</span>
                   </div>
-                  <h3 className="text-industrial-black font-bold text-lg text-center leading-tight">Bindura Nickel<br/>Corporation</h3>
+                  <h3 className="text-industrial-black font-bold text-xs sm:text-sm md:text-lg text-center leading-tight">Bindura Nickel<br/>Corporation</h3>
                 </div>
               </div>
               
               {/* Khaya Cement */}
               <div className="flex-shrink-0 group">
-                <div className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 w-72 h-40 flex flex-col items-center justify-center border border-gray-100 group-hover:border-construction-yellow/30">
-                  <div className="w-16 h-16 bg-gradient-to-br from-construction-yellow to-construction-yellow/80 rounded-full flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
-                    <HardHat className="text-industrial-black h-8 w-8" />
+                <div className="bg-white rounded-xl sm:rounded-2xl p-4 sm:p-6 md:p-8 shadow-lg hover:shadow-xl transition-all duration-300 w-48 sm:w-60 md:w-72 h-32 sm:h-36 md:h-40 flex flex-col items-center justify-center border border-gray-100 group-hover:border-construction-yellow/30">
+                  <div className="w-10 h-10 sm:w-12 sm:h-12 md:w-16 md:h-16 bg-gradient-to-br from-construction-yellow to-construction-yellow/80 rounded-full flex items-center justify-center mb-2 sm:mb-3 md:mb-4 group-hover:scale-110 transition-transform duration-300">
+                    <HardHat className="text-industrial-black h-5 w-5 sm:h-6 sm:w-6 md:h-8 md:w-8" />
                   </div>
-                  <h3 className="text-industrial-black font-bold text-lg text-center">Khaya Cement</h3>
+                  <h3 className="text-industrial-black font-bold text-sm sm:text-base md:text-lg text-center">Khaya Cement</h3>
                 </div>
               </div>
               
               {/* Zimplats */}
               <div className="flex-shrink-0 group">
-                <div className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 w-72 h-40 flex flex-col items-center justify-center border border-gray-100 group-hover:border-construction-yellow/30">
-                  <div className="w-16 h-16 bg-gradient-to-br from-construction-yellow to-construction-yellow/80 rounded-full flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
-                    <span className="text-industrial-black font-black text-xl">ZP</span>
+                <div className="bg-white rounded-xl sm:rounded-2xl p-4 sm:p-6 md:p-8 shadow-lg hover:shadow-xl transition-all duration-300 w-48 sm:w-60 md:w-72 h-32 sm:h-36 md:h-40 flex flex-col items-center justify-center border border-gray-100 group-hover:border-construction-yellow/30">
+                  <div className="w-10 h-10 sm:w-12 sm:h-12 md:w-16 md:h-16 bg-gradient-to-br from-construction-yellow to-construction-yellow/80 rounded-full flex items-center justify-center mb-2 sm:mb-3 md:mb-4 group-hover:scale-110 transition-transform duration-300">
+                    <span className="text-industrial-black font-black text-sm sm:text-lg md:text-xl">ZP</span>
                   </div>
-                  <h3 className="text-industrial-black font-bold text-lg text-center">Zimplats</h3>
+                  <h3 className="text-industrial-black font-bold text-sm sm:text-base md:text-lg text-center">Zimplats</h3>
                 </div>
               </div>
 
