@@ -108,35 +108,35 @@ export default function Contact() {
   };
 
   return (
-    <div className="min-h-screen pt-16">
+    <div className="min-h-screen">
       <ScrollAnimations />
       
       {/* Contact Section */}
-      <section className="py-20 bg-light-industrial">
+      <section className="py-12 md:py-16 lg:py-20 bg-light-industrial">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h1 className="animate-fade-in text-4xl sm:text-5xl font-black text-industrial-black mb-6">
+          <div className="text-center mb-10 md:mb-12 lg:mb-16">
+            <h1 className="animate-fade-in text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black text-industrial-black mb-4 md:mb-6">
               GET IN <span className="text-construction-yellow">TOUCH</span>
             </h1>
-            <p className="animate-fade-in text-lg text-industrial-gray max-w-3xl mx-auto">
+            <p className="animate-fade-in text-base sm:text-lg text-industrial-gray max-w-3xl mx-auto leading-relaxed">
               Ready to start your next industrial project? Contact our expert team for a consultation and detailed quote tailored to your specific requirements.
             </p>
           </div>
           
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-8 lg:gap-12">
             {/* Contact Form */}
             <div className="animate-slide-in-left">
-              <Card className="bg-white rounded-2xl shadow-xl">
-                <CardContent className="p-8">
+              <Card className="bg-white rounded-xl md:rounded-2xl shadow-xl">
+                <CardContent className="p-4 md:p-6 lg:p-8">
                   <Form {...form}>
-                    <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
-                      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4 md:space-y-6">
+                      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
                         <FormField
                           control={form.control}
                           name="firstName"
                           render={({ field }) => (
                             <FormItem>
-                              <FormLabel className="text-sm font-bold text-industrial-black">FIRST NAME *</FormLabel>
+                              <FormLabel className="text-xs md:text-sm font-bold text-industrial-black">FIRST NAME *</FormLabel>
                               <FormControl>
                                 <Input 
                                   placeholder="Enter your first name" 
@@ -153,7 +153,7 @@ export default function Contact() {
                           name="lastName"
                           render={({ field }) => (
                             <FormItem>
-                              <FormLabel className="text-sm font-bold text-industrial-black">LAST NAME *</FormLabel>
+                              <FormLabel className="text-xs md:text-sm font-bold text-industrial-black">LAST NAME *</FormLabel>
                               <FormControl>
                                 <Input 
                                   placeholder="Enter your last name" 
@@ -172,7 +172,7 @@ export default function Contact() {
                         name="email"
                         render={({ field }) => (
                           <FormItem>
-                            <FormLabel className="text-sm font-bold text-industrial-black">EMAIL ADDRESS *</FormLabel>
+                            <FormLabel className="text-xs md:text-sm font-bold text-industrial-black">EMAIL ADDRESS *</FormLabel>
                             <FormControl>
                               <Input 
                                 type="email"
@@ -191,7 +191,7 @@ export default function Contact() {
                         name="company"
                         render={({ field }) => (
                           <FormItem>
-                            <FormLabel className="text-sm font-bold text-industrial-black">COMPANY</FormLabel>
+                            <FormLabel className="text-xs md:text-sm font-bold text-industrial-black">COMPANY</FormLabel>
                             <FormControl>
                               <Input 
                                 placeholder="Your company name" 
@@ -209,7 +209,7 @@ export default function Contact() {
                         name="service"
                         render={({ field }) => (
                           <FormItem>
-                            <FormLabel className="text-sm font-bold text-industrial-black">SERVICE REQUIRED *</FormLabel>
+                            <FormLabel className="text-xs md:text-sm font-bold text-industrial-black">SERVICE REQUIRED *</FormLabel>
                             <Select onValueChange={field.onChange} value={field.value}>
                               <FormControl>
                                 <SelectTrigger className="bg-white border-gray-300 text-industrial-black focus:border-construction-yellow focus:ring-construction-yellow">
@@ -233,7 +233,7 @@ export default function Contact() {
                         name="message"
                         render={({ field }) => (
                           <FormItem>
-                            <FormLabel className="text-sm font-bold text-industrial-black">PROJECT DETAILS *</FormLabel>
+                            <FormLabel className="text-xs md:text-sm font-bold text-industrial-black">PROJECT DETAILS *</FormLabel>
                             <FormControl>
                               <Textarea 
                                 placeholder="Tell us about your project requirements, timeline, and any specific needs..."
@@ -249,10 +249,10 @@ export default function Contact() {
                       
                       <Button 
                         type="submit" 
-                        className="w-full bg-construction-yellow text-industrial-black hover:bg-industrial-black hover:text-white font-bold text-lg py-4 transition-colors duration-300"
+                        className="w-full bg-construction-yellow text-industrial-black hover:bg-industrial-black hover:text-white font-bold text-base md:text-lg py-3 md:py-4 transition-colors duration-300"
                         disabled={contactMutation.isPending}
                       >
-                        <Send className="mr-2 h-5 w-5" />
+                        <Send className="mr-2 h-4 w-4 md:h-5 md:w-5" />
                         {contactMutation.isPending ? 'SENDING...' : 'SEND MESSAGE'}
                       </Button>
                     </form>
@@ -262,46 +262,46 @@ export default function Contact() {
               
               {/* Success Message */}
               {showSuccess && (
-                <div id="success-message" className="mt-6 p-6 bg-green-600 rounded-lg text-center text-white">
-                  <CheckCircle className="h-8 w-8 mx-auto mb-2" />
-                  <h3 className="font-bold text-lg mb-2">MESSAGE SENT SUCCESSFULLY!</h3>
-                  <p className="text-sm opacity-90">Thank you for contacting Tartech Contracting. We'll get back to you within 24 hours.</p>
+                <div id="success-message" className="mt-4 md:mt-6 p-4 md:p-6 bg-green-600 rounded-lg text-center text-white">
+                  <CheckCircle className="h-6 w-6 md:h-8 md:w-8 mx-auto mb-2" />
+                  <h3 className="font-bold text-base md:text-lg mb-2">MESSAGE SENT SUCCESSFULLY!</h3>
+                  <p className="text-xs md:text-sm opacity-90">Thank you for contacting Tartech Contracting. We'll get back to you within 24 hours.</p>
                 </div>
               )}
             </div>
             
             {/* Contact Information */}
             <div className="animate-slide-in-right">
-              <Card className="bg-white rounded-2xl shadow-xl mb-8">
-                <CardContent className="p-8">
-                  <h3 className="text-2xl font-bold text-construction-yellow mb-6">CONTACT INFORMATION</h3>
-                  <div className="space-y-6">
+              <Card className="bg-white rounded-xl md:rounded-2xl shadow-xl mb-6 md:mb-8">
+                <CardContent className="p-4 md:p-6 lg:p-8">
+                  <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-construction-yellow mb-4 md:mb-6">CONTACT INFORMATION</h3>
+                  <div className="space-y-4 md:space-y-6">
                     <div className="flex items-start">
-                      <MapPin className="text-construction-yellow h-6 w-6 mr-4 mt-1 flex-shrink-0" />
+                      <MapPin className="text-construction-yellow h-5 w-5 md:h-6 md:w-6 mr-3 md:mr-4 mt-1 flex-shrink-0" />
                       <div>
-                        <h4 className="font-bold mb-1 text-industrial-black">HEAD OFFICE</h4>
-                        <p className="text-industrial-gray">123 Industrial Avenue<br />Harare, Zimbabwe</p>
+                        <h4 className="font-bold mb-1 text-sm md:text-base text-industrial-black">HEAD OFFICE</h4>
+                        <p className="text-xs md:text-sm text-industrial-gray">123 Industrial Avenue<br />Harare, Zimbabwe</p>
                       </div>
                     </div>
                     <div className="flex items-start">
-                      <Phone className="text-construction-yellow h-6 w-6 mr-4 mt-1 flex-shrink-0" />
+                      <Phone className="text-construction-yellow h-5 w-5 md:h-6 md:w-6 mr-3 md:mr-4 mt-1 flex-shrink-0" />
                       <div>
-                        <h4 className="font-bold mb-1 text-industrial-black">PHONE</h4>
-                        <p className="text-industrial-gray">+263 4 123 4567</p>
+                        <h4 className="font-bold mb-1 text-sm md:text-base text-industrial-black">PHONE</h4>
+                        <p className="text-xs md:text-sm text-industrial-gray">+263 4 123 4567</p>
                       </div>
                     </div>
                     <div className="flex items-start">
-                      <Mail className="text-construction-yellow h-6 w-6 mr-4 mt-1 flex-shrink-0" />
+                      <Mail className="text-construction-yellow h-5 w-5 md:h-6 md:w-6 mr-3 md:mr-4 mt-1 flex-shrink-0" />
                       <div>
-                        <h4 className="font-bold mb-1 text-industrial-black">EMAIL</h4>
-                        <p className="text-industrial-gray">info@tartech.co.zw</p>
+                        <h4 className="font-bold mb-1 text-sm md:text-base text-industrial-black">EMAIL</h4>
+                        <p className="text-xs md:text-sm text-industrial-gray">info@tartech.co.zw</p>
                       </div>
                     </div>
                     <div className="flex items-start">
-                      <Clock className="text-construction-yellow h-6 w-6 mr-4 mt-1 flex-shrink-0" />
+                      <Clock className="text-construction-yellow h-5 w-5 md:h-6 md:w-6 mr-3 md:mr-4 mt-1 flex-shrink-0" />
                       <div>
-                        <h4 className="font-bold mb-1 text-industrial-black">BUSINESS HOURS</h4>
-                        <p className="text-industrial-gray">Monday - Friday: 7:00 AM - 6:00 PM<br />Saturday: 8:00 AM - 2:00 PM</p>
+                        <h4 className="font-bold mb-1 text-sm md:text-base text-industrial-black">BUSINESS HOURS</h4>
+                        <p className="text-xs md:text-sm text-industrial-gray">Monday - Friday: 7:00 AM - 6:00 PM<br />Saturday: 8:00 AM - 2:00 PM</p>
                       </div>
                     </div>
                   </div>
@@ -309,11 +309,11 @@ export default function Contact() {
               </Card>
               
               {/* Map Placeholder */}
-              <Card className="bg-white rounded-2xl shadow-xl">
-                <CardContent className="p-8 text-center">
-                  <Map className="text-construction-yellow h-12 w-12 mx-auto mb-4" />
-                  <h4 className="font-bold text-lg mb-2 text-industrial-black">INTERACTIVE MAP</h4>
-                  <p className="text-industrial-gray">View our location and get directions</p>
+              <Card className="bg-white rounded-xl md:rounded-2xl shadow-xl">
+                <CardContent className="p-4 md:p-6 lg:p-8 text-center">
+                  <Map className="text-construction-yellow h-8 w-8 md:h-10 md:w-10 lg:h-12 lg:w-12 mx-auto mb-3 md:mb-4" />
+                  <h4 className="font-bold text-base md:text-lg mb-2 text-industrial-black">INTERACTIVE MAP</h4>
+                  <p className="text-xs md:text-sm text-industrial-gray">View our location and get directions</p>
                 </CardContent>
               </Card>
             </div>
