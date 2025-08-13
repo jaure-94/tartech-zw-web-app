@@ -163,15 +163,17 @@ export function GoogleMap({ address, className = "" }: GoogleMapProps) {
             const isMobile = window.innerWidth < 768;
             
             const infoWindow = new window.google.maps.InfoWindow({
-              maxWidth: isMobile ? 280 : 320,
+              maxWidth: isMobile ? 200 : 320,
               content: `
-                <div style="padding: ${isMobile ? '8px' : '12px'}; width: ${isMobile ? '260px' : '300px'}; text-align: center;">
-                  <div style="margin-bottom: ${isMobile ? '4px' : '8px'};">
-                    <img src="${tartechLogoSymbol}" alt="Tartech Logo" style="width: ${isMobile ? '24px' : '32px'}; height: ${isMobile ? '24px' : '32px'}; margin: 0 auto ${isMobile ? '4px' : '8px'} auto; display: block;" />
-                    <h3 style="font-weight: bold; font-size: ${isMobile ? '14px' : '16px'}; color: #333; margin: 0 0 ${isMobile ? '4px' : '8px'} 0; line-height: 1.2;">Tartech Contracting</h3>
-                    <p style="color: #666; font-size: ${isMobile ? '12px' : '14px'}; margin: 0 0 ${isMobile ? '4px' : '8px'} 0; line-height: 1.3;">6 Beryl Road, Msasa<br>Harare, Zimbabwe</p>
-                    <div style="font-size: ${isMobile ? '10px' : '12px'}; color: #999;">
-                      <span>Industrial Excellence</span>
+                <div style="padding: ${isMobile ? '6px' : '12px'}; width: ${isMobile ? '180px' : '300px'}; text-align: ${isMobile ? 'left' : 'center'};">
+                  <div style="display: flex; align-items: flex-start; gap: ${isMobile ? '6px' : '8px'};">
+                    <img src="${tartechLogoSymbol}" alt="Tartech Logo" style="width: ${isMobile ? '20px' : '32px'}; height: ${isMobile ? '20px' : '32px'}; flex-shrink: 0; margin-top: 2px;" />
+                    <div style="flex: 1; min-width: 0;">
+                      <h3 style="font-weight: bold; font-size: ${isMobile ? '12px' : '16px'}; color: #333; margin: 0 0 ${isMobile ? '2px' : '4px'} 0; line-height: 1.2; overflow: hidden;">Tartech Contracting</h3>
+                      <p style="color: #666; font-size: ${isMobile ? '10px' : '14px'}; margin: 0 0 ${isMobile ? '2px' : '4px'} 0; line-height: 1.2; word-wrap: break-word;">6 Beryl Road, Msasa<br>Harare, Zimbabwe</p>
+                      <div style="font-size: ${isMobile ? '9px' : '12px'}; color: #999;">
+                        <span>Industrial Excellence</span>
+                      </div>
                     </div>
                   </div>
                 </div>
