@@ -498,7 +498,7 @@ export default function Home() {
                   
                   <div className="space-y-5">
                     <p className="text-base sm:text-lg lg:text-xl text-gray-300/90 font-light leading-relaxed max-w-2xl">
-                      Three decades of unwavering commitment to safety, innovation, and excellence across multiple industrial domains.
+                      Over a decade of unwavering commitment to safety, innovation, and excellence across multiple industrial domains.
                     </p>
                     
                     <div className="flex flex-wrap gap-2">
@@ -666,7 +666,7 @@ export default function Home() {
               OUR <span className="text-construction-yellow">EXPERTISE</span>
             </h2>
             <p className="animate-fade-in text-sm sm:text-base md:text-lg text-industrial-gray max-w-3xl mx-auto leading-relaxed">
-              Three decades of delivering industrial-grade solutions across Zimbabwe's most demanding sectors
+              Over a decade of delivering industrial-grade solutions across Zimbabwe's most demanding sectors
             </p>
           </div>
           
@@ -920,9 +920,9 @@ export default function Home() {
                   />
                 </div>
                 <CardContent className="p-6 lg:p-8 text-white flex-1 flex flex-col">
-                  <Mountain className="h-12 w-12 text-construction-yellow mb-4" />
+                  <Mountain className="h-12 w-12 text-construction-yellow mb-2" />
                   <h3 className="text-xl lg:text-2xl font-bold mb-4">MINING SECTOR</h3>
-                  <ul className="space-y-2 text-gray-300 mb-6 flex-1">
+                  <ul className="space-y-2 text-gray-200 mb-6 flex-1">
                     <li className="flex items-center"><CheckCircle className="h-4 w-4 text-construction-yellow mr-2 flex-shrink-0" /> Gold & Platinum Extraction</li>
                     <li className="flex items-center"><CheckCircle className="h-4 w-4 text-construction-yellow mr-2 flex-shrink-0" /> Open-Pit Operations</li>
                     <li className="flex items-center"><CheckCircle className="h-4 w-4 text-construction-yellow mr-2 flex-shrink-0" /> Underground Mining</li>
@@ -948,9 +948,9 @@ export default function Home() {
                   />
                 </div>
                 <CardContent className="p-6 lg:p-8 text-white flex-1 flex flex-col">
-                  <HardHat className="h-12 w-12 text-construction-yellow mb-4" />
+                  <HardHat className="h-12 w-12 text-construction-yellow mb-2" />
                   <h3 className="text-xl lg:text-2xl font-bold mb-4">CONSTRUCTION</h3>
-                  <ul className="space-y-2 text-gray-300 mb-6 flex-1">
+                  <ul className="space-y-2 text-gray-200 mb-6 flex-1">
                     <li className="flex items-center"><CheckCircle className="h-4 w-4 text-construction-yellow mr-2 flex-shrink-0" /> Industrial Facilities</li>
                     <li className="flex items-center"><CheckCircle className="h-4 w-4 text-construction-yellow mr-2 flex-shrink-0" /> Commercial Buildings</li>
                     <li className="flex items-center"><CheckCircle className="h-4 w-4 text-construction-yellow mr-2 flex-shrink-0" /> Heavy Foundations</li>
@@ -976,9 +976,9 @@ export default function Home() {
                   />
                 </div>
                 <CardContent className="p-6 lg:p-8 text-white flex-1 flex flex-col">
-                  <Tractor className="h-12 w-12 text-construction-yellow mb-4" />
+                  <Tractor className="h-12 w-12 text-construction-yellow mb-2" />
                   <h3 className="text-xl lg:text-2xl font-bold mb-4">AGRICULTURE</h3>
-                  <ul className="space-y-2 text-gray-300 mb-6 flex-1">
+                  <ul className="space-y-2 text-gray-200 mb-6 flex-1">
                     <li className="flex items-center"><CheckCircle className="h-4 w-4 text-construction-yellow mr-2 flex-shrink-0" /> Irrigation Systems</li>
                     <li className="flex items-center"><CheckCircle className="h-4 w-4 text-construction-yellow mr-2 flex-shrink-0" /> Storage Facilities</li>
                     <li className="flex items-center"><CheckCircle className="h-4 w-4 text-construction-yellow mr-2 flex-shrink-0" /> Farm Mechanization</li>
