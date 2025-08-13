@@ -5,6 +5,7 @@ import { Card, CardContent } from '@/components/ui/card';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 import { Bolt, Calculator, Mountain, HardHat, Tractor, ArrowRight, ChevronDown, Shield, Award, Users, Clock, CheckCircle, Star, Phone, Drill, ChevronLeft, ChevronRight } from 'lucide-react';
 import { ScrollAnimations } from '@/components/ScrollAnimations';
+import PageLoader from '@/components/PageLoader';
 import bulldozerImage from '@assets/bulldozer-2195329_1920_1753976237868.jpg';
 import tartechLogoSymbol from '@assets/tartech-logo-symbol_1754996014881.png';
 
@@ -26,285 +27,16 @@ export default function Home() {
           ease: "power2.out",
           onComplete: () => {
             setIsLoading(false);
-            
-            // Start hero animations after loading screen is gone and DOM is ready
+            // Initialize parallax effect after page loads
             setTimeout(() => {
-              // Wait for DOM to be fully ready
-              if (document.readyState === 'complete') {
-                initHeroAnimations(gsap, initParallaxEffect);
-              } else {
-                window.addEventListener('load', () => {
-                  setTimeout(() => {
-                    initHeroAnimations(gsap, initParallaxEffect);
-                  }, 100);
-                });
-              }
+              initParallaxEffect();
             }, 500);
           }
         });
       });
     }, 2000); // Show loader for 2 seconds
 
-    const initHeroAnimations = (gsap: any, initParallaxEffect: any) => {
-      console.log('Starting hero animations initialization');
-      
-      // Function to wait for elements to be available
-      const waitForElements = (selector: string, maxAttempts = 10): Promise<NodeListOf<Element>> => {
-        return new Promise((resolve, reject) => {
-          let attempts = 0;
-          const checkElements = () => {
-            const elements = document.querySelectorAll(selector);
-            if (elements.length > 0) {
-              resolve(elements);
-            } else if (attempts < maxAttempts) {
-              attempts++;
-              console.log(`Attempt ${attempts}: Waiting for elements ${selector}...`);
-              setTimeout(checkElements, 100);
-            } else {
-              console.log(`Failed to find elements ${selector} after ${maxAttempts} attempts`);
-              resolve(document.querySelectorAll(selector)); // Return empty list
-            }
-          };
-          checkElements();
-        });
-      };
-      
-      // Wait for elements and then animate
-      Promise.all([
-        waitForElements('.animate-slide-up-delay-3, .animate-slide-up-delay-4, .animate-slide-up-delay-5, .animate-slide-left-card-1, .animate-slide-left-card-2, .animate-slide-left-card-3'),
-        waitForElements('.hero-heading-text-1, .hero-heading-text-2, .hero-heading-text-3')
-      ]).then(([heroElements, headingElements]) => {
-        console.log('Found hero elements:', heroElements.length);
-        console.log('Found heading elements:', headingElements.length);
-        
-        // Create master timeline for hero section animations
-        const heroTimeline = gsap.timeline();
-      
-      heroElements.forEach((el, index) => {
-        const htmlEl = el as HTMLElement;
-        console.log(`Setting initial state for element ${index}:`, htmlEl.className);
-        // Completely disable CSS animations and set GSAP initial state
-        htmlEl.style.setProperty('animation', 'none', 'important');
-        htmlEl.style.setProperty('opacity', '0', 'important');
-        
-        // Set different initial transforms for slide-left vs slide-up elements
-        if (htmlEl.className.includes('slide-left') || htmlEl.className.includes('card-')) {
-          htmlEl.style.setProperty('transform', 'translateX(50px)', 'important');
-        } else {
-          htmlEl.style.setProperty('transform', 'translateY(30px)', 'important');
-        }
-        
-        htmlEl.style.setProperty('visibility', 'visible', 'important');
-        htmlEl.style.setProperty('transition', 'none', 'important');
-        
-        // Remove any animation delay classes to prevent CSS conflicts
-        htmlEl.classList.forEach(className => {
-          if (className.includes('animate-') && !className.includes('delay') && !className.includes('card-')) {
-            htmlEl.classList.remove(className);
-          }
-        });
-      });
-      
-      // Letter stagger animation for main heading
-      const headingTexts = [
-        document.querySelector('.hero-heading-text-1'),
-        document.querySelector('.hero-heading-text-2'),
-        document.querySelector('.hero-heading-text-3')
-      ];
-      
-      console.log('Found heading texts:', headingTexts.map(el => el?.textContent));
-      
-      headingTexts.forEach((headingText, lineIndex) => {
-        if (headingText) {
-          // Split text into individual characters
-          const text = headingText.textContent || '';
-          console.log(`Processing heading ${lineIndex + 1}: "${text}"`);
-          const chars = text.split('').map(char => 
-            char === ' ' ? '<span class="char-space">&nbsp;</span>' : `<span class="char inline-block">${char}</span>`
-          );
-          headingText.innerHTML = chars.join('');
-        }
-      });
-      
-      // Check if chars were created
-      const chars = document.querySelectorAll('.char');
-      console.log('Created character spans:', chars.length);
-      
-      // PHASE 1: First make heading visible, then animate letters
-      heroTimeline.set('h1', { opacity: 1 });
-      
-      heroTimeline.fromTo('.char', 
-        {
-          opacity: 0,
-          y: -60,
-          scale: 0.9
-        },
-        {
-          opacity: 1,
-          y: 0,
-          scale: 1,
-          duration: 1.0,
-          ease: "power3.out",
-          stagger: {
-            amount: 3.0,
-            from: "start"
-          },
-          onComplete: () => {
-            console.log('Heading animation completed');
-          }
-        }
-      );
-      
-      // PHASE 2: Wait for heading to complete, then animate everything else sequentially
-      // Re-query elements to ensure they still exist
-      const delay3Elements = document.querySelectorAll('.animate-slide-up-delay-3');
-      const delay4Elements = document.querySelectorAll('.animate-slide-up-delay-4');
-      const delay5Elements = document.querySelectorAll('.animate-slide-up-delay-5');
-      const card1Elements = document.querySelectorAll('.animate-slide-left-card-1');
-      const card2Elements = document.querySelectorAll('.animate-slide-left-card-2');
-      const card3Elements = document.querySelectorAll('.animate-slide-left-card-3');
-      
-      console.log('Elements found for animation:', {
-        delay3: delay3Elements.length,
-        delay4: delay4Elements.length,
-        delay5: delay5Elements.length,
-        card1: card1Elements.length,
-        card2: card2Elements.length,
-        card3: card3Elements.length
-      });
-      
-      console.log('Card elements found:', {
-        card1: card1Elements,
-        card2: card2Elements,
-        card3: card3Elements
-      });
-      
-      // Debug: Check if cards are being found on mobile vs desktop
-      const allCards = document.querySelectorAll('[class*="animate-slide-left-card"]');
-      console.log('All card elements found:', allCards.length);
-      allCards.forEach((card, index) => {
-        console.log(`Card ${index + 1} classes:`, card.className);
-      });
-      
-      // Animate paragraph AND cards simultaneously right after heading completes
-      
-      // Animate subtitle/paragraph (delay-3) - Start immediately after heading
-      if (delay3Elements.length > 0) {
-        heroTimeline.fromTo(delay3Elements, 
-          {
-            opacity: 0,
-            y: 30
-          },
-          {
-            opacity: 1,
-            y: 0,
-            duration: 0.8,
-            ease: "power2.out",
-            onComplete: () => console.log('Paragraph animated')
-          },
-          "+=0.5" // Start 0.5s after heading completes
-        );
-      }
-      
-      // Animate cards at the SAME TIME as paragraph (using same timing label)
-      if (card1Elements.length > 0) {
-        heroTimeline.fromTo(card1Elements, 
-          {
-            opacity: 0,
-            x: 50,
-            scale: 0.95
-          },
-          {
-            opacity: 1,
-            x: 0,
-            scale: 1,
-            duration: 0.6,
-            ease: "power2.out",
-            onComplete: () => console.log('Card 1 animated')
-          },
-          "-=0.8" // Start at same time as paragraph
-        );
-      }
-      
-      if (card2Elements.length > 0) {
-        heroTimeline.fromTo(card2Elements, 
-          {
-            opacity: 0,
-            x: 50,
-            scale: 0.95
-          },
-          {
-            opacity: 1,
-            x: 0,
-            scale: 1,
-            duration: 0.6,
-            ease: "power2.out",
-            onComplete: () => console.log('Card 2 animated')
-          },
-          "-=0.6" // Start 0.2s after card 1 (overlapping with paragraph)
-        );
-      }
-      
-      if (card3Elements.length > 0) {
-        heroTimeline.fromTo(card3Elements, 
-          {
-            opacity: 0,
-            x: 50,
-            scale: 0.95
-          },
-          {
-            opacity: 1,
-            x: 0,
-            scale: 1,
-            duration: 0.6,
-            ease: "power2.out",
-            onComplete: () => console.log('Card 3 animated')
-          },
-          "-=0.4" // Start 0.2s after card 2 (still overlapping with paragraph)
-        );
-      }
-      
-      // Animate stats (delay-4) - After paragraph and cards
-      if (delay4Elements.length > 0) {
-        heroTimeline.fromTo(delay4Elements, 
-          {
-            opacity: 0,
-            y: 30
-          },
-          {
-            opacity: 1,
-            y: 0,
-            duration: 0.8,
-            ease: "power2.out",
-            onComplete: () => console.log('Stats animated')
-          },
-          "+=0.3"
-        );
-      }
-      
-      // Animate CTA button (delay-5) - After stats
-      if (delay5Elements.length > 0) {
-        heroTimeline.fromTo(delay5Elements, 
-          {
-            opacity: 0,
-            y: 30,
-            scale: 0.95
-          },
-          {
-            opacity: 1,
-            y: 0,
-            scale: 1,
-            duration: 0.8,
-            ease: "power2.out",
-            onComplete: () => console.log('CTA animated')
-          },
-          "+=0.3"
-        );
-      }
-      
-      initParallaxEffect();
-      });
-    };
+
 
     // Auto-scroll functionality
     let autoScrollInterval: NodeJS.Timeout;
@@ -412,9 +144,10 @@ export default function Home() {
         </div>
       )}
       
-      <ScrollAnimations />
-      
-      {/* Hero Section */}
+      <PageLoader enableHeroAnimation={!isLoading}>
+        <ScrollAnimations />
+        
+        {/* Hero Section */}
       <section className="hero-section relative min-h-screen flex items-center bg-gradient-to-br from-industrial-black via-gray-900 to-industrial-black overflow-hidden">
         {/* Advanced Background Layer */}
         <div className="absolute inset-0">
@@ -1225,6 +958,7 @@ export default function Home() {
           </div>
         </div>
       </section>
+      </PageLoader>
     </div>
   );
 }
