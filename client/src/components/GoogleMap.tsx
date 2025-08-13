@@ -221,26 +221,33 @@ export function GoogleMap({ address, className = "" }: GoogleMapProps) {
                 console.log('Found close button:', closeButton);
                 
                 if (closeButton) {
+                  // Ensure the button has visible content
+                  if (!closeButton.innerHTML || closeButton.innerHTML.trim() === '') {
+                    closeButton.innerHTML = '×';
+                  }
+                  
                   // Style the button with proper centering
                   closeButton.style.position = 'absolute';
                   closeButton.style.right = isMobile ? '8px' : '10px';
                   closeButton.style.top = isMobile ? '6px' : '8px';
                   closeButton.style.width = isMobile ? '20px' : '24px';
                   closeButton.style.height = isMobile ? '20px' : '24px';
-                  closeButton.style.opacity = '0.9';
-                  closeButton.style.backgroundColor = 'rgba(255, 255, 255, 0.9)';
+                  closeButton.style.opacity = '1';
+                  closeButton.style.backgroundColor = 'rgba(255, 255, 255, 0.95)';
                   closeButton.style.borderRadius = '50%';
-                  closeButton.style.boxShadow = '0 2px 4px rgba(0,0,0,0.2)';
+                  closeButton.style.boxShadow = '0 2px 6px rgba(0,0,0,0.3)';
                   closeButton.style.cursor = 'pointer';
-                  closeButton.style.zIndex = '1001';
-                  closeButton.style.border = '1px solid #ccc';
+                  closeButton.style.zIndex = '99999';
+                  closeButton.style.border = '1px solid #999';
                   closeButton.style.display = 'flex';
                   closeButton.style.alignItems = 'center';
                   closeButton.style.justifyContent = 'center';
-                  closeButton.style.fontSize = isMobile ? '14px' : '16px';
+                  closeButton.style.fontSize = isMobile ? '16px' : '18px';
                   closeButton.style.fontWeight = 'bold';
                   closeButton.style.lineHeight = '1';
                   closeButton.style.textAlign = 'center';
+                  closeButton.style.color = '#333';
+                  closeButton.style.fontFamily = 'Arial, sans-serif';
                   
                   // Remove existing event listeners and add new ones
                   closeButton.onclick = (e) => {
@@ -260,35 +267,45 @@ export function GoogleMap({ address, className = "" }: GoogleMapProps) {
                 } else {
                   console.warn('Close button not found, trying alternative approach');
                   // Add our own close button if we can't find the default one
-                  const infoContent = document.querySelector('.gm-style-iw-d');
-                  if (infoContent) {
+                  const infoWindowElement = document.querySelector('.gm-style-iw');
+                  if (infoWindowElement) {
+                    // Remove any existing custom close buttons first
+                    const existingBtn = infoWindowElement.querySelector('.custom-close-btn');
+                    if (existingBtn) existingBtn.remove();
+                    
                     const customCloseBtn = document.createElement('button');
+                    customCloseBtn.className = 'custom-close-btn';
                     customCloseBtn.innerHTML = '×';
                     customCloseBtn.style.position = 'absolute';
                     customCloseBtn.style.right = isMobile ? '8px' : '10px';
                     customCloseBtn.style.top = isMobile ? '6px' : '8px';
                     customCloseBtn.style.width = isMobile ? '20px' : '24px';
                     customCloseBtn.style.height = isMobile ? '20px' : '24px';
-                    customCloseBtn.style.backgroundColor = 'rgba(255, 255, 255, 0.9)';
-                    customCloseBtn.style.border = '1px solid #ccc';
+                    customCloseBtn.style.backgroundColor = 'rgba(255, 255, 255, 0.95)';
+                    customCloseBtn.style.border = '1px solid #999';
                     customCloseBtn.style.borderRadius = '50%';
                     customCloseBtn.style.cursor = 'pointer';
-                    customCloseBtn.style.fontSize = isMobile ? '14px' : '16px';
+                    customCloseBtn.style.fontSize = isMobile ? '16px' : '18px';
                     customCloseBtn.style.color = '#333';
-                    customCloseBtn.style.zIndex = '1001';
+                    customCloseBtn.style.zIndex = '99999';
                     customCloseBtn.style.display = 'flex';
                     customCloseBtn.style.alignItems = 'center';
                     customCloseBtn.style.justifyContent = 'center';
                     customCloseBtn.style.fontWeight = 'bold';
                     customCloseBtn.style.lineHeight = '1';
                     customCloseBtn.style.textAlign = 'center';
+                    customCloseBtn.style.fontFamily = 'Arial, sans-serif';
+                    customCloseBtn.style.boxShadow = '0 2px 6px rgba(0,0,0,0.3)';
+                    customCloseBtn.style.opacity = '1';
                     
-                    customCloseBtn.onclick = () => {
+                    customCloseBtn.onclick = (e) => {
+                      e.preventDefault();
+                      e.stopPropagation();
                       console.log('Custom close button clicked');
                       infoWindow.close();
                     };
                     
-                    infoContent.appendChild(customCloseBtn);
+                    infoWindowElement.appendChild(customCloseBtn);
                   }
                 }
               }, 100);
