@@ -548,14 +548,41 @@ export default function Home() {
                 </div>
               </div>
               
-              {/* Modern Gradient CTA Button */}
-              <div className="animate-slide-up-delay-5 mb-20 sm:mb-24 md:mb-28">
+              {/* Premium Industrial CTA Button */}
+              <div className="animate-slide-up-delay-5 mb-32 sm:mb-36 md:mb-40">
                 <Link href="/contact">
-                  <button className="relative inline-flex items-center justify-center p-0.5 overflow-hidden text-base sm:text-lg font-semibold text-white rounded-lg group bg-gradient-to-br from-construction-yellow to-safety-orange hover:from-construction-yellow hover:to-construction-yellow/90 focus:ring-4 focus:outline-none focus:ring-construction-yellow/50 transition-all duration-300 hover:scale-105 shadow-xl hover:shadow-2xl hover:shadow-construction-yellow/25">
-                    <span className="relative px-6 py-3 sm:px-8 sm:py-4 md:px-10 md:py-5 transition-all ease-in duration-200 bg-industrial-black rounded-md group-hover:bg-transparent flex items-center justify-center">
-                      <Phone className="mr-3 sm:mr-4 h-5 w-5 sm:h-6 sm:w-6 group-hover:rotate-6 transition-transform duration-300" />
-                      <span className="tracking-wide font-bold text-sm sm:text-base md:text-lg">GET IN TOUCH</span>
-                    </span>
+                  <button className="group relative inline-flex items-center justify-center px-8 py-4 sm:px-10 sm:py-5 md:px-12 md:py-6 text-lg sm:text-xl md:text-2xl font-black text-industrial-black bg-construction-yellow rounded-xl border-2 border-construction-yellow overflow-hidden shadow-2xl hover:shadow-construction-yellow/40 transition-all duration-500 hover:scale-105 active:scale-95 focus:outline-none focus:ring-4 focus:ring-construction-yellow/30 hover:border-white/20">
+                    
+                    {/* Animated Background Layers */}
+                    <div className="absolute inset-0 bg-gradient-to-r from-construction-yellow via-safety-orange to-construction-yellow bg-size-200 animate-gradient-x opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    
+                    {/* Industrial Grid Pattern */}
+                    <div className="absolute inset-0 opacity-10 group-hover:opacity-20 transition-opacity duration-300">
+                      <svg className="w-full h-full" viewBox="0 0 20 20">
+                        <defs>
+                          <pattern id="btn-grid" width="4" height="4" patternUnits="userSpaceOnUse">
+                            <path d="M 4 0 L 0 0 0 4" fill="none" stroke="currentColor" strokeWidth="0.5" className="text-industrial-black"/>
+                          </pattern>
+                        </defs>
+                        <rect width="100%" height="100%" fill="url(#btn-grid)" />
+                      </svg>
+                    </div>
+                    
+                    {/* Content */}
+                    <div className="relative flex items-center justify-center z-10">
+                      <Phone className="mr-4 h-6 w-6 sm:h-7 sm:w-7 md:h-8 md:w-8 group-hover:rotate-12 group-hover:text-white transition-all duration-500" />
+                      <span className="tracking-wider font-black group-hover:text-white transition-colors duration-300">GET IN TOUCH</span>
+                      
+                      {/* Arrow indicator */}
+                      <div className="ml-3 w-0 group-hover:w-6 transition-all duration-500 overflow-hidden">
+                        <ArrowRight className="h-5 w-5 sm:h-6 sm:w-6 text-industrial-black group-hover:text-white transition-colors duration-300" />
+                      </div>
+                    </div>
+                    
+                    {/* Industrial accent lines */}
+                    <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-industrial-black/20 to-transparent group-hover:via-white/40 transition-all duration-300"></div>
+                    <div className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-industrial-black/20 to-transparent group-hover:via-white/40 transition-all duration-300"></div>
                   </button>
                 </Link>
               </div>
@@ -617,7 +644,7 @@ export default function Home() {
         </div>
         
         {/* Elegant Scroll Indicator */}
-        <div className="absolute bottom-4 sm:bottom-6 md:bottom-8 left-1/2 transform -translate-x-1/2 text-center group cursor-pointer" onClick={scrollToServices}>
+        <div className="absolute bottom-12 sm:bottom-16 md:bottom-20 lg:bottom-8 left-1/2 transform -translate-x-1/2 text-center group cursor-pointer" onClick={scrollToServices}>
           <div className="animate-bounce">
             <div className="text-white/75 text-[10px] sm:text-xs font-semibold mb-3 sm:mb-4 uppercase tracking-[0.25em] group-hover:text-construction-yellow transition-colors duration-300">Discover Our Expertise</div>
             <div className="relative">

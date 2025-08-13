@@ -304,6 +304,20 @@
     }
   }
 
+  @keyframes gradient-x {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+
+  .bg-size-200 {
+    background-size: 200% 200%;
+  }
+
+  .animate-gradient-x {
+    animation: gradient-x 3s ease infinite;
+  }
+
   .animate-zoom-in {
     animation: zoom-in 2s ease-out;
   }
