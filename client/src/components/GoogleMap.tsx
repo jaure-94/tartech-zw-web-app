@@ -204,8 +204,8 @@ export function GoogleMap({ address, className = "" }: GoogleMapProps) {
                 // Try each selector
                 for (const selector of closeButtonSelectors) {
                   const elements = document.querySelectorAll(selector);
-                  for (const el of elements) {
-                    const element = el as HTMLElement;
+                  for (let i = 0; i < elements.length; i++) {
+                    const element = elements[i] as HTMLElement;
                     // Check if it's likely a close button
                     if (element.title?.toLowerCase().includes('close') || 
                         element.getAttribute('data-value') === 'Close' ||
@@ -221,7 +221,7 @@ export function GoogleMap({ address, className = "" }: GoogleMapProps) {
                 console.log('Found close button:', closeButton);
                 
                 if (closeButton) {
-                  // Style the button
+                  // Style the button with proper centering
                   closeButton.style.position = 'absolute';
                   closeButton.style.right = isMobile ? '8px' : '10px';
                   closeButton.style.top = isMobile ? '6px' : '8px';
@@ -234,6 +234,13 @@ export function GoogleMap({ address, className = "" }: GoogleMapProps) {
                   closeButton.style.cursor = 'pointer';
                   closeButton.style.zIndex = '1001';
                   closeButton.style.border = '1px solid #ccc';
+                  closeButton.style.display = 'flex';
+                  closeButton.style.alignItems = 'center';
+                  closeButton.style.justifyContent = 'center';
+                  closeButton.style.fontSize = isMobile ? '14px' : '16px';
+                  closeButton.style.fontWeight = 'bold';
+                  closeButton.style.lineHeight = '1';
+                  closeButton.style.textAlign = 'center';
                   
                   // Remove existing event listeners and add new ones
                   closeButton.onclick = (e) => {
@@ -266,9 +273,15 @@ export function GoogleMap({ address, className = "" }: GoogleMapProps) {
                     customCloseBtn.style.border = '1px solid #ccc';
                     customCloseBtn.style.borderRadius = '50%';
                     customCloseBtn.style.cursor = 'pointer';
-                    customCloseBtn.style.fontSize = '16px';
+                    customCloseBtn.style.fontSize = isMobile ? '14px' : '16px';
                     customCloseBtn.style.color = '#333';
                     customCloseBtn.style.zIndex = '1001';
+                    customCloseBtn.style.display = 'flex';
+                    customCloseBtn.style.alignItems = 'center';
+                    customCloseBtn.style.justifyContent = 'center';
+                    customCloseBtn.style.fontWeight = 'bold';
+                    customCloseBtn.style.lineHeight = '1';
+                    customCloseBtn.style.textAlign = 'center';
                     
                     customCloseBtn.onclick = () => {
                       console.log('Custom close button clicked');
