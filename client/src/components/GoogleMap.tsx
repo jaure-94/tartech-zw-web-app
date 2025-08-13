@@ -161,15 +161,13 @@ export function GoogleMap({ address, className = "" }: GoogleMapProps) {
             // Create info window
             const infoWindow = new window.google.maps.InfoWindow({
               content: `
-                <div style="padding: 8px; min-width: 200px;">
-                  <div style="display: flex; align-items: flex-start; gap: 8px; margin-bottom: 8px;">
-                    <img src="${tartechLogoSymbol}" alt="Tartech Logo" style="width: 24px; height: 24px; flex-shrink: 0; margin-top: 2px;" />
-                    <div style="flex: 1;">
-                      <h3 style="font-weight: bold; font-size: 16px; color: #333; margin: 0 0 4px 0; line-height: 1.2;">Tartech Contracting</h3>
-                      <p style="color: #666; font-size: 14px; margin: 0 0 8px 0; line-height: 1.3;">6 Beryl Road, Msasa, Harare, Zimbabwe</p>
-                      <div style="font-size: 12px; color: #999;">
-                        <span>Industrial Excellence</span>
-                      </div>
+                <div style="padding: 12px; min-width: 200px; text-align: center;">
+                  <div style="margin-bottom: 8px;">
+                    <img src="${tartechLogoSymbol}" alt="Tartech Logo" style="width: 32px; height: 32px; margin: 0 auto 8px auto; display: block;" />
+                    <h3 style="font-weight: bold; font-size: 16px; color: #333; margin: 0 0 8px 0; line-height: 1.2;">Tartech Contracting</h3>
+                    <p style="color: #666; font-size: 14px; margin: 0 0 8px 0; line-height: 1.3;">6 Beryl Road, Msasa, Harare, Zimbabwe</p>
+                    <div style="font-size: 12px; color: #999;">
+                      <span>Industrial Excellence</span>
                     </div>
                   </div>
                 </div>
