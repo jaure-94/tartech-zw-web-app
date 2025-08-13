@@ -464,11 +464,11 @@ export default function Home() {
         </div>
         
         {/* Cinematic Content Container */}
-        <div className="relative w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-20 items-center min-h-[70vh]">
+        <div className="relative w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-20 lg:py-24">
+          <div className="flex flex-col lg:grid lg:grid-cols-12 gap-8 md:gap-12 lg:gap-20 items-center min-h-[60vh] md:min-h-[65vh] lg:min-h-[70vh]">
             
-            {/* Left Column - Hero Content */}
-            <div className="lg:col-span-7 space-y-12">
+            {/* Main Content Section - Full width on mobile/tablet */}
+            <div className="w-full lg:col-span-7 flex flex-col space-y-8 md:space-y-10 lg:space-y-12 pb-16 md:pb-20 lg:pb-0">
 
               
               {/* Enhanced Headlines Structure */}
@@ -548,10 +548,10 @@ export default function Home() {
                 </div>
               </div>
               
-              {/* Premium Industrial CTA Button */}
-              <div className="animate-slide-up-delay-5 mb-32 sm:mb-36 md:mb-40">
+              {/* Premium Industrial CTA Button - Flex Column Item */}
+              <div className="animate-slide-up-delay-5 flex justify-center md:justify-start">
                 <Link href="/contact">
-                  <button className="group relative inline-flex items-center justify-center px-8 py-4 sm:px-10 sm:py-5 md:px-12 md:py-6 text-lg sm:text-xl md:text-2xl font-black text-industrial-black bg-construction-yellow rounded-xl border-2 border-construction-yellow overflow-hidden shadow-2xl hover:shadow-construction-yellow/40 transition-all duration-500 hover:scale-105 active:scale-95 focus:outline-none focus:ring-4 focus:ring-construction-yellow/30 hover:border-white/20">
+                  <button className="group relative inline-flex items-center justify-center px-6 py-3 sm:px-8 sm:py-4 md:px-9 md:py-4 lg:px-10 lg:py-5 text-base sm:text-lg md:text-xl lg:text-xl font-black text-industrial-black bg-construction-yellow rounded-xl border-2 border-construction-yellow overflow-hidden shadow-2xl hover:shadow-construction-yellow/40 transition-all duration-500 hover:scale-105 active:scale-95 focus:outline-none focus:ring-4 focus:ring-construction-yellow/30 hover:border-white/20">
                     
                     {/* Animated Background Layers */}
                     <div className="absolute inset-0 bg-gradient-to-r from-construction-yellow via-safety-orange to-construction-yellow bg-size-200 animate-gradient-x opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
@@ -571,12 +571,12 @@ export default function Home() {
                     
                     {/* Content */}
                     <div className="relative flex items-center justify-center z-10">
-                      <Phone className="mr-4 h-6 w-6 sm:h-7 sm:w-7 md:h-8 md:w-8 group-hover:rotate-12 group-hover:text-white transition-all duration-500" />
+                      <Phone className="mr-3 h-5 w-5 sm:h-6 sm:w-6 md:h-6 md:w-6 lg:h-7 lg:w-7 group-hover:rotate-12 group-hover:text-white transition-all duration-500" />
                       <span className="tracking-wider font-black group-hover:text-white transition-colors duration-300">GET IN TOUCH</span>
                       
                       {/* Arrow indicator */}
-                      <div className="ml-3 w-0 group-hover:w-6 transition-all duration-500 overflow-hidden">
-                        <ArrowRight className="h-5 w-5 sm:h-6 sm:w-6 text-industrial-black group-hover:text-white transition-colors duration-300" />
+                      <div className="ml-2 w-0 group-hover:w-5 transition-all duration-500 overflow-hidden">
+                        <ArrowRight className="h-4 w-4 sm:h-5 sm:w-5 md:h-5 md:w-5 lg:h-6 lg:w-6 text-industrial-black group-hover:text-white transition-colors duration-300" />
                       </div>
                     </div>
                     
@@ -643,8 +643,8 @@ export default function Home() {
           </div>
         </div>
         
-        {/* Elegant Scroll Indicator */}
-        <div className="absolute bottom-12 sm:bottom-16 md:bottom-20 lg:bottom-8 left-1/2 transform -translate-x-1/2 text-center group cursor-pointer" onClick={scrollToServices}>
+        {/* Scroll Indicator - Positioned for flex-column layout */}
+        <div className="absolute bottom-6 sm:bottom-8 md:bottom-12 lg:bottom-8 left-1/2 transform -translate-x-1/2 text-center group cursor-pointer" onClick={scrollToServices}>
           <div className="animate-bounce">
             <div className="text-white/75 text-[10px] sm:text-xs font-semibold mb-3 sm:mb-4 uppercase tracking-[0.25em] group-hover:text-construction-yellow transition-colors duration-300">Discover Our Expertise</div>
             <div className="relative">
