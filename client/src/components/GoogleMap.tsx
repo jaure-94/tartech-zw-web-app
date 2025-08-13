@@ -186,133 +186,97 @@ export function GoogleMap({ address, className = "" }: GoogleMapProps) {
               infoWindow.open(map, marker);
             });
 
-            // Add styling and functionality for info window close button
-            const styleInfoWindow = () => {
-              setTimeout(() => {
-                // Look for all possible close button selectors
-                const closeButtonSelectors = [
-                  'button[title="Close"]',
-                  '.gm-ui-hover-effect',
-                  '[data-value="Close"]',
-                  '.gm-control-active',
-                  'img[src*="close"]',
-                  '.gm-infowindow button'
-                ];
+            // Add a more aggressive approach to ensure close button visibility
+            const ensureCloseButtonVisible = () => {
+              console.log('Ensuring close button is visible...');
+              
+              // Always create our own custom close button
+              const infoWindowContainer = document.querySelector('.gm-style-iw');
+              console.log('InfoWindow container found:', infoWindowContainer);
+              
+              if (infoWindowContainer) {
+                // Remove any existing custom buttons
+                const existingBtn = infoWindowContainer.querySelector('.tartech-close-btn');
+                if (existingBtn) existingBtn.remove();
                 
-                let closeButton: HTMLElement | null = null;
+                // Create a highly visible close button
+                const closeBtn = document.createElement('div');
+                closeBtn.className = 'tartech-close-btn';
+                closeBtn.innerHTML = '✕';
+                closeBtn.title = 'Close';
                 
-                // Try each selector
-                for (const selector of closeButtonSelectors) {
-                  const elements = document.querySelectorAll(selector);
-                  for (let i = 0; i < elements.length; i++) {
-                    const element = elements[i] as HTMLElement;
-                    // Check if it's likely a close button
-                    if (element.title?.toLowerCase().includes('close') || 
-                        element.getAttribute('data-value') === 'Close' ||
-                        element.innerHTML.includes('×') ||
-                        element.innerHTML.includes('close')) {
-                      closeButton = element;
-                      break;
-                    }
+                // Apply aggressive styling that can't be overridden
+                const buttonStyle = `
+                  position: absolute !important;
+                  top: ${isMobile ? '6px' : '8px'} !important;
+                  right: ${isMobile ? '8px' : '10px'} !important;
+                  width: ${isMobile ? '22px' : '26px'} !important;
+                  height: ${isMobile ? '22px' : '26px'} !important;
+                  background: linear-gradient(135deg, #ffffff 0%, #f5f5f5 100%) !important;
+                  border: 2px solid #333 !important;
+                  border-radius: 50% !important;
+                  cursor: pointer !important;
+                  z-index: 999999 !important;
+                  display: flex !important;
+                  align-items: center !important;
+                  justify-content: center !important;
+                  font-size: ${isMobile ? '18px' : '20px'} !important;
+                  font-weight: 900 !important;
+                  color: #000 !important;
+                  font-family: Arial, sans-serif !important;
+                  line-height: 1 !important;
+                  text-align: center !important;
+                  box-shadow: 0 3px 8px rgba(0,0,0,0.4) !important;
+                  opacity: 1 !important;
+                  pointer-events: auto !important;
+                `;
+                
+                closeBtn.setAttribute('style', buttonStyle);
+                
+                // Add click handler
+                closeBtn.onclick = (e) => {
+                  e.preventDefault();
+                  e.stopPropagation();
+                  console.log('Tartech close button clicked!');
+                  infoWindow.close();
+                };
+                
+                // Add hover effects
+                closeBtn.onmouseenter = () => {
+                  closeBtn.style.backgroundColor = '#ff4444';
+                  closeBtn.style.color = '#fff';
+                  closeBtn.style.transform = 'scale(1.1)';
+                };
+                
+                closeBtn.onmouseleave = () => {
+                  closeBtn.style.backgroundColor = '#ffffff';
+                  closeBtn.style.color = '#000';
+                  closeBtn.style.transform = 'scale(1)';
+                };
+                
+                infoWindowContainer.appendChild(closeBtn);
+                console.log('Custom close button added successfully');
+                
+                // Keep re-applying styles in case Google overrides them
+                const keepStyling = () => {
+                  if (closeBtn.parentElement) {
+                    closeBtn.setAttribute('style', buttonStyle);
+                    setTimeout(keepStyling, 500);
                   }
-                  if (closeButton) break;
-                }
-                
-                console.log('Found close button:', closeButton);
-                
-                if (closeButton) {
-                  // Ensure the button has visible content
-                  if (!closeButton.innerHTML || closeButton.innerHTML.trim() === '') {
-                    closeButton.innerHTML = '×';
-                  }
-                  
-                  // Style the button with proper centering
-                  closeButton.style.position = 'absolute';
-                  closeButton.style.right = isMobile ? '8px' : '10px';
-                  closeButton.style.top = isMobile ? '6px' : '8px';
-                  closeButton.style.width = isMobile ? '20px' : '24px';
-                  closeButton.style.height = isMobile ? '20px' : '24px';
-                  closeButton.style.opacity = '1';
-                  closeButton.style.backgroundColor = 'rgba(255, 255, 255, 0.95)';
-                  closeButton.style.borderRadius = '50%';
-                  closeButton.style.boxShadow = '0 2px 6px rgba(0,0,0,0.3)';
-                  closeButton.style.cursor = 'pointer';
-                  closeButton.style.zIndex = '99999';
-                  closeButton.style.border = '1px solid #999';
-                  closeButton.style.display = 'flex';
-                  closeButton.style.alignItems = 'center';
-                  closeButton.style.justifyContent = 'center';
-                  closeButton.style.fontSize = isMobile ? '16px' : '18px';
-                  closeButton.style.fontWeight = 'bold';
-                  closeButton.style.lineHeight = '1';
-                  closeButton.style.textAlign = 'center';
-                  closeButton.style.color = '#333';
-                  closeButton.style.fontFamily = 'Arial, sans-serif';
-                  
-                  // Remove existing event listeners and add new ones
-                  closeButton.onclick = (e) => {
-                    e.preventDefault();
-                    e.stopPropagation();
-                    console.log('Close button clicked');
-                    infoWindow.close();
-                  };
-                  
-                  // Also try addEventListener
-                  closeButton.addEventListener('click', (e) => {
-                    e.preventDefault();
-                    e.stopPropagation();
-                    console.log('Close button event listener triggered');
-                    infoWindow.close();
-                  });
-                } else {
-                  console.warn('Close button not found, trying alternative approach');
-                  // Add our own close button if we can't find the default one
-                  const infoWindowElement = document.querySelector('.gm-style-iw');
-                  if (infoWindowElement) {
-                    // Remove any existing custom close buttons first
-                    const existingBtn = infoWindowElement.querySelector('.custom-close-btn');
-                    if (existingBtn) existingBtn.remove();
-                    
-                    const customCloseBtn = document.createElement('button');
-                    customCloseBtn.className = 'custom-close-btn';
-                    customCloseBtn.innerHTML = '×';
-                    customCloseBtn.style.position = 'absolute';
-                    customCloseBtn.style.right = isMobile ? '8px' : '10px';
-                    customCloseBtn.style.top = isMobile ? '6px' : '8px';
-                    customCloseBtn.style.width = isMobile ? '20px' : '24px';
-                    customCloseBtn.style.height = isMobile ? '20px' : '24px';
-                    customCloseBtn.style.backgroundColor = 'rgba(255, 255, 255, 0.95)';
-                    customCloseBtn.style.border = '1px solid #999';
-                    customCloseBtn.style.borderRadius = '50%';
-                    customCloseBtn.style.cursor = 'pointer';
-                    customCloseBtn.style.fontSize = isMobile ? '16px' : '18px';
-                    customCloseBtn.style.color = '#333';
-                    customCloseBtn.style.zIndex = '99999';
-                    customCloseBtn.style.display = 'flex';
-                    customCloseBtn.style.alignItems = 'center';
-                    customCloseBtn.style.justifyContent = 'center';
-                    customCloseBtn.style.fontWeight = 'bold';
-                    customCloseBtn.style.lineHeight = '1';
-                    customCloseBtn.style.textAlign = 'center';
-                    customCloseBtn.style.fontFamily = 'Arial, sans-serif';
-                    customCloseBtn.style.boxShadow = '0 2px 6px rgba(0,0,0,0.3)';
-                    customCloseBtn.style.opacity = '1';
-                    
-                    customCloseBtn.onclick = (e) => {
-                      e.preventDefault();
-                      e.stopPropagation();
-                      console.log('Custom close button clicked');
-                      infoWindow.close();
-                    };
-                    
-                    infoWindowElement.appendChild(customCloseBtn);
-                  }
-                }
-              }, 100);
+                };
+                setTimeout(keepStyling, 100);
+              } else {
+                console.warn('InfoWindow container not found');
+              }
             };
 
-            // Listen for info window open events
-            infoWindow.addListener('domready', styleInfoWindow);
+            // Listen for info window open events with multiple attempts
+            infoWindow.addListener('domready', () => {
+              console.log('InfoWindow DOM ready');
+              setTimeout(ensureCloseButtonVisible, 50);
+              setTimeout(ensureCloseButtonVisible, 200);
+              setTimeout(ensureCloseButtonVisible, 500);
+            });
 
             // Auto-open info window
             setTimeout(() => {
