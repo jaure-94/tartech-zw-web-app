@@ -649,7 +649,7 @@ export default function Home() {
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {/* Borehole Drilling Card */}
-            <Card className="service-card-hover animate-fade-in bg-white rounded-xl shadow-xl overflow-hidden border-4 border-transparent hover:border-construction-yellow">
+            <Card className="service-card-hover animate-fade-in bg-gradient-to-br from-white to-gray-50/30 rounded-2xl shadow-2xl overflow-hidden border border-gray-100 hover:border-construction-yellow/60 hover:shadow-construction-yellow/20 transition-all duration-500 backdrop-blur-sm">
               <div className="h-64 overflow-hidden">
                 <img 
                   src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600" 
@@ -657,12 +657,12 @@ export default function Home() {
                   className="w-full h-full object-cover transition-transform duration-500 hover:scale-110" 
                 />
               </div>
-              <CardContent className="p-8">
-                <div className="text-construction-yellow text-5xl mb-4">
+              <CardContent className="p-6">
+                <div className="text-construction-yellow text-5xl mb-3">
                   <Drill className="h-12 w-12" />
                 </div>
-                <h3 className="text-2xl font-bold text-industrial-black mb-4">BOREHOLE DRILLING</h3>
-                <p className="text-industrial-gray mb-6">
+                <h3 className="text-xl font-bold text-industrial-black mb-3">BOREHOLE DRILLING</h3>
+                <p className="text-industrial-gray mb-5">
                   Professional borehole drilling services with rotary air percussion and mud drilling techniques for water access and industrial applications.
                 </p>
                 <Link href="/services">
@@ -674,7 +674,7 @@ export default function Home() {
             </Card>
 
             {/* Mining Card */}
-            <Card className="service-card-hover animate-fade-in bg-white rounded-xl shadow-xl overflow-hidden border-4 border-transparent hover:border-construction-yellow">
+            <Card className="service-card-hover animate-fade-in bg-gradient-to-br from-white to-gray-50/30 rounded-2xl shadow-2xl overflow-hidden border border-gray-100 hover:border-construction-yellow/60 hover:shadow-construction-yellow/20 transition-all duration-500 backdrop-blur-sm">
               <div className="h-64 overflow-hidden">
                 <img 
                   src="https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=600" 
@@ -682,12 +682,12 @@ export default function Home() {
                   className="w-full h-full object-cover transition-transform duration-500 hover:scale-110" 
                 />
               </div>
-              <CardContent className="p-8">
-                <div className="text-construction-yellow text-5xl mb-4">
+              <CardContent className="p-6">
+                <div className="text-construction-yellow text-5xl mb-3">
                   <Mountain className="h-12 w-12" />
                 </div>
-                <h3 className="text-2xl font-bold text-industrial-black mb-4">MINING OPERATIONS</h3>
-                <p className="text-industrial-gray mb-6">
+                <h3 className="text-xl font-bold text-industrial-black mb-3">MINING OPERATIONS</h3>
+                <p className="text-industrial-gray mb-5">
                   Specialized mining contracting with heavy-duty equipment and expertise in harsh underground and surface mining environments.
                 </p>
                 <Link href="/services/mining">
@@ -699,7 +699,7 @@ export default function Home() {
             </Card>
             
             {/* Construction Card */}
-            <Card className="service-card-hover animate-fade-in bg-white rounded-xl shadow-xl overflow-hidden border-4 border-transparent hover:border-construction-yellow">
+            <Card className="service-card-hover animate-fade-in bg-gradient-to-br from-white to-gray-50/30 rounded-2xl shadow-2xl overflow-hidden border border-gray-100 hover:border-construction-yellow/60 hover:shadow-construction-yellow/20 transition-all duration-500 backdrop-blur-sm">
               <div className="h-64 overflow-hidden">
                 <img 
                   src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=600" 
@@ -707,12 +707,12 @@ export default function Home() {
                   className="w-full h-full object-cover transition-transform duration-500 hover:scale-110" 
                 />
               </div>
-              <CardContent className="p-8">
-                <div className="text-construction-yellow text-5xl mb-4">
+              <CardContent className="p-6">
+                <div className="text-construction-yellow text-5xl mb-3">
                   <HardHat className="h-12 w-12" />
                 </div>
-                <h3 className="text-2xl font-bold text-industrial-black mb-4">CONSTRUCTION</h3>
-                <p className="text-industrial-gray mb-6">
+                <h3 className="text-xl font-bold text-industrial-black mb-3">CONSTRUCTION</h3>
+                <p className="text-industrial-gray mb-5">
                   Commercial and industrial construction projects from ground up, delivering robust infrastructure built to last in challenging conditions.
                 </p>
                 <Link href="/services/construction">
@@ -724,7 +724,7 @@ export default function Home() {
             </Card>
             
             {/* Agriculture Card */}
-            <Card className="service-card-hover animate-fade-in bg-white rounded-xl shadow-xl overflow-hidden border-4 border-transparent hover:border-construction-yellow">
+            <Card className="service-card-hover animate-fade-in bg-gradient-to-br from-white to-gray-50/30 rounded-2xl shadow-2xl overflow-hidden border border-gray-100 hover:border-construction-yellow/60 hover:shadow-construction-yellow/20 transition-all duration-500 backdrop-blur-sm">
               <div className="h-64 overflow-hidden">
                 <img 
                   src="https://images.unsplash.com/photo-1625246333195-78d9c38ad449?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=600" 
@@ -732,12 +732,12 @@ export default function Home() {
                   className="w-full h-full object-cover transition-transform duration-500 hover:scale-110" 
                 />
               </div>
-              <CardContent className="p-8">
-                <div className="text-construction-yellow text-5xl mb-4">
+              <CardContent className="p-6">
+                <div className="text-construction-yellow text-5xl mb-3">
                   <Tractor className="h-12 w-12" />
                 </div>
-                <h3 className="text-2xl font-bold text-industrial-black mb-4">AGRICULTURE</h3>
-                <p className="text-industrial-gray mb-6">
+                <h3 className="text-xl font-bold text-industrial-black mb-3">AGRICULTURE</h3>
+                <p className="text-industrial-gray mb-5">
                   Agricultural infrastructure and mechanization services supporting Zimbabwe's farming sector with modern equipment and techniques.
                 </p>
                 <Link href="/services/agriculture">
