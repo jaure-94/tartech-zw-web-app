@@ -78,41 +78,71 @@ export default function Services() {
       <PageLoader enableHeroAnimation={!isLoading}>
         <ScrollAnimations />
       
-      {/* Hero Section */}
-      <section className="py-12 sm:py-16 md:py-20 lg:py-24 bg-gradient-to-br from-industrial-black via-gray-900 to-industrial-black relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-r from-construction-yellow/10 to-transparent"></div>
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      {/* Hero Section - Dark Mode Theme */}
+      <section className="py-12 sm:py-16 md:py-20 lg:py-24 bg-industrial-black text-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12 sm:mb-14 md:mb-16">
-            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-black mb-4 sm:mb-6 leading-tight">
-              <span style={{color: '#000000', opacity: '1', display: 'inline'}} className="font-black">BOREHOLE</span> <span className="text-construction-yellow font-black">DRILLING</span>
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-black mb-4 sm:mb-6 leading-tight animate-slide-up-delay-3">
+              <span className="text-white font-black">BOREHOLE</span> <span className="text-construction-yellow font-black">DRILLING</span>
             </h1>
-            <p className="animate-fade-in text-base sm:text-lg md:text-xl lg:text-xl text-gray-300 max-w-4xl mx-auto leading-relaxed px-2 sm:px-4">
+            <p className="text-base sm:text-lg md:text-xl lg:text-xl text-gray-300 max-w-4xl mx-auto leading-relaxed px-2 sm:px-4 animate-slide-up-delay-4">
               At Tartech Contracting, we are your comprehensive partner for unlocking reliable water on your property. Our highly skilled team tackles all drilling projects, from standard boreholes to specialized blast hole and RC drilling.
             </p>
           </div>
           
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 mb-12 sm:mb-14 md:mb-16">
-            <div className="animate-fade-in">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-10 md:gap-12 items-center mb-12 sm:mb-14 md:mb-16">
+            <div className="order-2 lg:order-1 animate-slide-in-left">
               <img 
                 src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&h=600" 
                 alt="Professional borehole drilling equipment in operation" 
-                className="rounded-lg w-full h-64 sm:h-72 md:h-80 lg:h-80 object-cover shadow-2xl" 
+                className="rounded-xl shadow-2xl w-full" 
               />
             </div>
-            <div className="animate-fade-in flex flex-col justify-center">
-              <div className="bg-white/10 backdrop-blur-sm rounded-lg p-6 sm:p-8">
-                <h3 className="text-xl sm:text-2xl md:text-2xl lg:text-3xl font-bold text-construction-yellow mb-4 sm:mb-6">OUR DRILLING HERITAGE</h3>
-                <p className="text-sm sm:text-base text-gray-300 leading-relaxed mb-4 sm:mb-6">
-                  We have a proud history of collaboration with Building Contractors, Local government projects, NGOs, Charitable Organizations, and Local villages for various water borehole drilling projects.
-                </p>
-                <div className="flex items-center space-x-3 sm:space-x-4">
-                  <div className="w-10 h-10 sm:w-12 sm:h-12 bg-construction-yellow rounded-full flex items-center justify-center">
-                    <Users className="text-industrial-black h-5 w-5 sm:h-6 sm:w-6" />
-                  </div>
-                  <span className="text-white font-semibold text-sm sm:text-base">Trusted Community Partner</span>
-                </div>
-              </div>
+            <div className="order-1 lg:order-2 animate-slide-in-right">
+              <h3 className="text-2xl sm:text-3xl md:text-4xl font-black text-construction-yellow mb-4 sm:mb-6 leading-tight">COMPREHENSIVE DRILLING SERVICES</h3>
+              <ul className="space-y-3 sm:space-y-4 text-base sm:text-lg">
+                <li className="flex items-start">
+                  <CheckCircle className="text-construction-yellow mr-3 mt-1 h-4 w-4 sm:h-5 sm:w-5 flex-shrink-0" />
+                  <span className="leading-relaxed">Water borehole drilling for residential and commercial properties</span>
+                </li>
+                <li className="flex items-start">
+                  <CheckCircle className="text-construction-yellow mr-3 mt-1 h-4 w-4 sm:h-5 sm:w-5 flex-shrink-0" />
+                  <span className="leading-relaxed">Specialized blast hole and RC drilling for mining operations</span>
+                </li>
+                <li className="flex items-start">
+                  <CheckCircle className="text-construction-yellow mr-3 mt-1 h-4 w-4 sm:h-5 sm:w-5 flex-shrink-0" />
+                  <span className="leading-relaxed">Complete borehole equipping and water systems installation</span>
+                </li>
+                <li className="flex items-start">
+                  <CheckCircle className="text-construction-yellow mr-3 mt-1 h-4 w-4 sm:h-5 sm:w-5 flex-shrink-0" />
+                  <span className="leading-relaxed">Professional water reticulation and irrigation systems</span>
+                </li>
+              </ul>
             </div>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8 animate-slide-up-delay-5">
+            <Card className="bg-white/10 backdrop-blur-sm border-0">
+              <CardContent className="p-6 sm:p-8 text-center">
+                <Drill className="text-construction-yellow h-10 w-10 sm:h-12 sm:w-12 mx-auto mb-3 sm:mb-4" />
+                <h4 className="text-lg sm:text-xl font-bold mb-3 sm:mb-4 text-white">DRILLING EXPERTISE</h4>
+                <p className="text-gray-300 text-sm sm:text-base leading-relaxed">Advanced drilling techniques for all geological conditions</p>
+              </CardContent>
+            </Card>
+            <Card className="bg-white/10 backdrop-blur-sm border-0">
+              <CardContent className="p-6 sm:p-8 text-center">
+                <Droplets className="text-construction-yellow h-10 w-10 sm:h-12 sm:w-12 mx-auto mb-3 sm:mb-4" />
+                <h4 className="text-lg sm:text-xl font-bold mb-3 sm:mb-4 text-white">WATER SOLUTIONS</h4>
+                <p className="text-gray-300 text-sm sm:text-base leading-relaxed">Complete water access and distribution systems</p>
+              </CardContent>
+            </Card>
+            <Card className="bg-white/10 backdrop-blur-sm border-0">
+              <CardContent className="p-6 sm:p-8 text-center">
+                <Wrench className="text-construction-yellow h-10 w-10 sm:h-12 sm:w-12 mx-auto mb-3 sm:mb-4" />
+                <h4 className="text-lg sm:text-xl font-bold mb-3 sm:mb-4 text-white">FULL INSTALLATION</h4>
+                <p className="text-gray-300 text-sm sm:text-base leading-relaxed">Professional pump installation and maintenance services</p>
+              </CardContent>
+            </Card>
           </div>
         </div>
       </section>
@@ -120,7 +150,7 @@ export default function Services() {
       {/* Drilling Services Section */}
       <section className="py-12 sm:py-16 md:py-20 bg-light-industrial">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12 sm:mb-14 md:mb-16">
+          <div className="text-center mb-12 sm:mb-14 md:mb-16 animate-slide-up-delay-3">
             <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-4xl font-black text-industrial-black mb-3 sm:mb-4 leading-tight">
               DRILLING <span className="text-construction-yellow">EXPERTISE</span>
             </h2>
@@ -131,7 +161,7 @@ export default function Services() {
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 mb-12 sm:mb-14 md:mb-16">
             {/* Rotary Air Percussion Drilling */}
-            <Card className="group hover:shadow-2xl transition-all duration-300 border-2 hover:border-construction-yellow bg-white">
+            <Card className="group hover:shadow-2xl transition-all duration-300 border-2 hover:border-construction-yellow bg-white animate-slide-in-left">
               <CardContent className="p-0">
                 <div className="relative">
                   <img 
@@ -168,7 +198,7 @@ export default function Services() {
             </Card>
 
             {/* Rotary Mud Drilling */}
-            <Card className="group hover:shadow-2xl transition-all duration-300 border-2 hover:border-construction-yellow bg-white">
+            <Card className="group hover:shadow-2xl transition-all duration-300 border-2 hover:border-construction-yellow bg-white animate-slide-in-right">
               <CardContent className="p-0">
                 <div className="relative">
                   <img 
@@ -206,7 +236,7 @@ export default function Services() {
           </div>
 
           {/* Equipping of Boreholes */}
-          <Card className="group hover:shadow-2xl transition-all duration-300 border-2 hover:border-construction-yellow bg-white mb-16">
+          <Card className="group hover:shadow-2xl transition-all duration-300 border-2 hover:border-construction-yellow bg-white mb-16 animate-slide-up-delay-4">
             <CardContent className="p-0">
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-0">
                 <div className="relative">
@@ -263,13 +293,13 @@ export default function Services() {
       {/* Call to Action */}
       <section className="py-12 sm:py-16 md:py-20 bg-industrial-black">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-black text-white mb-4 sm:mb-6 leading-tight">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-black text-white mb-4 sm:mb-6 leading-tight animate-slide-up-delay-3">
             READY TO ACCESS <span className="text-construction-yellow">RELIABLE WATER?</span>
           </h2>
-          <p className="text-base sm:text-lg md:text-xl text-gray-300 mb-8 sm:mb-10 max-w-3xl mx-auto px-2 sm:px-4">
+          <p className="text-base sm:text-lg md:text-xl text-gray-300 mb-8 sm:mb-10 max-w-3xl mx-auto px-2 sm:px-4 animate-slide-up-delay-4">
             From initial site assessment to complete borehole equipping, we deliver comprehensive water solutions tailored to your specific requirements.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center">
+          <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center animate-slide-up-delay-5">
             <Link href="/contact">
               <Button className="bg-construction-yellow text-industrial-black hover:bg-safety-orange font-bold text-base sm:text-lg px-6 sm:px-8 py-2.5 sm:py-3 w-full sm:w-auto">
                 GET A QUOTE <ArrowRight className="ml-2 h-4 w-4 sm:h-5 sm:w-5" />
