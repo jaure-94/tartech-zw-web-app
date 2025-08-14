@@ -41,7 +41,7 @@ export default function Services() {
   }, []);
 
   return (
-    <div className="min-h-screen pt-16">
+    <div className="min-h-screen">
       {/* Loading Screen */}
       {isLoading && (
         <div className="loading-screen fixed inset-0 z-50 bg-industrial-black flex items-center justify-center">
@@ -78,69 +78,110 @@ export default function Services() {
       <PageLoader enableHeroAnimation={!isLoading}>
         <ScrollAnimations />
       
-      {/* Hero Section - Dark Mode Theme */}
-      <section className="py-12 sm:py-16 md:py-20 lg:py-24 bg-industrial-black text-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12 sm:mb-14 md:mb-16">
-            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-black mb-4 sm:mb-6 leading-tight animate-slide-up-delay-3">
-              <span className="text-white font-black">BOREHOLE</span> <span className="text-construction-yellow font-black">DRILLING</span>
-            </h1>
-            <p className="text-base sm:text-lg md:text-xl lg:text-xl text-gray-300 max-w-4xl mx-auto leading-relaxed px-2 sm:px-4 animate-slide-up-delay-4">
+      {/* Enhanced Hero Section - Premium Dark Mode Theme */}
+      <section className="relative py-16 sm:py-20 md:py-24 lg:py-28 bg-gradient-to-br from-industrial-black via-gray-900 to-industrial-black overflow-hidden">
+        {/* Background Effects */}
+        <div className="absolute inset-0">
+          <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-r from-construction-yellow/5 via-transparent to-construction-yellow/5"></div>
+          <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-construction-yellow/10 rounded-full filter blur-3xl opacity-30 animate-pulse"></div>
+          <div className="absolute bottom-1/4 right-1/4 w-64 h-64 bg-safety-orange/10 rounded-full filter blur-3xl opacity-20 animate-pulse" style={{animationDelay: '2s'}}></div>
+        </div>
+        
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div className="text-center mb-16 sm:mb-18 md:mb-20">
+            <div className="mb-8 animate-slide-up-delay-3">
+              <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-black mb-6 sm:mb-8 leading-tight tracking-tight">
+                <span className="text-white font-black drop-shadow-2xl">BOREHOLE</span>
+                <br />
+                <span className="text-construction-yellow font-black drop-shadow-2xl bg-gradient-to-r from-construction-yellow via-yellow-400 to-construction-yellow bg-clip-text text-transparent animate-pulse">DRILLING</span>
+              </h1>
+              <div className="h-1 w-24 bg-gradient-to-r from-transparent via-construction-yellow to-transparent mx-auto mb-8 rounded-full"></div>
+            </div>
+            <p className="text-lg sm:text-xl md:text-2xl lg:text-2xl text-gray-200 max-w-5xl mx-auto leading-relaxed px-2 sm:px-4 font-light animate-slide-up-delay-4">
               At Tartech Contracting, we are your comprehensive partner for unlocking reliable water on your property. Our highly skilled team tackles all drilling projects, from standard boreholes to specialized blast hole and RC drilling.
             </p>
           </div>
           
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-10 md:gap-12 items-center mb-12 sm:mb-14 md:mb-16">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 sm:gap-14 md:gap-16 items-center mb-16 sm:mb-18 md:mb-20">
             <div className="order-2 lg:order-1 animate-slide-in-left">
-              <img 
-                src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&h=600" 
-                alt="Professional borehole drilling equipment in operation" 
-                className="rounded-xl shadow-2xl w-full" 
-              />
+              <div className="relative group">
+                <img 
+                  src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&h=600" 
+                  alt="Professional borehole drilling equipment in operation" 
+                  className="rounded-2xl shadow-3xl w-full transform group-hover:scale-105 transition-transform duration-700 border border-white/10" 
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-industrial-black/40 via-transparent to-transparent rounded-2xl"></div>
+                <div className="absolute bottom-6 left-6 right-6">
+                  <div className="bg-black/60 backdrop-blur-md rounded-lg p-4 border border-construction-yellow/30">
+                    <p className="text-white font-semibold text-sm">Professional Grade Equipment</p>
+                    <p className="text-construction-yellow text-xs">Advanced drilling technology for optimal results</p>
+                  </div>
+                </div>
+              </div>
             </div>
             <div className="order-1 lg:order-2 animate-slide-in-right">
-              <h3 className="text-2xl sm:text-3xl md:text-4xl font-black text-construction-yellow mb-4 sm:mb-6 leading-tight">COMPREHENSIVE DRILLING SERVICES</h3>
-              <ul className="space-y-3 sm:space-y-4 text-base sm:text-lg">
-                <li className="flex items-start">
-                  <CheckCircle className="text-construction-yellow mr-3 mt-1 h-4 w-4 sm:h-5 sm:w-5 flex-shrink-0" />
-                  <span className="leading-relaxed">Water borehole drilling for residential and commercial properties</span>
-                </li>
-                <li className="flex items-start">
-                  <CheckCircle className="text-construction-yellow mr-3 mt-1 h-4 w-4 sm:h-5 sm:w-5 flex-shrink-0" />
-                  <span className="leading-relaxed">Specialized blast hole and RC drilling for mining operations</span>
-                </li>
-                <li className="flex items-start">
-                  <CheckCircle className="text-construction-yellow mr-3 mt-1 h-4 w-4 sm:h-5 sm:w-5 flex-shrink-0" />
-                  <span className="leading-relaxed">Complete borehole equipping and water systems installation</span>
-                </li>
-                <li className="flex items-start">
-                  <CheckCircle className="text-construction-yellow mr-3 mt-1 h-4 w-4 sm:h-5 sm:w-5 flex-shrink-0" />
-                  <span className="leading-relaxed">Professional water reticulation and irrigation systems</span>
-                </li>
-              </ul>
+              <div className="space-y-8">
+                <h3 className="text-3xl sm:text-4xl md:text-5xl font-black text-construction-yellow mb-6 sm:mb-8 leading-tight bg-gradient-to-r from-construction-yellow via-yellow-400 to-construction-yellow bg-clip-text text-transparent">
+                  COMPREHENSIVE DRILLING SERVICES
+                </h3>
+                <ul className="space-y-5 sm:space-y-6 text-base sm:text-lg lg:text-xl">
+                  <li className="flex items-start group">
+                    <div className="mr-4 mt-1">
+                      <CheckCircle className="text-construction-yellow h-6 w-6 sm:h-7 sm:w-7 group-hover:scale-110 transition-transform duration-300" />
+                    </div>
+                    <span className="leading-relaxed text-gray-200 group-hover:text-white transition-colors duration-300">Water borehole drilling for residential and commercial properties</span>
+                  </li>
+                  <li className="flex items-start group">
+                    <div className="mr-4 mt-1">
+                      <CheckCircle className="text-construction-yellow h-6 w-6 sm:h-7 sm:w-7 group-hover:scale-110 transition-transform duration-300" />
+                    </div>
+                    <span className="leading-relaxed text-gray-200 group-hover:text-white transition-colors duration-300">Specialized blast hole and RC drilling for mining operations</span>
+                  </li>
+                  <li className="flex items-start group">
+                    <div className="mr-4 mt-1">
+                      <CheckCircle className="text-construction-yellow h-6 w-6 sm:h-7 sm:w-7 group-hover:scale-110 transition-transform duration-300" />
+                    </div>
+                    <span className="leading-relaxed text-gray-200 group-hover:text-white transition-colors duration-300">Complete borehole equipping and water systems installation</span>
+                  </li>
+                  <li className="flex items-start group">
+                    <div className="mr-4 mt-1">
+                      <CheckCircle className="text-construction-yellow h-6 w-6 sm:h-7 sm:w-7 group-hover:scale-110 transition-transform duration-300" />
+                    </div>
+                    <span className="leading-relaxed text-gray-200 group-hover:text-white transition-colors duration-300">Professional water reticulation and irrigation systems</span>
+                  </li>
+                </ul>
+              </div>
             </div>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8 animate-slide-up-delay-5">
-            <Card className="bg-white/10 backdrop-blur-sm border-0">
-              <CardContent className="p-6 sm:p-8 text-center">
-                <Drill className="text-construction-yellow h-10 w-10 sm:h-12 sm:w-12 mx-auto mb-3 sm:mb-4" />
-                <h4 className="text-lg sm:text-xl font-bold mb-3 sm:mb-4 text-white">DRILLING EXPERTISE</h4>
-                <p className="text-gray-300 text-sm sm:text-base leading-relaxed">Advanced drilling techniques for all geological conditions</p>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 sm:gap-10 animate-slide-up-delay-5">
+            <Card className="group bg-gradient-to-br from-white/15 via-white/10 to-white/5 backdrop-blur-xl border border-white/20 hover:border-construction-yellow/50 transition-all duration-500 hover:scale-105 hover:shadow-2xl hover:shadow-construction-yellow/20">
+              <CardContent className="p-8 sm:p-10 text-center">
+                <div className="mb-6">
+                  <Drill className="text-construction-yellow h-14 w-14 sm:h-16 sm:w-16 mx-auto group-hover:rotate-12 group-hover:scale-110 transition-all duration-500" />
+                </div>
+                <h4 className="text-xl sm:text-2xl font-black mb-4 sm:mb-6 text-white group-hover:text-construction-yellow transition-colors duration-300">DRILLING EXPERTISE</h4>
+                <p className="text-gray-300 text-sm sm:text-base leading-relaxed group-hover:text-gray-200 transition-colors duration-300">Advanced drilling techniques for all geological conditions</p>
               </CardContent>
             </Card>
-            <Card className="bg-white/10 backdrop-blur-sm border-0">
-              <CardContent className="p-6 sm:p-8 text-center">
-                <Droplets className="text-construction-yellow h-10 w-10 sm:h-12 sm:w-12 mx-auto mb-3 sm:mb-4" />
-                <h4 className="text-lg sm:text-xl font-bold mb-3 sm:mb-4 text-white">WATER SOLUTIONS</h4>
-                <p className="text-gray-300 text-sm sm:text-base leading-relaxed">Complete water access and distribution systems</p>
+            
+            <Card className="group bg-gradient-to-br from-white/15 via-white/10 to-white/5 backdrop-blur-xl border border-white/20 hover:border-safety-orange/50 transition-all duration-500 hover:scale-105 hover:shadow-2xl hover:shadow-safety-orange/20" style={{animationDelay: '0.2s'}}>
+              <CardContent className="p-8 sm:p-10 text-center">
+                <div className="mb-6">
+                  <Droplets className="text-construction-yellow h-14 w-14 sm:h-16 sm:w-16 mx-auto group-hover:rotate-12 group-hover:scale-110 transition-all duration-500" />
+                </div>
+                <h4 className="text-xl sm:text-2xl font-black mb-4 sm:mb-6 text-white group-hover:text-construction-yellow transition-colors duration-300">WATER SOLUTIONS</h4>
+                <p className="text-gray-300 text-sm sm:text-base leading-relaxed group-hover:text-gray-200 transition-colors duration-300">Complete water access and distribution systems</p>
               </CardContent>
             </Card>
-            <Card className="bg-white/10 backdrop-blur-sm border-0">
-              <CardContent className="p-6 sm:p-8 text-center">
-                <Wrench className="text-construction-yellow h-10 w-10 sm:h-12 sm:w-12 mx-auto mb-3 sm:mb-4" />
-                <h4 className="text-lg sm:text-xl font-bold mb-3 sm:mb-4 text-white">FULL INSTALLATION</h4>
-                <p className="text-gray-300 text-sm sm:text-base leading-relaxed">Professional pump installation and maintenance services</p>
+            
+            <Card className="group bg-gradient-to-br from-white/15 via-white/10 to-white/5 backdrop-blur-xl border border-white/20 hover:border-construction-yellow/50 transition-all duration-500 hover:scale-105 hover:shadow-2xl hover:shadow-construction-yellow/20" style={{animationDelay: '0.4s'}}>
+              <CardContent className="p-8 sm:p-10 text-center">
+                <div className="mb-6">
+                  <Wrench className="text-construction-yellow h-14 w-14 sm:h-16 sm:w-16 mx-auto group-hover:rotate-12 group-hover:scale-110 transition-all duration-500" />
+                </div>
+                <h4 className="text-xl sm:text-2xl font-black mb-4 sm:mb-6 text-white group-hover:text-construction-yellow transition-colors duration-300">FULL INSTALLATION</h4>
+                <p className="text-gray-300 text-sm sm:text-base leading-relaxed group-hover:text-gray-200 transition-colors duration-300">Professional pump installation and maintenance services</p>
               </CardContent>
             </Card>
           </div>
@@ -299,15 +340,10 @@ export default function Services() {
           <p className="text-base sm:text-lg md:text-xl text-gray-300 mb-8 sm:mb-10 max-w-3xl mx-auto px-2 sm:px-4 animate-slide-up-delay-4">
             From initial site assessment to complete borehole equipping, we deliver comprehensive water solutions tailored to your specific requirements.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center animate-slide-up-delay-5">
+          <div className="flex justify-center animate-slide-up-delay-5">
             <Link href="/contact">
               <Button className="bg-construction-yellow text-industrial-black hover:bg-safety-orange font-bold text-base sm:text-lg px-6 sm:px-8 py-2.5 sm:py-3 w-full sm:w-auto">
-                GET A QUOTE <ArrowRight className="ml-2 h-4 w-4 sm:h-5 sm:w-5" />
-              </Button>
-            </Link>
-            <Link href="/services/mining">
-              <Button variant="outline" className="border-construction-yellow text-construction-yellow hover:bg-construction-yellow hover:text-industrial-black font-bold text-base sm:text-lg px-6 sm:px-8 py-2.5 sm:py-3 w-full sm:w-auto">
-                VIEW OTHER SERVICES
+                DISCUSS YOUR PROJECT <ArrowRight className="ml-2 h-4 w-4 sm:h-5 sm:w-5" />
               </Button>
             </Link>
           </div>
