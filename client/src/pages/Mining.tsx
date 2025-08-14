@@ -6,6 +6,7 @@ import PageLoader from '@/components/PageLoader';
 import tartechLogo from '@assets/tartech-logo-symbol_1755071044733.png';
 import dewateringImage from '@assets/Dewatering_1754640759227.jpg';
 import miningInfrastructureImage from '@assets/view-heavy-machinery-used-construction-industry (1)-min_1755102340110.jpg';
+import miningTruckHeroImage from '@assets/large-truck-carrying-sand-platinum-mining-site-africa-min_1755186703049.jpg';
 
 export default function Mining() {
   const [isLoading, setIsLoading] = useState(true);
@@ -93,8 +94,8 @@ export default function Mining() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-10 md:gap-12 items-center mb-12 sm:mb-14 md:mb-16">
             <div className="order-2 lg:order-1">
               <img 
-                src="https://images.unsplash.com/photo-1611273426858-450d8e3c9fce?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=600" 
-                alt="Massive mining dump truck operating in open pit mine" 
+                src={miningTruckHeroImage} 
+                alt="Large truck carrying sand at platinum mining site in Africa" 
                 className="rounded-xl shadow-2xl w-full" 
               />
             </div>
