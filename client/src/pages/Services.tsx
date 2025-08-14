@@ -80,20 +80,20 @@ export default function Services() {
       
       {/* Enhanced Hero Section - Premium Dark Mode Theme */}
       <section className="relative py-16 sm:py-20 md:py-24 lg:py-28 bg-industrial-black text-white overflow-hidden" style={{background: 'linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 50%, #1a1a1a 100%)'}}>
-        {/* Background Effects */}
+        {/* Enhanced Background Effects */}
         <div className="absolute inset-0">
-          <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-r from-construction-yellow/5 via-transparent to-construction-yellow/5"></div>
-          <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-construction-yellow/10 rounded-full filter blur-3xl opacity-30 animate-pulse"></div>
-          <div className="absolute bottom-1/4 right-1/4 w-64 h-64 bg-safety-orange/10 rounded-full filter blur-3xl opacity-20 animate-pulse" style={{animationDelay: '2s'}}></div>
+          <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-r from-construction-yellow/8 via-transparent to-construction-yellow/8"></div>
+          <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-construction-yellow/15 rounded-full filter blur-3xl opacity-40 animate-pulse"></div>
+          <div className="absolute bottom-1/4 right-1/4 w-64 h-64 bg-safety-orange/15 rounded-full filter blur-3xl opacity-30 animate-pulse" style={{animationDelay: '2s'}}></div>
+          <div className="absolute inset-0 bg-black/20"></div>
         </div>
         
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center mb-16 sm:mb-18 md:mb-20">
             <div className="mb-8 animate-slide-up-delay-3">
               <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-black mb-6 sm:mb-8 leading-tight tracking-tight">
-                <span className="text-white font-black drop-shadow-2xl">BOREHOLE</span>
-                <br />
-                <span className="text-construction-yellow font-black drop-shadow-2xl bg-gradient-to-r from-construction-yellow via-yellow-400 to-construction-yellow bg-clip-text text-transparent animate-pulse">DRILLING</span>
+                <span className="text-white font-black drop-shadow-2xl">BOREHOLE</span>{' '}
+                <span className="text-construction-yellow font-black drop-shadow-2xl">DRILLING</span>
               </h1>
               <div className="h-1 w-24 bg-gradient-to-r from-transparent via-construction-yellow to-transparent mx-auto mb-8 rounded-full"></div>
             </div>
@@ -155,7 +155,7 @@ export default function Services() {
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 sm:gap-10 animate-slide-up-delay-5">
-            <Card className="group bg-gradient-to-br from-white/15 via-white/10 to-white/5 backdrop-blur-xl border border-white/20 hover:border-construction-yellow/50 transition-all duration-500 hover:scale-105 hover:shadow-2xl hover:shadow-construction-yellow/20">
+            <Card className="group bg-gradient-to-br from-white/15 via-white/10 to-white/5 backdrop-blur-xl border border-white/20 hover:border-construction-yellow/50 transition-all duration-500 hover:scale-105 hover:shadow-2xl hover:shadow-construction-yellow/20 animate-slide-left-card-1">
               <CardContent className="p-8 sm:p-10 text-center">
                 <div className="mb-6">
                   <Drill className="text-construction-yellow h-14 w-14 sm:h-16 sm:w-16 mx-auto group-hover:rotate-12 group-hover:scale-110 transition-all duration-500" />
@@ -165,7 +165,7 @@ export default function Services() {
               </CardContent>
             </Card>
             
-            <Card className="group bg-gradient-to-br from-white/15 via-white/10 to-white/5 backdrop-blur-xl border border-white/20 hover:border-safety-orange/50 transition-all duration-500 hover:scale-105 hover:shadow-2xl hover:shadow-safety-orange/20" style={{animationDelay: '0.2s'}}>
+            <Card className="group bg-gradient-to-br from-white/15 via-white/10 to-white/5 backdrop-blur-xl border border-white/20 hover:border-safety-orange/50 transition-all duration-500 hover:scale-105 hover:shadow-2xl hover:shadow-safety-orange/20 animate-slide-left-card-2">
               <CardContent className="p-8 sm:p-10 text-center">
                 <div className="mb-6">
                   <Droplets className="text-construction-yellow h-14 w-14 sm:h-16 sm:w-16 mx-auto group-hover:rotate-12 group-hover:scale-110 transition-all duration-500" />
@@ -175,7 +175,7 @@ export default function Services() {
               </CardContent>
             </Card>
             
-            <Card className="group bg-gradient-to-br from-white/15 via-white/10 to-white/5 backdrop-blur-xl border border-white/20 hover:border-construction-yellow/50 transition-all duration-500 hover:scale-105 hover:shadow-2xl hover:shadow-construction-yellow/20" style={{animationDelay: '0.4s'}}>
+            <Card className="group bg-gradient-to-br from-white/15 via-white/10 to-white/5 backdrop-blur-xl border border-white/20 hover:border-construction-yellow/50 transition-all duration-500 hover:scale-105 hover:shadow-2xl hover:shadow-construction-yellow/20 animate-slide-left-card-3">
               <CardContent className="p-8 sm:p-10 text-center">
                 <div className="mb-6">
                   <Wrench className="text-construction-yellow h-14 w-14 sm:h-16 sm:w-16 mx-auto group-hover:rotate-12 group-hover:scale-110 transition-all duration-500" />
