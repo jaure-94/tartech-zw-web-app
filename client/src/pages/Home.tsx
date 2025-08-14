@@ -8,6 +8,12 @@ import { ScrollAnimations } from '@/components/ScrollAnimations';
 import PageLoader from '@/components/PageLoader';
 import bulldozerImage from '@assets/bulldozer-2195329_1920_1753976237868.jpg';
 import tartechLogoSymbol from '@assets/tartech-logo-symbol_1754996014881.png';
+import cityOfHarareLogo from '@assets/city-of-harare_1755190481288.png';
+import cityOfMaronderaLogo from '@assets/city-of-marondera_1755190481288.png';
+import bikitaMineralsLogo from '@assets/bikita-logo_1755190481286.png';
+import ministryOfTransportLogo from '@assets/min-trans_1755190481289.png';
+import fredaRebeccaLogo from '@assets/reda_1755190481290.png';
+import binduraNickelLogo from '@assets/bnc-logo_1755190481287.png';
 
 export default function Home() {
   const logoSliderRef = useRef<HTMLDivElement>(null);
@@ -852,60 +858,66 @@ export default function Home() {
               {/* City of Harare */}
               <div className="flex-shrink-0 group">
                 <div className="bg-white rounded-xl sm:rounded-2xl p-4 sm:p-6 md:p-8 shadow-lg hover:shadow-xl transition-all duration-300 w-48 sm:w-60 md:w-72 h-32 sm:h-36 md:h-40 flex flex-col items-center justify-center border border-gray-100 group-hover:border-construction-yellow/30">
-                  <div className="w-10 h-10 sm:w-12 sm:h-12 md:w-16 md:h-16 bg-gradient-to-br from-construction-yellow to-construction-yellow/80 rounded-full flex items-center justify-center mb-2 sm:mb-3 md:mb-4 group-hover:scale-110 transition-transform duration-300">
-                    <span className="text-industrial-black font-black text-sm sm:text-lg md:text-xl">CH</span>
-                  </div>
-                  <h3 className="text-industrial-black font-bold text-sm sm:text-base md:text-lg text-center">City of Harare</h3>
+                  <img 
+                    src={cityOfHarareLogo} 
+                    alt="City of Harare Department of Works Logo" 
+                    className="max-h-16 md:max-h-20 max-w-full object-contain mb-2 group-hover:scale-105 transition-transform duration-300"
+                  />
                 </div>
               </div>
               
               {/* City of Marondera */}
               <div className="flex-shrink-0 group">
                 <div className="bg-white rounded-xl sm:rounded-2xl p-4 sm:p-6 md:p-8 shadow-lg hover:shadow-xl transition-all duration-300 w-48 sm:w-60 md:w-72 h-32 sm:h-36 md:h-40 flex flex-col items-center justify-center border border-gray-100 group-hover:border-construction-yellow/30">
-                  <div className="w-10 h-10 sm:w-12 sm:h-12 md:w-16 md:h-16 bg-gradient-to-br from-construction-yellow to-construction-yellow/80 rounded-full flex items-center justify-center mb-2 sm:mb-3 md:mb-4 group-hover:scale-110 transition-transform duration-300">
-                    <span className="text-industrial-black font-black text-sm sm:text-lg md:text-xl">CM</span>
-                  </div>
-                  <h3 className="text-industrial-black font-bold text-sm sm:text-base md:text-lg text-center">City of Marondera</h3>
+                  <img 
+                    src={cityOfMaronderaLogo} 
+                    alt="City of Marondera Department of Works Logo" 
+                    className="max-h-16 md:max-h-20 max-w-full object-contain mb-2 group-hover:scale-105 transition-transform duration-300"
+                  />
                 </div>
               </div>
               
               {/* Bikita Minerals */}
               <div className="flex-shrink-0 group">
                 <div className="bg-white rounded-xl sm:rounded-2xl p-4 sm:p-6 md:p-8 shadow-lg hover:shadow-xl transition-all duration-300 w-48 sm:w-60 md:w-72 h-32 sm:h-36 md:h-40 flex flex-col items-center justify-center border border-gray-100 group-hover:border-construction-yellow/30">
-                  <div className="w-10 h-10 sm:w-12 sm:h-12 md:w-16 md:h-16 bg-gradient-to-br from-construction-yellow to-construction-yellow/80 rounded-full flex items-center justify-center mb-2 sm:mb-3 md:mb-4 group-hover:scale-110 transition-transform duration-300">
-                    <Drill className="text-industrial-black h-5 w-5 sm:h-6 sm:w-6 md:h-8 md:w-8" />
-                  </div>
-                  <h3 className="text-industrial-black font-bold text-sm sm:text-base md:text-lg text-center">Bikita Minerals</h3>
+                  <img 
+                    src={bikitaMineralsLogo} 
+                    alt="Bikita Minerals Logo" 
+                    className="max-h-16 md:max-h-20 max-w-full object-contain mb-2 group-hover:scale-105 transition-transform duration-300"
+                  />
                 </div>
               </div>
               
               {/* Ministry of Transport */}
               <div className="flex-shrink-0 group">
                 <div className="bg-white rounded-xl sm:rounded-2xl p-4 sm:p-6 md:p-8 shadow-lg hover:shadow-xl transition-all duration-300 w-48 sm:w-60 md:w-72 h-32 sm:h-36 md:h-40 flex flex-col items-center justify-center border border-gray-100 group-hover:border-construction-yellow/30">
-                  <div className="w-10 h-10 sm:w-12 sm:h-12 md:w-16 md:h-16 bg-gradient-to-br from-construction-yellow to-construction-yellow/80 rounded-full flex items-center justify-center mb-2 sm:mb-3 md:mb-4 group-hover:scale-110 transition-transform duration-300">
-                    <span className="text-industrial-black font-black text-xs sm:text-sm md:text-sm">MOT</span>
-                  </div>
-                  <h3 className="text-industrial-black font-bold text-xs sm:text-sm md:text-lg text-center leading-tight">Min of Transport<br/>Department of Roads</h3>
+                  <img 
+                    src={ministryOfTransportLogo} 
+                    alt="Ministry of Transport Department of Roads Logo" 
+                    className="max-h-16 md:max-h-20 max-w-full object-contain mb-2 group-hover:scale-105 transition-transform duration-300"
+                  />
                 </div>
               </div>
               
               {/* Freda Rebecca Mines */}
               <div className="flex-shrink-0 group">
                 <div className="bg-white rounded-xl sm:rounded-2xl p-4 sm:p-6 md:p-8 shadow-lg hover:shadow-xl transition-all duration-300 w-48 sm:w-60 md:w-72 h-32 sm:h-36 md:h-40 flex flex-col items-center justify-center border border-gray-100 group-hover:border-construction-yellow/30">
-                  <div className="w-10 h-10 sm:w-12 sm:h-12 md:w-16 md:h-16 bg-gradient-to-br from-construction-yellow to-construction-yellow/80 rounded-full flex items-center justify-center mb-2 sm:mb-3 md:mb-4 group-hover:scale-110 transition-transform duration-300">
-                    <Mountain className="text-industrial-black h-5 w-5 sm:h-6 sm:w-6 md:h-8 md:w-8" />
-                  </div>
-                  <h3 className="text-industrial-black font-bold text-sm sm:text-base md:text-lg text-center">Freda Rebecca Mines</h3>
+                  <img 
+                    src={fredaRebeccaLogo} 
+                    alt="Freda Rebecca Gold Mine Ltd Logo" 
+                    className="max-h-16 md:max-h-20 max-w-full object-contain mb-2 group-hover:scale-105 transition-transform duration-300"
+                  />
                 </div>
               </div>
               
               {/* Bindura Nickel Corporation */}
               <div className="flex-shrink-0 group">
                 <div className="bg-white rounded-xl sm:rounded-2xl p-4 sm:p-6 md:p-8 shadow-lg hover:shadow-xl transition-all duration-300 w-48 sm:w-60 md:w-72 h-32 sm:h-36 md:h-40 flex flex-col items-center justify-center border border-gray-100 group-hover:border-construction-yellow/30">
-                  <div className="w-10 h-10 sm:w-12 sm:h-12 md:w-16 md:h-16 bg-gradient-to-br from-construction-yellow to-construction-yellow/80 rounded-full flex items-center justify-center mb-2 sm:mb-3 md:mb-4 group-hover:scale-110 transition-transform duration-300">
-                    <span className="text-industrial-black font-black text-xs sm:text-sm md:text-sm">BNC</span>
-                  </div>
-                  <h3 className="text-industrial-black font-bold text-xs sm:text-sm md:text-lg text-center leading-tight">Bindura Nickel<br/>Corporation</h3>
+                  <img 
+                    src={binduraNickelLogo} 
+                    alt="Bindura Nickel Corporation Limited Logo" 
+                    className="max-h-16 md:max-h-20 max-w-full object-contain mb-2 group-hover:scale-105 transition-transform duration-300"
+                  />
                 </div>
               </div>
               
