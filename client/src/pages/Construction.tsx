@@ -1,6 +1,8 @@
 import { useEffect, useState } from 'react';
 import { Card, CardContent } from '@/components/ui/card';
-import { CheckCircle2, Compass, Shovel, Hammer, Key, Building, MapPin, Droplets, Mountain } from 'lucide-react';
+import { Button } from '@/components/ui/button';
+import { CheckCircle2, Compass, Shovel, Hammer, Key, Building, MapPin, Droplets, Mountain, ArrowRight } from 'lucide-react';
+import { Link } from 'wouter';
 import { ScrollAnimations } from '@/components/ScrollAnimations';
 import PageLoader from '@/components/PageLoader';
 import tartechLogo from '@assets/tartech-logo-symbol_1755071044733.png';
@@ -268,9 +270,18 @@ export default function Construction() {
                   From planning to completion, our experienced team delivers construction projects that meet the highest standards and specifications.
                 </p>
                 <div className="flex justify-center">
-                  <button className="px-6 sm:px-8 py-3 sm:py-4 bg-construction-yellow text-industrial-black font-bold rounded-lg hover:bg-yellow-400 transition-colors duration-200 text-sm sm:text-base">
-                    REQUEST QUOTE
-                  </button>
+                  <Link href="/contact">
+                    <Button 
+                      className="px-6 sm:px-8 py-3 sm:py-4 bg-construction-yellow text-industrial-black hover:bg-safety-orange font-bold text-sm sm:text-base"
+                      onClick={() => {
+                        setTimeout(() => {
+                          window.scrollTo({ top: 0, behavior: 'smooth' });
+                        }, 100);
+                      }}
+                    >
+                      DISCUSS YOUR PROJECT <ArrowRight className="ml-2 h-4 w-4 sm:h-5 sm:w-5" />
+                    </Button>
+                  </Link>
                 </div>
               </CardContent>
             </Card>
