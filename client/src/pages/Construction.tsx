@@ -4,7 +4,7 @@ import { CheckCircle2, Compass, Shovel, Hammer, Key, Building, MapPin, Droplets,
 import { ScrollAnimations } from '@/components/ScrollAnimations';
 import PageLoader from '@/components/PageLoader';
 import tartechLogo from '@assets/tartech-logo-symbol_1755071044733.png';
-import constructionHeroImage from '@assets/large-building-site-min_1755102476346.jpg';
+import constructionHeroImage from '@assets/construction-site-silhouettes-min_1755186368834.jpg';
 
 export default function Construction() {
   const [isLoading, setIsLoading] = useState(true);
