@@ -129,7 +129,7 @@ export default function About() {
         </div>
         
         {/* Main Content */}
-        <div className="relative w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-20 lg:py-24 pb-20 md:pb-24 lg:pb-28">
+        <div className="relative w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-0 pb-20 md:pb-24 lg:pb-28">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-16 items-center">
             {/* Left Column - Main Content */}
             <div className="space-y-8 md:space-y-12 lg:space-y-16">
