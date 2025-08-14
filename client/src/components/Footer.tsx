@@ -100,7 +100,7 @@ export function Footer() {
                 <MapPin className="h-5 w-5 text-construction-yellow mt-1 flex-shrink-0" />
                 <div>
                   <p className="text-gray-300 text-sm lg:text-base leading-relaxed">
-                    6 Beryl Road, Msasa<br />
+                    16 Beryl Road, Msasa<br />
                     Harare, Zimbabwe
                   </p>
                 </div>

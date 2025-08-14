@@ -344,7 +344,7 @@ export default function Contact() {
                       <MapPin className="text-construction-yellow h-5 w-5 md:h-6 md:w-6 mr-3 md:mr-4 mt-1 flex-shrink-0" />
                       <div>
                         <h4 className="font-bold mb-1 text-sm md:text-base text-industrial-black">HEAD OFFICE</h4>
-                        <p className="text-xs md:text-sm text-industrial-gray">6 Beryl Road, Msasa<br />Harare, Zimbabwe</p>
+                        <p className="text-xs md:text-sm text-industrial-gray">16 Beryl Road, Msasa<br />Harare, Zimbabwe</p>
                       </div>
                     </div>
                     <div className="flex items-start">
@@ -385,7 +385,7 @@ export default function Contact() {
                 <Card className="bg-white rounded-xl md:rounded-2xl shadow-xl overflow-hidden h-full w-full">
                   <CardContent className="p-0 h-full w-full">
                     <GoogleMap 
-                      address="6 beryl road, msasa, harare, zimbabwe"
+                      address="16 beryl road, msasa, harare, zimbabwe"
                       className="rounded-xl md:rounded-2xl"
                     />
                   </CardContent>

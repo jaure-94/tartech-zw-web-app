@@ -38,13 +38,13 @@ export function GoogleMap({ address, className = "" }: GoogleMapProps) {
                 </svg>
               </div>
               <h3 class="font-bold text-${isMobile ? 'sm' : 'base sm:text-lg md:text-xl'} text-industrial-black mb-${isMobile ? '1' : '1 sm:mb-2 md:mb-3'}">Tartech Contracting</h3>
-              <p class="text-${isMobile ? 'xs' : 'xs sm:text-sm md:text-base'} text-gray-600 mb-${isMobile ? '2' : '2 sm:mb-3 md:mb-4'} leading-tight">6 Beryl Road, Msasa<br>Harare, Zimbabwe</p>
+              <p class="text-${isMobile ? 'xs' : 'xs sm:text-sm md:text-base'} text-gray-600 mb-${isMobile ? '2' : '2 sm:mb-3 md:mb-4'} leading-tight">16 Beryl Road, Msasa<br>Harare, Zimbabwe</p>
               <div class="space-y-${isMobile ? '0.5' : '1 sm:space-y-2'} text-${isMobile ? 'xs' : 'xs sm:text-sm'} text-gray-500 mb-${isMobile ? '3' : '3 sm:mb-4 md:mb-6'}">
                 <p>📍 Msasa Industrial Area</p>
                 <p>🚗 Major highway access</p>
               </div>
               <a 
-                href="https://www.google.com/maps/search/6+beryl+road+msasa+harare+zimbabwe" 
+                href="https://www.google.com/maps/search/16+beryl+road+msasa+harare+zimbabwe" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 class="inline-flex items-center px-${isMobile ? '3 py-2' : '4 py-2 sm:px-5 sm:py-3 md:px-6 md:py-3'} bg-construction-yellow text-industrial-black text-${isMobile ? 'xs' : 'xs sm:text-sm md:text-base'} font-medium rounded-lg hover:bg-yellow-500 transition-colors duration-200 shadow-lg hover:shadow-xl"
@@ -171,7 +171,7 @@ export function GoogleMap({ address, className = "" }: GoogleMapProps) {
                     <img src="${tartechLogoSymbol}" alt="Tartech Logo" style="width: ${isMobile ? '20px' : '32px'}; height: ${isMobile ? '20px' : '32px'}; flex-shrink: 0; margin-top: 2px;" />
                     <div style="flex: 1; min-width: 0;">
                       <h3 style="font-weight: bold; font-size: ${isMobile ? '12px' : '16px'}; color: #333; margin: 0 0 ${isMobile ? '2px' : '4px'} 0; line-height: 1.2; overflow: hidden;">Tartech Contracting</h3>
-                      <p style="color: #666; font-size: ${isMobile ? '10px' : '14px'}; margin: 0 0 ${isMobile ? '2px' : '4px'} 0; line-height: 1.2; word-wrap: break-word;">6 Beryl Road, Msasa<br>Harare, Zimbabwe</p>
+                      <p style="color: #666; font-size: ${isMobile ? '10px' : '14px'}; margin: 0 0 ${isMobile ? '2px' : '4px'} 0; line-height: 1.2; word-wrap: break-word;">16 Beryl Road, Msasa<br>Harare, Zimbabwe</p>
                       <div style="font-size: ${isMobile ? '9px' : '12px'}; color: #999;">
                         <span>Industrial Excellence</span>
                       </div>
