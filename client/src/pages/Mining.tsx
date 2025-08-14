@@ -7,6 +7,7 @@ import tartechLogo from '@assets/tartech-logo-symbol_1755071044733.png';
 import dewateringImage from '@assets/Dewatering_1754640759227.jpg';
 import miningInfrastructureImage from '@assets/view-heavy-machinery-used-construction-industry (1)-min_1755102340110.jpg';
 import miningTruckHeroImage from '@assets/large-truck-carrying-sand-platinum-mining-site-africa-min_1755186703049.jpg';
+import openPitMiningImage from '@assets/open-pit-mining-920200_640-min_1755187586396.jpg';
 
 export default function Mining() {
   const [isLoading, setIsLoading] = useState(true);
@@ -237,8 +238,8 @@ export default function Mining() {
               <CardContent className="p-0">
                 <div className="relative">
                   <img 
-                    src="https://images.unsplash.com/photo-1611273426858-450d8e3c9fce?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&h=300" 
-                    alt="Heavy mining excavator loading dump truck at open pit mine" 
+                    src={openPitMiningImage} 
+                    alt="Open pit mining operation at night with illuminated machinery and infrastructure" 
                     className="w-full h-48 object-cover rounded-t-lg" 
                   />
                   <div className="absolute top-4 right-4">
