@@ -299,15 +299,10 @@ export default function Services() {
           <p className="text-base sm:text-lg md:text-xl text-gray-300 mb-8 sm:mb-10 max-w-3xl mx-auto px-2 sm:px-4 animate-slide-up-delay-4">
             From initial site assessment to complete borehole equipping, we deliver comprehensive water solutions tailored to your specific requirements.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center animate-slide-up-delay-5">
-            <Link href="/contact">
+          <div className="flex justify-center animate-slide-up-delay-5">
+            <Link href="/about">
               <Button className="bg-construction-yellow text-industrial-black hover:bg-safety-orange font-bold text-base sm:text-lg px-6 sm:px-8 py-2.5 sm:py-3 w-full sm:w-auto">
-                GET A QUOTE <ArrowRight className="ml-2 h-4 w-4 sm:h-5 sm:w-5" />
-              </Button>
-            </Link>
-            <Link href="/services/mining">
-              <Button variant="outline" className="border-construction-yellow text-construction-yellow hover:bg-construction-yellow hover:text-industrial-black font-bold text-base sm:text-lg px-6 sm:px-8 py-2.5 sm:py-3 w-full sm:w-auto">
-                VIEW OTHER SERVICES
+                DISCUSS YOUR PROJECT WITH US <ArrowRight className="ml-2 h-4 w-4 sm:h-5 sm:w-5" />
               </Button>
             </Link>
           </div>
