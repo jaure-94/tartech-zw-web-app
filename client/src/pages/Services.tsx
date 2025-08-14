@@ -79,7 +79,7 @@ export default function Services() {
         <ScrollAnimations />
       
       {/* Enhanced Hero Section - Premium Dark Mode Theme */}
-      <section className="relative py-16 sm:py-20 md:py-24 lg:py-28 bg-gradient-to-br from-industrial-black via-gray-900 to-industrial-black overflow-hidden">
+      <section className="relative py-16 sm:py-20 md:py-24 lg:py-28 bg-industrial-black text-white overflow-hidden" style={{background: 'linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 50%, #1a1a1a 100%)'}}>
         {/* Background Effects */}
         <div className="absolute inset-0">
           <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-r from-construction-yellow/5 via-transparent to-construction-yellow/5"></div>
