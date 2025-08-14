@@ -300,7 +300,7 @@ export default function Services() {
             From initial site assessment to complete borehole equipping, we deliver comprehensive water solutions tailored to your specific requirements.
           </p>
           <div className="flex justify-center animate-slide-up-delay-5">
-            <Link href="/about">
+            <Link href="/contact">
               <Button className="bg-construction-yellow text-industrial-black hover:bg-safety-orange font-bold text-base sm:text-lg px-6 sm:px-8 py-2.5 sm:py-3 w-full sm:w-auto">
                 DISCUSS YOUR PROJECT WITH US <ArrowRight className="ml-2 h-4 w-4 sm:h-5 sm:w-5" />
               </Button>
