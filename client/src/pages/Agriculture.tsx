@@ -110,16 +110,16 @@ export default function Agriculture() {
         
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-5xl mx-auto">
-            <div>
+            <div className="animate-slide-up-delay-3">
               <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-black text-white mb-4 sm:mb-6 leading-tight">
                 AGRI-INFRASTRUCTURE <span className="text-construction-yellow">EXPERTS</span>
               </h1>
-              <p className="text-base sm:text-lg md:text-xl lg:text-xl text-gray-200 mb-8 sm:mb-10 md:mb-12 leading-relaxed max-w-4xl mx-auto px-2 sm:px-4">
+              <p className="text-base sm:text-lg md:text-xl lg:text-xl text-gray-200 mb-8 sm:mb-10 md:mb-12 leading-relaxed max-w-4xl mx-auto px-2 sm:px-4 animate-slide-up-delay-4">
                 Transforming Zimbabwe's agricultural landscape with cutting-edge technology, precision engineering, and three decades of expertise in land development and infrastructure.
               </p>
             </div>
             
-            <div>
+            <div className="animate-slide-up-delay-5">
               <div className="bg-white/10 backdrop-blur-md rounded-2xl p-4 sm:p-6 md:p-8 border border-white/20 max-w-4xl mx-auto">
                 <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-construction-yellow mb-4 sm:mb-6">OUR AGRICULTURE SERVICES</h3>
                 <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3 sm:gap-4 text-white">
@@ -157,18 +157,18 @@ export default function Agriculture() {
       {/* Core Services Section */}
       <section className="py-12 sm:py-16 md:py-20 lg:py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12 sm:mb-14 md:mb-16">
+          <div className="text-center mb-12 sm:mb-14 md:mb-16 animate-slide-up-delay-3">
             <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black text-industrial-black mb-4 sm:mb-6 leading-tight">
               COMPREHENSIVE <span className="text-construction-yellow">AGRICULTURAL SOLUTIONS</span>
             </h2>
-            <p className="text-base sm:text-lg md:text-xl text-industrial-gray max-w-4xl mx-auto leading-relaxed px-2 sm:px-4">
+            <p className="text-base sm:text-lg md:text-xl text-industrial-gray max-w-4xl mx-auto leading-relaxed px-2 sm:px-4 animate-slide-up-delay-4">
               From land preparation to infrastructure development, we provide end-to-end agricultural services that maximize productivity and ensure sustainable farming practices across Zimbabwe.
             </p>
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-10 md:gap-12 lg:gap-16 mb-16 sm:mb-18 md:mb-20">
             {/* Bush Clearing */}
-            <div className="animate-slide-in-left">
+            <div className="animate-slide-left-card-1">
               <Card className="h-full overflow-hidden shadow-2xl border-4 border-transparent hover:border-construction-yellow transition-all duration-500">
                 <div className="h-64 overflow-hidden">
                   <img 
@@ -208,7 +208,7 @@ export default function Agriculture() {
             </div>
 
             {/* Land Preparation */}
-            <div className="animate-slide-in-right">
+            <div className="animate-slide-left-card-2">
               <Card className="h-full overflow-hidden shadow-2xl border-4 border-transparent hover:border-construction-yellow transition-all duration-500">
                 <div className="h-64 overflow-hidden">
                   <img 

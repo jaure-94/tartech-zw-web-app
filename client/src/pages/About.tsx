@@ -632,8 +632,8 @@ export default function About() {
               </p>
             </div>
 
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 items-center mb-12 md:mb-16">
-              <div className="animate-slide-in-left">
+            <div className="flex flex-col lg:flex-row gap-8 md:gap-12 items-start mb-12 md:mb-16">
+              <div className="animate-slide-in-left flex-1">
                 <img
                   src={cityImage}
                   alt="Zimbabwe city skyline showcasing urban development and construction projects"
@@ -641,21 +641,21 @@ export default function About() {
                 />
               </div>
 
-              <div className="animate-slide-in-right">
+              <div className="animate-slide-in-right flex-1">
                 <h3 className="text-xl sm:text-2xl md:text-3xl font-black text-industrial-black mb-6 md:mb-8">
                   TRUSTED BY LEADING ORGANIZATIONS
                 </h3>
 
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 md:gap-4">
-                  <Card className="p-4 md:p-6 bg-white border-l-4 border-construction-yellow shadow-lg hover:shadow-xl transition-all duration-300">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-6">
+                  <Card className="p-3 md:p-4 bg-white border-l-4 border-construction-yellow shadow-lg hover:shadow-xl transition-all duration-300">
                     <CardContent className="p-0">
-                      <div className="flex items-center space-x-2 md:space-x-3">
+                      <div className="flex items-center space-x-3 md:space-x-4">
                         <img 
                           src={cityOfHarareLogo} 
                           alt="City of Harare"
-                          className="h-8 w-8 md:h-10 md:w-10 object-contain flex-shrink-0"
+                          className="h-12 w-12 md:h-16 md:w-16 object-contain flex-shrink-0"
                         />
-                        <div>
+                        <div className="flex-1 min-w-0">
                           <h4 className="font-bold text-sm md:text-base text-industrial-black">
                             City of Harare
                           </h4>
@@ -667,15 +667,15 @@ export default function About() {
                     </CardContent>
                   </Card>
 
-                  <Card className="p-4 md:p-6 bg-white border-l-4 border-construction-yellow shadow-lg hover:shadow-xl transition-all duration-300">
+                  <Card className="p-3 md:p-4 bg-white border-l-4 border-construction-yellow shadow-lg hover:shadow-xl transition-all duration-300">
                     <CardContent className="p-0">
-                      <div className="flex items-center space-x-2 md:space-x-3">
+                      <div className="flex items-center space-x-3 md:space-x-4">
                         <img 
                           src={cityOfMaronderaLogo} 
                           alt="City of Marondera"
-                          className="h-8 w-8 md:h-10 md:w-10 object-contain flex-shrink-0"
+                          className="h-12 w-12 md:h-16 md:w-16 object-contain flex-shrink-0"
                         />
-                        <div>
+                        <div className="flex-1 min-w-0">
                           <h4 className="font-bold text-sm md:text-base text-industrial-black">
                             City of Marondera
                           </h4>
@@ -687,15 +687,15 @@ export default function About() {
                     </CardContent>
                   </Card>
 
-                  <Card className="p-4 md:p-6 bg-white border-l-4 border-construction-yellow shadow-lg hover:shadow-xl transition-all duration-300">
+                  <Card className="p-3 md:p-4 bg-white border-l-4 border-construction-yellow shadow-lg hover:shadow-xl transition-all duration-300">
                     <CardContent className="p-0">
-                      <div className="flex items-center space-x-2 md:space-x-3">
+                      <div className="flex items-center space-x-3 md:space-x-4">
                         <img 
                           src={bikitaMineralsLogo} 
                           alt="Bikita Minerals"
-                          className="h-8 w-8 md:h-10 md:w-10 object-contain flex-shrink-0"
+                          className="h-12 w-12 md:h-16 md:w-16 object-contain flex-shrink-0"
                         />
-                        <div>
+                        <div className="flex-1 min-w-0">
                           <h4 className="font-bold text-sm md:text-base text-industrial-black">
                             Bikita Minerals
                           </h4>
@@ -707,15 +707,15 @@ export default function About() {
                     </CardContent>
                   </Card>
 
-                  <Card className="p-4 md:p-6 bg-white border-l-4 border-construction-yellow shadow-lg hover:shadow-xl transition-all duration-300">
+                  <Card className="p-3 md:p-4 bg-white border-l-4 border-construction-yellow shadow-lg hover:shadow-xl transition-all duration-300">
                     <CardContent className="p-0">
-                      <div className="flex items-center space-x-2 md:space-x-3">
+                      <div className="flex items-center space-x-3 md:space-x-4">
                         <img 
                           src={ministryOfTransportLogo} 
                           alt="Ministry of Transport"
-                          className="h-8 w-8 md:h-10 md:w-10 object-contain flex-shrink-0"
+                          className="h-12 w-12 md:h-16 md:w-16 object-contain flex-shrink-0"
                         />
-                        <div>
+                        <div className="flex-1 min-w-0">
                           <h4 className="font-bold text-sm md:text-base text-industrial-black">
                             Min of Transport
                           </h4>
@@ -727,15 +727,15 @@ export default function About() {
                     </CardContent>
                   </Card>
 
-                  <Card className="p-4 md:p-6 bg-white border-l-4 border-construction-yellow shadow-lg hover:shadow-xl transition-all duration-300">
+                  <Card className="p-3 md:p-4 bg-white border-l-4 border-construction-yellow shadow-lg hover:shadow-xl transition-all duration-300">
                     <CardContent className="p-0">
-                      <div className="flex items-center space-x-2 md:space-x-3">
+                      <div className="flex items-center space-x-3 md:space-x-4">
                         <img 
                           src={fredaRebeccaLogo} 
                           alt="Freda Rebecca Mines"
-                          className="h-8 w-8 md:h-10 md:w-10 object-contain flex-shrink-0"
+                          className="h-12 w-12 md:h-16 md:w-16 object-contain flex-shrink-0"
                         />
-                        <div>
+                        <div className="flex-1 min-w-0">
                           <h4 className="font-bold text-sm md:text-base text-industrial-black">
                             Freda Rebecca Mines
                           </h4>
@@ -747,15 +747,15 @@ export default function About() {
                     </CardContent>
                   </Card>
 
-                  <Card className="p-4 md:p-6 bg-white border-l-4 border-construction-yellow shadow-lg hover:shadow-xl transition-all duration-300">
+                  <Card className="p-3 md:p-4 bg-white border-l-4 border-construction-yellow shadow-lg hover:shadow-xl transition-all duration-300">
                     <CardContent className="p-0">
-                      <div className="flex items-center space-x-2 md:space-x-3">
+                      <div className="flex items-center space-x-3 md:space-x-4">
                         <img 
                           src={binduraNickelLogo} 
                           alt="Bindura Nickel Corporation"
-                          className="h-8 w-8 md:h-10 md:w-10 object-contain flex-shrink-0"
+                          className="h-12 w-12 md:h-16 md:w-16 object-contain flex-shrink-0"
                         />
-                        <div>
+                        <div className="flex-1 min-w-0">
                           <h4 className="font-bold text-sm md:text-base text-industrial-black">
                             Bindura Nickel Corporation
                           </h4>

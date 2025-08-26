@@ -83,24 +83,24 @@ export default function Mining() {
       {/* Mining Services Header */}
       <section className="py-12 sm:py-16 md:py-20 lg:py-24 bg-industrial-black text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12 sm:mb-14 md:mb-16">
+          <div className="text-center mb-12 sm:mb-14 md:mb-16 animate-slide-up-delay-3">
             <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-black mb-4 sm:mb-6 leading-tight">
               <span className="text-construction-yellow font-black">MINING</span> <span className="text-white font-black">OPERATIONS</span>
             </h1>
-            <p className="text-base sm:text-lg md:text-xl lg:text-xl text-gray-300 max-w-4xl mx-auto leading-relaxed px-2 sm:px-4">
+            <p className="text-base sm:text-lg md:text-xl lg:text-xl text-gray-300 max-w-4xl mx-auto leading-relaxed px-2 sm:px-4 animate-slide-up-delay-4">
               Specialized mining contracting with cutting-edge equipment and expertise in both surface and underground operations across Zimbabwe's mineral-rich landscape.
             </p>
           </div>
           
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-10 md:gap-12 items-center mb-12 sm:mb-14 md:mb-16">
-            <div className="order-2 lg:order-1">
+            <div className="order-2 lg:order-1 animate-slide-left-card-1">
               <img 
                 src={miningTruckHeroImage} 
                 alt="Large truck carrying sand at platinum mining site in Africa" 
                 className="rounded-xl shadow-2xl w-full" 
               />
             </div>
-            <div className="order-1 lg:order-2">
+            <div className="order-1 lg:order-2 animate-slide-left-card-2">
               <h3 className="text-2xl sm:text-3xl md:text-4xl font-black text-construction-yellow mb-4 sm:mb-6 leading-tight">SURFACE MINING EXPERTISE</h3>
               <ul className="space-y-3 sm:space-y-4 text-base sm:text-lg">
                 <li className="flex items-start">
@@ -123,7 +123,7 @@ export default function Mining() {
             </div>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8 animate-slide-up-delay-5">
             <Card className="bg-white/10 backdrop-blur-sm border-0">
               <CardContent className="p-6 sm:p-8 text-center">
                 <Gem className="text-construction-yellow h-10 w-10 sm:h-12 sm:w-12 mx-auto mb-3 sm:mb-4" />
@@ -152,16 +152,16 @@ export default function Mining() {
       {/* Detailed Mining Services */}
       <section className="py-12 sm:py-16 md:py-20 lg:py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12 sm:mb-14 md:mb-16">
+          <div className="text-center mb-12 sm:mb-14 md:mb-16 animate-slide-up-delay-3">
             <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black text-industrial-black mb-4 sm:mb-6 leading-tight">
               COMPREHENSIVE <span className="text-construction-yellow">MINING</span> SERVICES
             </h2>
-            <p className="text-base sm:text-lg md:text-xl text-industrial-gray max-w-4xl mx-auto leading-relaxed px-2 sm:px-4">
+            <p className="text-base sm:text-lg md:text-xl text-industrial-gray max-w-4xl mx-auto leading-relaxed px-2 sm:px-4 animate-slide-up-delay-4">
               From site development to contract mining operations, we deliver complete mining solutions across Zimbabwe's diverse mineral landscape
             </p>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 sm:gap-8 mb-12 sm:mb-14 md:mb-16">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 sm:gap-8 mb-12 sm:mb-14 md:mb-16 animate-slide-up-delay-5">
             {/* Mine Site Infrastructure */}
             <Card className="group hover:shadow-2xl transition-all duration-300 border-2 hover:border-construction-yellow bg-white">
               <CardContent className="p-0">
