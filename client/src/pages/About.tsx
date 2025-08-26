@@ -22,6 +22,12 @@ import PageLoader from "@/components/PageLoader";
 import tartechLogo from "@assets/tartech-logo-symbol_1755071044733.png";
 import constructionSiteImage from "@assets/construction-site-min_1755117902164.jpg";
 import cityImage from "@assets/city-568208_1280_1755188153811.jpg";
+import cityOfHarareLogo from "@assets/city-of-harare_1755190481288.png";
+import cityOfMaronderaLogo from "@assets/city-of-marondera_1755190481288.png";
+import bikitaMineralsLogo from "@assets/bikita-logo_1755190481286.png";
+import ministryOfTransportLogo from "@assets/min-trans_1755190481289.png";
+import fredaRebeccaLogo from "@assets/reda_1755190481290.png";
+import binduraNickelLogo from "@assets/bnc-logo_1755190481287.png";
 
 export default function About() {
   const [isLoading, setIsLoading] = useState(true);
@@ -644,7 +650,11 @@ export default function About() {
                   <Card className="p-4 md:p-6 bg-white border-l-4 border-construction-yellow shadow-lg hover:shadow-xl transition-all duration-300">
                     <CardContent className="p-0">
                       <div className="flex items-center space-x-2 md:space-x-3">
-                        <Building2 className="h-5 w-5 md:h-6 md:w-6 text-construction-yellow flex-shrink-0" />
+                        <img 
+                          src={cityOfHarareLogo} 
+                          alt="City of Harare"
+                          className="h-8 w-8 md:h-10 md:w-10 object-contain flex-shrink-0"
+                        />
                         <div>
                           <h4 className="font-bold text-sm md:text-base text-industrial-black">
                             City of Harare
@@ -660,7 +670,11 @@ export default function About() {
                   <Card className="p-4 md:p-6 bg-white border-l-4 border-construction-yellow shadow-lg hover:shadow-xl transition-all duration-300">
                     <CardContent className="p-0">
                       <div className="flex items-center space-x-2 md:space-x-3">
-                        <Building2 className="h-5 w-5 md:h-6 md:w-6 text-construction-yellow flex-shrink-0" />
+                        <img 
+                          src={cityOfMaronderaLogo} 
+                          alt="City of Marondera"
+                          className="h-8 w-8 md:h-10 md:w-10 object-contain flex-shrink-0"
+                        />
                         <div>
                           <h4 className="font-bold text-sm md:text-base text-industrial-black">
                             City of Marondera
@@ -676,7 +690,11 @@ export default function About() {
                   <Card className="p-4 md:p-6 bg-white border-l-4 border-construction-yellow shadow-lg hover:shadow-xl transition-all duration-300">
                     <CardContent className="p-0">
                       <div className="flex items-center space-x-2 md:space-x-3">
-                        <Settings className="h-5 w-5 md:h-6 md:w-6 text-construction-yellow flex-shrink-0" />
+                        <img 
+                          src={bikitaMineralsLogo} 
+                          alt="Bikita Minerals"
+                          className="h-8 w-8 md:h-10 md:w-10 object-contain flex-shrink-0"
+                        />
                         <div>
                           <h4 className="font-bold text-sm md:text-base text-industrial-black">
                             Bikita Minerals
@@ -692,7 +710,11 @@ export default function About() {
                   <Card className="p-4 md:p-6 bg-white border-l-4 border-construction-yellow shadow-lg hover:shadow-xl transition-all duration-300">
                     <CardContent className="p-0">
                       <div className="flex items-center space-x-2 md:space-x-3">
-                        <Target className="h-5 w-5 md:h-6 md:w-6 text-construction-yellow flex-shrink-0" />
+                        <img 
+                          src={ministryOfTransportLogo} 
+                          alt="Ministry of Transport"
+                          className="h-8 w-8 md:h-10 md:w-10 object-contain flex-shrink-0"
+                        />
                         <div>
                           <h4 className="font-bold text-sm md:text-base text-industrial-black">
                             Min of Transport
@@ -708,7 +730,11 @@ export default function About() {
                   <Card className="p-4 md:p-6 bg-white border-l-4 border-construction-yellow shadow-lg hover:shadow-xl transition-all duration-300">
                     <CardContent className="p-0">
                       <div className="flex items-center space-x-2 md:space-x-3">
-                        <Settings className="h-5 w-5 md:h-6 md:w-6 text-construction-yellow flex-shrink-0" />
+                        <img 
+                          src={fredaRebeccaLogo} 
+                          alt="Freda Rebecca Mines"
+                          className="h-8 w-8 md:h-10 md:w-10 object-contain flex-shrink-0"
+                        />
                         <div>
                           <h4 className="font-bold text-sm md:text-base text-industrial-black">
                             Freda Rebecca Mines
@@ -724,7 +750,11 @@ export default function About() {
                   <Card className="p-4 md:p-6 bg-white border-l-4 border-construction-yellow shadow-lg hover:shadow-xl transition-all duration-300">
                     <CardContent className="p-0">
                       <div className="flex items-center space-x-2 md:space-x-3">
-                        <Settings className="h-5 w-5 md:h-6 md:w-6 text-construction-yellow flex-shrink-0" />
+                        <img 
+                          src={binduraNickelLogo} 
+                          alt="Bindura Nickel Corporation"
+                          className="h-8 w-8 md:h-10 md:w-10 object-contain flex-shrink-0"
+                        />
                         <div>
                           <h4 className="font-bold text-sm md:text-base text-industrial-black">
                             Bindura Nickel Corporation

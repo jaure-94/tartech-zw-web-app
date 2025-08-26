@@ -95,8 +95,8 @@ export function GoogleMap({ address, className = "" }: GoogleMapProps) {
       }
 
       try {
-        // Default coordinates for Harare, Zimbabwe as fallback
-        const defaultLocation = { lat: -17.8292, lng: 31.0522 };
+        // Coordinates for 16 Beryl Road, Msasa, Harare (Tartech Contracting location)
+        const defaultLocation = { lat: -17.8436, lng: 31.0783 };
 
         // Create map with default location
         const map = new window.google.maps.Map(mapRef.current, {
@@ -215,23 +215,14 @@ export function GoogleMap({ address, className = "" }: GoogleMapProps) {
                   
                   defaultCloseButton.setAttribute('style', buttonStyles);
                   
-                  // Style the inner content (usually an image or text)
-                  const buttonContent = defaultCloseButton.querySelector('img, span, div');
-                  if (buttonContent) {
-                    (buttonContent as HTMLElement).style.cssText = `
-                      width: ${isMobile ? '16px' : '18px'} !important;
-                      height: ${isMobile ? '16px' : '18px'} !important;
-                      opacity: 1 !important;
-                      filter: contrast(2) brightness(0) !important;
-                    `;
-                  } else {
-                    // If no inner content, add our own X
-                    defaultCloseButton.innerHTML = '×';
-                    defaultCloseButton.style.fontSize = isMobile ? '16px' : '18px';
-                    defaultCloseButton.style.fontWeight = 'bold';
-                    defaultCloseButton.style.color = '#000';
-                    defaultCloseButton.style.fontFamily = 'Arial, sans-serif';
-                  }
+                  // Always replace with a clear X symbol
+                  defaultCloseButton.innerHTML = '×';
+                  defaultCloseButton.style.fontSize = isMobile ? '18px' : '20px';
+                  defaultCloseButton.style.fontWeight = 'bold';
+                  defaultCloseButton.style.color = '#000';
+                  defaultCloseButton.style.fontFamily = 'Arial, sans-serif';
+                  defaultCloseButton.style.lineHeight = '1';
+                  defaultCloseButton.style.textAlign = 'center';
                   
                   console.log('Default close button styled successfully');
                 } else {
