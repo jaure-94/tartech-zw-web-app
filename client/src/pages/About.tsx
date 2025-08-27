@@ -656,7 +656,7 @@ export default function About() {
 
               {/* Client Cards Grid - Full Width */}
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 md:gap-6">
-                  <Card className="p-4 md:p-6 bg-white border-l-4 border-construction-yellow shadow-lg hover:shadow-xl transition-all duration-300">
+                  <Card className="py-4 px-3 md:py-6 md:px-4 bg-white border-l-4 border-construction-yellow shadow-lg hover:shadow-xl transition-all duration-300">
                     <CardContent className="p-0">
                       <div className="flex items-center space-x-4 md:space-x-5">
                         <img 
@@ -676,7 +676,7 @@ export default function About() {
                     </CardContent>
                   </Card>
 
-                  <Card className="p-4 md:p-6 bg-white border-l-4 border-construction-yellow shadow-lg hover:shadow-xl transition-all duration-300">
+                  <Card className="py-4 px-3 md:py-6 md:px-4 bg-white border-l-4 border-construction-yellow shadow-lg hover:shadow-xl transition-all duration-300">
                     <CardContent className="p-0">
                       <div className="flex items-center space-x-4 md:space-x-5">
                         <img 
@@ -696,7 +696,7 @@ export default function About() {
                     </CardContent>
                   </Card>
 
-                  <Card className="p-4 md:p-6 bg-white border-l-4 border-construction-yellow shadow-lg hover:shadow-xl transition-all duration-300">
+                  <Card className="py-4 px-3 md:py-6 md:px-4 bg-white border-l-4 border-construction-yellow shadow-lg hover:shadow-xl transition-all duration-300">
                     <CardContent className="p-0">
                       <div className="flex items-center space-x-4 md:space-x-5">
                         <img 
@@ -716,7 +716,7 @@ export default function About() {
                     </CardContent>
                   </Card>
 
-                  <Card className="p-4 md:p-6 bg-white border-l-4 border-construction-yellow shadow-lg hover:shadow-xl transition-all duration-300">
+                  <Card className="py-4 px-3 md:py-6 md:px-4 bg-white border-l-4 border-construction-yellow shadow-lg hover:shadow-xl transition-all duration-300">
                     <CardContent className="p-0">
                       <div className="flex items-center space-x-4 md:space-x-5">
                         <img 
@@ -736,7 +736,7 @@ export default function About() {
                     </CardContent>
                   </Card>
 
-                  <Card className="p-4 md:p-6 bg-white border-l-4 border-construction-yellow shadow-lg hover:shadow-xl transition-all duration-300">
+                  <Card className="py-4 px-3 md:py-6 md:px-4 bg-white border-l-4 border-construction-yellow shadow-lg hover:shadow-xl transition-all duration-300">
                     <CardContent className="p-0">
                       <div className="flex items-center space-x-4 md:space-x-5">
                         <img 
@@ -756,7 +756,7 @@ export default function About() {
                     </CardContent>
                   </Card>
 
-                  <Card className="p-4 md:p-6 bg-white border-l-4 border-construction-yellow shadow-lg hover:shadow-xl transition-all duration-300">
+                  <Card className="py-4 px-3 md:py-6 md:px-4 bg-white border-l-4 border-construction-yellow shadow-lg hover:shadow-xl transition-all duration-300">
                     <CardContent className="p-0">
                       <div className="flex items-center space-x-4 md:space-x-5">
                         <img 
@@ -776,7 +776,7 @@ export default function About() {
                     </CardContent>
                   </Card>
 
-                  <Card className="p-4 md:p-6 bg-white border-l-4 border-construction-yellow shadow-lg hover:shadow-xl transition-all duration-300">
+                  <Card className="py-4 px-3 md:py-6 md:px-4 bg-white border-l-4 border-construction-yellow shadow-lg hover:shadow-xl transition-all duration-300">
                     <CardContent className="p-0">
                       <div className="flex items-center space-x-4 md:space-x-5">
                         <img 
@@ -796,7 +796,7 @@ export default function About() {
                     </CardContent>
                   </Card>
 
-                  <Card className="p-4 md:p-6 bg-white border-l-4 border-construction-yellow shadow-lg hover:shadow-xl transition-all duration-300">
+                  <Card className="py-4 px-3 md:py-6 md:px-4 bg-white border-l-4 border-construction-yellow shadow-lg hover:shadow-xl transition-all duration-300">
                     <CardContent className="p-0">
                       <div className="flex items-center space-x-4 md:space-x-5">
                         <img 
