@@ -26,20 +26,98 @@ export default function Construction() {
             ease: "power2.out",
             onComplete: () => {
               setIsLoading(false);
+              // Start hero section animation after loading screen is complete
+              setTimeout(() => {
+                animateHeroSection();
+              }, 200);
             }
           });
         } else {
           // Fallback if GSAP target not found
           setIsLoading(false);
+          setTimeout(() => {
+            animateHeroSection();
+          }, 200);
         }
       }).catch(() => {
         // Fallback if GSAP import fails
         setIsLoading(false);
+        setTimeout(() => {
+          animateHeroSection();
+        }, 200);
       });
     }, 1500); // Show loader for 1.5 seconds
 
     return () => clearTimeout(loadingTimer);
   }, []);
+
+  // Smooth hero section animation
+  const animateHeroSection = async () => {
+    try {
+      const { gsap } = await import('@/lib/gsap');
+      
+      // Create timeline for smooth sequential animation
+      const tl = gsap.timeline({ ease: "power2.out" });
+      
+      // First animate the main hero section container
+      tl.to("#construction-hero", {
+        opacity: 1,
+        duration: 0.8,
+        ease: "power2.out"
+      })
+      // Then animate the title area
+      .to("#hero-title", {
+        opacity: 1,
+        y: 0,
+        duration: 0.6,
+        ease: "power2.out"
+      }, "-=0.4")
+      // Animate the description text
+      .to("#hero-description", {
+        opacity: 1,
+        y: 0,
+        duration: 0.6,
+        ease: "power2.out"
+      }, "-=0.3")
+      // Animate the main content grid
+      .to("#hero-content", {
+        opacity: 1,
+        duration: 0.6,
+        ease: "power2.out"
+      }, "-=0.2")
+      // Animate the text content
+      .to("#hero-text", {
+        opacity: 1,
+        x: 0,
+        duration: 0.8,
+        ease: "power2.out"
+      }, "-=0.3")
+      // Animate the hero image
+      .to("#hero-image", {
+        opacity: 1,
+        x: 0,
+        duration: 0.8,
+        ease: "power2.out"
+      }, "-=0.5")
+      // Finally animate the timeline card
+      .to("#hero-timeline", {
+        opacity: 1,
+        y: 0,
+        duration: 0.8,
+        ease: "power2.out"
+      }, "-=0.2");
+      
+    } catch (error) {
+      console.warn('GSAP animation failed, showing content immediately:', error);
+      // Fallback: show all content immediately
+      const heroElements = document.querySelectorAll('#construction-hero, #hero-title, #hero-description, #hero-content, #hero-text, #hero-image, #hero-timeline');
+      heroElements.forEach(el => {
+        if (el instanceof HTMLElement) {
+          el.style.opacity = '1';
+        }
+      });
+    }
+  };
 
   return (
     <div className="min-h-screen pt-16">
@@ -80,19 +158,19 @@ export default function Construction() {
         <ScrollAnimations />
       
       {/* Construction Services Header */}
-      <section className="py-12 sm:py-16 md:py-20 lg:py-24 bg-light-industrial">
+      <section className="py-12 sm:py-16 md:py-20 lg:py-24 bg-light-industrial opacity-0" id="construction-hero">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12 sm:mb-14 md:mb-16 animate-slide-up-delay-3">
+          <div className="text-center mb-12 sm:mb-14 md:mb-16 animate-slide-up-delay-3 opacity-0 transform translate-y-8" id="hero-title">
             <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-black text-industrial-black mb-4 sm:mb-6 leading-tight">
               <span className="text-construction-yellow font-black">CONSTRUCTION</span> <span className="text-industrial-black font-black">EXCELLENCE</span>
             </h1>
-            <p className="text-base sm:text-lg md:text-xl lg:text-xl text-industrial-gray max-w-4xl mx-auto leading-relaxed px-2 sm:px-4 animate-slide-up-delay-4">
+            <p className="text-base sm:text-lg md:text-xl lg:text-xl text-industrial-gray max-w-4xl mx-auto leading-relaxed px-2 sm:px-4 animate-slide-up-delay-4 opacity-0 transform translate-y-6" id="hero-description">
               From ground-breaking to completion, we deliver robust commercial and industrial construction projects that stand the test of time and Zimbabwe's challenging climate.
             </p>
           </div>
           
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-10 md:gap-12 items-center mb-12 sm:mb-14 md:mb-16">
-            <div className="order-2 lg:order-1 animate-slide-left-card-1">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-10 md:gap-12 items-center mb-12 sm:mb-14 md:mb-16 opacity-0" id="hero-content">
+            <div className="order-2 lg:order-1 animate-slide-left-card-1 opacity-0 transform -translate-x-8" id="hero-text">
               <h3 className="text-2xl sm:text-3xl md:text-4xl font-black text-industrial-black mb-4 sm:mb-6 leading-tight">INDUSTRIAL CONSTRUCTION</h3>
               <ul className="space-y-3 sm:space-y-4 text-base sm:text-lg text-industrial-gray">
                 <li className="flex items-start">
@@ -113,7 +191,7 @@ export default function Construction() {
                 </li>
               </ul>
             </div>
-            <div className="order-1 lg:order-2 animate-slide-left-card-2">
+            <div className="order-1 lg:order-2 animate-slide-left-card-2 opacity-0 transform translate-x-8" id="hero-image">
               <img 
                 src={constructionHeroImage} 
                 alt="Modern industrial building under construction with steel framework" 
@@ -123,7 +201,7 @@ export default function Construction() {
           </div>
           
           {/* Construction Process Timeline */}
-          <Card className="bg-white rounded-2xl shadow-xl animate-slide-up-delay-5">
+          <Card className="bg-white rounded-2xl shadow-xl animate-slide-up-delay-5 opacity-0 transform translate-y-8" id="hero-timeline">
             <CardContent className="p-6 sm:p-8">
               <h3 className="text-xl sm:text-2xl md:text-3xl font-black text-industrial-black mb-6 sm:mb-8 text-center leading-tight">OUR CONSTRUCTION PROCESS</h3>
               <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8">
