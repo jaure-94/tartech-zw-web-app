@@ -96,7 +96,7 @@ export function GoogleMap({ address, className = "" }: GoogleMapProps) {
 
       try {
         // Coordinates for 16 Beryl Road, Msasa, Harare (Tartech Contracting location)
-        const defaultLocation = { lat: -17.8436, lng: 31.0783 };
+        const defaultLocation = { lat: -17.83812853685665, lng: 31.13772127027994 };
 
         // Create map with default location
         const map = new window.google.maps.Map(mapRef.current, {
