@@ -37,6 +37,7 @@ import prazLogo from "@assets/praz-logo-resized_1756292941950.png";
 import necLogo from "@assets/nec-logo-resized_1756292941948.png";
 import cifozLogo from "@assets/cifoz-logo-resized_1756292941947.png";
 import nssaLogo from "@assets/nssa-logo-resized_1756292941949.png";
+import localGovLogo from "@assets/local-gvt-logo_1756293961486.png";
 
 export default function About() {
   const [isLoading, setIsLoading] = useState(true);
@@ -841,19 +842,19 @@ export default function About() {
               </p>
             </div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-6 gap-4 md:gap-6 lg:gap-8">
               <div className="animate-fade-in">
-                <Card className="bg-white/10 backdrop-blur-md border border-white/20 p-4 md:p-6 text-center hover:border-construction-yellow transition-all duration-500">
-                  <CardContent className="p-0">
+                <Card className="bg-white/10 backdrop-blur-md border border-white/20 p-3 md:p-4 lg:p-6 text-center hover:border-construction-yellow transition-all duration-500 h-full">
+                  <CardContent className="p-0 flex flex-col items-center justify-center">
                     <img 
                       src={zbcaLogo} 
                       alt="ZBCA Logo"
-                      className="h-12 w-12 md:h-16 md:w-16 lg:h-20 lg:w-20 object-contain mx-auto mb-3 md:mb-4"
+                      className="h-12 w-12 md:h-14 md:w-14 lg:h-16 lg:w-16 object-contain mx-auto mb-2 md:mb-3"
                     />
-                    <h3 className="text-white font-bold mb-2 text-sm md:text-base">
+                    <h3 className="text-white font-bold mb-1 md:mb-2 text-xs md:text-sm lg:text-base">
                       ZBCA
                     </h3>
-                    <p className="text-gray-300 text-xs md:text-sm">
+                    <p className="text-gray-300 text-xs leading-tight">
                       Zimbabwe Building Contractors Association
                     </p>
                   </CardContent>
@@ -861,17 +862,17 @@ export default function About() {
               </div>
 
               <div className="animate-fade-in">
-                <Card className="bg-white/10 backdrop-blur-md border border-white/20 p-4 md:p-6 text-center hover:border-construction-yellow transition-all duration-500">
-                  <CardContent className="p-0">
+                <Card className="bg-white/10 backdrop-blur-md border border-white/20 p-3 md:p-4 lg:p-6 text-center hover:border-construction-yellow transition-all duration-500 h-full">
+                  <CardContent className="p-0 flex flex-col items-center justify-center">
                     <img 
                       src={prazLogo} 
                       alt="PRAZ Logo"
-                      className="h-12 w-12 md:h-16 md:w-16 lg:h-20 lg:w-20 object-contain mx-auto mb-3 md:mb-4"
+                      className="h-12 w-12 md:h-14 md:w-14 lg:h-16 lg:w-16 object-contain mx-auto mb-2 md:mb-3"
                     />
-                    <h3 className="text-white font-bold mb-2 text-sm md:text-base">
+                    <h3 className="text-white font-bold mb-1 md:mb-2 text-xs md:text-sm lg:text-base">
                       PRAZ
                     </h3>
-                    <p className="text-gray-300 text-xs md:text-sm">
+                    <p className="text-gray-300 text-xs leading-tight">
                       Procurement Regulatory Authority
                     </p>
                   </CardContent>
@@ -879,17 +880,17 @@ export default function About() {
               </div>
 
               <div className="animate-fade-in">
-                <Card className="bg-white/10 backdrop-blur-md border border-white/20 p-4 md:p-6 text-center hover:border-construction-yellow transition-all duration-500">
-                  <CardContent className="p-0">
+                <Card className="bg-white/10 backdrop-blur-md border border-white/20 p-3 md:p-4 lg:p-6 text-center hover:border-construction-yellow transition-all duration-500 h-full">
+                  <CardContent className="p-0 flex flex-col items-center justify-center">
                     <img 
                       src={necLogo} 
                       alt="NEC Logo"
-                      className="h-12 w-12 md:h-16 md:w-16 lg:h-20 lg:w-20 object-contain mx-auto mb-3 md:mb-4"
+                      className="h-12 w-12 md:h-14 md:w-14 lg:h-16 lg:w-16 object-contain mx-auto mb-2 md:mb-3"
                     />
-                    <h3 className="text-white font-bold mb-2 text-sm md:text-base">
+                    <h3 className="text-white font-bold mb-1 md:mb-2 text-xs md:text-sm lg:text-base">
                       NEC
                     </h3>
-                    <p className="text-gray-300 text-xs md:text-sm">
+                    <p className="text-gray-300 text-xs leading-tight">
                       National Employment Council for Construction
                     </p>
                   </CardContent>
@@ -897,37 +898,35 @@ export default function About() {
               </div>
 
               <div className="animate-fade-in">
-                <Card className="bg-white/10 backdrop-blur-md border border-white/20 p-4 md:p-6 text-center hover:border-construction-yellow transition-all duration-500">
-                  <CardContent className="p-0">
+                <Card className="bg-white/10 backdrop-blur-md border border-white/20 p-3 md:p-4 lg:p-6 text-center hover:border-construction-yellow transition-all duration-500 h-full">
+                  <CardContent className="p-0 flex flex-col items-center justify-center">
                     <img 
                       src={cifozLogo} 
                       alt="CIFOZ Logo"
-                      className="h-12 w-12 md:h-16 md:w-16 lg:h-20 lg:w-20 object-contain mx-auto mb-3 md:mb-4"
+                      className="h-12 w-12 md:h-14 md:w-14 lg:h-16 lg:w-16 object-contain mx-auto mb-2 md:mb-3"
                     />
-                    <h3 className="text-white font-bold mb-2 text-sm md:text-base">
+                    <h3 className="text-white font-bold mb-1 md:mb-2 text-xs md:text-sm lg:text-base">
                       CIFOZ
                     </h3>
-                    <p className="text-gray-300 text-xs md:text-sm">
+                    <p className="text-gray-300 text-xs leading-tight">
                       Construction Industry Federation of Zimbabwe
                     </p>
                   </CardContent>
                 </Card>
               </div>
-            </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 mt-6 md:mt-8">
               <div className="animate-fade-in">
-                <Card className="bg-white/10 backdrop-blur-md border border-white/20 p-4 md:p-6 text-center hover:border-construction-yellow transition-all duration-500">
-                  <CardContent className="p-0">
+                <Card className="bg-white/10 backdrop-blur-md border border-white/20 p-3 md:p-4 lg:p-6 text-center hover:border-construction-yellow transition-all duration-500 h-full">
+                  <CardContent className="p-0 flex flex-col items-center justify-center">
                     <img 
                       src={nssaLogo} 
                       alt="NSSA Logo"
-                      className="h-12 w-12 md:h-16 md:w-16 lg:h-20 lg:w-20 object-contain mx-auto mb-3 md:mb-4"
+                      className="h-12 w-12 md:h-14 md:w-14 lg:h-16 lg:w-16 object-contain mx-auto mb-2 md:mb-3"
                     />
-                    <h3 className="text-white font-bold mb-2 text-sm md:text-base">
+                    <h3 className="text-white font-bold mb-1 md:mb-2 text-xs md:text-sm lg:text-base">
                       NSSA
                     </h3>
-                    <p className="text-gray-300 text-xs md:text-sm">
+                    <p className="text-gray-300 text-xs leading-tight">
                       National Social Security Authority
                     </p>
                   </CardContent>
@@ -935,16 +934,18 @@ export default function About() {
               </div>
 
               <div className="animate-fade-in">
-                <Card className="bg-white/5 backdrop-blur-md border border-construction-yellow/30 p-4 md:p-6 text-center">
-                  <CardContent className="p-0">
-                    <p className="text-gray-300 mb-2 text-sm md:text-base">
-                      <strong className="text-construction-yellow">
-                        Ministry of Local Government Public Works
-                      </strong>
-                    </p>
-                    <p className="text-gray-400 text-xs md:text-sm">
-                      Licensed and compliant with government construction
-                      standards
+                <Card className="bg-white/10 backdrop-blur-md border border-white/20 p-3 md:p-4 lg:p-6 text-center hover:border-construction-yellow transition-all duration-500 h-full">
+                  <CardContent className="p-0 flex flex-col items-center justify-center">
+                    <img 
+                      src={localGovLogo} 
+                      alt="Local Government Logo"
+                      className="h-12 w-12 md:h-14 md:w-14 lg:h-16 lg:w-16 object-contain mx-auto mb-2 md:mb-3"
+                    />
+                    <h3 className="text-white font-bold mb-1 md:mb-2 text-xs md:text-sm lg:text-base">
+                      Local Government
+                    </h3>
+                    <p className="text-gray-300 text-xs leading-tight">
+                      Ministry of Local Government Public Works
                     </p>
                   </CardContent>
                 </Card>
