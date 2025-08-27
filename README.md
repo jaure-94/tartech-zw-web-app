@@ -1,5 +1,7 @@
 # Tartech Contracting Website
 
+## AUTHOR: Tawanda Jaure
+
 ## Overview
 
 This is a modern, industrial-grade business website for Tartech Contracting, a company operating in the construction, agriculture, and mining industries in Zimbabwe. The project is built as a full-stack web application with a React frontend and Express backend, designed to replace an outdated WordPress site with modern design, animations, and technical functionality.
