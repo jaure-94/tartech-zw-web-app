@@ -31,6 +31,13 @@ import binduraNickelLogo from "@assets/bnc-logo_1755190481287.png";
 import khayaLogo from "@assets/khaya-logo_1756283910285.png";
 import zimplatsLogo from "@assets/zimplats-logo_1756283910288.png";
 
+// Import certification logos
+import zbcaLogo from "@assets/zbca-logo-resized_1756292941950.png";
+import prazLogo from "@assets/praz-logo-resized_1756292941950.png";
+import necLogo from "@assets/nec-logo-resized_1756292941948.png";
+import cifozLogo from "@assets/cifoz-logo-resized_1756292941947.png";
+import nssaLogo from "@assets/nssa-logo-resized_1756292941949.png";
+
 export default function About() {
   const [isLoading, setIsLoading] = useState(true);
 
@@ -838,7 +845,11 @@ export default function About() {
               <div className="animate-fade-in">
                 <Card className="bg-white/10 backdrop-blur-md border border-white/20 p-4 md:p-6 text-center hover:border-construction-yellow transition-all duration-500">
                   <CardContent className="p-0">
-                    <Award className="h-8 w-8 md:h-10 md:w-10 lg:h-12 lg:w-12 text-construction-yellow mx-auto mb-3 md:mb-4" />
+                    <img 
+                      src={zbcaLogo} 
+                      alt="ZBCA Logo"
+                      className="h-12 w-12 md:h-16 md:w-16 lg:h-20 lg:w-20 object-contain mx-auto mb-3 md:mb-4"
+                    />
                     <h3 className="text-white font-bold mb-2 text-sm md:text-base">
                       ZBCA
                     </h3>
@@ -852,7 +863,11 @@ export default function About() {
               <div className="animate-fade-in">
                 <Card className="bg-white/10 backdrop-blur-md border border-white/20 p-4 md:p-6 text-center hover:border-construction-yellow transition-all duration-500">
                   <CardContent className="p-0">
-                    <FileCheck className="h-8 w-8 md:h-10 md:w-10 lg:h-12 lg:w-12 text-construction-yellow mx-auto mb-3 md:mb-4" />
+                    <img 
+                      src={prazLogo} 
+                      alt="PRAZ Logo"
+                      className="h-12 w-12 md:h-16 md:w-16 lg:h-20 lg:w-20 object-contain mx-auto mb-3 md:mb-4"
+                    />
                     <h3 className="text-white font-bold mb-2 text-sm md:text-base">
                       PRAZ
                     </h3>
@@ -866,7 +881,11 @@ export default function About() {
               <div className="animate-fade-in">
                 <Card className="bg-white/10 backdrop-blur-md border border-white/20 p-4 md:p-6 text-center hover:border-construction-yellow transition-all duration-500">
                   <CardContent className="p-0">
-                    <Building2 className="h-8 w-8 md:h-10 md:w-10 lg:h-12 lg:w-12 text-construction-yellow mx-auto mb-3 md:mb-4" />
+                    <img 
+                      src={necLogo} 
+                      alt="NEC Logo"
+                      className="h-12 w-12 md:h-16 md:w-16 lg:h-20 lg:w-20 object-contain mx-auto mb-3 md:mb-4"
+                    />
                     <h3 className="text-white font-bold mb-2 text-sm md:text-base">
                       NEC
                     </h3>
@@ -880,7 +899,11 @@ export default function About() {
               <div className="animate-fade-in">
                 <Card className="bg-white/10 backdrop-blur-md border border-white/20 p-4 md:p-6 text-center hover:border-construction-yellow transition-all duration-500">
                   <CardContent className="p-0">
-                    <Settings className="h-8 w-8 md:h-10 md:w-10 lg:h-12 lg:w-12 text-construction-yellow mx-auto mb-3 md:mb-4" />
+                    <img 
+                      src={cifozLogo} 
+                      alt="CIFOZ Logo"
+                      className="h-12 w-12 md:h-16 md:w-16 lg:h-20 lg:w-20 object-contain mx-auto mb-3 md:mb-4"
+                    />
                     <h3 className="text-white font-bold mb-2 text-sm md:text-base">
                       CIFOZ
                     </h3>
@@ -896,7 +919,11 @@ export default function About() {
               <div className="animate-fade-in">
                 <Card className="bg-white/10 backdrop-blur-md border border-white/20 p-4 md:p-6 text-center hover:border-construction-yellow transition-all duration-500">
                   <CardContent className="p-0">
-                    <Shield className="h-8 w-8 md:h-10 md:w-10 lg:h-12 lg:w-12 text-construction-yellow mx-auto mb-3 md:mb-4" />
+                    <img 
+                      src={nssaLogo} 
+                      alt="NSSA Logo"
+                      className="h-12 w-12 md:h-16 md:w-16 lg:h-20 lg:w-20 object-contain mx-auto mb-3 md:mb-4"
+                    />
                     <h3 className="text-white font-bold mb-2 text-sm md:text-base">
                       NSSA
                     </h3>
