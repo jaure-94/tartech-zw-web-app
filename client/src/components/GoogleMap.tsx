@@ -135,133 +135,109 @@ export function GoogleMap({ address, className = "" }: GoogleMapProps) {
           zoomControl: true
         });
 
-        // Create geocoder
-        const geocoder = new window.google.maps.Geocoder();
+        // Use exact coordinates instead of geocoding
+        const exactLocation = defaultLocation;
+        map.setCenter(exactLocation);
         
-        // Geocode the address
-        geocoder.geocode({ address: address }, (results: any, status: any) => {
-          if (status === 'OK' && results[0]) {
-            const location = results[0].geometry.location;
-            map.setCenter(location);
-            
-            // Create custom marker
-            const marker = new window.google.maps.Marker({
-              position: location,
-              map: map,
-              title: 'Tartech Contracting',
-              icon: {
-                path: window.google.maps.SymbolPath.CIRCLE,
-                scale: 10,
-                fillColor: '#FFD700',
-                fillOpacity: 1,
-                strokeColor: '#2d2d2d',
-                strokeWeight: 2
-              }
-            });
-
-            // Create info window with mobile-responsive content
-            const isMobile = window.innerWidth < 768;
-            
-            const infoWindow = new window.google.maps.InfoWindow({
-              maxWidth: isMobile ? 200 : 320,
-              disableAutoPan: false,
-              content: `
-                <div style="padding: ${isMobile ? '6px' : '12px'}; width: ${isMobile ? '180px' : '300px'}; text-align: ${isMobile ? 'left' : 'center'}; position: relative;">
-                  <div style="display: flex; align-items: flex-start; gap: ${isMobile ? '6px' : '8px'};">
-                    <img src="${tartechLogoSymbol}" alt="Tartech Logo" style="width: ${isMobile ? '20px' : '32px'}; height: ${isMobile ? '20px' : '32px'}; flex-shrink: 0; margin-top: 2px;" />
-                    <div style="flex: 1; min-width: 0;">
-                      <h3 style="font-weight: bold; font-size: ${isMobile ? '12px' : '16px'}; color: #333; margin: 0 0 ${isMobile ? '2px' : '4px'} 0; line-height: 1.2; overflow: hidden;">Tartech Contracting</h3>
-                      <p style="color: #666; font-size: ${isMobile ? '10px' : '14px'}; margin: 0 0 ${isMobile ? '2px' : '4px'} 0; line-height: 1.2; word-wrap: break-word;">16 Beryl Road, Msasa<br>Harare, Zimbabwe</p>
-                      <div style="font-size: ${isMobile ? '9px' : '12px'}; color: #999;">
-                        <span>Industrial Excellence</span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              `
-            });
-
-            // Add click event to marker
-            marker.addListener('click', () => {
-              infoWindow.open(map, marker);
-            });
-
-            // Style Google's default close button to be more visible
-            const styleDefaultCloseButton = () => {
-              setTimeout(() => {
-                // Find Google's default close button
-                const defaultCloseButton = document.querySelector('button[title="Close"]') as HTMLElement;
-                console.log('Default close button found:', defaultCloseButton);
-                
-                if (defaultCloseButton) {
-                  // Apply styling to make it more visible and centered
-                  const buttonStyles = `
-                    position: absolute !important;
-                    top: ${isMobile ? '8px' : '10px'} !important;
-                    right: ${isMobile ? '8px' : '10px'} !important;
-                    width: ${isMobile ? '24px' : '28px'} !important;
-                    height: ${isMobile ? '24px' : '28px'} !important;
-                    background: rgba(255, 255, 255, 0.95) !important;
-                    border: 2px solid #333 !important;
-                    border-radius: 50% !important;
-                    cursor: pointer !important;
-                    z-index: 1000 !important;
-                    display: flex !important;
-                    align-items: center !important;
-                    justify-content: center !important;
-                    box-shadow: 0 2px 6px rgba(0,0,0,0.3) !important;
-                    opacity: 1 !important;
-                  `;
-                  
-                  defaultCloseButton.setAttribute('style', buttonStyles);
-                  
-                  // Always replace with a clear X symbol
-                  defaultCloseButton.innerHTML = '×';
-                  defaultCloseButton.style.fontSize = isMobile ? '18px' : '20px';
-                  defaultCloseButton.style.fontWeight = 'bold';
-                  defaultCloseButton.style.color = '#000';
-                  defaultCloseButton.style.fontFamily = 'Arial, sans-serif';
-                  defaultCloseButton.style.lineHeight = '1';
-                  defaultCloseButton.style.textAlign = 'center';
-                  
-                  console.log('Default close button styled successfully');
-                } else {
-                  console.warn('Default close button not found');
-                }
-              }, 100);
-            };
-
-            // Listen for info window open events and style the default close button
-            infoWindow.addListener('domready', () => {
-              console.log('InfoWindow DOM ready');
-              styleDefaultCloseButton();
-              setTimeout(styleDefaultCloseButton, 200);
-              setTimeout(styleDefaultCloseButton, 500);
-            });
-
-            // Auto-open info window
-            setTimeout(() => {
-              infoWindow.open(map, marker);
-            }, 1000);
-
-          } else {
-            console.warn('Geocoding failed:', status);
-            // If geocoding fails, still show the map with default location
-            const marker = new window.google.maps.Marker({
-              position: defaultLocation,
-              map: map,
-              title: 'Tartech Contracting - Harare, Zimbabwe',
-              icon: {
-                path: window.google.maps.SymbolPath.CIRCLE,
-                scale: 10,
-                fillColor: '#FFD700',
-                fillOpacity: 1,
-                strokeColor: '#2d2d2d',
-                strokeWeight: 2
-              }
-            });
+        // Create custom marker at exact coordinates
+        const marker = new window.google.maps.Marker({
+          position: exactLocation,
+          map: map,
+          title: 'Tartech Contracting',
+          icon: {
+            path: window.google.maps.SymbolPath.CIRCLE,
+            scale: 10,
+            fillColor: '#FFD700',
+            fillOpacity: 1,
+            strokeColor: '#2d2d2d',
+            strokeWeight: 2
           }
         });
+
+        // Create info window with mobile-responsive content
+        const isMobile = window.innerWidth < 768;
+        
+        const infoWindow = new window.google.maps.InfoWindow({
+          maxWidth: isMobile ? 200 : 320,
+          disableAutoPan: false,
+          content: `
+            <div style="padding: ${isMobile ? '6px' : '12px'}; width: ${isMobile ? '180px' : '300px'}; text-align: ${isMobile ? 'left' : 'center'}; position: relative;">
+              <div style="display: flex; align-items: flex-start; gap: ${isMobile ? '6px' : '8px'};">
+                <img src="${tartechLogoSymbol}" alt="Tartech Logo" style="width: ${isMobile ? '20px' : '32px'}; height: ${isMobile ? '20px' : '32px'}; flex-shrink: 0; margin-top: 2px;" />
+                <div style="flex: 1; min-width: 0;">
+                  <h3 style="font-weight: bold; font-size: ${isMobile ? '12px' : '16px'}; color: #333; margin: 0 0 ${isMobile ? '2px' : '4px'} 0; line-height: 1.2; overflow: hidden;">Tartech Contracting</h3>
+                  <p style="color: #666; font-size: ${isMobile ? '10px' : '14px'}; margin: 0 0 ${isMobile ? '2px' : '4px'} 0; line-height: 1.2; word-wrap: break-word;">16 Beryl Road, Msasa<br>Harare, Zimbabwe</p>
+                  <div style="font-size: ${isMobile ? '9px' : '12px'}; color: #999;">
+                    <span>Industrial Excellence</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          `
+        });
+
+        // Add click event to marker
+        marker.addListener('click', () => {
+          infoWindow.open(map, marker);
+        });
+
+        // Style Google's default close button to be more visible
+        const styleDefaultCloseButton = () => {
+          setTimeout(() => {
+            // Find Google's default close button
+            const defaultCloseButton = document.querySelector('button[title="Close"]') as HTMLElement;
+            console.log('Default close button found:', defaultCloseButton);
+            
+            if (defaultCloseButton) {
+              // Apply styling to make it more visible and centered
+              const buttonStyles = `
+                position: absolute !important;
+                top: ${isMobile ? '8px' : '10px'} !important;
+                right: ${isMobile ? '8px' : '10px'} !important;
+                width: ${isMobile ? '24px' : '28px'} !important;
+                height: ${isMobile ? '24px' : '28px'} !important;
+                background: rgba(255, 255, 255, 0.95) !important;
+                border: 2px solid #333 !important;
+                border-radius: 50% !important;
+                cursor: pointer !important;
+                z-index: 1000 !important;
+                display: flex !important;
+                align-items: center !important;
+                justify-content: center !important;
+                box-shadow: 0 2px 6px rgba(0,0,0,0.3) !important;
+                opacity: 1 !important;
+              `;
+              
+              defaultCloseButton.setAttribute('style', buttonStyles);
+              
+              // Always replace with a clear X symbol
+              defaultCloseButton.innerHTML = '×';
+              defaultCloseButton.style.fontSize = isMobile ? '18px' : '20px';
+              defaultCloseButton.style.fontWeight = 'bold';
+              defaultCloseButton.style.color = '#000';
+              defaultCloseButton.style.fontFamily = 'Arial, sans-serif';
+              defaultCloseButton.style.lineHeight = '1';
+              defaultCloseButton.style.textAlign = 'center';
+              
+              console.log('Default close button styled successfully');
+            } else {
+              console.warn('Default close button not found');
+            }
+          }, 100);
+        };
+
+        // Listen for info window open events and style the default close button
+        infoWindow.addListener('domready', () => {
+          console.log('InfoWindow DOM ready');
+          styleDefaultCloseButton();
+          setTimeout(styleDefaultCloseButton, 200);
+          setTimeout(styleDefaultCloseButton, 500);
+        });
+
+        // Auto-open info window
+        setTimeout(() => {
+          infoWindow.open(map, marker);
+        }, 1000);
 
       } catch (error) {
         console.error('Error initializing map:', error);
