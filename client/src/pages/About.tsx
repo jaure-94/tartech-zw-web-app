@@ -28,6 +28,8 @@ import bikitaMineralsLogo from "@assets/bikita-logo_1755190481286.png";
 import ministryOfTransportLogo from "@assets/min-trans_1755190481289.png";
 import fredaRebeccaLogo from "@assets/reda_1755190481290.png";
 import binduraNickelLogo from "@assets/bnc-logo_1755190481287.png";
+import khayaLogo from "@assets/khaya-logo_1756283910285.png";
+import zimplatsLogo from "@assets/zimplats-logo_1756283910288.png";
 
 export default function About() {
   const [isLoading, setIsLoading] = useState(true);
@@ -770,7 +772,11 @@ export default function About() {
                   <Card className="p-4 md:p-6 bg-white border-l-4 border-construction-yellow shadow-lg hover:shadow-xl transition-all duration-300">
                     <CardContent className="p-0">
                       <div className="flex items-center space-x-2 md:space-x-3">
-                        <Building2 className="h-5 w-5 md:h-6 md:w-6 text-construction-yellow flex-shrink-0" />
+                        <img 
+                          src={khayaLogo} 
+                          alt="Khaya Cement"
+                          className="h-8 w-8 md:h-10 md:w-10 object-contain flex-shrink-0"
+                        />
                         <div>
                           <h4 className="font-bold text-sm md:text-base text-industrial-black">
                             Khaya Cement
@@ -786,7 +792,11 @@ export default function About() {
                   <Card className="p-4 md:p-6 bg-white border-l-4 border-construction-yellow shadow-lg hover:shadow-xl transition-all duration-300">
                     <CardContent className="p-0">
                       <div className="flex items-center space-x-2 md:space-x-3">
-                        <Settings className="h-5 w-5 md:h-6 md:w-6 text-construction-yellow flex-shrink-0" />
+                        <img 
+                          src={zimplatsLogo} 
+                          alt="Zimplats"
+                          className="h-8 w-8 md:h-10 md:w-10 object-contain flex-shrink-0"
+                        />
                         <div>
                           <h4 className="font-bold text-sm md:text-base text-industrial-black">
                             Zimplats
