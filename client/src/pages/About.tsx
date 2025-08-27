@@ -769,15 +769,15 @@ export default function About() {
                     </CardContent>
                   </Card>
 
-                  <Card className="p-4 md:p-6 bg-white border-l-4 border-construction-yellow shadow-lg hover:shadow-xl transition-all duration-300">
+                  <Card className="p-3 md:p-4 bg-white border-l-4 border-construction-yellow shadow-lg hover:shadow-xl transition-all duration-300">
                     <CardContent className="p-0">
-                      <div className="flex items-center space-x-2 md:space-x-3">
+                      <div className="flex items-center space-x-3 md:space-x-4">
                         <img 
                           src={khayaLogo} 
                           alt="Khaya Cement"
-                          className="h-8 w-8 md:h-10 md:w-10 object-contain flex-shrink-0"
+                          className="h-12 w-12 md:h-16 md:w-16 object-contain flex-shrink-0"
                         />
-                        <div>
+                        <div className="flex-1 min-w-0">
                           <h4 className="font-bold text-sm md:text-base text-industrial-black">
                             Khaya Cement
                           </h4>
@@ -789,15 +789,15 @@ export default function About() {
                     </CardContent>
                   </Card>
 
-                  <Card className="p-4 md:p-6 bg-white border-l-4 border-construction-yellow shadow-lg hover:shadow-xl transition-all duration-300">
+                  <Card className="p-3 md:p-4 bg-white border-l-4 border-construction-yellow shadow-lg hover:shadow-xl transition-all duration-300">
                     <CardContent className="p-0">
-                      <div className="flex items-center space-x-2 md:space-x-3">
+                      <div className="flex items-center space-x-3 md:space-x-4">
                         <img 
                           src={zimplatsLogo} 
                           alt="Zimplats"
-                          className="h-8 w-8 md:h-10 md:w-10 object-contain flex-shrink-0"
+                          className="h-12 w-12 md:h-16 md:w-16 object-contain flex-shrink-0"
                         />
-                        <div>
+                        <div className="flex-1 min-w-0">
                           <h4 className="font-bold text-sm md:text-base text-industrial-black">
                             Zimplats
                           </h4>
