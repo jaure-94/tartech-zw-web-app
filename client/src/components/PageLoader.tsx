@@ -95,7 +95,7 @@ export default function PageLoader({
 
         // Create animation timeline
         const timeline = gsap.timeline({ 
-          delay: 0.5,
+          delay: 0.2,
           onComplete: () => {
             console.log('Page animations completed');
             onAnimationComplete?.();
@@ -120,10 +120,10 @@ export default function PageLoader({
               opacity: 1,
               y: 0,
               scale: 1,
-              duration: 1.0,
+              duration: 0.8,
               ease: "power3.out",
               stagger: {
-                amount: 3.0,
+                amount: 1.5,
                 from: "start"
               },
               onComplete: () => {
@@ -133,7 +133,7 @@ export default function PageLoader({
           );
           
           // Add delay before other animations start
-          timeline.to({}, { duration: 0.5 });
+          timeline.to({}, { duration: 0.2 });
         }
 
         // Cards animation
@@ -142,7 +142,7 @@ export default function PageLoader({
             opacity: 1,
             x: 0,
             y: 0,
-            duration: 1,
+            duration: 0.8,
             ease: "power2.out",
             onComplete: () => console.log('Card 1 animated')
           });
@@ -153,10 +153,10 @@ export default function PageLoader({
           timeline.to(animationElements.delay3, {
             opacity: 1,
             y: 0,
-            duration: 0.8,
+            duration: 0.7,
             ease: "power2.out",
             onComplete: () => console.log('Paragraph animated')
-          }, "-=0.5");
+          }, "-=0.4");
         }
 
         // Second card
@@ -165,10 +165,10 @@ export default function PageLoader({
             opacity: 1,
             x: 0,
             y: 0,
-            duration: 1,
+            duration: 0.8,
             ease: "power2.out",
             onComplete: () => console.log('Card 2 animated')
-          }, "-=0.7");
+          }, "-=0.5");
         }
 
         // Third card  
@@ -177,10 +177,10 @@ export default function PageLoader({
             opacity: 1,
             x: 0,
             y: 0,
-            duration: 1,
+            duration: 0.8,
             ease: "power2.out",
             onComplete: () => console.log('Card 3 animated')
-          }, "-=0.8");
+          }, "-=0.6");
         }
 
         // Stats animation (delay-4)
@@ -188,10 +188,10 @@ export default function PageLoader({
           timeline.to(animationElements.delay4, {
             opacity: 1,
             y: 0,
-            duration: 0.8,
+            duration: 0.7,
             ease: "power2.out",
             onComplete: () => console.log('Stats animated')
-          }, "-=0.6");
+          }, "-=0.4");
         }
 
         // CTA animation (delay-5)
@@ -199,10 +199,10 @@ export default function PageLoader({
           timeline.to(animationElements.delay5, {
             opacity: 1,
             y: 0,
-            duration: 0.8,
+            duration: 0.7,
             ease: "power2.out",
             onComplete: () => console.log('CTA animated')
-          }, "-=0.4");
+          }, "-=0.3");
         }
 
       } catch (error) {
