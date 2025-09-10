@@ -30,6 +30,15 @@ export default defineConfig({
   build: {
     outDir: path.resolve(__dirname, "dist"),
     emptyOutDir: true,
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          'gsap': ['gsap'],
+          'vendor': ['react', 'react-dom'],
+          'ui': ['lucide-react']
+        }
+      }
+    }
   },
   server: {
     fs: {

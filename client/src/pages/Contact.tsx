@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import React, { useEffect, useState, Suspense } from 'react';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';
@@ -10,8 +10,11 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@
 import { Textarea } from '@/components/ui/textarea';
 import { MapPin, Phone, Mail, Clock, Send, CheckCircle } from 'lucide-react';
 import { ScrollAnimations } from '@/components/ScrollAnimations';
-import { gsap } from '@/lib/gsap';
 import PageLoader from '@/components/PageLoader';
+import LoadingScreen from '@/components/LoadingScreen';
+import SEOHead from '@/components/SEOHead';
+import { gsap, initializePageAnimations } from '@/lib/gsap';
+import { trackPageView, trackContactFormSubmission } from '@/lib/analytics';
 import tartechLogo from '@assets/tartech-logo-symbol_1755071044733.png';
 import { GoogleMap } from '@/components/GoogleMap';
 import { useMutation } from '@tanstack/react-query';
@@ -35,32 +38,32 @@ export default function Contact() {
   const { toast } = useToast();
 
   useEffect(() => {
-    document.title = 'Contact Us - Tartech Contracting';
+    trackPageView('/contact', 'Contact Us - Tartech Contracting');
     
-    // Simulate loading time and then hide loader
-    const loadingTimer = setTimeout(() => {
-      import('@/lib/gsap').then(({ gsap }) => {
-        // Animate loading screen out
-        const loadingElement = document.querySelector('.loading-screen');
-        if (loadingElement) {
-          gsap.to(loadingElement, {
-            opacity: 0,
-            duration: 0.8,
-            ease: "power2.out",
-            onComplete: () => {
-              setIsLoading(false);
-            }
-          });
-        } else {
-          // Fallback if GSAP target not found
-          setIsLoading(false);
-        }
-      }).catch(() => {
-        // Fallback if GSAP import fails
+    // Initialize animations and hide loader
+    const initializeAndHideLoader = () => {
+      const loadingElement = document.querySelector('.loading-screen');
+      if (loadingElement) {
+        gsap.to(loadingElement, {
+          opacity: 0,
+          duration: 0.8,
+          ease: "power2.out",
+          onComplete: () => {
+            setIsLoading(false);
+            setTimeout(() => {
+              initializePageAnimations();
+            }, 100);
+          }
+        });
+      } else {
         setIsLoading(false);
-      });
-    }, 1500); // Show loader for 1.5 seconds
+        setTimeout(() => {
+          initializePageAnimations();
+        }, 100);
+      }
+    };
 
+    const loadingTimer = setTimeout(initializeAndHideLoader, 300);
     return () => clearTimeout(loadingTimer);
   }, []);
 
@@ -134,43 +137,19 @@ export default function Contact() {
   });
 
   const onSubmit = (data: ContactFormData) => {
+    trackContactFormSubmission(data.service);
     contactMutation.mutate(data);
   };
 
   return (
-    <div className="min-h-screen">
-      {/* Loading Screen */}
-      {isLoading && (
-        <div className="loading-screen fixed inset-0 z-50 bg-industrial-black flex items-center justify-center">
-          <div className="text-center">
-            {/* Animated Logo/Brand */}
-            <div className="mb-8">
-              <div className="w-24 h-24 mx-auto mb-6 relative">
-                <div className="absolute inset-0 border-4 border-construction-yellow/20 rounded-full"></div>
-                <div className="absolute inset-0 border-4 border-construction-yellow border-t-transparent rounded-full animate-spin"></div>
-                <div className="absolute inset-2 bg-construction-yellow/10 rounded-full flex items-center justify-center">
-                  <img 
-                    src={tartechLogo} 
-                    alt="Tartech Logo" 
-                    className="w-10 h-10 object-contain"
-                  />
-                </div>
-              </div>
-              <h2 className="text-2xl font-bold text-white mb-2">CONTACT US</h2>
-              <p className="text-construction-yellow/80 text-sm font-medium tracking-wider">TARTECH CONTRACTING</p>
-            </div>
-            
-            {/* Loading Animation */}
-            <div className="flex items-center justify-center space-x-1">
-              <div className="w-2 h-2 bg-construction-yellow rounded-full animate-pulse" style={{animationDelay: '0ms'}}></div>
-              <div className="w-2 h-2 bg-construction-yellow rounded-full animate-pulse" style={{animationDelay: '200ms'}}></div>
-              <div className="w-2 h-2 bg-construction-yellow rounded-full animate-pulse" style={{animationDelay: '400ms'}}></div>
-            </div>
-            
-            <p className="text-gray-400 text-sm mt-4 font-light">Loading...</p>
-          </div>
-        </div>
-      )}
+    <Suspense fallback={<LoadingScreen title="CONTACT US" />}>
+      <SEOHead 
+        title="Contact Us - Tartech Contracting"
+        description="Get in touch with Tartech Contracting for your industrial projects. Contact our expert team for construction, mining, agriculture, and borehole drilling services in Zimbabwe."
+        keywords="contact Tartech Contracting, industrial contractors Zimbabwe, construction quotes Harare, mining contractors contact"
+      />
+      <div className="min-h-screen">
+        {isLoading && <LoadingScreen title="CONTACT US" />}
 
       <PageLoader enableHeroAnimation={!isLoading}>
         <ScrollAnimations />
@@ -396,6 +375,7 @@ export default function Contact() {
         </div>
       </section>
       </PageLoader>
-    </div>
+      </div>
+    </Suspense>
   );
 }

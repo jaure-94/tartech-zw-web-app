@@ -6,6 +6,24 @@ gsap.registerPlugin(ScrollTrigger);
 
 export { gsap, ScrollTrigger };
 
+export const initializePageAnimations = () => {
+  try {
+    // Initialize scroll animations
+    initScrollAnimations();
+    
+    // Initialize navbar animation
+    initNavbarAnimation();
+    
+    // Initialize service card animations
+    animateServiceCards();
+    
+    // Initialize parallax effect
+    initParallaxEffect();
+  } catch (error) {
+    console.warn('Animation initialization failed:', error);
+  }
+};
+
 // Animation utilities
 export const initScrollAnimations = () => {
   // Fade in animations

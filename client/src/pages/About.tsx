@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import React, { useEffect, useState, Suspense } from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Link } from "wouter";
@@ -19,6 +19,10 @@ import {
 } from "lucide-react";
 import { ScrollAnimations } from "@/components/ScrollAnimations";
 import PageLoader from "@/components/PageLoader";
+import LoadingScreen from "@/components/LoadingScreen";
+import SEOHead from "@/components/SEOHead";
+import { gsap, initializePageAnimations } from "@/lib/gsap";
+import { trackPageView } from "@/lib/analytics";
 import tartechLogo from "@assets/tartech-logo-symbol_1755071044733.png";
 import constructionSiteImage from "@assets/construction-site-min_1755117902164.jpg";
 import cityImage from "@assets/city-568208_1280_1755188153811.jpg";
@@ -43,82 +47,44 @@ export default function About() {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    document.title = "Who We Are - Tartech Contracting Zimbabwe";
-
-    // Simulate loading time and then hide loader
-    const loadingTimer = setTimeout(() => {
-      import("@/lib/gsap")
-        .then(({ gsap }) => {
-          // Animate loading screen out
-          const loadingElement = document.querySelector(".loading-screen");
-          if (loadingElement) {
-            gsap.to(loadingElement, {
-              opacity: 0,
-              duration: 1,
-              ease: "power2.out",
-              onComplete: () => {
-                setIsLoading(false);
-              },
-            });
-          } else {
-            // Fallback if GSAP target not found
+    trackPageView('/about', 'About Us - Tartech Contracting Zimbabwe');
+    
+    // Initialize animations and hide loader
+    const initializeAndHideLoader = () => {
+      const loadingElement = document.querySelector('.loading-screen');
+      if (loadingElement) {
+        gsap.to(loadingElement, {
+          opacity: 0,
+          duration: 0.8,
+          ease: "power2.out",
+          onComplete: () => {
             setIsLoading(false);
+            setTimeout(() => {
+              initializePageAnimations();
+            }, 100);
           }
-        })
-        .catch(() => {
-          // Fallback if GSAP import fails
-          setIsLoading(false);
         });
-    }, 1500); // Show loader for 1.5 seconds
+      } else {
+        setIsLoading(false);
+        setTimeout(() => {
+          initializePageAnimations();
+        }, 100);
+      }
+    };
 
+    const loadingTimer = setTimeout(initializeAndHideLoader, 300);
     return () => clearTimeout(loadingTimer);
   }, []);
 
   return (
-    <div className="min-h-screen">
-      {/* Loading Screen */}
-      {isLoading && (
-        <div className="loading-screen fixed inset-0 z-50 bg-industrial-black flex items-center justify-center">
-          <div className="text-center">
-            {/* Animated Logo/Brand */}
-            <div className="mb-8">
-              <div className="w-24 h-24 mx-auto mb-6 relative">
-                <div className="absolute inset-0 border-4 border-construction-yellow/20 rounded-full"></div>
-                <div className="absolute inset-0 border-4 border-construction-yellow border-t-transparent rounded-full animate-spin"></div>
-                <div className="absolute inset-2 bg-construction-yellow/10 rounded-full flex items-center justify-center">
-                  <img
-                    src={tartechLogo}
-                    alt="Tartech Logo"
-                    className="w-10 h-10 object-contain"
-                  />
-                </div>
-              </div>
-              <h2 className="text-2xl font-bold text-white mb-2">ABOUT US</h2>
-              <p className="text-construction-yellow/80 text-sm font-medium tracking-wider">
-                TARTECH CONTRACTING
-              </p>
-            </div>
-
-            {/* Loading Animation */}
-            <div className="flex items-center justify-center space-x-1">
-              <div
-                className="w-2 h-2 bg-construction-yellow rounded-full animate-pulse"
-                style={{ animationDelay: "0ms" }}
-              ></div>
-              <div
-                className="w-2 h-2 bg-construction-yellow rounded-full animate-pulse"
-                style={{ animationDelay: "200ms" }}
-              ></div>
-              <div
-                className="w-2 h-2 bg-construction-yellow rounded-full animate-pulse"
-                style={{ animationDelay: "400ms" }}
-              ></div>
-            </div>
-
-            <p className="text-gray-400 text-sm mt-4 font-light">Loading...</p>
-          </div>
-        </div>
-      )}
+    <Suspense fallback={<LoadingScreen title="ABOUT US" />}>
+      <SEOHead 
+        title="About Us - Tartech Contracting Zimbabwe"
+        description="Learn about Tartech Contracting, Zimbabwe's leading industrial contracting company with over 15 years of experience in construction, mining, agriculture, and infrastructure development."
+        keywords="about Tartech Contracting, industrial contractors Zimbabwe, construction company history, mining contractors Zimbabwe"
+      />
+      <div className="min-h-screen">
+        {isLoading && <LoadingScreen title="ABOUT US" />}
 
       <PageLoader enableHeroAnimation={!isLoading}>
         <ScrollAnimations />
@@ -977,6 +943,7 @@ export default function About() {
           </div>
         </section>
       </PageLoader>
-    </div>
+      </div>
+    </Suspense>
   );
 }
