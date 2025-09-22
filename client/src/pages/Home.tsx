@@ -125,14 +125,14 @@ export default function Home() {
     <Suspense fallback={<LoadingScreen title="ENGINEERING EXCELLENCE" />}>
       <SEOHead 
         title="Tartech Contracting - Engineering Excellence in Harsh Environments"
-        description="Leading industrial contracting company in Zimbabwe specializing in construction, mining, agriculture, and borehole drilling services with over 15 years of experience."
+        description="Leading industrial contracting company in Zimbabwe specializing in construction, mining, agriculture, and borehole drilling services with over 10 years of experience."
         keywords="industrial contracting Zimbabwe, construction services Harare, mining operations Zimbabwe, agriculture contracting, borehole drilling Zimbabwe"
       />
       <div className="min-h-screen">
         {isLoading && <LoadingScreen title="ENGINEERING EXCELLENCE" />}
       
       <PageLoader enableHeroAnimation={!isLoading}>
-        <ScrollAnimations />
+        {/* <ScrollAnimations /> */}
         
         {/* Hero Section */}
       <section className="hero-section relative min-h-screen flex items-center bg-gradient-to-br from-industrial-black via-gray-900 to-industrial-black overflow-hidden">
