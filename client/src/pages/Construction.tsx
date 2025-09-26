@@ -9,8 +9,7 @@ import LoadingScreen from '@/components/LoadingScreen';
 import SEOHead from '@/components/SEOHead';
 import { gsap, initializePageAnimations } from '@/lib/gsap';
 import { trackPageView, trackServicePageView } from '@/lib/analytics';
-import tartechLogo from '@assets/tartech-logo-symbol_1755071044733.png';
-import constructionHeroImage from '@assets/construction-site-silhouettes-min_1755186368834.jpg';
+import tartechTrucksImage from "@assets/tartech-trucks.jpeg";
 
 export default function Construction() {
   const [isLoading, setIsLoading] = useState(true);
@@ -141,7 +140,7 @@ export default function Construction() {
           </div>
           
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-10 md:gap-12 items-center mb-12 sm:mb-14 md:mb-16 opacity-0" id="hero-content">
-            <div className="order-2 lg:order-1 animate-slide-left-card-1 opacity-0 transform -translate-x-8" id="hero-text">
+            <div className="order-2 opacity-0 transform -translate-x-8" id="hero-text">
               <h3 className="text-2xl sm:text-3xl md:text-4xl font-black text-industrial-black mb-4 sm:mb-6 leading-tight">INDUSTRIAL CONSTRUCTION</h3>
               <ul className="space-y-3 sm:space-y-4 text-base sm:text-lg text-industrial-gray">
                 <li className="flex items-start">
@@ -162,9 +161,9 @@ export default function Construction() {
                 </li>
               </ul>
             </div>
-            <div className="order-1 lg:order-2 animate-slide-left-card-2 opacity-0 transform translate-x-8" id="hero-image">
+            <div className="order-1 lg:order-2 opacity-0 transform" id="hero-image">
               <img 
-                src={constructionHeroImage} 
+                src={tartechTrucksImage} 
                 alt="Modern industrial building under construction with steel framework" 
                 className="rounded-xl shadow-2xl w-full" 
               />

@@ -23,6 +23,9 @@ import LoadingScreen from "@/components/LoadingScreen";
 import SEOHead from "@/components/SEOHead";
 import { gsap, initializePageAnimations } from "@/lib/gsap";
 import { trackPageView } from "@/lib/analytics";
+
+// Assets
+import engineersMeetingImage from "@assets/engineers-meeting.jpg";
 import tartechLogo from "@assets/tartech-logo-symbol_1755071044733.png";
 import constructionSiteImage from "@assets/construction-site-min_1755117902164.jpg";
 import cityImage from "@assets/city-568208_1280_1755188153811.jpg";
@@ -95,7 +98,7 @@ export default function About() {
           <div className="absolute inset-0">
             {/* Primary Background Image */}
             <img
-              src="https://images.unsplash.com/photo-1577962917302-cd874c4e31d2?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&h=1080"
+              src={engineersMeetingImage}
               alt="Professional construction team in hard hats and safety gear on industrial site"
               className="w-full h-full object-cover opacity-30 animate-zoom-in"
             />
@@ -256,10 +259,10 @@ export default function About() {
         <section className="py-12 md:py-16 lg:py-20 bg-white">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-10 md:mb-12 lg:mb-16">
-              <h2 className="animate-fade-in text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black text-industrial-black mb-4 md:mb-6">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black text-industrial-black mb-4 md:mb-6">
                 OUR <span className="text-construction-yellow">VALUES</span>
               </h2>
-              <p className="animate-fade-in text-base sm:text-lg text-industrial-gray max-w-3xl mx-auto leading-relaxed">
+              <p className="text-base sm:text-lg text-industrial-gray max-w-3xl mx-auto leading-relaxed">
                 Our core values guide every decision we make and define how we
                 conduct business across all our operations in Zimbabwe.
               </p>
@@ -267,7 +270,7 @@ export default function About() {
 
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8 mb-12 md:mb-16">
               {/* Safety */}
-              <div className="animate-slide-in-left">
+              <div className="">
                 <Card className="h-full text-center p-4 md:p-6 lg:p-8 border-4 border-transparent hover:border-construction-yellow transition-all duration-500 shadow-xl">
                   <CardContent className="p-0">
                     <div className="w-12 h-12 md:w-14 md:h-14 lg:w-16 lg:h-16 bg-construction-yellow rounded-full flex items-center justify-center mx-auto mb-4 md:mb-6">
@@ -292,7 +295,7 @@ export default function About() {
               </div>
 
               {/* Integrity */}
-              <div className="animate-slide-in-left">
+              <div className="">
                 <Card className="h-full text-center p-4 md:p-6 lg:p-8 border-4 border-transparent hover:border-construction-yellow transition-all duration-500 shadow-xl">
                   <CardContent className="p-0">
                     <div className="w-12 h-12 md:w-14 md:h-14 lg:w-16 lg:h-16 bg-industrial-black rounded-full flex items-center justify-center mx-auto mb-4 md:mb-6">
@@ -317,7 +320,7 @@ export default function About() {
               </div>
 
               {/* People */}
-              <div className="animate-slide-in-right">
+              <div className="">
                 <Card className="h-full text-center p-4 md:p-6 lg:p-8 border-4 border-transparent hover:border-construction-yellow transition-all duration-500 shadow-xl">
                   <CardContent className="p-0">
                     <div className="w-12 h-12 md:w-14 md:h-14 lg:w-16 lg:h-16 bg-safety-orange rounded-full flex items-center justify-center mx-auto mb-4 md:mb-6">
@@ -342,7 +345,7 @@ export default function About() {
               </div>
 
               {/* Innovation */}
-              <div className="animate-slide-in-right">
+              <div className="">
                 <Card className="h-full text-center p-4 md:p-6 lg:p-8 border-4 border-transparent hover:border-construction-yellow transition-all duration-500 shadow-xl">
                   <CardContent className="p-0">
                     <div className="w-12 h-12 md:w-14 md:h-14 lg:w-16 lg:h-16 bg-construction-yellow rounded-full flex items-center justify-center mx-auto mb-4 md:mb-6">
@@ -373,20 +376,20 @@ export default function About() {
         <section className="py-12 md:py-16 lg:py-20 bg-light-industrial">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-10 md:mb-12 lg:mb-16">
-              <h2 className="animate-fade-in text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black text-industrial-black mb-4 md:mb-6">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black text-industrial-black mb-4 md:mb-6">
                 OUR{" "}
                 <span className="text-construction-yellow">
                   ENABLING APPROACH
                 </span>
               </h2>
-              <p className="animate-fade-in text-base sm:text-lg text-industrial-gray max-w-4xl mx-auto leading-relaxed">
+              <p className="text-base sm:text-lg text-industrial-gray max-w-4xl mx-auto leading-relaxed">
                 We are differentiated by the breadth of our construction
                 capability based on the following attributes:
               </p>
             </div>
 
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 items-center mb-12 md:mb-16">
-              <div className="animate-slide-in-left">
+              <div className="">
                 <img
                   src={constructionSiteImage}
                   alt="Professional construction management team reviewing project plans"
@@ -394,7 +397,7 @@ export default function About() {
                 />
               </div>
 
-              <div className="animate-slide-in-right space-y-4 md:space-y-6">
+              <div className="space-y-4 md:space-y-6">
                 <div className="flex items-start space-x-3 md:space-x-4">
                   <div className="w-6 h-6 md:w-8 md:h-8 bg-construction-yellow rounded-full flex items-center justify-center flex-shrink-0 mt-1">
                     <CheckCircle className="h-4 w-4 md:h-5 md:w-5 text-industrial-black" />
@@ -439,7 +442,7 @@ export default function About() {
             </div>
 
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 items-center">
-              <div className="animate-slide-in-left space-y-4 md:space-y-6 lg:order-2">
+              <div className="space-y-4 md:space-y-6 lg:order-2">
                 <div className="flex items-start space-x-3 md:space-x-4">
                   <div className="w-6 h-6 md:w-8 md:h-8 bg-construction-yellow rounded-full flex items-center justify-center flex-shrink-0 mt-1">
                     <CheckCircle className="h-4 w-4 md:h-5 md:w-5 text-industrial-black" />
@@ -465,7 +468,7 @@ export default function About() {
                 </div>
               </div>
 
-              <div className="animate-slide-in-right lg:order-1">
+              <div className="lg:order-1">
                 <img
                   src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600"
                   alt="Industrial construction site with advanced equipment and safety protocols"
@@ -480,17 +483,17 @@ export default function About() {
         <section className="py-12 md:py-16 lg:py-20 bg-white">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-10 md:mb-12 lg:mb-16">
-              <h2 className="animate-fade-in text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black text-industrial-black mb-4 md:mb-6">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black text-industrial-black mb-4 md:mb-6">
                 KEY <span className="text-construction-yellow">STRENGTHS</span>
               </h2>
-              <p className="animate-fade-in text-base sm:text-lg text-industrial-gray max-w-4xl mx-auto leading-relaxed">
+              <p className="text-base sm:text-lg text-industrial-gray max-w-4xl mx-auto leading-relaxed">
                 Our strategic advantages and core competencies that set us apart
                 in the competitive construction landscape.
               </p>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
-              <div className="animate-slide-in-left space-y-4 md:space-y-6">
+              <div className="space-y-4 md:space-y-6">
                 <div className="flex items-start space-x-3 md:space-x-4">
                   <div className="w-6 h-6 md:w-8 md:h-8 bg-construction-yellow rounded-full flex items-center justify-center flex-shrink-0 mt-1">
                     <CheckCircle className="h-4 w-4 md:h-5 md:w-5 text-industrial-black" />
@@ -534,7 +537,7 @@ export default function About() {
                 </div>
               </div>
 
-              <div className="animate-slide-in-right space-y-4 md:space-y-6">
+              <div className="space-y-4 md:space-y-6">
                 <div className="flex items-start space-x-3 md:space-x-4">
                   <div className="w-6 h-6 md:w-8 md:h-8 bg-construction-yellow rounded-full flex items-center justify-center flex-shrink-0 mt-1">
                     <CheckCircle className="h-4 w-4 md:h-5 md:w-5 text-industrial-black" />
@@ -590,17 +593,17 @@ export default function About() {
         <section className="py-12 md:py-16 lg:py-20 bg-light-industrial">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-10 md:mb-12 lg:mb-16">
-              <h2 className="animate-fade-in text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black text-industrial-black mb-4 md:mb-6">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black text-industrial-black mb-4 md:mb-6">
                 TRACK <span className="text-construction-yellow">RECORD</span>
               </h2>
-              <p className="animate-fade-in text-sm sm:text-base md:text-lg text-industrial-gray max-w-4xl mx-auto mb-6 md:mb-8 leading-relaxed">
+              <p className="text-sm sm:text-base md:text-lg text-industrial-gray max-w-4xl mx-auto mb-6 md:mb-8 leading-relaxed">
                 Our history speaks for itself. Since its inception, the company
                 has sought to acquire new skills and to improve upon established
                 methods. This philosophy has provided the company a platform to
                 successfully develop a multi-disciplinary construction
                 capability.
               </p>
-              <p className="animate-fade-in text-sm sm:text-base md:text-lg text-industrial-gray max-w-4xl mx-auto leading-relaxed">
+              <p className="text-sm sm:text-base md:text-lg text-industrial-gray max-w-4xl mx-auto leading-relaxed">
                 Tartech is a company that has already been tried and proven and
                 has outstood the test of time as it has managed to make a
                 tremendous impact on the market and has gained the satisfaction
@@ -610,7 +613,7 @@ export default function About() {
 
             <div className="mb-12 md:mb-16">
               <div className="flex flex-col lg:flex-row gap-8 md:gap-12 items-start mb-8 md:mb-12">
-                <div className="animate-slide-in-left flex-1">
+                <div className="flex-1">
                   <img
                     src={cityImage}
                     alt="Zimbabwe city skyline showcasing urban development and construction projects"
@@ -618,7 +621,7 @@ export default function About() {
                   />
                 </div>
 
-                <div className="animate-slide-in-right flex-1">
+                <div className="flex-1">
                   <h3 className="text-xl sm:text-2xl md:text-3xl font-black text-industrial-black mb-6 md:mb-8">
                     TRUSTED BY LEADING ORGANIZATIONS
                   </h3>
@@ -798,18 +801,18 @@ export default function About() {
         <section className="py-12 md:py-16 lg:py-20 bg-industrial-black">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-10 md:mb-12 lg:mb-16">
-              <h2 className="animate-fade-in text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black text-white mb-4 md:mb-6">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black text-white mb-4 md:mb-6">
                 CERTIFICATION &{" "}
                 <span className="text-construction-yellow">MEMBERSHIP</span>
               </h2>
-              <p className="animate-fade-in text-base sm:text-lg text-gray-300 max-w-3xl mx-auto leading-relaxed">
+              <p className="text-base sm:text-lg text-gray-300 max-w-3xl mx-auto leading-relaxed">
                 Our professional affiliations and certifications demonstrate our
                 commitment to industry standards and regulatory compliance.
               </p>
             </div>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-6 gap-4 md:gap-6 lg:gap-8">
-              <div className="animate-fade-in">
+              <div className="">
                 <Card className="bg-white/10 backdrop-blur-md border border-white/20 p-3 md:p-4 lg:p-6 text-center hover:border-construction-yellow transition-all duration-500 h-full">
                   <CardContent className="p-0 flex flex-col items-center justify-center">
                     <img 
@@ -827,7 +830,7 @@ export default function About() {
                 </Card>
               </div>
 
-              <div className="animate-fade-in">
+              <div className="">
                 <Card className="bg-white/10 backdrop-blur-md border border-white/20 p-3 md:p-4 lg:p-6 text-center hover:border-construction-yellow transition-all duration-500 h-full">
                   <CardContent className="p-0 flex flex-col items-center justify-center">
                     <img 
@@ -845,7 +848,7 @@ export default function About() {
                 </Card>
               </div>
 
-              <div className="animate-fade-in">
+              <div className="">
                 <Card className="bg-white/10 backdrop-blur-md border border-white/20 p-3 md:p-4 lg:p-6 text-center hover:border-construction-yellow transition-all duration-500 h-full">
                   <CardContent className="p-0 flex flex-col items-center justify-center">
                     <img 
@@ -863,7 +866,7 @@ export default function About() {
                 </Card>
               </div>
 
-              <div className="animate-fade-in">
+              <div className="">
                 <Card className="bg-white/10 backdrop-blur-md border border-white/20 p-3 md:p-4 lg:p-6 text-center hover:border-construction-yellow transition-all duration-500 h-full">
                   <CardContent className="p-0 flex flex-col items-center justify-center">
                     <img 
@@ -881,7 +884,7 @@ export default function About() {
                 </Card>
               </div>
 
-              <div className="animate-fade-in">
+              <div className="">
                 <Card className="bg-white/10 backdrop-blur-md border border-white/20 p-3 md:p-4 lg:p-6 text-center hover:border-construction-yellow transition-all duration-500 h-full">
                   <CardContent className="p-0 flex flex-col items-center justify-center">
                     <img 
@@ -899,7 +902,7 @@ export default function About() {
                 </Card>
               </div>
 
-              <div className="animate-fade-in">
+              <div className="">
                 <Card className="bg-white/10 backdrop-blur-md border border-white/20 p-3 md:p-4 lg:p-6 text-center hover:border-construction-yellow transition-all duration-500 h-full">
                   <CardContent className="p-0 flex flex-col items-center justify-center">
                     <img 
@@ -923,15 +926,15 @@ export default function About() {
         {/* Contact CTA Section */}
         <section className="py-12 md:py-16 lg:py-20 bg-construction-yellow">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h2 className="animate-fade-in text-xl sm:text-2xl md:text-3xl lg:text-4xl font-black text-industrial-black mb-4 md:mb-6 leading-tight">
+            <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-black text-industrial-black mb-4 md:mb-6 leading-tight">
               READY TO WORK WITH ZIMBABWE'S MOST TRUSTED CONTRACTOR?
             </h2>
-            <p className="animate-fade-in text-sm sm:text-base md:text-lg text-industrial-black mb-6 md:mb-8 max-w-2xl mx-auto leading-relaxed">
+            <p className="text-sm sm:text-base md:text-lg text-industrial-black mb-6 md:mb-8 max-w-2xl mx-auto leading-relaxed">
               Partner with us for your next construction, mining, or
               agricultural project. Experience the Tartech difference - where
               safety, quality, and excellence meet.
             </p>
-            <div className="animate-fade-in flex justify-center">
+            <div className="flex justify-center">
               <Button
                 size="lg"
                 className="bg-industrial-black text-construction-yellow hover:bg-gray-800 text-base md:text-lg px-6 md:px-8 py-3 md:py-4"

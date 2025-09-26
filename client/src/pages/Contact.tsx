@@ -15,7 +15,6 @@ import LoadingScreen from '@/components/LoadingScreen';
 import SEOHead from '@/components/SEOHead';
 import { gsap, initializePageAnimations } from '@/lib/gsap';
 import { trackPageView, trackContactFormSubmission } from '@/lib/analytics';
-import tartechLogo from '@assets/tartech-logo-symbol_1755071044733.png';
 import { GoogleMap } from '@/components/GoogleMap';
 import { useMutation } from '@tanstack/react-query';
 import { apiRequest } from '@/lib/queryClient';
@@ -168,7 +167,7 @@ export default function Contact() {
           
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-8 lg:gap-12">
             {/* Contact Form */}
-            <div className="animate-slide-in-left">
+            <div className="">
               <Card className="bg-white rounded-xl md:rounded-2xl shadow-xl">
                 <CardContent className="p-4 md:p-6 lg:p-8">
                   <Form {...form}>
@@ -314,7 +313,7 @@ export default function Contact() {
             </div>
             
             {/* Contact Information */}
-            <div className="animate-slide-in-right">
+            <div className="">
               <Card className="bg-white rounded-xl md:rounded-2xl shadow-xl mb-6 md:mb-8">
                 <CardContent className="p-4 md:p-6 lg:p-8">
                   <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-construction-yellow mb-4 md:mb-6">CONTACT INFORMATION</h3>

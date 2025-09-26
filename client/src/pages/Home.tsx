@@ -10,6 +10,9 @@ import LoadingScreen from '@/components/LoadingScreen';
 import SEOHead from '@/components/SEOHead';
 import { gsap, initializePageAnimations, initParallaxEffect } from '@/lib/gsap';
 import { trackPageView, trackServicePageView } from '@/lib/analytics';
+
+// Image assets
+import tartechTrucksImage from '@assets/tartech-trucks.jpeg';
 import bulldozerImage from '@assets/bulldozer-2195329_1920_1753976237868.jpg';
 import tartechLogoSymbol from '@assets/tartech-logo-symbol_1754996014881.png';
 import cityOfHarareLogo from '@assets/city-of-harare_1755190481288.png';
@@ -20,6 +23,9 @@ import fredaRebeccaLogo from '@assets/reda_1755190481290.png';
 import binduraNickelLogo from '@assets/bnc-logo_1755190481287.png';
 import khayaLogo from '@assets/khaya-logo_1756283910285.png';
 import zimplatsLogo from '@assets/zimplats-logo_1756283910288.png';
+import greenhouse from "@assets/greenhouse.jpg";
+import constructionWorkersImage from "@assets/construction-workers.jpg";
+import boreholeDrillersImage from "@assets/borehole-drillers.jpg";
 
 export default function Home() {
   const logoSliderRef = useRef<HTMLDivElement>(null);
@@ -140,7 +146,7 @@ export default function Home() {
         <div className="absolute inset-0">
           {/* Primary Background Image */}
           <img 
-            src={bulldozerImage} 
+            src={tartechTrucksImage} 
             alt="Heavy industrial bulldozer and excavator equipment at construction site with dramatic sky" 
             className="hero-parallax-image w-full h-[120%] object-cover opacity-35 animate-zoom-in"
             onError={(e) => {
@@ -211,7 +217,7 @@ export default function Home() {
                   </div>
                 </div>
                 
-                <div className="animate-slide-up-delay-3 space-y-6 max-w-3xl">
+                <div className="space-y-6 max-w-3xl">
                   <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl text-white font-light leading-tight tracking-wide">
                     Leading contractor delivering <span className="font-semibold text-white/95">world-class solutions</span> across Zimbabwe's most demanding industrial sectors
                   </h2>
@@ -240,7 +246,7 @@ export default function Home() {
               </div>
               
               {/* Premium Statistics Display */}
-              <div className="animate-slide-up-delay-4 py-4 md:py-6">
+              <div className="py-4 md:py-6">
                 <div className="bg-gradient-to-r from-white/6 to-white/10 backdrop-blur-xl rounded-xl md:rounded-2xl border border-white/15 p-4 md:p-6 shadow-2xl">
                   <div className="grid grid-cols-3 gap-3 md:gap-6">
                     <div className="text-center group cursor-default">
@@ -269,7 +275,7 @@ export default function Home() {
               </div>
               
               {/* Premium Industrial CTA Button - Flex Column Item */}
-              <div className="animate-slide-up-delay-5 flex justify-center md:justify-start">
+              <div className="flex justify-center md:justify-start">
                 <Link href="/contact">
                   <button className="group relative inline-flex items-center justify-center px-6 py-3 sm:px-8 sm:py-4 md:px-9 md:py-4 lg:px-10 lg:py-5 text-base sm:text-lg md:text-xl lg:text-xl font-black text-industrial-black bg-construction-yellow rounded-xl border-2 border-construction-yellow overflow-hidden shadow-2xl hover:shadow-construction-yellow/40 transition-all duration-500 hover:scale-105 active:scale-95 focus:outline-none focus:ring-4 focus:ring-construction-yellow/30 hover:border-white/20">
                     
@@ -313,7 +319,7 @@ export default function Home() {
               {/* Premium Feature Cards */}
               <div className="space-y-4">
                 {/* Safety Card */}
-                <div className="animate-slide-left-card-1 bg-gradient-to-r from-white/8 to-white/4 backdrop-blur-xl border border-white/20 rounded-2xl p-6 hover:from-white/12 hover:to-white/8 hover:border-construction-yellow/30 transition-all duration-500 hover:scale-105 hover:shadow-2xl hover:shadow-construction-yellow/10">
+                <div className="bg-gradient-to-r from-white/8 to-white/4 backdrop-blur-xl border border-white/20 rounded-2xl p-6 hover:from-white/12 hover:to-white/8 hover:border-construction-yellow/30 transition-all duration-500 hover:scale-105 hover:shadow-2xl hover:shadow-construction-yellow/10">
                   <div className="flex items-center space-x-4">
                     <div className="p-4 bg-construction-yellow/15 rounded-2xl border border-construction-yellow/30 group-hover:bg-construction-yellow/25 transition-all duration-300">
                       <Shield className="w-7 h-7 text-construction-yellow" />
@@ -326,10 +332,10 @@ export default function Home() {
                 </div>
                 
                 {/* Innovation Card */}
-                <div className="animate-slide-left-card-2 bg-gradient-to-r from-white/6 to-white/3 backdrop-blur-xl border border-white/15 rounded-2xl p-6 hover:from-white/10 hover:to-white/6 hover:border-safety-orange/30 transition-all duration-500 hover:scale-105 hover:shadow-2xl hover:shadow-safety-orange/10 ml-8">
+                <div className="bg-gradient-to-r from-white/6 to-white/3 backdrop-blur-xl border border-white/15 rounded-2xl p-6 hover:from-white/10 hover:to-white/6 hover:border-safety-orange/30 transition-all duration-500 hover:scale-105 hover:shadow-2xl hover:shadow-safety-orange/10 ml-8">
                   <div className="flex items-center space-x-4">
                     <div className="p-4 bg-safety-orange/15 rounded-2xl border border-safety-orange/30 group-hover:bg-safety-orange/25 transition-all duration-300">
-                      <Award className="w-7 h-7 text-safety-orange" />
+                      <Award className="w-7 h-7 text-white" />
                     </div>
                     <div className="flex-1">
                       <h3 className="text-white font-bold text-lg mb-1">Certified Excellence</h3>
@@ -339,7 +345,7 @@ export default function Home() {
                 </div>
                 
                 {/* 24/7 Support Card */}
-                <div className="animate-slide-left-card-3 bg-gradient-to-r from-white/8 to-white/4 backdrop-blur-xl border border-white/20 rounded-2xl p-6 hover:from-white/12 hover:to-white/8 hover:border-construction-yellow/30 transition-all duration-500 hover:scale-105 hover:shadow-2xl hover:shadow-construction-yellow/10">
+                <div className="bg-gradient-to-r from-white/8 to-white/4 backdrop-blur-xl border border-white/20 rounded-2xl p-6 hover:from-white/12 hover:to-white/8 hover:border-construction-yellow/30 transition-all duration-500 hover:scale-105 hover:shadow-2xl hover:shadow-construction-yellow/10">
                   <div className="flex items-center space-x-4">
                     <div className="p-4 bg-construction-yellow/15 rounded-2xl border border-construction-yellow/30 group-hover:bg-construction-yellow/25 transition-all duration-300">
                       <Clock className="w-7 h-7 text-construction-yellow" />
@@ -382,20 +388,20 @@ export default function Home() {
       <section id="our-expertise" className="py-20 bg-light-industrial">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12 md:mb-16">
-            <h2 className="animate-fade-in text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black text-industrial-black mb-4 md:mb-6">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black text-industrial-black mb-4 md:mb-6">
               OUR <span className="text-construction-yellow">EXPERTISE</span>
             </h2>
-            <p className="animate-fade-in text-sm sm:text-base md:text-lg text-industrial-gray max-w-3xl mx-auto leading-relaxed">
+            <p className="text-sm sm:text-base md:text-lg text-industrial-gray max-w-3xl mx-auto leading-relaxed">
               Over a decade of delivering industrial-grade solutions across Zimbabwe's most demanding sectors
             </p>
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {/* Borehole Drilling Card */}
-            <Card className="service-card-hover animate-fade-in bg-gradient-to-br from-white to-gray-50/30 rounded-2xl shadow-2xl overflow-hidden border border-gray-100 hover:border-construction-yellow/60 hover:shadow-construction-yellow/20 transition-all duration-500 backdrop-blur-sm">
+            <Card className="service-card-hover bg-gradient-to-br from-white to-gray-50/30 rounded-2xl shadow-2xl overflow-hidden border border-gray-100 hover:border-construction-yellow/60 hover:shadow-construction-yellow/20 transition-all duration-500 backdrop-blur-sm">
               <div className="h-64 overflow-hidden">
                 <img 
-                  src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600" 
+                  src={boreholeDrillersImage} 
                   alt="Industrial borehole drilling rig equipment in operation" 
                   className="w-full h-full object-cover transition-transform duration-500 hover:scale-110" 
                 />
@@ -417,7 +423,7 @@ export default function Home() {
             </Card>
 
             {/* Mining Card */}
-            <Card className="service-card-hover animate-fade-in bg-gradient-to-br from-white to-gray-50/30 rounded-2xl shadow-2xl overflow-hidden border border-gray-100 hover:border-construction-yellow/60 hover:shadow-construction-yellow/20 transition-all duration-500 backdrop-blur-sm">
+            <Card className="service-card-hover bg-gradient-to-br from-white to-gray-50/30 rounded-2xl shadow-2xl overflow-hidden border border-gray-100 hover:border-construction-yellow/60 hover:shadow-construction-yellow/20 transition-all duration-500 backdrop-blur-sm">
               <div className="h-64 overflow-hidden">
                 <img 
                   src="https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=600" 
@@ -442,10 +448,10 @@ export default function Home() {
             </Card>
             
             {/* Construction Card */}
-            <Card className="service-card-hover animate-fade-in bg-gradient-to-br from-white to-gray-50/30 rounded-2xl shadow-2xl overflow-hidden border border-gray-100 hover:border-construction-yellow/60 hover:shadow-construction-yellow/20 transition-all duration-500 backdrop-blur-sm">
+            <Card className="service-card-hover bg-gradient-to-br from-white to-gray-50/30 rounded-2xl shadow-2xl overflow-hidden border border-gray-100 hover:border-construction-yellow/60 hover:shadow-construction-yellow/20 transition-all duration-500 backdrop-blur-sm">
               <div className="h-64 overflow-hidden">
                 <img 
-                  src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=600" 
+                  src={constructionWorkersImage} 
                   alt="Construction site with tower cranes and building framework" 
                   className="w-full h-full object-cover transition-transform duration-500 hover:scale-110" 
                 />
@@ -467,10 +473,10 @@ export default function Home() {
             </Card>
             
             {/* Agriculture Card */}
-            <Card className="service-card-hover animate-fade-in bg-gradient-to-br from-white to-gray-50/30 rounded-2xl shadow-2xl overflow-hidden border border-gray-100 hover:border-construction-yellow/60 hover:shadow-construction-yellow/20 transition-all duration-500 backdrop-blur-sm">
+            <Card className="service-card-hover bg-gradient-to-br from-white to-gray-50/30 rounded-2xl shadow-2xl overflow-hidden border border-gray-100 hover:border-construction-yellow/60 hover:shadow-construction-yellow/20 transition-all duration-500 backdrop-blur-sm">
               <div className="h-64 overflow-hidden">
                 <img 
-                  src="https://images.unsplash.com/photo-1625246333195-78d9c38ad449?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=600" 
+                  src={greenhouse} 
                   alt="Large agricultural tractor working in expansive field" 
                   className="w-full h-full object-cover transition-transform duration-500 hover:scale-110" 
                 />
@@ -498,15 +504,15 @@ export default function Home() {
       <section className="py-16 md:py-20 lg:py-24 bg-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12 md:mb-16">
-            <h2 className="animate-fade-in text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black text-industrial-black mb-4 md:mb-6">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black text-industrial-black mb-4 md:mb-6">
               WHY CHOOSE <span className="text-construction-yellow">TARTECH</span>
             </h2>
-            <p className="animate-fade-in text-sm sm:text-base md:text-lg text-industrial-gray max-w-3xl mx-auto leading-relaxed">
+            <p className="text-sm sm:text-base md:text-lg text-industrial-gray max-w-3xl mx-auto leading-relaxed">
               Three decades of excellence in Zimbabwe's most demanding industrial environments, backed by cutting-edge equipment and unwavering commitment to safety.
             </p>
           </div>
           
-          <div className="animate-fade-in">
+          <div className="">
             <Accordion type="single" collapsible className="w-full space-y-4">
               <AccordionItem value="safety" className="border border-gray-200 rounded-lg md:rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300">
                 <AccordionTrigger className="px-4 py-4 sm:px-6 sm:py-5 md:px-8 md:py-6 bg-gradient-to-r from-white to-gray-50 hover:from-construction-yellow/10 hover:to-construction-yellow/5 transition-all duration-300 text-left [&[data-state=open]]:bg-construction-yellow/10">
@@ -620,17 +626,17 @@ export default function Home() {
       <section className="py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12 md:mb-16">
-            <h2 className="animate-fade-in text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black text-industrial-black mb-4 md:mb-6">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black text-industrial-black mb-4 md:mb-6">
               WE ARE GOOD AT <span className="text-construction-yellow">SOLVING PROBLEMS</span>
             </h2>
-            <p className="animate-fade-in text-sm sm:text-base md:text-lg text-industrial-gray max-w-3xl mx-auto leading-relaxed">
+            <p className="text-sm sm:text-base md:text-lg text-industrial-gray max-w-3xl mx-auto leading-relaxed">
               From the depths of Zimbabwe's mines to expansive agricultural lands, we deliver specialized solutions across every major industrial sector.
             </p>
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 lg:gap-8">
             {/* Mining Industry */}
-            <div className="animate-slide-in-left md:col-span-1 xl:col-span-1">
+            <div className="md:col-span-1 xl:col-span-1">
               <Card className="bg-white/10 backdrop-blur-sm border-0 overflow-hidden group cursor-pointer h-full flex flex-col">
                 <div className="h-64 overflow-hidden">
                   <img 
@@ -658,7 +664,7 @@ export default function Home() {
             </div>
             
             {/* Construction Industry */}
-            <div className="animate-fade-in md:col-span-1 xl:col-span-1">
+            <div className="md:col-span-1 xl:col-span-1">
               <Card className="bg-white/10 backdrop-blur-sm border-0 overflow-hidden group cursor-pointer h-full flex flex-col">
                 <div className="h-64 overflow-hidden">
                   <img 
@@ -686,7 +692,7 @@ export default function Home() {
             </div>
             
             {/* Agriculture Industry */}
-            <div className="animate-slide-in-right md:col-span-2 xl:col-span-1">
+            <div className="md:col-span-2 xl:col-span-1">
               <Card className="bg-white/10 backdrop-blur-sm border-0 overflow-hidden group cursor-pointer h-full flex flex-col">
                 <div className="h-64 overflow-hidden">
                   <img 
@@ -720,16 +726,16 @@ export default function Home() {
       <section className="py-24 bg-light-industrial">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12 md:mb-16">
-            <h2 className="animate-fade-in text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black text-industrial-black mb-4 md:mb-6">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black text-industrial-black mb-4 md:mb-6">
               CLIENT <span className="text-construction-yellow">TESTIMONIALS</span>
             </h2>
-            <p className="animate-fade-in text-sm sm:text-base md:text-lg text-industrial-gray max-w-3xl mx-auto leading-relaxed">
+            <p className="text-sm sm:text-base md:text-lg text-industrial-gray max-w-3xl mx-auto leading-relaxed">
               Hear from industry leaders who trust Tartech Contracting for their most critical projects.
             </p>
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <Card className="animate-fade-in p-8 bg-white shadow-xl">
+            <Card className="p-8 bg-white shadow-xl">
               <CardContent className="p-0">
                 <div className="flex items-center mb-4">
                   {[...Array(5)].map((_, i) => (
@@ -751,7 +757,7 @@ export default function Home() {
               </CardContent>
             </Card>
             
-            <Card className="animate-fade-in p-8 bg-white shadow-xl">
+            <Card className="p-8 bg-white shadow-xl">
               <CardContent className="p-0">
                 <div className="flex items-center mb-4">
                   {[...Array(5)].map((_, i) => (
@@ -773,7 +779,7 @@ export default function Home() {
               </CardContent>
             </Card>
             
-            <Card className="animate-fade-in p-8 bg-white shadow-xl">
+            <Card className="p-8 bg-white shadow-xl">
               <CardContent className="p-0">
                 <div className="flex items-center mb-4">
                   {[...Array(5)].map((_, i) => (
@@ -802,10 +808,10 @@ export default function Home() {
       <section className="py-20 bg-gradient-to-br from-gray-50 via-white to-gray-50 border-t border-gray-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12 md:mb-16">
-            <h2 className="animate-fade-in text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black text-industrial-black mb-4 md:mb-6">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black text-industrial-black mb-4 md:mb-6">
               TRUSTED BY <span className="text-construction-yellow">INDUSTRY LEADERS</span>
             </h2>
-            <p className="animate-fade-in text-sm sm:text-base md:text-lg text-industrial-gray max-w-2xl mx-auto leading-relaxed">
+            <p className="text-sm sm:text-base md:text-lg text-industrial-gray max-w-2xl mx-auto leading-relaxed">
               Partnering with Zimbabwe's most respected organizations across public and private sectors
             </p>
           </div>
@@ -937,13 +943,13 @@ export default function Home() {
       {/* Call to Action */}
       <section className="py-16 md:py-20 lg:py-24 bg-construction-yellow">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="animate-fade-in text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black text-industrial-black mb-4 md:mb-6">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black text-industrial-black mb-4 md:mb-6">
             READY TO START YOUR PROJECT?
           </h2>
-          <p className="animate-fade-in text-sm sm:text-base md:text-lg lg:text-xl text-industrial-black mb-6 md:mb-8 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-sm sm:text-base md:text-lg lg:text-xl text-industrial-black mb-6 md:mb-8 max-w-3xl mx-auto leading-relaxed">
             Get in touch with Zimbabwe's leading industrial contractor. Our expert team is ready to deliver excellence for your next construction, mining, or agricultural project.
           </p>
-          <div className="animate-fade-in flex justify-center">
+          <div className="flex justify-center">
             <Link href="/contact">
               <Button size="lg" className="bg-industrial-black text-construction-yellow hover:bg-gray-800 font-bold text-sm sm:text-base md:text-lg lg:text-xl px-6 py-3 sm:px-8 sm:py-4 md:px-10 md:py-6 rounded-xl shadow-2xl transform hover:scale-105 transition-all duration-300">
                 <Phone className="mr-2 sm:mr-3 h-4 w-4 sm:h-5 sm:w-5 md:h-6 md:w-6" />

@@ -24,11 +24,13 @@ import LoadingScreen from '@/components/LoadingScreen';
 import SEOHead from '@/components/SEOHead';
 import { gsap, initializePageAnimations } from '@/lib/gsap';
 import { trackPageView, trackServicePageView } from '@/lib/analytics';
-import tartechLogo from '@assets/tartech-logo-symbol_1755071044733.png';
-import bushClearingImage from '@assets/WhatsApp Image 2025-08-01 at 12.39.54_1755097414696.jpeg';
 import landLevellingImage from '@assets/tractor-agricultural-machine-cultivating-field-min_1755102581325.jpg';
 import gpsLevellingImage from '@assets/construction-site (1)-min_1755102726620.jpg';
-import agricultureInfrastructureImage from '@assets/UIIII-min_1755103137242.png';
+import manInForestImage from "@assets/man-in-forest.jpg";
+import tractorPloughing from "@assets/tractor-ploughing.jpg";
+import dam from "@assets/dam.jpg";
+import greenhouse from "@assets/greenhouse.jpg";
+import drainagePipeImage from "@assets/drainage-pipe.jpg";
 
 export default function Agriculture() {
   const [isLoading, setIsLoading] = useState(true);
@@ -148,11 +150,11 @@ export default function Agriculture() {
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-10 md:gap-12 lg:gap-16 mb-16 sm:mb-18 md:mb-20">
             {/* Bush Clearing */}
-            <div className="animate-slide-left-card-1">
+            <div className="">
               <Card className="h-full overflow-hidden shadow-2xl border-4 border-transparent hover:border-construction-yellow transition-all duration-500">
                 <div className="h-64 overflow-hidden">
                   <img 
-                    src={bushClearingImage} 
+                    src={manInForestImage} 
                     alt="Heavy bulldozer and excavator clearing dense vegetation and bush land"
                     className="w-full h-full object-cover hover:scale-110 transition-transform duration-700" 
                   />
@@ -188,11 +190,11 @@ export default function Agriculture() {
             </div>
 
             {/* Land Preparation */}
-            <div className="animate-slide-left-card-2">
+            <div className="">
               <Card className="h-full overflow-hidden shadow-2xl border-4 border-transparent hover:border-construction-yellow transition-all duration-500">
                 <div className="h-64 overflow-hidden">
                   <img 
-                    src="https://images.unsplash.com/photo-1589923188900-85dae523342b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600" 
+                    src={tractorPloughing} 
                     alt="Agricultural tractor with tillage equipment preparing farmland"
                     className="w-full h-full object-cover hover:scale-110 transition-transform duration-700" 
                   />
@@ -270,7 +272,7 @@ export default function Agriculture() {
             </div>
 
             {/* GPS Laser Levelling */}
-            <div className="animate-slide-in-right">
+            <div className="">
               <Card className="h-full overflow-hidden shadow-2xl border-4 border-transparent hover:border-construction-yellow transition-all duration-500">
                 <div className="h-48 sm:h-56 md:h-64 overflow-hidden">
                   <img 
@@ -316,7 +318,7 @@ export default function Agriculture() {
               <Card className="h-full overflow-hidden shadow-2xl border-4 border-transparent hover:border-construction-yellow transition-all duration-500">
                 <div className="h-48 sm:h-56 md:h-64 overflow-hidden">
                   <img 
-                    src="https://images.unsplash.com/photo-1586771107445-d3ca888129ff?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600" 
+                    src={drainagePipeImage} 
                     alt="Agricultural drainage system construction with excavator"
                     className="w-full h-full object-cover hover:scale-110 transition-transform duration-700" 
                   />
@@ -356,7 +358,7 @@ export default function Agriculture() {
               <Card className="h-full overflow-hidden shadow-2xl border-4 border-transparent hover:border-construction-yellow transition-all duration-500">
                 <div className="h-48 sm:h-56 md:h-64 overflow-hidden">
                   <img 
-                    src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600" 
+                    src={dam} 
                     alt="Dam construction with heavy earthmoving equipment"
                     className="w-full h-full object-cover hover:scale-110 transition-transform duration-700" 
                   />
@@ -398,7 +400,7 @@ export default function Agriculture() {
               <div className="grid grid-cols-1 lg:grid-cols-2">
                 <div className="h-48 sm:h-56 md:h-64 lg:h-auto overflow-hidden">
                   <img 
-                    src={agricultureInfrastructureImage} 
+                    src={greenhouse} 
                     alt="Modern agricultural infrastructure and storage facilities"
                     className="w-full h-full object-cover hover:scale-110 transition-transform duration-700" 
                   />

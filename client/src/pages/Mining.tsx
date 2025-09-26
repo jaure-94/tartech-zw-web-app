@@ -12,6 +12,7 @@ import dewateringImage from '@assets/Dewatering_1754640759227.jpg';
 import miningInfrastructureImage from '@assets/view-heavy-machinery-used-construction-industry (1)-min_1755102340110.jpg';
 import miningTruckHeroImage from '@assets/large-truck-carrying-sand-platinum-mining-site-africa-min_1755186703049.jpg';
 import openPitMiningImage from '@assets/open-pit-mining-920200_640-min_1755187586396.jpg';
+import civilEngineerImage from "@assets/civil-engineer.jpg";
 
 export default function Mining() {
   const [isLoading, setIsLoading] = useState(true);
@@ -73,14 +74,14 @@ export default function Mining() {
           </div>
           
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-10 md:gap-12 items-center mb-12 sm:mb-14 md:mb-16">
-            <div className="order-2 lg:order-1 animate-slide-left-card-1">
+            <div className="order-2 lg:order-1">
               <img 
                 src={miningTruckHeroImage} 
                 alt="Large truck carrying sand at platinum mining site in Africa" 
                 className="rounded-xl shadow-2xl w-full" 
               />
             </div>
-            <div className="order-1 lg:order-2 animate-slide-left-card-2">
+            <div className="order-1 lg:order-2">
               <h3 className="text-2xl sm:text-3xl md:text-4xl font-black text-construction-yellow mb-4 sm:mb-6 leading-tight">SURFACE MINING EXPERTISE</h3>
               <ul className="space-y-3 sm:space-y-4 text-base sm:text-lg">
                 <li className="flex items-start">
@@ -274,7 +275,7 @@ export default function Mining() {
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-0">
                   <div className="relative order-2 lg:order-1">
                     <img 
-                      src={dewateringImage} 
+                      src={civilEngineerImage} 
                       alt="Professional dewatering operations with excavator and submersible pump removing water from mining excavation site" 
                       className="w-full h-64 sm:h-80 lg:h-full object-cover lg:rounded-l-lg shadow-inner" 
                     />
@@ -286,7 +287,7 @@ export default function Mining() {
                     <div className="absolute bottom-3 sm:bottom-4 left-3 sm:left-4 right-3 sm:right-4">
                       <div className="bg-industrial-black/80 backdrop-blur-sm rounded-lg p-3 sm:p-4">
                         <p className="text-construction-yellow font-bold text-xs sm:text-sm">ADVANCED PUMP SYSTEMS</p>
-                        <p className="text-white text-xs">Continuous water removal & site management</p>
+                        <p className="text-gray-700 text-xs">Continuous water removal & site management</p>
                       </div>
                     </div>
                   </div>

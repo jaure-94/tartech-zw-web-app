@@ -10,6 +10,8 @@ import SEOHead from '@/components/SEOHead';
 import { gsap, initializePageAnimations } from '@/lib/gsap';
 import { trackPageView, trackServicePageView } from '@/lib/analytics';
 import tartechLogo from '@assets/tartech-logo-symbol_1755071044733.png';
+import boreholeDrillersImage from '@assets/borehole-drillers.jpg';
+import civilEngineerImage from "@assets/civil-engineer.jpg";
 
 export default function Services() {
   const [isLoading, setIsLoading] = useState(true);
@@ -62,23 +64,23 @@ export default function Services() {
       <section className="py-12 sm:py-16 md:py-20 lg:py-24 bg-industrial-black text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12 sm:mb-14 md:mb-16">
-            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-black mb-4 sm:mb-6 leading-tight animate-slide-up-delay-3">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-black mb-4 sm:mb-6 leading-tight">
               <span className="text-white font-black">BOREHOLE</span> <span className="text-construction-yellow font-black">DRILLING</span>
             </h1>
-            <p className="text-base sm:text-lg md:text-xl lg:text-xl text-gray-300 max-w-4xl mx-auto leading-relaxed px-2 sm:px-4 animate-slide-up-delay-4">
+            <p className="text-base sm:text-lg md:text-xl lg:text-xl text-gray-300 max-w-4xl mx-auto leading-relaxed px-2 sm:px-4">
               At Tartech Contracting, we are your comprehensive partner for unlocking reliable water on your property. Our highly skilled team tackles all drilling projects, from standard boreholes to specialized blast hole and RC drilling.
             </p>
           </div>
           
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-10 md:gap-12 items-center mb-12 sm:mb-14 md:mb-16">
-            <div className="order-2 lg:order-1 animate-slide-in-left">
+            <div className="order-2 lg:order-1">
               <img 
-                src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&h=600" 
+                src={boreholeDrillersImage} 
                 alt="Professional borehole drilling equipment in operation" 
                 className="rounded-xl shadow-2xl w-full" 
               />
             </div>
-            <div className="order-1 lg:order-2 animate-slide-in-right">
+            <div className="order-1 lg:order-2">
               <h3 className="text-2xl sm:text-3xl md:text-4xl font-black text-construction-yellow mb-4 sm:mb-6 leading-tight">COMPREHENSIVE DRILLING SERVICES</h3>
               <ul className="space-y-3 sm:space-y-4 text-base sm:text-lg">
                 <li className="flex items-start">
@@ -141,7 +143,7 @@ export default function Services() {
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 mb-12 sm:mb-14 md:mb-16">
             {/* Rotary Air Percussion Drilling */}
-            <Card className="group hover:shadow-2xl transition-all duration-300 border-2 hover:border-construction-yellow bg-white animate-slide-in-left">
+            <Card className="group hover:shadow-2xl transition-all duration-300 border-2 hover:border-construction-yellow bg-white">
               <CardContent className="p-0">
                 <div className="relative">
                   <img 
@@ -178,7 +180,7 @@ export default function Services() {
             </Card>
 
             {/* Rotary Mud Drilling */}
-            <Card className="group hover:shadow-2xl transition-all duration-300 border-2 hover:border-construction-yellow bg-white animate-slide-in-right">
+            <Card className="group hover:shadow-2xl transition-all duration-300 border-2 hover:border-construction-yellow bg-white">
               <CardContent className="p-0">
                 <div className="relative">
                   <img 
@@ -221,7 +223,7 @@ export default function Services() {
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-0">
                 <div className="relative">
                   <img 
-                    src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&h=500" 
+                    src={civilEngineerImage} 
                     alt="Borehole pump installation and water systems" 
                     className="w-full h-64 sm:h-72 md:h-80 lg:h-full object-cover lg:rounded-l-lg" 
                   />
